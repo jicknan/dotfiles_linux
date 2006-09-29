@@ -1,0 +1,73 @@
+# Default Server List for podget
+# FORMAT:    <url> <category> <name>
+# NOTES: 
+#    1. The Category must be one word, however you can use underscores.
+#    2. Any spaces in the urls needs to be converted to %20 
+# Find more servers at: http://www.ipodder.org/directory/4/podcasts
+
+# Too slooooow!
+#http://thelinuxlink.net/tllts/tllts.rss Linux TheLinuxLink
+
+#http://www.itconversations.com/rss/category-rss.php?k=lawandit&e=1 IT IT Conversations: Law & IT
+
+#http://www.cnn.com/services/podcasting/newscast/rss.xml News CNN
+
+#http://www.podlook.com/rss/channel/133332 PodLook 80
+#http://www.podlook.com/rss/channel/124514 PodLook Keso
+#http://www.podlook.com/rss/channel/124894 PodLook BaiduMP3
+
+# update slowly
+#http://www.podlook.com/rss/channel/15534 PodLook JacksPodcast
+
+#http://www.podlook.com/rss/channel/72581 PodLook Genshang.com
+http://feeds.feedburner.com/genshang IT Genshang.com
+
+#http://www.podlook.com/rss/channel/117812 PodLook The Linux Action Show Podcast
+
+#http://www.podlook.com/rss/channel/112722 PodLook LQ Radio
+http://feeds.feedburner.com/linuxquestions/LQRadioALL Linux LQRadio
+
+http://www.podlook.com/rss/channel/1004 PodLook pdh
+#http://www.lifepop.com/asp/rss.asp?domain=yyse PodLook pdh
+
+#http://www.podlook.com/rss/channel/23468 PodLook 23468
+http://podcast.kijiji.com.cn/podcast.xml News Kijiji
+
+#http://www.podlook.com/rss/channel/16093 PodLook 16093
+http://feeds.feedburner.com/srx PhoenixTV srx
+
+#http://www.podlook.com/rss/channel/113134 PodLook InfoWorld Daily Podcast
+http://weblog.infoworld.com/daily/podcast.xml IT IFWDaily
+
+#http://www.podlook.com/rss/channel/15334 PodLook 15334
+# Slow
+# update weekly
+http://www.bookast.com/mp3/bookast_rss.xml PodLook Bookast
+
+#http://www.podlook.com/rss/channel/1001 PodLook AntiWavenet
+http://www.antiwave.net/index.xml PodLook AntiWave
+
+# Just a podcast list
+#http://www.podcastalley.com/PodcastAlley10Newest.xml PodLook PodcastAlley
+# ~60MB
+#http://shitecom.libsyn.com/rss PodcastAlley KeithandTheGirl
+http://www.distortedview.com/show/index.xml PodcastAlley DistortedView
+# ~70MB
+#http://feeds.feedburner.com/UrbanCoffee PodcastAlley UrbanCoffee
+
+#http://www.podlook.com/rss/channel/22174 PodLook 22174
+http://rss.dw-world.de/xml/podcast_radio_china News dw-world
+
+#http://www.podlook.com/rss/channel/1095 PodLook English as a Second Language Podcast
+http://feeds.feedburner.com/EnglishasaSecondLanguagePodcast English ESLPod
+
+#http://www.bbc.co.uk/china/learningenglish/index.xml English BBC
+
+# update slowly
+#http://www.podlook.com/rss/channel/1578 PodLook 1578 
+http://indieblog.cn/feed/rss.xml PodLook 笑骂江湖
+
+# update slowly
+#http://hopesome.com/wp-ipodder.php PodLook hopesome
+
+http://odeo.com/channel/126064/rss BoingBoing BoingBoingBoing

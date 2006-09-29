@@ -1,0 +1,49 @@
+# ~/.conkyrc
+# use default value set by function set_default_configurations() heavily.
+
+use_xft yes
+xftfont Bitstream Vera Sans Mono:size=10
+xftalpha 0.8
+
+# Update interval in seconds
+update_interval 2.0
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+
+# If own_window is yes, you may use type normal, desktop or override
+own_window_type desktop
+
+# Use pseudo transparency with own_window?
+own_window_transparent yes
+
+# If own_window is yes, these window manager hints may be used
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Text alignment, other possible values are commented
+alignment bottom_right
+
+# Force UTF8? note that UTF8 support required XFT
+#override_utf8_locale no
+
+# stuff after 'TEXT' will be formatted on screen
+TEXT
+${color lightgrey}$nodename - $sysname $kernel $machine
+${color #98c2c7}CPU:	$cpu%	(up: $uptime)
+${cpubar 8}
+${cpugraph}
+	(Load: $loadavg)
+RAM:	$memperc%	$mem/$memmax
+${membar 8}
+Swap:	$swapperc%	$swap/$swapmax
+${swapbar 8}
+DISK I/O:	$diskio
+${diskiograph}
+Down:	k/s:${downspeedf eth0}	${alignr}${totaldown eth0}
+${downspeedgraph eth0}
+Up:	k/s:${upspeedf eth0}	${alignr}${totalup eth0}
+${upspeedgraph eth0}
+${color lightgrey}${time %a %b %e %H:%M:%S %Z %G}

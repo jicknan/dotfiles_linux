@@ -1,0 +1,1257 @@
+#####
+# (~/.fvwm/.fvwm2rc)
+# $Header: /jick/.opt/cvsroot/conf/.fvwm/.fvwm2rc,v 1.10 2006/06/14 08:34:28 jick Exp $
+# Used by Jick Nan <jick.nan AT gmail.com>
+# Heavily based on Steve Roome <steve AT pepcross DOT com> and 
+# 		Tavis Ormandy <taviso@gentoo.org>
+#
+# FVWM from hand-made:
+#   jick@darkstar:~$ fvwm -V
+#    fvwm 2.5.17 compiled on Aug  8 2006 at 11:01:00
+#    with support for: ReadLine, XPM, PNG, Shape, XShm, SM, Bidi text, Xinerama, XRender, XFT, NLS
+#
+# Shortcuts:
+# Please search for 'Key bindings' in this file.
+#
+# Mouse shortcuts:
+# Please search for 'Mouse bindings' in this file.
+# Note: there is NO mouse gesture.
+#
+# Tavis's Screenshots: http://dev.gentoo.org/~taviso/screenshots/
+#
+# To turn this file into plain text, try
+#   $ lynx -width=999 -nolist -dump http://dev.gentoo.org/~taviso/fvwm2rc.html
+#
+# FAQ:
+#   1.  What is that icon set?
+#   1a. http://forums.gentoo.org/viewtopic.php?p=853150&highlight=#853150
+#
+#   2.  I'm not using Gentoo Linux, why isnt your "Translucent" colorset option working for me?
+#   2a. http://www.fvwm.org/documentation/faq/#3.23
+#
+#   3.  Where can I find your Xdefaults?
+#   3a. http://dev.gentoo.org/~taviso/xdefaults.html
+#
+# This work is licensed under the Creative Commons Attribution License.
+# To view a copy of this license, visit http://creativecommons.org/licenses/by/2.0/
+#
+#################
+
+#####
+# Set the directories to look in for Image files.
+#################
+ImagePath ${HOME}/.fvwm/images/icons:/usr/share/icons:+
+
+#####
+# You can set simple options like this, using variables.
+# If you need something more complex, you can get your configuration
+# pre-processed with FvwmCPP or FvwmM4.
+#################
+#SetEnv fvwm_wallpaper_dir /home/jick/.fvwm/images/wallpaper
+#SetEnv fvwm_wallpaper $[fvwm_wallpaper_dir]/cc.png
+#SetEnv fvwm_script $[HOME]/.fvwm/scripts
+
+#####
+# You can automatically move the viewport into adjacent pages when the pointer
+# hits the screen edge, but I dont like this.
+#
+# EdgeThickness disables edge scrolling and EdgeCommand, which I never use. set this
+# to 1 or 2 to enable them.
+#################
+EdgeResistance 15 100
+EdgeThickness 0
+
+#####
+# http://www.fvwm.org/documentation/faq/#5.5
+#################
+#IgnoreModifiers L2
+
+#####
+# You can use EwmhBaseStruts to stop Maximised windows, and new windows from obscuring
+# TaskBars/ButtonBars or anything else you always want to be visible.
+#
+# This Setting makes sure my ButtonBar on the left and taskbar along the bottom is always
+# visible, if you would like some windows to ignore this setting when being placed or Maximized,
+# you can set the EWMHPlacementIgnoreWorkingArea or EWMHMaximizeIgnoreWorkingArea Style options.
+#
+# you can also use the ewmhiwa flag on ceratin Maximize commands, so you could have one menu
+# option for normal maximization, and one for full-screen maximization.
+#################
+#EwmhBaseStruts 0 128 0 28
+
+######
+# Fvwm uses a default ClickTime of 150ms, which is way too short for me.
+# A Click that lasts <= ClickTime is considered a `Click` in functions,
+# > ClickTime is a `Hold`.
+# Remember that if you have a function that has actions on Click (C) and
+# DoubleClick (D), fvwm will have to wait at least this long so it can tell which
+# action you are trying to make.
+#################
+ClickTime 550
+
+#####
+# Use 9 pages per desktop, arranged in a square, like this:
+#
+#   +-----+-----+-----+
+#   |(0,0)|(1,0)|(2,0)|
+#   +-----+-----+-----+
+#   |(0,1)|(1,1)|(2,1)|
+#   +-----+-----+-----+
+#   |(0,2)|(1,2)|(2,2)|
+#   +-----+-----+-----+
+#################
+DeskTopSize 3x3
+
+######
+# Use an arrow rather than the `X` cursor on the root window.
+#################
+CursorStyle root top_left_arrow
+CursorStyle stroke hand2
+#CursorStyle stroke pencil
+
+#####
+# OpaqueMoveSize allows you to stop Large windows from being moved opaquely,
+# I like the effect, and have Cycles to burn, so all windows can use it.
+#
+# SnapAttraction lets nearby windows snap together, or snap to edges so that they
+# are easier to align on your desktop, The default is off, if you set it too large
+# it's annoying as hell, 3 pixels is just right.
+#################
+OpaqueMoveSize -1
+SnapAttraction 3 SameType
+
+######
+# Menu Settings.
+#
+#   * PopupOffset allows you to control where submenus will appear, and
+#       whether they should overlap or not.
+#   * PopupDelay controls how long fvwm will wait before showing an sub
+#       menu, if you would rather click than just hover on the menu item, set
+#       this to 0, if you would rather the menus appear instantly use the PopupImmediately
+#       setting.
+#   * This menu uses a translucent Colorset, and Hilighted items are light
+#       blue with a single pixel border.
+#   * I changed the default ItemFormat to be a little more spacious.
+#
+# AutomaticHotKeys generates your HotKeys (Keys you can press when a menu opens to
+# jump straight to an item) for you, you can write your own also, or disable them.
+# I've gone off HotKeys recently, so it's disabled for now.
+#
+# Try adding fgsh xxxx to Colorset 1 to change the Colour of the Font shadow on Hilighted
+# Menu entries.
+#
+# Anyone using lots of transparency in their theme will want to read these great tips
+# from olicha (Olivier Chapuis, an fvwm developer) on efficiency and performance
+# http://www.mail-archive.com/fvwm@hpc.uh.edu/msg02143.html
+#################
+Colorset 0 fg black, bg grey,  RootTransparent Buffer, Tint #c6cbd6 70
+Colorset 1 fg black, bg #6b83b5, hi #dcdcdc, sh #dcdcdc
+
+MenuStyle * Hilight3DThin, PopupOffset 0 100, PopupDelay 300
+#MenuStyle * Font "Shadow=0 1 SE:xft:Bitstream Vera Sans Mono:style=Roman:size=10"
+MenuStyle * MenuColorset 0, HilightBack, ActiveColorset 1
+MenuStyle * BorderWidth 1, TitleUnderlines1, SeparatorsLong, TrianglesSolid, Animation
+MenuStyle * ItemFormat "%.2|%.5i%.5l%.5i%2.3>%2|"
+MenuStyle * AutomaticHotKeys
+
+######
+# Use colormaps according to Focus, rather than where the Mouse is.
+#################
+ColormapFocus FollowsFocus
+
+######
+# Default window Styles.
+#
+# I like single pixel borders, which look cleaner and simpler that the default 3d borders.
+#
+# It can be a little tricky to grab the handles, but I usually use a Key Binding for that
+# anyway, you can always make the handles stick out a bit more if you use them more than I do.
+#
+# SloppyFocus is the one true Focus policy :) (focus follows mouse, except on root)
+#
+# If I click in a window, I like it to be raised (MouseFocusClickRaises)
+#
+# GrabFocus is terrible, windows are always stealing focus and keystrokes end up in the wrong
+# windows and you lose your train of thought, etc. So turn it off here, and back on for windows
+# that play nice with it.
+#
+# Set up an IconBox (an area that Windows jump to by default when Iconified) along the left.
+# You can set more than one of these, as one gets filled the next one is used. You might also
+# be interested in this FAQ: http://www.fvwm.org/documentation/faq/#3.15
+#
+# Syntax Reminder:
+#
+# IconBox [screen scr-spec] l t r b
+#
+# Fvwm offers several placement policies, which decide where new windows should appear, I've
+# found that TileCascadePlacement makes a decent guess at where the windows should be, but there are
+# plenty more to choose from.
+#
+# If you find that a window is being placed in some awkward location, it may be setting it's own
+# geometry, you can ask fvwm to ignore this with either NoPPosition or NoUSPosition, for example:
+#   Style wmtimer NoUSPosition
+# you might also find the ExplainWindowPlacement BugOpt useful (search the man page).
+#
+# IconAlpha looks great, but requires a lot of redrawing while being moved...so I have disabled
+# it (by setting to 100) for Hilighted Icons, this also creates a cool MouseOver effect :)
+#
+# If you want to stop Thumbnails getting too big, you can use the IconSize option.
+#################
+Colorset 13 fg #f6f6f6, bg black, IconAlpha 40
+Colorset 14 fg white, bg black, fgsh black, IconAlpha 100
+Style * BorderWidth 1, HandleWidth 1
+Style * Colorset 13, HilightColorset 14, MWMFunctions, MWMDecor, HintOverride
+Style * DecorateTransient, NoPPosition, IconBox 20 20 100 -15, IconGrid 3 3, IconFill left top
+Style * SloppyFocus, MouseFocusClickRaises, TileCascadePlacement, WindowShadeSteps 20
+Style * GrabFocusOff, NoIconTitle, !AllowMaximizeFixedSize, FPReleaseFocus, IndexedIconName
+
+# comment these lines if you dont like Icons to have Titles.
+Colorset 12 fg white, bg black, fgsh black, RootTransparent
+Style * IconTitle, IconTitleColorset 12, HilightIconTitleColorset 12, IconTitleRelief 0
+Style * IndexedIconName, IconBackgroundPadding 2,
+Style * IconBackgroundRelief 0, IconBackGroundColorset 12
+
+# This is another nice Placement Policy, which tries to avoid obscuring existing windows,
+# you can set penalties on certain window types so some are less likely to be obscured than
+# others. Check the manpage for even more Placement Policies.
+#Style * MinOverlapPercentPlacement
+#Style * MinOverlapPercentPlacementPenalties 2 5 1 2 0.5 50
+
+#####
+# My Vectors look like this
+#
+# +----------------------------------------------------------+
+# | .                                             ?  _  #  X |
+# +----------------------------------------------------------+
+# | 1                                             8  6  4  2 |
+# |                                                          |
+#                                                            |
+#
+# When the Buttons are ActiveDown (Pressed), The shadow vector is not drawn.
+#
+# Note that some Title/Button Styles are destructive.
+#
+# Vectors are basically just a set of co-ordinates, each button is a grid of 100x100 points
+# (or you can use pixels..it's up to you), following each vector you must specify a line type:
+#
+#   @0 Shadow (sh)
+#   @1 Hilight (hi)
+#   @2 Background (bg)
+#   @3 Foreground (fg)
+#   @4 Invisible (just move the pointer, dont draw anything)
+#
+# I normally use Gradients for my themes, but I am using a TiledPixmap below for the titlebar back.
+# If you would like the same pixmaps that i use, you can use these:
+#
+# begin 644 title_back.png
+# MB5!.1PT*&@H````-24A$4@````$````1"`8````<P\82````!F)+1T0`_P#_
+# M`/^@O:>3````"7!(67,```L3```+$P$`FIP8````!W1)344'U`,7##(;H1J%
+# ME@```!UT15AT0V]M;65N=`!#<F5A=&5D('=I=&@@5&AE($=)35#O9"5N````
+# M.DE$051XVCV*L0V`,`##K/P_]BNZLG``5Y"$`=HELJTPCD[=UXGB![5%B?]I
+# B@M)%C9?:*-WM^P6`^0)LD#!7?4W=0@````!)14Y$KD)@@@``
+# `
+# end
+#
+# begin 644 title_back_inactive.png
+# MB5!.1PT*&@H````-24A$4@````$````1"`8````<P\82````!F)+1T0`_P#_
+# M`/^@O:>3````"7!(67,```L3```+$P$`FIP8````!W1)344'U`,7##4`9#[:
+# MO0```!UT15AT0V]M;65N=`!#<F5A=&5D('=I=&@@5&AE($=)35#O9"5N````
+# M-4E$051XVE7+L0D`(!3$T'#[KV1C+98NX0X_5@IVX4%8VY'9&Q&(2A12W.*9
+# =2HIKY7>(`(P#7O$CI!U5BA4`````245.1*Y"8((`
+# `
+# end
+#
+# man uudecode if you're not sure what to do with these :)
+#
+# If you would like an example of a TitleBar gradient:
+#   TitleStyle Active ( VGradient 16 1 #5a8ade 50 #000000 -- Flat )
+#
+# More complex styles can be achieved using the MultiPixmap feature, see the
+# man page for details.
+#
+# ButtonStyle and TitleStyle are destructive, i.e. all other TitleStyles
+# before them will get overridden.
+#
+# AddButtonStyle and AddTitleStyle are not destructive (mostly), so you can
+# stack multiple styles (pixmaps, vectors, etc) on top of each other to make
+# some nice effects.
+#
+# I have seperated the vectors below into different parts, I have made one in
+# shadow and one in fg, if you dont like the shadow you can comment it out.
+#
+# Title bar Buttons can also be MiniIcons, this can look nice, there
+# is an example below commented out.
+##################
+Colorset 7 fg black, bg white, sh white, RootTransparent Buffer, Tint #f6f6f6 20
+
+DestroyDecor DefaultDecor
+AddToDecor DefaultDecor
++ TitleStyle LeftJustified Height 17
++ TitleStyle InActive ( Colorset 7 -- Flat ) Active ( Colorset 7 -- Flat )
++ AddTitleStyle Active ( TiledPixmap title_back.png -- Flat ) \
+    Inactive ( TiledPixmap title_back_inactive.png -- Flat )
++ ButtonStyle All InActive ( Colorset 7 -- Flat )
++ ButtonStyle All Active ( Colorset 7 -- Flat )
++ AddButtonStyle  All Inactive TiledPixmap title_back_inactive.png -- Flat
++ AddButtonStyle  All Active TiledPixmap title_back.png -- Flat
++ AddButtonStyle  1 Active Vector 4 49x49@2 49x51@2 51x51@2 51x49@2 -- Flat
++ AddButtonStyle  1 Inactive Vector 4 49x49@3 49x51@3 51x51@3 51x49@3 -- Flat
++ AddButtonStyle  1 AllUp Vector 2 50x55@1 50x55@1 -- Flat
++ AddButtonStyle  2 Active Vector 4 40x40@2 60x60@2 60x40@4 40x60@2 -- Flat
++ AddButtonStyle  2 Inactive Vector 4 40x40@3 60x60@3 60x40@4 40x60@3 -- Flat
++ AddButtonStyle  2 AllUp Vector 4 40x45@1 60x65@1 60x45@4 40x65@1 -- Flat
++ AddButtonStyle  4 Active Vector 7 40x40@2 40x60@2 60x60@2 60x40@2 40x40@2 40x45@2 60x45@2 -- Flat
++ AddButtonStyle  4 Inactive Vector 7 40x40@3 40x60@3 60x60@3 60x40@3 40x40@3 40x45@3 60x45@3 -- Flat
++ AddButtonStyle  4 AllUp Vector 4 40x65@1 60x65@1 45x50@4 55x50@1 -- Flat
++ AddButtonStyle  6 Active Vector 5 40x60@2 60x60@2 60x55@2 40x55@2 40x60@2 -- Flat
++ AddButtonStyle  6 Inactive Vector 5 40x60@3 60x60@3 60x55@3 40x55@3 40x60@3 -- Flat
++ AddButtonStyle  6 AllUp Vector 2 40x65@1 60x65@1 -- Flat
++ AddButtonStyle  8 Active Vector 9 40x40@2 45x35@2 55x35@2 60x40@2 60x45@2 50x50@2 50x55@2 50x65@4 50x65@2 -- Flat
++ AddButtonStyle  8 InActive Vector 9 40x40@3 45x35@3 55x35@3 60x40@3 60x45@3 50x50@3 50x55@3 50x65@4 50x65@3 -- Flat
++ AddButtonStyle  8 AllUp Vector 7 40x45@1 45x40@1 55x40@1 60x50@4 50x60@1 50x75@4 50x75@1 -- Flat
++ ButtonStyle 1 - MwmDecorMenu
++ ButtonStyle 6 - MwmDecorMin
++ ButtonStyle 4 - MwmDecorMax
++ BorderStyle Active Solid black -- NoInset HiddenHandles
++ BorderStyle Inactive Solid black -- NoInset HiddenHandles
+
+# These two vectors draw a circle around the vectors above, uncomment
+# them and see what you think.
+#+ AddButtonStyle  All Active Vector 9 80x60@4 80x40@2 60x20@2 40x20@2 20x40@2 20x60@2 40x80@2 60x80@2 80x60@2 -- Flat
+#+ AddButtonStyle  All Inactive Vector 9 80x60@4 80x40@2 60x20@2 40x20@2 20x40@2 20x60@2 40x80@2 60x80@2 80x60@2 -- Flat
+
+Style * UseDecor DefaultDecor
+
+# FlickeringMoveWorkaround disables ConfigureNotify events that
+# are usually sent to an application while it is moved. If some
+# windows flicker annoyingly while being moved, this option may
+# help you. Note that if this problem occurs it is not an fvwm
+# bug, it is a problem of the application.
+
+BugOpts FlickeringMoveWorkaround True
+#BugOpts ExplainWindowPlacement True
+
+#####
+# Application specific Style settings
+#
+# FVWM will match your window's style line thus:
+# Title/Name --> Class --> Resource
+#
+# You might be interested in the IconOverride style, which will allow you to specify
+# an Icon for an application even if it has set its own previously, This can be very
+# useful for applications that insist on setting their own icons even if it doesnt
+# fit in with your theme :)
+#
+# You can change most settings for specific applications, based on Title,
+# Class or Resource. you can also use wildcards, eg Style "Fvwm*" NoTitle.
+#
+# Use xwininfo or FvwmIdent module to find window Names, Classes, etc.
+#################
+Style FvwmPager   NoTitle, Sticky, WindowListSkip, StaysOnBottom
+Style FvwmBanner  NoTitle
+Style FvwmApplet-DigitalClock NoTitle, WindowListSkip
+Style FvwmScript-Quit CenterPlacement, StaysOnTop, MiniIcon plug.png, NoTitle, BorderWidth 3
+Style FvwmShelf   NoTitle, StaysOnBottom, Sticky, WindowListSkip, CirculateSkip, NeverFocus, FixedSize, NoHandles
+Style DeskControl NoTitle, NeverFocus, CirculateSkip, WindowListSkip, Sticky, StaysOnBottom, FixedSize, NoHandles
+Style FvwmBar     NoTitle, WindowListSkip, CirculateSkip, Sticky, NeverFocus, StaysOnBottom, NoHandles
+Style FvwmIdent   MiniIcon label_tag_version.png
+Style fvwm_menu   MiniIcon gears.png, NoButton 4
+Style HiddenConsole Sticky, WindowListSkip, Notitle, StaysOnTop, NoHandles, CirculateSkip
+Style HiddenConsole WindowShadeSteps 100, ResizeHintOverride
+Style beep-media-player MiniIcon audio.png, UsePPosition, !FPFocusByProgram, !Iconifiable, IgnoreRestack, StartsOnPage 2 0, SkipMapping
+Style Calculator  MiniIcon calculator.png
+Style Dia         MiniIcon dia.png, StartsOnPage 1 2
+Style Ethereal	  EWMHMiniIconOverride, MiniIcon ethereal.png, StartsOnPage 1 2
+Style findtextdialog NoFuncHint, NoDecorHint
+Style Firefox-bin EWMHMiniIconOVerride, MiniIcon firefox.png, StartsOnPage 1 0, SkipMapping
+Style *FreeMind*  MiniIcon freemind.png, StartsOnPage 1 2, SkipMapping
+Style gaim        EWMHMiniIconOverride, MiniIcon gaim.png
+Style gimp        EWMHMiniIconOverride, MiniIcon gimp.png, !FPFocusByProgram
+Style GQview	  EWMHMiniIconOverride, MiniIcon gqview.png, StartsOnPage 1 1
+#Style grip        EWMHMiniIconOverride, MiniIcon hardware_audio_cd.png
+Style gvim        EWMHMiniIconOverride, MiniIcon gvim.png
+Style MPlayer     MiniIcon film.png
+Style Notes	  EWMHMiniIconOverride, MiniIcon notes.png, StartsOnPage 1 2
+Style OpenOffice* EWMHMiniIconOverride, MiniIcon ooo.png, StartsOnPage 1 2
+Style Opera       EWMHMiniIconOverride, MiniIcon opera.png, StartsOnPage 1 0, SkipMapping
+Style rdesktop	  !Title, !Borders, HandleWidth 0, BorderWidth 0, ResizeHintOverride, WindowShadeShrinks, EWMHMiniIconOverride, MiniIcon rdesktop.png, StartsOnPage 1 2
+Style ROX-Filer   EWMHMiniIconOverride, MiniIcon rox.png, !FPFocusByProgram, !FPGrabFocusTransient
+Style URxvt        !Title, !Borders, HandleWidth 0, BorderWidth 0, ResizeHintOverride, WindowShadeShrinks, MiniIcon rxvt.png
+Style StarDict	  EWMHMiniIconOverride, MiniIcon stardict.png, StartsOnPage 2 0, SkipMapping
+Style xcalendar   MiniIcon calendar_schedule.png
+Style xchat      !FPFocusByProgram, NoFuncHint, NoDecorHint, StartsOnPage 2 1
+Style xclock     WindowListSkip, CirculateSkip, NoTitle
+Style xmag        ClickToFocus, MiniIcon document_database_view.png
+Style xman        MiniIcon book_help_paper.png
+Style xmessage    MiniIcon person_face_talking.png, MinOverlapPlacement, EWMHPlacementIgnoreWorkingArea
+Style xmms        MiniIcon xmms.png, StartsOnpage 2 0, SkipMapping, NoTitle
+Style XOsview     WindowListSkip, CirculateSkip, NoTitle
+Style Xpdf	  EWMHMiniIconOverride, MiniIcon xpdf.png, StartsOnPage 1 1
+Style XTerm       MiniIcon term.png, ResizeHintOverride, WindowShadeShrinks
+Style xv          MiniIcon graphics_woman_panel.png
+Style XVroot      GrabFocus
+Style VMware      MiniIcon hardware_computers.png
+Style Waiting     MinOverlapPlacement, ClickToFocus
+Style wmtimer     NoUSPosition
+
+#####
+# Miscellaneous Module Settings.
+#################
+
+# FvwmIdent is an xwininfo replacement.
+DestroyModuleConfig FvwmIdent: *
+*FvwmIdent: Back MidnightBlue
+*FvwmIdent: Fore #f6f6f6
+
+# FvwmScroll swallows applications into smaller containers, sometimes handy.
+DestroyModuleConfig FvwmScroll: *
+*FvwmScroll: Back #f6f6f6
+*FvwmScroll: Fore #f6f6f6
+
+# FvwmEvent can bind Commands to Events
+DestroyModuleConfig FvwmEvent: *
+*FvwmEvent: deiconify DeThumbnail
+*FvwmEvent: add_window NewWindowFunc
+*FvwmEvent: new_desk "SendToModule DeskControl ChangeButton desk Title $$[desk.n]"
+
+# Animations are controlled by this module
+# You could also use Frame, Lines, Turn, Twist, Random and None
+DestroyModuleConfig FvwmAnimate: *
+*FvwmAnimate: Effect Flip
+*FvwmAnimate: Delay 0
+*FvwmAnimate: Iterations 30
+#*FvwmAnimate: Twist 1
+*FvwmAnimate: Width 2
+
+ModuleTimeout 10
+
+#####
+# Hit Alt+Esc to toggle FvwmProxy, which allows you to see all windows on your
+# desktop, even if they've been obscured..really cool.
+##################
+DestroyModuleConfig FvwmProxy: *
+*FvwmProxy: ProxyMove false
+
+Key Escape  A   M   SendToModule FvwmProxy ShowToggle
+
+#####
+# Mouse bindings.
+#################
+
+# Syntax Reminder:
+# Mouse Button Context Modifiers Function
+Mouse 1 R	A   Nop
+Mouse 3 R       A   Menu MenuFvwmRoot
+
+# Mouse wheel bindings
+
+# No modifier on root window just opens a menu.
+Mouse 4 R       A   Menu MenuFvwmRoot
+Mouse 5 R       A   Menu MenuFvwmRoot
+
+# hold down alt and roll wheel anywhere to switch windows.
+Mouse 4 A       M   Next (AcceptsFocus) FlipFocus
+Mouse 5 A       M   Prev (AcceptsFocus) Focus
+
+# hold down shift and roll wheel to move up and down pages.
+Mouse 4 A       S   WheelScroll down
+Mouse 5 A       S   WheelScroll up
+Mouse 4 R       C   WheelScroll down
+Mouse 5 R       C   WheelScroll up
+
+# Roll mouse wheel on Titlebars to shade/unshade
+Mouse 4 T       N   WheelToggleShade True
+Mouse 5 T       N   WheelToggleShade False
+
+Mouse 2 R       A   WindowList SortByClass MaxLabelWidth 60
+Mouse 1 1       N   Menu MenuFvwmWindowOps
+
+# Using a touchpad and having trouble with this?
+# http://forums.gentoo.org/viewtopic.php?p=1050159&highlight=#1050159
+Mouse 1 2       A   DestroyOnHold
+
+Mouse 1 6       A   Thumbnail
+Mouse 1 4       A   Maximize
+Mouse 1 8       A   Module FvwmIdent
+Mouse 1 FS      A   Resize-or-Raise
+Mouse 1 T       A   Move-or-Raise
+Mouse 1 I       A   Move-or-Iconify
+Mouse 2 I       A   Iconify
+Mouse 3 TSIF    A   RaiseLower
+
+Mouse 2 W       C   Resize-or-Raise
+Mouse 1 W       M   Move-or-Raise
+# Reserved for Mouse Gestures (See below)
+#Mouse 3 R      A   -
+
+
+#####
+# Key bindings.
+#
+# Key Keyname Context Modifiers Function
+#################
+Key F1	    A       N   GoToPage 0 0
+Key F2	    A       N   GoToPage 0 1
+Key F3	    A       N   GoToPage 0 2
+Key F4	    A       N   GoToPage 1 0
+Key F5	    A       N   GoToPage 1 1
+Key F6	    A       N   GoToPage 1 2
+Key F7	    A       N   GoToPage 2 0
+Key F8	    A       N   GoToPage 2 1
+Key F9	    A       N   GoToPage 2 2
+Key F1	    A       M   Exec exec urxvtc -name 'terminal'
+Key F3	    A       M   Module FvwmConsole -terminal urxvtc
+Key Tab     A       M   RaiseLower
+Key F4	    A       M   Pick Close
+Key X	    A       4   Pick Destroy
+Key H	    A       4   Next (CirculateHit, HiddenConsole) HiddenConsoleKeyBinding
+Key L	    A       4   Exec exec xlock
+Key T	    A       4   All (AcceptsFocus CurrentPage !Iconic !Shaded) Thumbnail
+Key C	    A       CM  Exec exec xcalc -stipple
+Key G	    A       CM  Exec exec gaim
+Key O	    A       CM  Exec exec opera
+Key V	    A       CM  Exec exec gvim -geom 139x56
+Key B	    A       CM  Exec exec beep-media-player
+Key Q	    A       CM  Quit
+Key R	    A       CM  Restart
+Key Up      WTSF    SM  PackWrapperUp
+Key Down    WTSF    SM  PackWrapperDown
+Key Left    WTSF    SM  PackWrapperLeft
+Key Right   WTSF    SM  PackWrapperRight
+
+# Menu is the name of the key adjacent to the my Right Windows Key.
+Key Menu    	A   	A   	NoWindow FvwmExpose
+Key Pause       A       A       PopUp "MenuFvwmRoot"
+Key Space	A	M	PopUp "MenuFvwmWindowOps"
+
+#####
+# Fvwm executes StartFunction when Fvwm is initialized, and at restart.
+# A Good place to start Modules.
+#
+# FvwmCommandS Allows you to run Fvwm Commands from a Terminal, like this:
+#   $ FvwmCommand 'Module FvwmBanner'
+# Or any other Command.
+#
+# You can test for Initialization from within StartFunction, this is a good
+# place to set the Background or start your favourite applications.
+#
+# osd_cat comes from the xosd package.
+#################
+AddToFunc StartFunction
+#+ I Test (Init) Exec exec fvwm-root --dither --retain-pixmap $[fvwm_wallpaper]
+#+ I Module FvwmCommandS
++ I Module FvwmAnimate
++ I Module FvwmEvent
++ I Module FvwmProxy
++ I Module FvwmAuto FvwmAutohide -menter FuncAutoEnter
++ I Test (init) Test (x urxvtd) Exec exec urxvtd
++ I Test (Init) Test (x osd_cat) Exec exec tail -n0 -f /var/log/messages | osd_cat -a30 -Aleft -o10 -i10 -cwhite -d10 -s1
++ I Test (Init) Test (x urxvtc) StartHiddenConsole
++ I Test (Restart) All (Iconic) Test (f $[FVWM_USERDIR]/icon.tmp.$[w.id].png) WindowStyle IconOverride, Icon $[FVWM_USERDIR]/icon.tmp.$[w.id].png
++ I Test (Init) Test (x conky) Exec exec conky 2>/dev/null 1>/dev/null
++ I Test (Init) Test (x xautolock) Exec exec xautolock -time 10  -locker xlock
++ I Test (Init) Test (x stardict) Exec exec stardict > /dev/null
+
+#####
+# I Sometimes use xsm, but dont usually bother.
+#################
+#AddToFunc SessionInitFunction I Nop
+#AddToFunc SessionRestartFunction I Nop
+
+#####
+# ExitFunction is executed when you ask Fvwm to Quit.
+# Test (ToRestart) is true before a Restart.
+#################
+AddToFunc ExitFunction
++ I Test (!ToRestart) Exec rm -f $[FVWM_USERDIR]/icon.tmp.*
++ I Test (!ToRestart) KillModule FvwmAnimate
++ I Test (!ToRestart) Exec killall stardict urxvtd
++ I Exec sync
+
+#####
+# Autohide console example: http://dev.gentoo.org/~taviso/screenshots/autohide_console.png
+##################
+DestroyFunc StartHiddenConsole
+AddToFunc StartHiddenConsole
++ I Exec exec urxvtc +sb -geometry 114x8+0+0 -name HiddenConsole
++ I Wait HiddenConsole
++ I Next (HiddenConsole) Resize $[vp.width]p 9
++ I Autohide HiddenConsole 0 0 N
+
+# XXX: This doesnt change focus, should it?
+DestroyFunc HiddenConsoleKeyBinding
+AddToFunc HiddenConsoleKeyBinding
++ I ThisWindow (Shaded) FuncAutoEnter
++ I TestRc (NoMatch) NoWindow FuncAutoEnter
+
+#####
+# Menu definitions
+# Beep if theres a missing SubMenu to remind me to write it.
+#
+# The Test (x foobar) only adds options to the menu if the application
+# exists in your $PATH.
+#################
+DestroyMenu MenuFvwmRoot
+AddToMenu MenuFvwmRoot
+Test (x urxvtc) + "URxvt" Exec exec urxvtc -name 'terminal'
+Test (x opera) + "&Opera" Exec exec opera
+Test (x xchat) + "X&Chat" Exec exec xchat
+Test (x rdesktop) + "R&desktop" Exec exec rdesktop -u jick -g 100% -K -a 16 172.21.5.66
++ "&2 Level"           Popup "Menu2Level"
++ "" Nop
++ "F&vwmConsole" Module FvwmConsole -terminal urxvtc
++ "&Preferences" Popup MenuFvwmConfig
++ "Window Controls" Popup MenuFvwmWindowOps
++ "" Nop
++ "Show Desktop" All (AcceptsFocus CurrentPage !Iconic !Shaded) Thumbnail
++ "Cascade &Windows" Module FvwmRearrange -cascade -animate -incx 3 -incy 3
++ "&Tile Windows" Module FvwmRearrange -tile -animate -mn 2
+Test (x scrot) + "Screenshot" Exec exec scrot --quality 100 '%Y-%m-%d_$wx$h.png'
+Test (x xlock) + "&Lock Screen"     Exec exec xlock
++ "" Nop
++ "&Exit Fvwm" Popup MenuQuit-Verify
+
+DestroyMenu "Menu2Level"
+AddtoMenu "Menu2Level"
++ MissingSubmenuFunction FuncFvwmMenuDirectory
+Test (x firefox) + "&Firefox" Exec exec firefox
+Test (x gaim) + "&Gaim" Exec exec gaim
+Test (x ethereal) + "&Ethereal" Exec exec ethereal
+Test (x giFtoxic) + "File Sharing" Exec exec giFToxic
+Test (x /opt/picasa/bin/picasa) + "&Picasa" Exec exec /opt/picasa/bin/picasa
+Test (x googleearth) + "Google &Earth" Exec exec googleearth
++ ""                                    Nop
+Test (x xterm) + "X&Term" Exec exec xterm
+Test (x stardict) + "Star&Dict" Exec exec stardict
+Test (x xmms) + "&Xmms" Exec exec xmms
+Test (x gvim) + "G&vim" Exec exec gvim -geom 139x56
+Test (x fsv) + "3D File System Explorer" Exec exec fsv
+Test (x xcalc) + "Calculator" Exec exec xcalc -stipple
+Test (x dia) + "Dia" Exec exec dia
+Test (x /opt/freemind/freemind.sh) + "Free&Mind" Exec exec /opt/freemind/freemind.sh
+Test (x gqview) + "Gq&view"           Exec exec gqview
+Test (x gv) + "GV Document Viewer" Exec exec gv
+Test (x ooffice) + "&OpenOffice" Exec exec ooffice
+Test (x rox) + "ROX Filer" Exec exec rox
+Test (x xpad) + "Sticky &Notes" Exec exec xpad
+Test (x vmware) + "VMware Workstation" Exec exec vmware
+Test (x xpdf) + "x&pdf"               Exec exec xpdf
++ ""                                    Nop
+Test (x beep-media-player) + "&Beep Media Player" Exec exec beep-media-player
+Test (x gimp) + "gimp" Exec exec gimp
+
+DestroyMenu MenuQuit-Verify
+AddToMenu MenuQuit-Verify
++ "&Quit Fvwm Now" Quit
++ "&Restart Fvwm2" Restart
++ "" Nop
+Test (x blackbox) + "Start &blackbox" Restart blackbox
+Test (x fluxbox) + "Start &fluxbox" Restart fluxbox
+Test (x fvwm95) + "Start fvwm&95" Restart fvwm95
+Test (x mwm) + "Start &mwm" Restart mwm
+Test (x twm) + "Start &twm" Restart twm
+Test (x wmaker) + "Start &wmaker" Restart wmaker
+Test (x xfce4-session) + "Start &xfce4" Restart xfce4-session
+Test (x xterm) + "Start XTerm" Restart xterm
+
+DestroyMenu MenuFvwmConfig
+AddToMenu MenuFvwmConfig
++ MissingSubmenuFunction WallpaperBrowser
++ "Configure FvwmForm" Module FvwmForm FvwmForm-Form
++ "Configure Cursor" Module FvwmForm FvwmForm-RootCursor
++ "Screensaver Settings" Exec exec xscreensaver-demo
++ "Mouse Settings" Module FvwmScript FvwmScript-PointerSetup
++ "Keyboard Settings" Module FvwmScript FvwmScript-KeyboardSetup
++ "Configure Bell" Module FvwmScript FvwmScript-BellSetup
++ "General Settings" Module FvwmScript FvwmScript-BaseConfig
++ "Edit fvwm2rc..." Exec exec gvim -geom 139x56 $[FVWM_USERDIR]/.fvwm2rc
++ "Fvwm Modules" Popup MenuFvwmModules
++ "Browse Wallpaper" Popup $[fvwm_wallpaper_dir]
++ "" NOP
++ "Fvwm Information..." Exec exec xmessage "$(fvwm --version)"
++ "X Information..." Exec exec xmessage "$(xdpyinfo)"
+
+DestroyMenu FvwmMoveMethods
+AddToMenu FvwmMoveMethods
++ "Move to &Top" Pick AnimatedMove keep 0p
++ "Move to &Left" Pick AnimatedMove 0p keep
++ "Move to &Right" Pick PipeRead "echo AnimatedMove $$(($[vp.width] - $[w.width]))p keep"
++ "Move to &Bottom" Pick PipeRead "echo AnimatedMove keep $$(($[vp.height] - $[w.height]))p"
++ "" Nop
++ "&Centre Window" Pick CentreWindow 0 0 Animated
++ "" Nop
++ "Pack &Up" Pick PackWrapperUp
++ "Pack Left" Pick PackWrapperLeft
++ "Pack Right" Pick PackWrapperRight
++ "Pack &Down" Pick PackWrapperDown
++ "" Nop
++ "&Move To Page" Popup MenuPageList
++ "" Nop
++ "&Interactive Move" Pick Move
+
+# XXX: I can probably automate making this menu.
+DestroyMenu MenuPageList
+AddToMenu MenuPageList
++ "1" Pick MoveToPage 0 0
++ "2" Pick MoveToPage 0 1
++ "3" Pick MoveToPage 0 2
++ "4" Pick MoveToPage 1 0
++ "5" Pick MoveToPage 1 1
++ "6" Pick MoveToPage 1 2
++ "7" Pick MoveToPage 2 0
++ "8" Pick MoveToPage 2 1
++ "9" Pick MoveToPage 2 2
+
+#####
+# WindowOps, Main window controls menu.
+#################
+DestroyMenu MenuFvwmWindowOps
+AddToMenu MenuFvwmWindowOps
++ "Maximise" Pick Maximize
++ "&Close" Pick Close
++ "&Destroy" Pick Destroy
++ "&Thumbnail" Pick Thumbnail
++ "Re&fresh" Pick RefreshWindow
++ "" Nop
++ "&Resize" Pick Resize
++ "Iconify" Pick Iconify
++ "&Move" Popup FvwmMoveMethods
++ "&Shade" Pick WindowShade Toggle
++ "&Zoom Window" Pick Exec exec xmag -source $[w.width]x$[w.height]+$[w.x]+$[w.y] -mag 2
++ "Jiggle Window" Pick Jiggle 5
++ "" Nop
++ "Stick" Pick Stick
++ "Scroll" Pick Module FvwmScroll
++ "&Identify" Pick Module FvwmIdent
+
+DestroyMenu MenuFvwmModules
+AddToMenu MenuFvwmModules
++ "Start Animation" Module FvwmAnimate
++ "Identify Window" Module FvwmIdent
++ "Start FvwmIconMan" Module FvwmIconMan
++ "Display Banner" Module FvwmBanner
++ "Start FvwmConsole" Module FvwmConsole -terminal urxvtc
++ "Start FvwmPager" Module FvwmPager *
++ "Start FvwmBacker" Module FvwmBacker
++ "Scroll Window" Module FvwmScroll 50 50
++ "Start FvwmTaskBar" Module FvwmTaskBar
++ "AutoRaise Windows" Module FvwmAuto 200 Raise Nop
++ "" Nop
++ "Stop Module" Popup MenuFvwmStopModule
+
+DestroyMenu MenuFvwmStopModule
+AddToMenu MenuFvwmStopModule
++ "Close FvwmButtons" KillModule FvwmButtons
++ "Close Icon Managers" KillModule FvwmIconMan
++ "Close Pagers" KillModule FvwmPager
++ "Stop FvwmBacker" KillModule FvwmBacker
++ "Stop FvwmTaskBar" KillModule FvwmTaskBar
++ "Disable AutoRaise" KillModule FvwmAuto
+
+#####
+# You can browse directories and files with the fvwm-menu-directory
+# script included with Fvwm, its very configurable (as you might expect!),
+# and very useful.
+#
+# http://www.mail-archive.com/fvwm%40hpc.uh.edu/msg05260.html
+#################
+DestroyFunc FuncFvwmMenuDirectory
+
+# CentreWindow xoff yoff [Animated]
+# To use full screen, CentreWindow 0 0
+AddToFunc CentreWindow I PipeRead "echo $2Move $$(((($[vp.width]-$[w.width])/2)-$0))p $$(((($[vp.height]-$[w.height])/2)-$1))p"
+
+# XXX: This will be a visual alert for something, apps can run
+# FvwmCommand 'Next (CurrentPage) Jiggle 3', or whatever :)
+AddToFunc Jiggle I PipeRead "for ((y=$0;y>=0;y--)) do printf 'AnimatedMove w+%up w+%up\\nAnimatedMove w-%up w-%up\\n' ${y} ${y} ${y} ${y}; done"
+
+#####
+# Name:     PackWindowUp
+# Bound:    Alt+Shift+Up When a window is active
+# Purpose:  Interrogate all windows on the current page, find the window with an edge
+#           closest to active window, and slide the Active window upto that edge, or
+#           the Page edge, if no window is in the way.
+#
+#           The Wrappers are required to look after the Context while we're testing
+#           windows. Could also do it with a load of variables, but this is nicer.
+#
+#           See PackWindowLeft for a description of the logic (i know it looks a little
+#           cryptic).
+#
+#           Sometimes terminals seem to need WindowRefresh, but 99% of the time it just
+#           works, it creates a little flicker so I'll leave it out until it starts to bug
+#           me.
+#
+#           Windows are also Raised, you can disable this.
+#
+#################
+DestroyFunc PackWindowUp
+AddToFunc PackWindowUp
++ I SetEnv low_w 0
++ I WindowId $3 Raise
++ I All (CurrentPage !Iconic AcceptsFocus \
+        !Shaded) PipeRead "test `expr $[w.y] + $[w.height]` -gt $[low_w] \
+        -a `expr $[w.y] + $[w.height]` -lt $0 \
+        -a \\( \\( $[w.x] -gt $1 -a $[w.x] -lt `expr $1 + $2` \\) \
+            -o \\( $1 -gt $[w.x] -a $1 -lt `expr $[w.x] + $[w.width]` \\) \
+            -o \\( $1 -le $[w.x] -a `expr $1 + $2` -ge `expr $[w.x] + $[w.width]` \\) \
+            -o \\( $[w.x] -lt $1 -a `expr $[w.x] + $[w.width]` -gt `expr $1 + $2` \\) \
+        \\) \
+        && echo SetEnv low_w `expr $[w.y] + $[w.height]` \
+        || echo Nop"
++ I WindowId $3 AnimatedMove keep $[low_w]p
+#+ I WindowId $3 RefreshWindow
+
+AddToFunc PackWrapperUp I NoWindow PackWindowUp $[w.y] $[w.x] $[w.width] $[w.id]
+
+#####
+# Name:     PackWindowDown
+# Bound:    Alt+Shift+Down When a window is active.
+# Purpose:  See PackWindowUp.
+#
+#################
+DestroyFunc PackWindowDown
+AddToFunc PackWindowDown
++ I SetEnv high_w $[vp.height]
++ I WindowId $3 Raise
++ I All (CurrentPage !Iconic AcceptsFocus \
+        !Shaded) PipeRead "test $[w.y] -lt $[high_w] \
+        -a $[w.y] -gt `expr $0 + $4`  \
+        -a \\( \\( $[w.x] -gt $1 -a $[w.x] -lt `expr $1 + $2` \\) \
+            -o \\( $1 -gt $[w.x] -a $1 -lt `expr $[w.x] + $[w.width]` \\) \
+            -o \\( $1 -le $[w.x] -a `expr $1 + $2` -ge `expr $[w.x] + $[w.width]` \\) \
+            -o \\( $[w.x] -lt $1 -a `expr $[w.x] + $[w.width]` -gt `expr $1 + $2` \\) \
+        \\) \
+        && echo SetEnv high_w $[w.y] \
+        || echo Nop"
++ I PipeRead "echo WindowId $3 AnimatedMove keep `expr $[high_w] - $4`p"
+#+ I WindowId $3 RefreshWindow
+
+AddToFunc PackWrapperDown I NoWindow PackWindowDown $[w.y] $[w.x] $[w.width] $[w.id] $[w.height]
+
+#####
+# Name:     PackWindowLeft
+# Bound:    Alt+Shift+Left When a window is active
+# Purpose:  See PackWindowUp.
+#
+# The Logic works likes this:
+#   1. Set Destination to the Left Edge
+#   2. For every window, Run these tests:
+#               + Is the Window's Right edge further _Right_ than furthest edge seen yet?
+#       And:    + Is it's Right edge Further _Left_ than Target Windows Left edge? (ie, in the way)
+#           Yes:
+#                   + Does the window start inside Target Window, and end below?
+#               Or  + Does it start above, and end inside?
+#               Or  + Is it the same vertical position/height/size, or start inside and end inside?
+#               Or  + Does it start above, and end below?
+#                   Yes:
+#                       This is the new Destination.
+#                   No:
+#                       Nop
+#           No:
+#               Nop
+#   3. Move to Destination.
+#
+#################
+DestroyFunc PackWindowLeft
+AddToFunc PackWindowLeft
++ I SetEnv left_w 0
++ I WindowId $3 Raise
++ I All (CurrentPage !Iconic AcceptsFocus \
+        !Shaded) PipeRead "test `expr $[w.x] + $[w.width]` -gt $[left_w] \
+        -a `expr $[w.x] + $[w.width]` -lt $1 \
+        -a \\( \\( $[w.y] -gt $0 -a $[w.y] -lt `expr $0 + $4` \\) \
+            -o \\( $[w.y] -lt $0 -a `expr $[w.y] + $[w.height]` -gt $0 \\) \
+            -o \\( $[w.y] -ge $0 -a `expr $[w.y] + $[w.height]` -le `expr $0 + $4` \\) \
+            -o \\( $[w.y] -lt $0 -a `expr $[w.y] + $[w.height]` -gt `expr $0 + $4` \\) \
+        \\) \
+        && echo SetEnv left_w `expr $[w.x] + $[w.width]`  \
+        || echo Nop"
++ I WindowId $3 AnimatedMove $[left_w]p keep
+#+ I WindowId $3 RefreshWindow
+
+AddToFunc PackWrapperLeft I NoWindow PackWindowLeft $[w.y] $[w.x] $[w.width] $[w.id] $[w.height]
+
+DestroyFunc PackWindowRight
+AddToFunc PackWindowRight
++ I SetEnv right_w $[vp.width]
++ I WindowId $3 Raise
++ I All (CurrentPage !Iconic AcceptsFocus \
+        !Shaded) PipeRead "test $[w.x] -lt $[right_w] \
+        -a $[w.x] -gt `expr $1 + $2` \
+        -a \\( \\( $[w.y] -gt $0 -a $[w.y] -lt `expr $0 + $4` \\) \
+            -o \\( $[w.y] -lt $0 -a `expr $[w.y] + $[w.height]` -gt $0 \\) \
+            -o \\( $[w.y] -ge $0 -a `expr $[w.y] + $[w.height]` -le `expr $0 + $4` \\) \
+            -o \\( $[w.y] -lt $0 -a `expr $[w.y] + $[w.height]` -gt `expr $0 + $4` \\) \
+        \\) \
+        && echo SetEnv right_w $[w.x] \
+        || echo Nop"
++ I PipeRead "echo WindowId $3 AnimatedMove `expr $[right_w] - $2`p keep"
+#+ I WindowId $3 RefreshWindow
+
+AddToFunc PackWrapperRight I NoWindow PackWindowRight $[w.y] $[w.x] $[w.width] $[w.id] $[w.height]
+
+#####
+# Name:     WheelToggleShade
+# Bound:    Mouse Buttons 4 and 5 (wheel up and down) on Titlebars
+# Purpose:  Shade or unshade the window when the Mouse wheel is rolled up or
+#           down on the Titlebar. Rolling the Wheel up calls the Function with
+#           argument `True` and rolling it down uses `False`, so rolling the wheel
+#           down when the window isnt shaded has no effect, which I like :)
+#
+#################
+DestroyFunc WheelToggleShade
+AddToFunc WheelToggleShade D WindowShade $0
+
+#####
+# Name:     DestroyOnHold
+# Bound:    Titlebar Button 2 (X)
+# Purpose:  When clicked, Raise the window Immediately.
+#           If the button is pressed and released, Close the Window. If it is pressed
+#           and held, Destroy it, and issue a Beep to confirm.
+#
+#           There is a 100ms delay before issuing `Close` so I have a chance to see the
+#           animation when the button changes from ActiveDown to ActiveUp :).
+#
+#################
+DestroyFunc DestroyOnHold
+AddToFunc DestroyOnHold I Raise
++ C Schedule 100 Close
++ H Destroy
++ H Beep
+
+#####
+# Name:     Thumbnail
+# Purpose:  Iconify a window with a reduced screenshot of the application
+#           Window, looks really cool.
+#
+#           Uses FvwmEvent to remove the Icon when deiconified.
+#
+#           Thumbnailing example:
+#
+# http://www.fvwm.org/screenshots/desktops/Tavis_Ormandy-desk-1152x864/screenshot.jpg
+#
+# If you have a slow machine, try changing -scale to -sample, the quality of the Icons
+# won't be as good, but they are generated much faster. for a different effect, try using
+# -scale $(($[w.width]/5))
+#
+# You can also remove the command that uses composite to try to superimpose a MiniIcon
+# onto the icon, if you dont like this.
+##################
+DestroyFunc Thumbnail
+AddToFunc Thumbnail
++ I Raise
++ I ThisWindow (!Iconic) SetEnv Icon-$[w.id] $[w.iconfile]
++ I ThisWindow (!Shaded, Iconifiable, !Iconic) PipeRead \
+    "xwd -silent -id $[w.id] | convert -scale 128 -frame 1x1 \
+    -mattecolor black -quality 0 xwd:- png:$[FVWM_USERDIR]/icon.tmp.$[w.id].png \
+    && echo WindowStyle IconOverride, Icon $[FVWM_USERDIR]/icon.tmp.$[w.id].png \
+    || echo Nop"
++ I TestRc (Match) Test (f $[w.miniiconfile], f $[FVWM_USERDIR]/icon.tmp.$[w.id].png) PipeRead \
+    "composite -geometry +2+4 $[w.miniiconfile] $[FVWM_USERDIR]/icon.tmp.$[w.id].png \
+    $[FVWM_USERDIR]/icon.tmp.$[w.id].png; echo Nop"
++ I Iconify
+
+DestroyFunc DeThumbnail
+AddToFunc DeThumbnail
++ I PipeRead "echo Test \\(i \\$\\[Icon-$[w.id]\\]\\) WindowStyle Icon \\$\\[Icon-$[w.id]\\]"
++ I TestRc (NoMatch) WindowStyle NoIconOverride, Icon
++ I Exec rm -f $[FVWM_USERDIR]/icon.tmp.$[w.id].png
++ I All (Iconic, CurrentPage) PlaceAgain icon
++ I UnsetEnv Icon-$[w.id]
+
+# Fvwm uses this function when selecting windows from the WindwList command
+# you can make this function do any thing you like, it is executed in the context
+# of the selected window.
+DestroyFunc WindowListFunc
+AddToFunc WindowListFunc
++ I WindowShade False
++ I Iconify off
++ I Raise
++ I FlipFocus
+
+# Set the delays on Showing and Hiding here for the AutoHide functions.
+DestroyFunc FuncAutoEnter
+AddToFunc FuncAutoEnter I Autohide HiddenConsole 500 500 N
+
+#####
+# Example: http://dev.gentoo.org/~taviso/screenshots/may04a-fvwm.png
+#
+# Remember, fvwm-root only works with png and xpm, if you use lots of jpg, try changing this
+# to Esetroot, or similar.
+#
+# If you have xv installed, clicking the title will start a slide show.
+###############
+DestroyFunc WallpaperBrowser
+AddToFunc WallpaperBrowser I PipeRead 'test ! -d "$0/.thumbs" && mkdir "$0/.thumbs"; \
+    for i in "$0/"*; do \
+        test -f "$0/.thumbs/${i##*/}" \
+            -a "${i}" -ot "$0/.thumbs/${i##*/}" || { \
+                convert -quality 0 -scale 42 "${i}" "png:$0/.thumbs/${i##*/}" 2>/dev/null \
+                    || continue; \
+            }; \
+    done; \
+    fvwm-menu-directory --icon-file __PIXMAP__ \
+    --icon-dir folder_paper_closed.png --dir "$0" --exec-file "^fvwm-root --dither -r" \
+    --exec-t="^xv -wait 2 *" | sed -e "s#FuncFvwmMenuDirectory#WallpaperBrowser#g" \
+    -e "s#__PIXMAP__\\(.*\\)\\\"\\(.*/\\)\\(.*\\)\\\"#\\2.thumbs/\\3\\1\\2\\3#g"'
+
+# http://forums.gentoo.org/viewtopic.php?p=1002353#1002353
+DestroyFunc WheelScroll
+AddToFunc WheelScroll I PipeRead 'case $0 in \
+      up) test $[page.ny] -eq $$(($[desk.pagesy]-1)) -a $[page.nx] -lt $$(($[desk.pagesx]-1)) \
+         && echo GotoPage +1p 0 \
+         || echo GotoPage 0p +1p;; \
+      down) test $[page.ny] -eq 0 -a $[page.nx] -gt 0 \
+         && echo GotoPage -1p $$(($[desk.pagesy]-1)) \
+         || echo GotoPage 0p -1p;; \
+   esac'
+
+####
+# These functions modified from the functions provided in the fvwm FAQ.
+# http://www.fvwm.org/documentation/faq/#7.17
+#################
+AddToFunc Autohide
++ I ThisWindow ($0) Deschedule $[w.id]
++ I TestRc (!Match) Deschedule -$[w.id]
++ I ThisWindow ($0) ThisWindow (shaded) AutohideShow $1 $3
++ I TestRc (!Match) All ($0, !shaded) AutohideHide $2 $3
+
+AddToFunc AutohideShow
++ I Schedule $0 -$[w.id] WindowShade $1 off
++ I Schedule $0 -$[w.id] Raise
++ I Schedule $0 -$[w.id] Deschedule $[w.id]
++ I Schedule $0 -$[w.id] Deschedule -$[w.id]
+
+AddToFunc AutohideHide
++ I Schedule $0 $[w.id] WindowShade $1 on
++ I Schedule $0 $[w.id] Deschedule $[w.id]
++ I Schedule $0 $[w.id] Deschedule -$[w.id]
+
+#####
+# Miscellaneous Functions
+#
+# Function Operators
+# Context	Meaning
+# I		Immediate - executed as soon as the function is called.
+# C		Click - executed when the mouse button is clicked once.
+# D		Double-click - executed when the mouse button is double-clicked.
+# M		Motion - executed when the mouse is moved.
+# H		Hold - executed when the mouse button is held down.
+#################
+AddToFunc Move-or-Raise I Raise
++ M Move
++ D WindowShade Toggle
+
+AddToFunc Move-or-Iconify I Raise
++ M Move
++ D Iconify
+
+AddToFunc Resize-or-Raise I Raise
++ M Resize
++ D Lower
+
+#####
+# Telling a window that is already moving to AnimatedMove is not a good idea!
+# This function makes sure the user doesnt accidentally catch a window twice, by
+# setting one of the windows states while it is being moved.
+#
+# Every window has around 30 user definable states which you can test in
+# functions, you can use them for anything you like.
+##
+DestroyFunc LockingSlide
+AddToFunc LockingSlide
++ I Test (!State 2) Break
++ I State 2 False
++ I AnimatedMove $0 $1
++ I State 2 True
+
+#####
+# Use This to execute commands on new windows as they appear.
+########
+DestroyFunc NewWindowFunc
+AddToFunc NewWindowFunc
++ I ThisWindow ("terminal|Opera", \
+	!Maximized, !Transient) Maximize
+#+ I ThisWindow (AnnoyingWindow) Close
+
+# FIXME: Make this more useful.
+# XXX: This doesnt do much yet, you can play with it if you like.
+# Example: http://dev.gentoo.org/~taviso/fvwm_expose.png
+DestroyFunc FvwmExpose
+AddToFunc FvwmExpose
++ I AddToMenu FvwmExposeMenu ".: e x p o s e :." Title
++ I + DynamicPopDownAction DestroyMenu FvwmExposeMenu
++ I All (!Iconic !Shaded CurrentPage AcceptsFocus)\
+    PipeRead "echo Raise; \
+        xwd -silent -id $[w.id] | convert -scale 128 -quality 0 xwd:- \
+        png:$[FVWM_USERDIR]/icon.exp.$[w.id].png \
+    && echo AddToMenu FvwmExposeMenu \
+    %$[FVWM_USERDIR]/icon.exp.$[w.id].png%\\\'\"$[w.name]\"\\\' WindowID $[w.id] WarpToWindow 50 50 \
+        && echo AddToMenu FvwmExposeMenu \\\"\\\" Nop \
+    || Nop"
++ I Popup FvwmExposeMenu
++ I Exec exec rm -f $[FVWM_USERDIR]/icon.exp.*
+
+#####
+# FvwmPager is probably the most advanced desktop pager ever written,
+# of course its highly configurable, has many advanced features, and can
+# be made to look very eye candy.
+#
+# You can drag the Windows around inside the Pager, pull windows from
+# other desktops out onto your current page, or drag the viewport into
+# non-standard positions.
+#
+# This pager gets swallowed into my FvwmButtons Bar. The pages are seperated
+# by solid white lines, the pager itself is tinted transparent and the colours
+# lighten as focus and the viewport changes.
+#
+# You can write titles, or draw icons into the Windows, but i prefer to use
+# the Balloons (tooltips) to find the Names.
+#
+#   +-----+-----+-----+
+#   |(0,0)|(1,0)|(2,0)|
+#   +-----+-----+-----+
+#   |(0,1)|(1,1)|(2,1)|
+#   +-----+-----+-----+
+#   |(0,2)|(1,2)|(2,2)|
+#   +-----+-----+-----+
+#
+#################
+Colorset 2 fg white, bg black, RootTransparent buffer, Tint #b5b2ff 80
+Colorset 3 fg white, bg black, RootTransparent buffer, Tint #eeefcf 70
+Colorset 4 fg #63656e, bg black, RootTransparent buffer, Tint #b5b2ff 60
+Colorset 5 fg black, bg #e7e7e7, Plain
+Colorset 6 fg white, bg black, RootTransparent buffer, Tint #e4e5c7 90
+DestroyModuleConfig FvwmPager: *
+*FvwmPager: Colorset * 3
+*FvwmPager: HilightColorset * 6
+*FvwmPager: WindowColorsets 4 2
+*FvwmPager: BalloonColorset * 5
+# Comment out or set this to a font name for desktop names/numbers above desks (you can name desktops
+# anything you like to help organise your workspaces).
+*FvwmPager: Font none
+# Comment out or set this option for window names in pager windows
+# also see WindowLabelFormat.
+*FvwmPager: SmallFont none
+*FvwmPager: Balloons All
+*FvwmPager: BalloonYOffset +2
+*FvwmPager: BalloonBorderWidth 1
+*FvwmPager: UseSkipList
+*FvwmPager: MoveThreshold 0
+*FvwmPager: SolidSeparators
+*FvwmPager: WindowBorderWidth 1
+# Try uncommenting this for MiniIcon's in pager windows
+#*FvwmPager: MiniIcons
+
+#####
+# FvwmButtons is an incredible piece of software.
+#
+# It can create freeform panels of any size, shape (including Non-Rectangular windows),
+# Colour and function. It can swallow other applications, even applications not designed
+# for docking, have "panels" that slide out consisting of other panels, has a "startup-notification"
+# like feature, hundreds of possible bindings, uses the powerful fvwm Colorsets feature, and
+# can even change dynamically and respond to window manager events.
+#
+# The widgets can be transparent, use Xft fonts, and using fvwm's font definitions can render drop shadows
+# at any direction, offset, size and colour. Buttons can all use different Colorsets, and can have different
+# reliefs, shapes, anything!
+#
+# FvwmButtons is even tolerant to errors in configuration, and can workaround bad or impossible
+# definitions!
+#
+# As it's an fvwm module, it has 100% integration with the window manager and can use
+# internal fvwm commands, functions, etc.
+#
+# as you can tell, i am a big FvwmButtons fan :)
+#
+# I've written a quick introduction into making panels with FvwmButtons, you can read it here
+# http://forums.gentoo.org/viewtopic.php?t=162177
+#
+# To use Startup-notification, make an action like this:
+#   Action(Mouse 1) `Exec "rxvt" exec rxvt`
+# the button will remain pressed until a window called "rxvt" appears.
+#
+# The configuration below start with an alias, 'FvwmShelf', you can have as many button bars
+# as you like, if you give each one a seperate alias they can all have a different configuration.
+#
+# FvwmApplet-DigitalClock is a modified version of the FvwmScript script that comes with
+# fvwm-themes, I just changed it to print the date and time.
+#
+# Screenshot: http://dev.gentoo.org/~taviso/screenshots/april-04-clean.png
+#########
+Colorset 10 fg black, bg #c6c3c6, RootTransparent buffer, Tint #efebef 65
+Colorset 18 fg black, bg #c6c3c6, RootTransparent buffer, Tint #c3c6c3 65
+Colorset 17 fg black, bg #c6cbd6
+DestroyModuleConfig FvwmShelf: *
+*FvwmShelf: Columns 23
+*FvwmShelf: Font "Shadow=0 1 SE:xft:Bitstream Vera Sans Mono:style=Roman:size=8"
+*FvwmShelf: Colorset 10
+*FvwmShelf: Frame 1
+*FvwmShelf: Padding 2 2
+*FvwmShelf: Rows 11
+*FvwmShelf: (1x11, Action(Mouse 1) Next (CirculateHit, FvwmShelf) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep; echo Next \\(CirculateHit, FvwmBar\\) Maximize ewmhiwa growright 0')
+*FvwmShelf: (22x2, Colorset 18, Frame 0, Padding 2 2, Left, Swallow(UseOld) "cpumon" `Exec exec xosview -title cpumon +cpu`)
+*FvwmShelf: (22x2, Colorset 18, Frame 0, Padding 2 2, Left, Swallow(UseOld) "netmon" `Exec exec xosview -title netmon +net`)
+*FvwmShelf: (22x2, Colorset 18, Frame 0, Padding 2 0, Left, Swallow(UseOld) "memmon" `Exec exec xosview -title memmon +swap +mem`)
+*FvwmShelf: (22x2, Colorset 18, Frame 0, Padding 2 2, Left, Swallow(UseOld) "diskmon" `Exec exec xosview -title diskmon +disk`)
+*FvwmShelf: (5x2, Colorset 18, Frame 0, Icon calendar_schedule.png, Left, Action(mouse 1) `Exec exec xcalendar`)
+*FvwmShelf: (17x2, Colorset 18, Frame 0, Swallow FvwmApplet-DigitalClock `FvwmScript $[fvwm_script]/DigitalClock 18`)
+
+# An FvwmButtons-based Taskbar, it will swallow an FvwmIconMan.
+# Note the Menu options to make it appear at a nice and consistant
+# offset to the button, cool huh? :)
+DestroyModuleConfig FvwmBar: *
+*FvwmBar: Font "Shadow=0 1 SE:xft:Bitstream Vera Sans Mono:style=Roman:size=10"
+*FvwmBar: Colorset 10
+*FvwmBar: Frame 1
+*FvwmBar: Padding 2 2
+*FvwmBar: Rows 23
+*FvwmBar: Columns 71
+*FvwmBar: (71x3, Padding 0 0, Action(Mouse 1) `Next (CirculateHit, FvwmBar) PipeRead 'echo LockingSlide keep $$(test $$(($[w.y]+$[w.height])) -le $[vp.height] && echo w$$(($[w.height]-$height))p || echo w-$$(($[w.height]-$height))p)'`)
+*FvwmBar: (6x20, Title(Side) " Launch", Left, Icon gears.png, Action(Mouse 1) `Menu MenuFvwmRoot Rectangle +$left+$top 0 -100m`)
+*FvwmBar: (63x20, Swallow "FvwmIconMan" `FvwmIconMan`)
+*FvwmBar: (2x20, Colorset 18, Frame 0)
+
+#####
+# FvwmIconMan is a highly configurable module for managing running tasks.
+# This one is configured to look like a TaskBar.
+#
+# If you want to change the information written on the Buttons you can
+# set the Format option, look up the available options in the FvwmIconMan man page.
+#
+# You can configure Actions for the buttons, sendcommand will execute a command in
+# the context of the window. Notice the Menu options so that the Popup menu appears
+# aligned at the left of the button.
+#######
+Colorset 15 fg black, bg #c6c3c6, sh #dedbde, hi #dedbde, RootTransparent buffer, Tint #efebef 65
+Colorset 16 fg black, bg #c6c3c6, RootTransparent buffer, Tint #e4e5c7 90
+DestroyModuleConfig FvwmIconMan: *
+*FvwmIconMan: ManagerGeometry 1x1
+*FvwmIconMan: ButtonGeometry 24x23
+*FvwmIconMan: FocusAndSelectButton down
+*FvwmIconMan: FocusButton down
+*FvwmIconMan: IconButton down
+*FvwmIconMan: PlainButton down
+*FvwmIconMan: SelectButton down
+# disable default binding of "Iconify"
+*FvwmIconMan: Action Mouse 0 N sendcommand Nop
+# redefine buttons 1, 2 and 3.
+*FvwmIconMan: Action Mouse 2 N sendcommand Thumbnail
+*FvwmIconMan: Action Mouse 1 N sendcommand "Iconify off", sendcommand RaiseLower, sendcommand FlipFocus
+*FvwmIconMan: Action Mouse 3 N sendcommand "Popup MenuFvwmWindowOps Rectangle +$left+$top 0 -100m"
+#*FvwmIconMan: Action Mouse 4 N sendcommand "LockingSlide keep w-3p"
+#*FvwmIconMan: Action Mouse 5 N sendcommand "LockingSlide keep w3p"
+*FvwmIconMan: Colorset 15
+*FvwmIconMan: ReliefThickness 1
+*FvwmIconMan: Font "xft:Bitstream Vera Sans Mono:style=Roman:size=10"
+*FvwmIconMan: FocusAndSelectColorset 16
+*FvwmIconMan: FocusColorset 16
+*FvwmIconMan: Resolution Page
+*FvwmIconMan: DrawIcons Always
+*FvwmIconMan: FollowFocus True
+*FvwmIconMan: UseWinList True
+*FvwmIconMan: ShowOnlyIcons False
+#*FvwmIconMan: Format "%c: %i"
+*FvwmIconMan: Title ""
+*FvwmIconMan: Sort id
