@@ -1,0 +1,56 @@
+#! /bin/bash
+
+function tor_start {
+	if test -f /var/run/tor/tor.pid; then
+		echo "Tor is already running." 1>&2
+	elif test -x /usr/bin/tor; then
+		echo "Starting the Tor daemon..."
+		/usr/bin/tor --RunAsDaemon 1 --PidFile /var/run/tor/tor.pid
+	fi
+}
+
+function tor_shutdown {
+	if test -f /var/run/tor/tor.pid; then
+		echo "Tor should now initiate controlled shutdown (30 seconds by default)."
+		kill -INT $(cat /var/run/tor/tor.pid)
+	else
+		echo "Tor is not running." 1>&2
+	fi
+}
+
+function tor_stop {
+	if test -f /var/run/tor/tor.pid; then
+		echo -n "Stopping the Tor daemon... "
+		kill -TERM $(cat /var/run/tor/tor.pid)
+		sleep 1
+		if test -f /var/run/tor/tor.pid; then
+			echo "Failed. Force-killing it."
+			kill -KILL $(cat /var/run/tor/tor.pid)
+			rm -f /var/run/tor/tor.pid
+		else
+			echo "OK."
+		fi
+	else
+		echo "Tor is not running." 1>&2
+	fi
+}
+
+case $1 in
+( start )
+	tor_start
+	;;
+( shutdown )
+	tor_shutdown
+	;;
+( stop )
+	tor_stop
+	;;
+( restart )
+	tor_stop
+	tor_start
+	;;
+( * )
+	echo "Usage: $0 start|shutdown|stop|restart"
+	exit 1
+	;;
+esac

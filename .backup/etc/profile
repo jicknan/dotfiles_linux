@@ -1,0 +1,115 @@
+# /etc/profile: This file contains system-wide defaults used by
+# all Bourne (and related) shells.
+
+# Set the values for some environment variables:
+export MINICOM="-c on"
+export MANPATH=/usr/local/man:/usr/man:/usr/X11R6/man
+export HOSTNAME="`cat /etc/HOSTNAME`"
+export LESSOPEN="|lesspipe.sh %s"
+export LESSCHARSET=utf-8
+export LESS="-M"
+
+# don't put duplicate lines in the history. See bash(1) for more options
+export HISTCONTROL=ignoredups
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
+
+# If the user doesn't have a .inputrc, use the one in /etc.
+if [ ! -r "$HOME/.inputrc" ]; then
+  export INPUTRC=/etc/inputrc
+fi
+
+# Set the default system $PATH:
+PATH="/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/usr/games:/opt/bin:~/bin"
+
+# For root users, ensure that /usr/local/sbin, /usr/sbin, and /sbin are in
+# the $PATH.  Some means of connection don't add these by default (sshd comes
+# to mind).
+if [ "`id -u`" = "0" ]; then
+  echo $PATH | grep /usr/local/sbin 1> /dev/null 2> /dev/null
+  if [ ! $? = 0 ]; then
+    PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
+  fi
+fi
+
+# I had problems with the backspace key using 'eval tset' instead of 'TERM=',
+# but you might want to try it anyway instead of the section below it.  I
+# think with the right /etc/termcap it would work.
+# eval `tset -sQ "$TERM"`
+
+# Set TERM to linux for unknown type or unset variable:
+if [ "$TERM" = "" -o "$TERM" = "unknown" ]; then
+ TERM=linux
+fi
+
+# Set ksh93 visual editing mode:
+if [ "$SHELL" = "/bin/ksh" ]; then
+  VISUAL=emacs
+#  VISUAL=gmacs
+#  VISUAL=vi
+fi
+
+# Set a default shell prompt:
+#PS1='`hostname`:`pwd`# '
+if [ "$SHELL" = "/bin/pdksh" ]; then
+ PS1='! $ '
+elif [ "$SHELL" = "/bin/ksh" ]; then
+ PS1='! ${PWD/#$HOME/~}$ '
+elif [ "$SHELL" = "/bin/zsh" ]; then
+ PS1='%n@%m:%~%# '
+elif [ "$SHELL" = "/bin/ash" ]; then
+ PS1='$ '
+else
+ #PS1='\u@\h:\w\$ '
+ PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+fi
+PS2='> '
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+    ;;
+*)
+    ;;
+esac
+
+export PATH DISPLAY LESS TERM PS1 PS2 CVSROOT
+
+# Default umask.  A umask of 022 prevents new files from being created group
+# and world writable.
+umask 022
+
+# Set up the LS_COLORS and LS_OPTIONS environment variables for color ls:
+if [ "$SHELL" = "/bin/zsh" ]; then
+ eval `dircolors -z`
+elif [ "$SHELL" = "/bin/ash" ]; then
+ eval `dircolors -s`
+else
+ eval `dircolors -b`
+fi
+
+# Notify user of incoming mail.  This can be overridden in the user's
+# local startup file (~/.bash.login or whatever, depending on the shell)
+if [ -x /usr/bin/biff ]; then
+ biff y
+fi
+
+# Append any additional sh scripts found in /etc/profile.d/:
+for profile_script in /etc/profile.d/*.sh ; do
+  if [ -x $profile_script ]; then
+    . $profile_script
+  fi
+done
+unset profile_script
+
+# For non-root users, add the current directory to the search path:
+if [ ! "`id -u`" = "0" ]; then
+ PATH="$PATH:."
+fi
+

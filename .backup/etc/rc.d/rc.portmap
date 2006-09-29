@@ -1,0 +1,45 @@
+#!/bin/sh
+# rc.portmap:  start/stop/restart the RPC portmapper (rpc.portmap)
+#
+# You must run rpc.portmap in order to mount NFS partitions (unless you
+# use the mount option '-o nolock', which can corrupt files and is not
+# generally recommended).
+#
+# rpc.portmap is also required in order to run an NFS server.
+#
+
+portmap_start() {
+  # If rpc.portmap is not running, start it:
+  if ! /usr/sbin/rpcinfo -p 1> /dev/null 2> /dev/null ; then
+    if [ -x /sbin/rpc.portmap ]; then
+      echo "Starting RPC portmapper:  /sbin/rpc.portmap"
+      /sbin/rpc.portmap
+    fi
+  fi
+}
+
+portmap_stop() {
+  killall rpc.portmap 2> /dev/null
+  sleep 1
+  killall -9 rpc.portmap 2> /dev/null # make sure :)
+}
+
+portmap_restart() {
+  portmap_stop
+  sleep 1
+  portmap_start
+}
+
+case "$1" in
+'start')
+  portmap_start
+  ;;
+'stop')
+  portmap_stop
+  ;;
+'restart')
+  portmap_restart
+  ;;
+*)
+  echo "usage $0 start|stop|restart"
+esac

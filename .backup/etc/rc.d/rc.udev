@@ -1,0 +1,132 @@
+#!/bin/sh
+# This is a script to initialize udev, which populates the /dev
+# directory with device nodes, scans for devices, loads the
+# appropriate kernel modules, and configures the devices.
+
+PATH="/sbin:/bin"
+
+case "$1" in
+    start)
+        # Sanity check -- we aren't running a 2.4.x kernel, are we?
+        # This will help stop people from trying to start udev when the
+        # machine isn't ready for that...
+        if [ "$(uname -r | cut -f 1,2 -d .)" = "2.4" ]; then
+          echo "Sorry, but you need a 2.6.15+ kernel to use udev."
+          echo "Your kernel version is only $(uname -r)."
+          echo
+          echo "FATAL:  Refusing to run /etc/rc.d/rc.udev."
+          exit 1
+        fi
+
+	# Sanity check #2, udev requires that the kernel support tmpfs:
+        if ! grep -wq tmpfs /proc/filesystems ; then
+          echo "Sorry, but you need tmpfs support in the kernel to use udev."
+          echo
+          echo "FATAL:  Refusing to run /etc/rc.d/rc.udev."
+          exit 1
+        fi
+
+        # Sanity check #3, make sure that a 2.6.x kernel is new enough:
+        if [ "$(uname -r | cut -f 1,2 -d .)" = "2.6" ]; then
+          if [ "$(uname -r | cut -f 3 -d . | sed 's/[^[:digit:]].*//')" -lt "15" ]; then
+            echo "Sorry, but you need a 2.6.15+ kernel to use udev."
+            echo "Your kernel version is only $(uname -r)."
+            echo
+            echo "FATAL:  Refusing to run /etc/rc.d/rc.udev."
+            exit 1
+          fi
+        fi
+
+        # Disable hotplug helper since udevd listens to netlink:
+        if [ -e /proc/sys/kernel/hotplug ]; then
+          echo "" > /proc/sys/kernel/hotplug
+        fi
+
+	# Copy the needed disk nodes to the static devices directory:
+	RDEV=`grep -v '^#' /etc/fstab | sed -ne '/\W\/\W/s#/dev/\(\w*\)[0-9].*#\1#p'`
+	if ! [ -e /lib/udev/devices/$RDEV ]; then
+		cp -a /dev/`echo $RDEV | cut -f3 -d/` /lib/udev/devices/ 2>/dev/null
+	fi
+	for i in `grep "$RDEV" /etc/fstab | cut -f1 -d\  | cut -f3 -d/`; do
+		if ! [ -e /lib/udev/devices/$i ]; then
+			cp -a /dev/$i /lib/udev/devices/ 2>/dev/null
+		fi
+	done
+
+	# Mount tmpfs on /dev:
+	if ! grep -E -q "^[^[:space:]]+ /dev tmpfs" /proc/mounts; then
+	    # umount shm if needed
+	    if grep -E -q "^[^[:space:]]+ /dev/shm tmpfs" /proc/mounts; then
+		umount -l /dev/shm
+	    fi
+
+	    # Umount pts if needed, we will remount it later:
+	    if grep -E -q "^[^[:space:]]+ /dev/pts devpts" /proc/mounts; then
+		umount -l /dev/pts
+	    fi
+
+	    # Mount tmpfs on /dev:
+	    # the -n is because we don't want /dev umounted when
+	    # someone (rc.[06]) calls umount -a
+            mount -n -o mode=0755 -t tmpfs tmpfs /dev
+
+	    # Remount pts:
+	    mkdir /dev/pts 2> /dev/null
+	    mount -n -o mode=0620,gid=5 -t devpts devpts /dev/pts
+
+            # Mount usbfs:
+            if ! grep -wq usbfs /proc/mounts ; then
+	        if [ -d /proc/bus/usb ]; then
+		    mount usbfs -t usbfs /proc/bus/usb -o devgid=10,devmode=0666
+	        fi
+            fi
+	fi
+
+	# Add the static nodes to /dev:
+	cp --preserve=all --recursive --remove-destination /lib/udev/devices/* /dev
+
+	# Start udevd:
+	echo "Starting udevd:  /sbin/udevd --daemon"
+	/sbin/udevd --daemon
+
+	# This lock file prevents network devices from being configured too early:
+        # Previously this lock file was /var/lock/subsys/coldplug...
+        # but we need to use /dev here since the / partition is read-only
+        # and /var might not even be mounted at all.
+	touch /dev/coldplug
+	mkdir -p /dev/.udev/queue
+	
+	# Call udevtrigger and udevsettle to do the device configuration:
+	/sbin/udevtrigger && /sbin/udevsettle
+
+	;;
+    stop)
+	echo "Stopping udevd"
+        if [ -e /proc/sys/kernel/hotplug ]; then
+          echo /sbin/hotplug > /proc/sys/kernel/hotplug
+        fi
+	killall udevd 
+	;;
+    restart)
+	echo "Restarting udevd"
+	killall udevd
+	sleep 5
+	udevd --daemon
+	;;
+    reload)
+	echo "Reloading udev rules"
+	udevcontrol reload_rules
+	cp --preserve=all --recursive --update /lib/udev/devices/* /dev
+	;;
+    force-reload)
+	echo "Updating all available device nodes in /dev"
+	udevcontrol reload_rules
+	rm -rf /dev/.udev /dev/disk
+	cp --preserve=all --recursive --update /lib/udev/devices/* /dev
+	;;
+	
+    *)
+	echo "Usage: $0 {start|stop|restart|reload|force-reload}"
+	exit 1
+	;;
+esac

@@ -1,0 +1,76 @@
+#!/bin/sh
+#
+# hotplug This scripts starts hotpluggable subsystems.
+#
+# chkconfig: 2345 01 99
+# description:	Starts and stops each hotpluggable subsystem. \
+#		On startup, may simulate hotplug events for devices \
+#		that were present at boot time, before filesystems \
+#		(or other resources) used by hotplug agents were available.
+#
+# $Id: hotplug,v 1.3 2002/12/03 02:01:48 dbrownell Exp $
+#
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+# If we are running a new version of udev (no /sbin/udevsend) on a 2.6+
+# kernel, then we can skip this script:
+if [ -x /etc/rc.d/rc.udev -a ! -x /sbin/udevsend -a ! "$(uname -r | cut -f 1,2 -d .)" = "2.4" ]; then
+  /bin/true
+else
+
+  # Put a mark in the system logs as we enter this script:
+  if [ -f /var/run/syslogd.pid -a -x /usr/bin/logger ]; then
+    echo "/etc/rc.d/rc.hotplug $1 (entering script)" | logger
+    echo "Detecting hardware:  /etc/rc.d/rc.hotplug start"
+  fi
+
+  # source function library
+  if [ -f /etc/init.d/functions ]; then
+    . /etc/init.d/functions
+  elif [ -f /etc/rc.d/init.d/functions ]; then
+    . /etc/rc.d/init.d/functions
+  fi
+
+  case "$1" in
+    start|restart|status)
+      for RC in /etc/hotplug/*.rc ; do
+        $RC $1
+      done
+      # For kernels newer than 2.4, tell the kernel to use for /sbin/udevsend for
+      # hotplug events, and then run udevstart one more time.
+      if [ -x /etc/rc.d/rc.udev -a -x /sbin/udevsend -a ! "$(uname -r | cut -f 1,2 -d .)" = "2.4" ]; then
+        echo "/sbin/udevsend" > /proc/sys/kernel/hotplug
+      if [ -x /sbin/udevstart ]; then
+        /sbin/udevstart
+      fi
+      fi
+      touch /var/lock/subsys/hotplug
+      ;;
+    stop)
+      for RC in /etc/hotplug/*.rc ; do
+        $RC stop
+      done
+      rm -f /var/lock/subsys/hotplug
+      ;;
+    force-reload)
+      for RC in /etc/hotplug/*.rc ; do
+        $RC stop
+      done
+      for RC in /etc/hotplug/*.rc ; do
+        $RC start
+      done
+      rm -f /var/lock/subsys/hotplug
+      ;;
+    *)
+      echo $"Usage: $0 {start|stop|restart|status|force-reload}"
+      exit 3
+      ;;
+  esac
+
+  # Put a mark in the system logs as we exit this script:
+  if [ -f /var/run/syslogd.pid -a -x /usr/bin/logger ]; then
+    echo "/etc/rc.d/rc.hotplug $1 (exiting script)" | logger
+  fi
+
+fi

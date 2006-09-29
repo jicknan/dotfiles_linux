@@ -1,0 +1,44 @@
+#
+# hosts		This file describes a number of hostname-to-address
+#		mappings for the TCP/IP subsystem.  It is mostly
+#		used at boot time, when no name servers are running.
+#		On small systems, this file can be used instead of a
+#		"named" name server.  Just add the names, addresses
+#		and any aliases to this file...
+#
+# By the way, Arnt Gulbrandsen <agulbra@nvg.unit.no> says that 127.0.0.1
+# should NEVER be named with the name of the machine.  It causes problems
+# for some (stupid) programs, irc and reputedly talk. :^)
+#
+
+# For loopbacking.
+127.0.0.1		localhost
+127.0.0.1		darkstar
+127.0.0.1		www.nan.org nan
+
+# CVSROOT
+172.21.1.234	scs
+
+# Telnet bbs
+61.182.213.238	www.newsmth.net	newsmth.net
+218.30.103.84	www.lqqm.com	lqqm.com
+
+# Wikipedia IPs
+145.97.39.132	en.wikipedia.org
+145.97.39.132	zh.wikipedia.org
+145.97.39.132	jp.wikipedia.org
+145.97.39.132	upload.wikimedia.org
+# Google Ips
+#64.233.171.99	www.google.com		google.com
+#216.239.53.99	google.com
+66.102.15.100	www.blogger.com		blogger.com
+71.14.207.191	www.blogspot.com	blogspot.com
+
+# Other hosts
+207.7.108.235	www.wordpress.com	wordpress.com
+192.43.244.18	time.nist.gov
+#64.233.187.99	www.google.com/ig?hl=en
+#59.151.41.69	www.douban.com	douban.com
+61.135.170.233	my.donews.com
+# End of hosts.
+

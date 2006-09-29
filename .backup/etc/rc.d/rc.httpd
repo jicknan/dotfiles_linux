@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# /etc/rc.d/rc.httpd
+#
+# Start/stop/restart the Apache web server.
+#
+# To make Apache start automatically at boot, make this
+# file executable:  chmod 755 /etc/rc.d/rc.httpd
+#
+
+case "$1" in
+   'start')
+      /usr/sbin/apachectl start ;;
+   'stop')
+      /usr/sbin/apachectl stop ;;
+   'restart')
+      /usr/sbin/apachectl restart ;;
+   *)
+      echo "usage $0 start|stop|restart" ;;
+esac
+

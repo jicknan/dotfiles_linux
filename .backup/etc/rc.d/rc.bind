@@ -1,0 +1,120 @@
+#!/bin/sh
+# Start/stop/restart the BIND name server daemon (named).
+
+# Start bind.  In the past it was more secure to run BIND
+# as a non-root user (for example, with '-u daemon'), but
+# the modern version of BIND knows how uses to use the
+# kernel's capability mechanism to drop all root privileges
+# except the ability to bind() to a privileged port and set
+# process resource limits, so -u should not be needed.  If
+# you wish to use it anyway, chown the /var/run/named
+# directory to the non-root user.
+#
+# IMPORTANT:  With a 2.6 or newer kernel, if "capability"
+# was built as a module you may have to load it first:
+#
+#modprobe capability
+#
+# You can uncomment a line in /etc/rc.d/rc.modules to do
+# this automatically at boot time.  If your kernel requires
+# "capability" to run BIND and you don't load it first, this
+# script will attempt to cover for you by loading the
+# module anyway, but you'll get some big ugly warnings.  ;-)
+
+# You might also consider running BIND in a "chroot jail",
+# a discussion of which may be found in
+# /usr/doc/Linux-HOWTOs/Chroot-BIND-HOWTO.
+#
+# One last note:  rndc has a lot of other nice features that
+# it is not within the scope of this start/stop/restart script
+# to support.  For more details, see "man rndc" or just type
+# "rndc" to see the options.
+
+
+# Sanity check.  If either /usr/sbin/named or /etc/named.conf
+# aren't ready, it doesn't make much sense to try to run this
+# script:
+if [ ! -x /usr/sbin/named ]; then
+  echo "/etc/rc.d/rc.bind:  no /usr/sbin/named found (or not executable); cannot start."
+  exit 1
+elif [ ! -f /etc/named.conf ]; then
+  echo "/etc/rc.d/rc.bind:  no /etc/named.conf found; cannot start /usr/sbin/named."
+  exit 1
+fi
+
+# Start BIND.  As many times as you like.  ;-)
+# Seriously, don't run "rc.bind start" if BIND is already
+# running or you'll get more than one copy running.
+bind_start() {
+  if [ -x /usr/sbin/named ]; then
+    echo "Starting BIND:  /usr/sbin/named"
+    /usr/sbin/named
+  fi
+  if ! ps axc | grep -q named ; then
+    # A common reason why BIND might not start is that the
+    # Linux capabilities module is required on Linux 2.6.
+    # So, we will warn the user and then load the module.
+    # While it's possible to test to see if this is true,
+    # that approach could be a moving target, so we'll
+    # just go for the brute force approach.  It's likely
+    # to be safe enough.
+    echo "WARNING:  named did not start.  Perhaps this is because"
+    echo "the \"capability\" module required by newer kernels is"
+    echo "not loaded (or built into the kernel)?"
+    echo "Attempting to load security capability module:"
+    echo "/sbin/modprobe capability"
+    /sbin/modprobe capability
+    echo "Attempting to start named again:  /usr/sbin/named"
+    /usr/sbin/named
+    if ps axc | grep -q named ; then
+      echo "SUCCESS:  named started.  To avoid this warning in"
+      echo "the future you can edit your /etc/rc.d/rc.modules"
+      echo "to load the \"capability\" module."
+    else
+      echo "FAILED:  Sorry, but even after attempting to load"
+      echo "the \"capability\" module, named did not start."
+      echo "There may be a different configuration error that"
+      echo "needs fixing.  Good luck!"
+    fi
+  fi
+}
+
+# Stop all running copies of BIND (/usr/sbin/named):
+bind_stop() {
+  echo "Stopping BIND:  /usr/sbin/rndc stop"
+  /usr/sbin/rndc stop
+  # A problem with using "/usr/sbin/rndc stop" is that if you
+  # managed to get multiple copies of named running it will
+  # only stop one of them and then can't stop the others even
+  # if you run it again.  So, after doing things the nice way
+  # we'll do them the old-fashioned way.  If you don't like
+  # it you can comment it out, but unless you have a lot of
+  # other programs you run called "named" this is unlikely
+  # to have any ill effects:
+  if ps axc | grep -q named ; then
+    echo "Using "killall named" on additional BIND processes..."
+    /bin/killall named 2> /dev/null
+  fi
+}
+
+# Restart BIND:
+bind_restart() {
+  bind_stop
+  sleep 1
+  bind_start
+}
+
+case "$1" in
+'start')
+  bind_start
+  ;;
+'stop')
+  bind_stop
+  ;;
+'restart')
+  bind_restart
+  ;;
+*)
+  echo "usage $0 start|stop|restart"
+esac
+

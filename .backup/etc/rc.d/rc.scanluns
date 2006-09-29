@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# rc.scanluns (Wed Jul 26 16:55:51 CDT 2006) pjv
+#
+# This script simply runs "rescan-scsi-bus -l" to look for devices
+# that have been plugged into a USB or IEEE1394 (Firewire) port that
+# might not have been detected because they use a LUN (Logical Unit
+# Number) other than 0.
+#
+# You might need to run this script again (or just use
+# rescan-scsi-bus directly at the command line) after plugging
+# in new devices such as USB cameras, music players, external
+# storage, and similar items.
+
+# Run this only if "noscanluns" was NOT given as a kernel option.
+if ! grep -qw noscanluns /proc/cmdline ; then
+  if [ -x /sbin/rescan-scsi-bus ]; then
+    echo "Scanning all LUNs for additional hardware:  /sbin/rescan-scsi-bus -l"
+    /sbin/rescan-scsi-bus -l
+  fi
+fi
+
+# Options like "start", "stop", and "restart" are meaningless here
+# so they are not implemented.  You might need to use the "umount"
+# and "eject" commands to safely remove a device, though.
+
