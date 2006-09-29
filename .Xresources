@@ -1,5 +1,5 @@
 ! ~/.Xresource - X resource settings
-! $Header:$
+! $Id:$
 ! more colour settings in /usr/X11R6/lib/X11/rgb.txt
 URxvt*geometry: 	100x30
 URxvt*saveLines: 	2000
