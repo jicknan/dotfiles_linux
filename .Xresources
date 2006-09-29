@@ -1,0 +1,56 @@
+! ~/.Xresource - X resource settings
+! $Header:$
+! more colour settings in /usr/X11R6/lib/X11/rgb.txt
+URxvt*geometry: 	100x30
+URxvt*saveLines: 	2000
+
+!URxvt*multichar_encoding: en_US.UTF-8
+URxvt*imlocale:		zh.CN.utf8
+URxvt*inputMethod:	scim
+
+! scroll bar settings
+URxvt*scrollBar:	False
+!URxvt*scrollBar_right: True
+! Turn on/off scroll-to-bottom on TTY output inhibit:
+!URxvt*scrollTtyOutputInhibit:	True
+!URxvt*shading:	10
+!URxvt*scrollWithBuffer:	True
+
+! font settings
+!URxvt*font:		xft:DejaVu Sans Mono
+URxvt*font:		xft:DejaVu Sans Mono:pixelsize=15,\
+			xft:WenQuanYi Bitmap Song:pixelsize=15,\
+			[codeset=GB2312]xft:WenQuanYi Bitmap Song:antialias=false,\
+			[codeset=GBK]xft:WenQuanYi Bitmap Song:antialias=false,\
+			[codeset=GB18030]xft:WenQuanYi Bitmap Song:antialias=false,\
+			[codeset=JISX0208]xft:Kochi Gothic:antialias=false
+!URxvt*italicFont:        xft:Bitstream Vera Sans Mono:italic:autohint=true
+
+! VIM-like colors
+URxvt*background: 	gray16
+URxvt*foreground:	#ffffbf
+URxvt*colorBD:		white
+URxvt*colorIT:		green
+URxvt*color0:      	#000000
+URxvt*color1:      	#ee1828
+URxvt*color2:      	#aece92
+URxvt*color3:      	#eeaa88
+URxvt*color4:      	#1181ff
+URxvt*color5:      	#963c59
+URxvt*color6:      	#41f4ff
+URxvt*color7:      	#C0C0C0
+URxvt*color8:      	#808080
+URxvt*color9:      	#cf6171
+URxvt*color10:	  	#00A800
+URxvt*color11:     	#fff796
+URxvt*color12:     	#2186fe
+URxvt*color13:	  	#A800A8
+URxvt*color14:     	#f1be2e
+URxvt*color15:     	#ffffff
+
+! xterm
+XTerm*background: 	gray16
+XTerm*foreground:	#ffffbf
+XTerm*facefont:		DejaVu Sans Mono
+XTerm*font: -*-courier-medium-r-*-*-14-140-*-75-*-*-*-*
+XTerm*boldFont: -*-courier-bold-r-*-*-14-140-*-75-*-*-*-*
