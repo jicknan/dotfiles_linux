@@ -1,0 +1,77 @@
+MAILDIR=$HOME/.mutt/mbox
+DEFAULT=$MAILDIR/default
+DUP=duplicates
+LOGFILE=$MAILDIR/procmail.log
+#LOGABSTRACT=no
+#VERBOSE=off
+FORMAIL=/usr/bin/formail
+NL="
+"
+
+# catch duplicates using formail
+:0 Whc: .msgid.lock
+| $FORMAIL -D 16384 .msgid.cache
+
+:0 a
+$DUP
+
+:0:				# This will create a local lockfile named smth.lock
+* ^From:.*newsmth
+smth
+
+# now flush some spam out
+:0:
+* ^Subject:.*(debian-devel-digest|¿ªÐÄ|ÖÂ¸»|ÅàÑµ|51job)
+spam
+
+# no more html messages
+:0:
+* ^Content-Type:.*html
+junk
+
+:0:
+* ^Subject: *Madwifi
+madwifi
+
+:0:
+* ^List-Id:.*gentoo-user
+gentoo-user
+
+:0:
+* ^From:.*gentoo.org
+gentoo
+
+# catch Kernel Traffic by Zack Brown
+:0:
+* ^From:.*zbrown
+KT-lists
+
+# catch debian-lists
+:0:
+* ^To:.*lists.debian.org
+debian-lists
+
+:0:
+* ^CC:.*lists.debian.org
+debian-lists
+
+# catch html-tidy lists
+:0:
+* ^To:.*html-tidy@w3.org
+html-tidy
+
+:0:
+* ^CC:.*html-tidy@w3.org
+html-tidy
+
+# catch redhat magazine
+:0:
+* ^From:.*info.redhat.com
+redhat-magazine
+
+##last rule: mail that gets this far goes in default box
+:0:
+* .*
+default
+
+#end of file

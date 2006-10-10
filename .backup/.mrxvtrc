@@ -1,0 +1,52 @@
+####
+# ~/.mrxvtrc - Config file of mrxvt
+# $Header: /opt/cvsroot/conf/.mrxvtrc,v 1.2 2006/06/01 07:00:27 jick Exp $
+
+mrxvt*termName:		xterm    
+mrxvt*geometry:		80x25
+mrxvt*saveLines:	1000
+mrxvt*foreground:	white
+mrxvt*background:	black
+
+mrxvt*mfont:		hanzigb16st
+mrxvt*xftmfont:		SimSun
+#mrxvt*font":	-misc-simsun-medium-r-normal--0-0-0-0-c-0-gb2312.1980-0
+mrxvt*font":		Tahoma
+mrxvt*xftSize:            14
+#mrxvt*xft:True
+#mrxvt*xftFont:Luxi Mono
+#mrxvt*xftmFont:SimSun
+#mrxvt*xftNomFont:True
+#mrxvt*xftAntialias:True
+#mrxvt*xftWeight:Medium
+#mrxvt*xftSlant:Roman
+#mrxvt*xftHinting:True
+#mrxvt*xftAutoHint:True
+#mrxvt*xftGlobalAdvance:True
+#mrxvt*xftWidth:normal
+#mrxvt*xftRGBA:rgb
+
+mrxvt*multichar_encoding: GB
+mrxvt*inputMethod:        fcitx
+
+#mrxvt*vt0*Pixmap:      /usr/share/wallpapers/Paper01.jpg
+
+mrxvt*scrollTtyOutputInhibit:     True
+mrxvt*scrollWithBuffer:            True
+
+Mrxvt*color0:      #000000
+Mrxvt*color1:      #ee1828
+Mrxvt*color2:      #aece92
+Mrxvt*color3:      #eeaa88
+Mrxvt*color4:      #1181ff
+Mrxvt*color5:      #963c59
+Mrxvt*color6:      #41f4ff
+Mrxvt*color7:      #C0C0C0
+Mrxvt*color8:      #808080
+Mrxvt*color9:      #cf6171
+Mrxvt*color10:     #15f7f9
+Mrxvt*color11:     #fff796
+Mrxvt*color12:     #2186fe
+Mrxvt*color13:     #2f9efe
+Mrxvt*color14:     #f1be2e
+Mrxvt*color15:	   #ffffff
