@@ -45,45 +45,45 @@
  * (kernel) -> /sbin/init
  * -> /etc/inittab
  * --> /etc/rc.d/rc.S
-  * ---> Mount /proc right away.
-  * ---> If 'nohotplug' was given at boot, or rc.hotplug has been turned off
-    (add a 2.4.x kernel is running), then shut off hotplugging in the kernel
-    now.
-  * ---> Start devfsd if necessary. On newer kernels, udev should be used
-    instead. (rc.devfsd)
-  * ---> Mount sysfs next, if the kernel supports it.
-  * ---> Enable swapping.
-  * ---> Test to see if the root partition is read-only, like it ought to be.
-  * ---> See if a forced filesystem check was requested at shutdown.
-  * ---> Check the root filesystem.
-  * ---> Delete any old /etc/mtab here.
-  * ---> Remounting the / partition will initialize the new /etc/mtab.
-  * ---> Fix /etc/mtab to list sys and proc if they ware not yet entered in
-    /etc/mtab because / was still mounted read-only.
-  * ---> Initialize udev to manage /dev entries and hotplugging for 2.6.x
-    kernels. (rc.udev)
-  * ---> Set the system time from the hardware clock using hwclock --hctosys
-  * ---> Configure ISA Plug-and-Play devices.
-  * ---> Load any kernel modules that are needed. (rc.modules.local,
-    rc.modules-$FULL_KERNEL_VERSION, rc.modules)
-  * ---> Configure runtime kernel parameters. (sysctl)
-  * ---> Initialize the LVM.
-  * ---> Check all the non-root filesystems.
-  * ---> Mount usbfs if we're not using hotplug.
-  * ---> Mount non-root fs in fstab, but not NFS or SMB because TCP/IP is not
-    yet configured, and not proc or sysfs bacause those have already been
-    mounted.
-  * ---> Enable swapping again, for maybe a swapfile.
-  * ---> Clean up some temporary files.
-  * ---> Create /tmp/{.ICE-unix,.X11-unix} if they are not present.
-  * ---> Attempt to umount and remove any leftover /initrd.
-  * ---> Create a fresh utmp file.
-  * ---> Update any files added in DOS.
-  * ---> Setup the /etc/motd to reflect the current kernel level.
-  * ---> If there are SystemV init scripts for this runlevel, run them.
-    (rc.sysinit)
-  * ---> Run serial ports setup scripts. (rc.serial)
-  * ---> Carry an entropy pool between reboots to improve randomness.
+   * ---> Mount /proc right away.
+   * ---> If 'nohotplug' was given at boot, or rc.hotplug has been turned off
+     (add a 2.4.x kernel is running), then shut off hotplugging in the kernel
+     now.
+   * ---> Start devfsd if necessary. On newer kernels, udev should be used
+     instead. (rc.devfsd)
+   * ---> Mount sysfs next, if the kernel supports it.
+   * ---> Enable swapping.
+   * ---> Test to see if the root partition is read-only, like it ought to be.
+   * ---> See if a forced filesystem check was requested at shutdown.
+   * ---> Check the root filesystem.
+   * ---> Delete any old /etc/mtab here.
+   * ---> Remounting the / partition will initialize the new /etc/mtab.
+   * ---> Fix /etc/mtab to list sys and proc if they ware not yet entered in
+     /etc/mtab because / was still mounted read-only.
+   * ---> Initialize udev to manage /dev entries and hotplugging for 2.6.x
+     kernels. (rc.udev)
+   * ---> Set the system time from the hardware clock using hwclock --hctosys
+   * ---> Configure ISA Plug-and-Play devices.
+   * ---> Load any kernel modules that are needed. (rc.modules.local,
+     rc.modules-$FULL_KERNEL_VERSION, rc.modules)
+   * ---> Configure runtime kernel parameters. (sysctl)
+   * ---> Initialize the LVM.
+   * ---> Check all the non-root filesystems.
+   * ---> Mount usbfs if we're not using hotplug.
+   * ---> Mount non-root fs in fstab, but not NFS or SMB because TCP/IP is not
+     yet configured, and not proc or sysfs bacause those have already been
+     mounted.
+   * ---> Enable swapping again, for maybe a swapfile.
+   * ---> Clean up some temporary files.
+   * ---> Create /tmp/{.ICE-unix,.X11-unix} if they are not present.
+   * ---> Attempt to umount and remove any leftover /initrd.
+   * ---> Create a fresh utmp file.
+   * ---> Update any files added in DOS.
+   * ---> Setup the /etc/motd to reflect the current kernel level.
+   * ---> If there are SystemV init scripts for this runlevel, run them.
+     (rc.sysinit)
+   * ---> Run serial ports setup scripts. (rc.serial)
+   * ---> Carry an entropy pool between reboots to improve randomness.
  * --> /etc/rc.d/rc.M
   * ---> Screen blacks after 15ms idle time, and powers down in 1 hour if the
     kernel supports APM or ACPI power management. (setterm)
@@ -94,14 +94,14 @@
   * ---> Start the system logger. (rc.syslog)
   * ---> Initialize PCMCIA devices. (rc.pcmcia)
   * ---> Initialize the networking hardware. (rc.inet1)
-    * ----> Get the configuration information from /etc/rc.d/rc.inet1.conf.
+	* ----> Get the configuration information from /etc/rc.d/rc.inet1.conf.
 	* ----> Compose a list of interfaces from rc.inet1.conf.
 	* ----> Functions: {lo,if,gateway}_{up,down}(), start(), stop().
   * ---> Initialize the hotplugging subsystem. (rc.hotplug)
   * ---> Look for additional USB/SCSI/IEEE1294/etc devices on multiple LUNs.
     (rc.scanluns)
   * ---> Start networking daemons. (rc.inet2)
-    * ----> Mount remote (NFS) filesystems. (rc.portmap)
+	* ----> Mount remote (NFS) filesystems. (rc.portmap)
 	* ----> Mount remove (SMB) filesystems.
 	* ----> Start the system logger if it is not already running (maybe
 	  bacause /usr is on a network partition). (rc.syslog)
