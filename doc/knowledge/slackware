@@ -1,0 +1,155 @@
+##
+# slackware - alias fun='Slackware Linux' ; -)
+# 
+# $Header: /opt/cvsroot/doc/tech/slackware,v 1.2 2006/08/10 17:11:59 jick Exp $
+
+= Document =
+ * boot_process
+ * http://www.userlocal.com/phorum/
+ * The alt.os.linux.slackware FAQ:
+   http://wombat.san-francisco.ca.us/cgi-bin/fom
+ * Slackware Packages for some programs can be found at:
+   http://www.linuxpackages.net/
+ * http://www.linuxquestions.org/questions/forumdisplay.php?forumid=14
+
+= Install a small slackware =
+ * Require: tar-1.13, installpkg
+ * installpkg --root /slack2 /jick/slackware/slackware/*.tgz
+ * chroot /slack2 /sbin/ldconfig
+ * chroot /slack2
+
+= Basical packages =
+ * aaa_base
+ * aaa_elflibs
+ * sysvinit
+ * devs
+
+= X11 server packages =
+ * l/freetype	- A Free, High-Quality, and Portable Font Engine
+ * x/fontconfig	- Font library and tools
+ * x/x11		- X11 base package
+ * x/x11-devel	- Libraries and other files for X programming
+ * x/x11-doc	- text documentation for X
+ * x/x11-fonts-misc - a minimal set of fonts needed to run X
+ * x/x11-fonts-scale - Speedo, Type 1, and TrueType scalable fonts for X
+ * xap/fvwm		- a small and fast virtual window manager for X
+ *
+ * x/dejavu-ttf	- based on the Bitstream Vera Fonts, purpose is to provide a
+   wider range of characters
+ * x/x11-doc-html - HTML documentation for X
+ * x/x11-xdmx	- Distributed Multi-head X server
+ * x/x11-xnest	- a nested X server
+ * x/x11-xvfb	- virtual framebuffer X server
+
+= Slackware Boot process (11.0) =
+ * (kernel) -> /sbin/init
+ * -> /etc/inittab
+ * --> /etc/rc.d/rc.S
+  * ---> Mount /proc right away.
+  * ---> If 'nohotplug' was given at boot, or rc.hotplug has been turned off
+    (add a 2.4.x kernel is running), then shut off hotplugging in the kernel
+    now.
+  * ---> Start devfsd if necessary. On newer kernels, udev should be used
+    instead. (rc.devfsd)
+  * ---> Mount sysfs next, if the kernel supports it.
+  * ---> Enable swapping.
+  * ---> Test to see if the root partition is read-only, like it ought to be.
+  * ---> See if a forced filesystem check was requested at shutdown.
+  * ---> Check the root filesystem.
+  * ---> Delete any old /etc/mtab here.
+  * ---> Remounting the / partition will initialize the new /etc/mtab.
+  * ---> Fix /etc/mtab to list sys and proc if they ware not yet entered in
+    /etc/mtab because / was still mounted read-only.
+  * ---> Initialize udev to manage /dev entries and hotplugging for 2.6.x
+    kernels. (rc.udev)
+  * ---> Set the system time from the hardware clock using hwclock --hctosys
+  * ---> Configure ISA Plug-and-Play devices.
+  * ---> Load any kernel modules that are needed. (rc.modules.local,
+    rc.modules-$FULL_KERNEL_VERSION, rc.modules)
+  * ---> Configure runtime kernel parameters. (sysctl)
+  * ---> Initialize the LVM.
+  * ---> Check all the non-root filesystems.
+  * ---> Mount usbfs if we're not using hotplug.
+  * ---> Mount non-root fs in fstab, but not NFS or SMB because TCP/IP is not
+    yet configured, and not proc or sysfs bacause those have already been
+    mounted.
+  * ---> Enable swapping again, for maybe a swapfile.
+  * ---> Clean up some temporary files.
+  * ---> Create /tmp/{.ICE-unix,.X11-unix} if they are not present.
+  * ---> Attempt to umount and remove any leftover /initrd.
+  * ---> Create a fresh utmp file.
+  * ---> Update any files added in DOS.
+  * ---> Setup the /etc/motd to reflect the current kernel level.
+  * ---> If there are SystemV init scripts for this runlevel, run them.
+    (rc.sysinit)
+  * ---> Run serial ports setup scripts. (rc.serial)
+  * ---> Carry an entropy pool between reboots to improve randomness.
+ * --> /etc/rc.d/rc.M
+  * ---> Screen blacks after 15ms idle time, and powers down in 1 hour if the
+    kernel supports APM or ACPI power management. (setterm)
+  * ---> Set the hostname.
+  * ---> Save the contents of 'dmesg'.
+  * ---> If we are returning from single-user mode we will need to restart
+    udevd on systems that use udev. (rc.udev)
+  * ---> Start the system logger. (rc.syslog)
+  * ---> Initialize PCMCIA devices. (rc.pcmcia)
+  * ---> Initialize the networking hardware. (rc.inet1)
+    * ----> Get the configuration information from /etc/rc.d/rc.inet1.conf.
+	* ----> Compose a list of interfaces from rc.inet1.conf.
+	* ----> Functions: {lo,if,gateway}_{up,down}(), start(), stop().
+  * ---> Initialize the hotplugging subsystem. (rc.hotplug)
+  * ---> Look for additional USB/SCSI/IEEE1294/etc devices on multiple LUNs.
+    (rc.scanluns)
+  * ---> Start networking daemons. (rc.inet2)
+    * ----> Mount remote (NFS) filesystems. (rc.portmap)
+	* ----> Mount remove (SMB) filesystems.
+	* ----> Start the system logger if it is not already running (maybe
+	  bacause /usr is on a network partition). (rc.syslog)
+	* ----> If there is a firewall script, run it before enabling packet
+	  forwarding. (rc.firewall)
+	* ----> Turn on IPv4 packet forwarding support. (rc.ip_forward)
+	* ----> Start the inetd server. (rc.inetd)
+	* ----> Start the OpenSSH SSH daemon. (rc.sshd)
+	* ----> Start the BIND name server daemon. (rc.bind)
+	* ----> Start NIS. (rc.yp)
+	* ----> Start the NFS server. (rc.nfsd)
+	* ----> Start the network routing daemon. (rc.routed)
+	* ----> Start the system status server. (rwhod)
+	* ----> Fire up the PC-NFS daemon(s). (rc.pcnfsd)
+  * ---> Remove stale locks and junk files.
+  * ---> Remove stale hunt sockets so the game can start.
+  * ---> Ensure basic filesystem permissions sanity.
+  * ---> Update all the shared library links. (ldconfig)
+  * ---> Update the X font indexes. (fc-cache)
+  * ---> Start dnsmasq, a simple DHCP/DNS server. (rc.dnsmasq)
+  * ---> Start the print spooling system. (rc.cups, rc.hplip, rc.lprng)
+  * ---> Start netatalk. (rc.atalk)
+  * ---> Start smartd. (rc.smartd)
+  * ---> If we're using udev, make /dev/cdrom and any other optical drive
+    symlinks if some udev rule hasn't made them already.
+  * ---> Monitor the UPS with genpowerd.
+  * ---> Turn on process accounting. (pacct)
+  * ---> Start crond (Dillon's crond). 
+  * ---> Start atd (manages jobs scheduled with 'at').
+  * ---> Check quotas and then turn quota system on.
+  * ---> Start the SASL authentication server. (rc.saslauthd)
+  * ---> Start the sendmail daemon. (rc.sendmail)
+  * ---> Start APM or ACPI daemon. (apmd, rc.acpid)
+  * ---> Load ALSA (sound) defaults. (rc.alsa)
+  * ---> Load a custom screen font. (rc.font)
+  * ---> Load a custom keymap. (rc.keymap)
+  * ---> Start the MySQL database. (rc.mysqld)
+  * ---> Start Apache web server. (rc.httpd)
+  * ---> Start OpenLDAP. (rc.openldap)
+  * ---> Start Samba. (rc.samba)
+  * ---> Start the GPM mouse server. (rc.gpm)
+  * ---> If there are SystemV init scripts fro this runlevel, run them.
+    (rc.sysvinit)
+  * ---> Start the local setup procedure. (rc.local)
+
+= misc =
+ * xwmconfig - switch window manager
+ * reliable > speed
+ * xdpyinfo - display info utility for X
+
+# vim:ft=text:
