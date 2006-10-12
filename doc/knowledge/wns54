@@ -1,0 +1,162 @@
+##
+# wns54 - 
+# $Header$
+
+= Document =
+ * flash
+ * redboot
+ * rootfs
+
+= Basic Description =
+ * Model Name - WNS54
+
+= Hardware =
+ * Power Adapter - 12V DC/5A
+ * CPU - Intel IXP425
+ * Working Frequency - 266MHz
+ * Memory - 32MB SDRAM
+ * Flash - 8MB ROM
+ * LAN - 10/100 Base-T
+ * Wireless - Atheos 5110
+ * USB - USB 2.0 x2
+
+= Firmware =
+ * OS - Snapgear Embedded Linux 3.1
+
+= Bootloader (redboot) =
+Version:
+	RedBoot(tm) bootstrap and debug environment [ROMRAM]
+	Red Hat certified release, version 1.92 - built 15:16:07, Feb  3 2004
+
+To load ramdisk and kernel:
+    ip_address -h 172.21.4.60 -l 172.21.4.253
+    load -r -v -b 0x01000000 WNS54.ram
+    load -r -v -b 0x01d00000 zImage
+    go 0x01d00000
+
+= WNS54 NG(Flash: 8M->16M; RAM: 32M->64M) =
+  * kernel/.config: CONFIG_CMDLINE
+    * (8M) "console=ttyS0,115200 root=/dev/ram0 initrd=0x01000000,14M mem=32M@0x00000000"
+    *(16M) "console=ttyS0,115200 root=/dev/mtdblock3 mem=64M@0x000000"
+  * kernel/drivers/net/ixp425_eth.c: DEFAULT_MAC_ADDRESS(0x3FFB0->0x5FFA0)
+  		     ./net_init.c: NPE_IXP0_MAC_OFFSET(0x3FFB0->0x5FFA0)
+  		 ./mtd/maps/ixp425.c: struct ixp425_partitions[]
+  * packages/redboot/current/include/sercomm_flash.h: heavily
+  	   ./hal/arm/xscale/ixdp425/current/include/ixdp425.h: {IXDP_FLASH,SDRAM}_SIZE
+  * images/image.par: adjust.
+  * user/library/rw_flash/flash.c: mtd_partion
+  			./flash.h: {BOOT,CONFIG,KERNEL,SYSTEM}_SIZE, NODE_ADDRESS
+      ./sercomm_dl/download.c: 63->79(0x56-7)
+      ./cgi/upgrade/upgrade.c: 63->79
+
+= Flash maps (kernel/drivers/mtd/maps/ixp425.c: struct ixp425_partitions) =
+== 8MB ==
+	static struct mtd_partition ixp425_partitions[] = { 
+		{   
+			name:   "RedBoot ",
+			offset: 0x00000000,
+			size:   0x00040000,	// 256K
+		},  
+		{   
+			name:   "System Configuration",
+			offset: 0x00040000,
+			size:   0x00020000,	// 128K
+		},  
+		{   
+			name:   "Kernel",
+			offset: 0x00060000,
+			size:   0x00100000,	// 1M
+		},  
+		{   
+			name:   "Ramdisk",
+			offset: 0x00160000,
+			size:   0x006a0000,	// 6784K=6.6M
+		}   
+	};
+== 16MB ==
+static struct mtd_partition ixp425_partitions[] = {
+        {
+                name:   "RedBoot ",
+                offset: 0x00000000,
+                size:   0x00060000,	// 384K
+        },
+        {
+                name:   "System Configuration",
+                offset: 0x00060000,
+                size:   0x00020000,	// 128K
+        },
+        {
+                name:   "Kernel",
+                offset: 0x00080000,
+                size:   0x00200000,	// 2M
+        },
+        {
+                name:   "Ramdisk",
+                offset: 0x00280000,
+                size:   0x00D80000,	// 13824K=13.5M
+        }
+	};
+
+= Boot process =
+ * redboot
+ * -> kernel
+ * -> /sbin/init
+ * ...
+ * -> /etc/rc
+   * --> Set_Led
+   * --> Mount proc fs.
+   * --> Remount / r/w.
+   * --> ifconfig lo 127.0.0.1
+   * --> insmod ixp400
+   * --> insmod ixp425
+   * --> insmod ath_pci
+   * --> ifconfig ixp0 up
+   * --> rc.sysinit
+     * ---> /etc/rc.d/rc.functions
+	   * ----> check_status();
+	 * ---> /etc/sysconfig/network
+	 * ---> Creating ramfs for /var/lock/samba
+	 * ---> Limit the space of /var/log
+	 * ---> Starting hostname.
+	 * ---> /etc/rc.d/rc.modules
+	 * ---> /etc/rc.d/rc.bridge
+	 * ---> /etc/rc.d/rc.parport
+	 * ---> /etc/rc.d/rc.1
+	   * ----> Set CGI_ds.conf (rc.bootbin, source/utility/bootbin/)
+	     * -----> Set_Led dskrf.
+		 * -----> Check Conf at MTD.
+		 * -----> ST_SetConfigure(): Set CGI_ds.conf according MTD Conf Sec.
+		 * -----> Set hostname for /etc/sysconfig/network according
+		   disk_server_name of CGI_ds.conf.
+		 * -----> ResetHTTP() according CGI_ds.conf.
+		 * -----> StoreATHMAC();
+		 * -----> switch_lan(); // ResetTCPIP();
+		 * -----> Install HD. ST_HD();
+		 * -----> Reset guest account. ResetGuest();
+		 * -----> Start samba. SetSMB();
+		 * -----> Start FTP service. ResetFTP();
+		 * -----> Reset Telnet service. ResetTelnet();
+		 * -----> ResetHttps()
+		 * -----> Initialize printer setup. ResetIPP();
+		 * -----> Deal with fstab and mtab file. ST_fstab();
+		 * -----> ResetUPnP();
+		 * -----> ST_email_sub();
+	   * ----> Set HDD parameters (HDD_init)
+	     * -----> HD Detect.
+		 * -----> hdparm
+	   * ----> Restore time and timezone. (rc.rstimezone)
+	   * ----> Restore usrgrpstore. (rc.reset_usrgrpstore)
+	   * ----> Generating telnet password. (TelnetPassword)
+	   * ----> Start web server. (rc.thtttpd)
+	   * ----> Start CUPS. (rc.lpd)
+	   * ----> Start download. (download)
+	   * ----> Creating ramfs for /tmp.
+	   * ----> Start crond. (rc.crond)
+	   * ----> Start samba. (rc.samba)
+	   * ----> Start rest task. (rc.local)
+	   * ----> Start Quickset Daemon. (rc.quickset)
+	   * ----> Sed_Led {ready,beep1}
+	   * ----> Check disk status. (CheckDiskFull)
+	   * ----> Remove modules. (rm -rf /lib/modules)
+
+# vim:ft=text:

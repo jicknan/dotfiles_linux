@@ -1,0 +1,132 @@
+##
+# acronym
+# $Header: /opt/cvsroot/doc/tech/acronym,v 1.15 2006/08/10 17:07:26 jick Exp $
+
+-_-	: angry
+:(	: sad
+:)	: smile
+:*)	: clowning
+:-(	: frown
+:-)	: classic smiley
+:-D	: wide grin, happy smile
+:-O	: Surpise, shock
+:-<	: very sad
+:->	: smile of happiness or sarcasm
+:-/	: wry face
+:-|	: indifferent, bored or disgusted
+:=(	: crying
+;)	: wink
+;(	: crying
+;-(	: angry, or get a black eye
+;-)	: winkey
+^_^	: giggles
+
+ACPI	: Advanced Configuration & Power Interface
+AES	: Advanced Encryption Standard
+AFK	: Away From Keyboard
+AGP	: 
+AJAX	: Asynchronous Javascript and XML
+ALU	: Arithmetic Logic Unit
+AP	: Access Point
+API	: Application Programming Interface
+ARM	: Advanced RISC Machine
+ARP	: Address Resolution Protocol
+ALSA	:
+BIOS	:
+BLOB	: Binary Large OBject
+BSP	: Board-Support Package
+CCD	:
+CEO	: Chief Executive Officer
+CIFS	: Common Internet File System
+CISC	:
+CLI	: Command Line Interface
+CRC	: Cyclic Redundancy Check
+DES	: Data Encryption Standard
+DMA	: Direct Memory Access
+DNS	: Distributed Name Server
+DRM	: Digital Restrictions Management
+	: Digital Rights Mismanagement(RMS)
+DSP	:
+EEPROM	:
+ELF	: Executable and Linkable Format
+EPS	: Earning Pre Share
+etc	: et cetera
+	: everything that configures
+FAQ	: Frequently Asked Question
+FHS	: Filesystem Hierarchy Standard
+FOSS	: Free and Open Source Software
+FTP	:
+FSF	: Free Software Foundation
+FWIW	: For What It's Worth
+GFW	: Great Fire Ware
+GNU	: GNU's Not Unix
+GPL	: General Public License
+HAL	: Hardware Abstraction Layer
+HTH	: Hope Thats Helps
+HTTP	:
+I2C	: Inter-Integrated Circuit
+IDE	: Intergrated Disk Electronic
+IEEE	:
+IMHO	: In My Humble/Honest Opinion
+IP	: Intellectual Property
+	: Internet Protocol
+IPC	: Inter-Process Communication
+IPO	: Initial Public Offering
+ISA	: Industry Standard Architecture
+ISR	: Interrupt Service Routine
+ISV	: Independence SOftware Vendor
+IV	: Initlization Vector
+LCD	:
+LDAP	:
+LED	: Light-Emitting Diode
+LOL	: Laugh Out Loud
+	: Lots Of Laughter
+LUKS	: Linux Unified Key Setup
+MAC	: Machine Access Control
+MBR	: Master Boot Record
+MD5	: Message-Digest algorithm 5
+MMU	: Memory Management Unit
+MTBF	: Mean Time Between Failure
+NAS	: Network-Attached Storage 
+NIC	: Network Interface Card
+NTP	: Network Time Protocol
+ODF	: Open Document Format
+ODM	: Original Design Manufacturers
+OEM	: Original Equipment Manufacturers
+PA	: Production Assistant
+PAM	: Pluggable Authentication Modules
+PCB	: Program Control Block
+PCBA	: Printed Circuit Board Assemblies
+PCI	: Peripheral Component Interconnect
+PCMCIA	: Personal Computer Memory Card International Association
+POSIX	: Portable Operating System Interface Standard
+PSP	: Play Station Portable
+RAM	:
+RAID	: Redundant Array of Independent Disks
+RF	: Radio Frequency
+RISC	: Reduced Instruction Set Computer
+RMS	: Richard M. Stallman
+ROM	:
+RTC	: Real Time Clock
+SAN	: Storage Area Network
+SCM	: Software Configuration Management
+SCSI	: Smail Computer System Interface
+SIP	: Suzhou Industrial Park
+SMB	: Small- and Medium-sized Business
+   	: Symmetric Multi-Processing
+SoC	: System-on-Chip
+SSH	: The Secure Shell
+TCP	:
+UAM	: Universal Access Method
+UART	: Universal Asynchronous Reciever-Transmitter
+UNIX	:
+USB	: Universal Serial Bus
+VFS	: Virtual File System
+VPN	: Virtual Private Network
+WAPI	: Wired Authentication and Privacy Infrastructure
+WEP	: Wired Equivalent Privacy
+WiFi	: Wireless Fidelity
+WPA	: WiFi Protected Access
+XIP	: 
+
+# vim:ft=text:ts=8
