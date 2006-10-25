@@ -146,6 +146,7 @@ static struct mtd_partition ixp425_partitions[] = {
 		 * -----> hdparm
 	   * ----> Restore time and timezone. (rc.rstimezone)
 	   * ----> Restore usrgrpstore. (rc.reset_usrgrpstore)
+	     * ----> /usr/sbin/reset_ugs
 	   * ----> Generating telnet password. (TelnetPassword)
 	   * ----> Start web server. (rc.thtttpd)
 	   * ----> Start CUPS. (rc.lpd)
