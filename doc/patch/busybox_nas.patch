@@ -1,0 +1,466 @@
+diff -r busybox-1.00-rc2/Makefile busybox-1.00-rc2_smb/Makefile
+28c28,31
+< 
+---
+> CROSS = arm-linux-gnueabi-
+> CC = $(CROSS)gcc
+> AR = $(CROSS)ar
+> STRIP = $(CROSS)strip
+33d35
+< 
+38c40
+< 
+---
+> CFLAGS +=-D_FILE_OFFSET_BITS=64
+44c46
+< all: busybox busybox.links doc
+---
+> all: busybox busybox.links 
+54c56,57
+< 
+---
+> romfs:
+> 	cp busybox ../romfs/bin -f
+58,59c61,63
+< install: applets/install.sh busybox busybox.links
+< 	$(SHELL) $< $(PREFIX)
+---
+> install: #applets/install.sh busybox busybox.links
+> 	#$(SHELL) $< $(PREFIX)
+> 	cp -f busybox ../../ramdisk/bin -f
+137d140
+< 
+194d196
+< 
+diff -r busybox-1.00-rc2/Rules.mak busybox-1.00-rc2_smb/Rules.mak
+37c37
+< CROSS           =$(subst ",, $(strip $(CROSS_COMPILER_PREFIX)))
+---
+> CROSS           =arm-linux-gnueabi-
+diff -r busybox-1.00-rc2/applets/Makefile busybox-1.00-rc2_smb/applets/Makefile
+23c23
+< include $(TOPDIR)Rules.mak
+---
+> #include $(TOPDIR)Rules.mak
+26c26
+< -include $(TOPDIR).depend
+---
+> #-include $(TOPDIR).depend
+diff -r busybox-1.00-rc2/init/halt.c busybox-1.00-rc2_smb/init/halt.c
+35c35,38
+< 
+---
+> 	if(!access("/tmp/umount_hdd", F_OK)){
+> 		reboot(0xCDEF0123);
+> 		exit(0);
+> 	}
+40,47c43,67
+< #ifndef CONFIG_INIT
+< #ifndef RB_HALT_SYSTEM
+< #define RB_HALT_SYSTEM		0xcdef0123
+< #endif
+< 	return(bb_shutdown_system(RB_HALT_SYSTEM));
+< #else
+< 	return kill_init(SIGUSR1);
+< #endif
+---
+> 	/* Don't kill ourself */
+> 	signal(SIGTERM,SIG_IGN);
+> 	signal(SIGHUP,SIG_IGN);
+> 	setpgrp();
+> 
+> 	/* Allow Ctrl-Alt-Del to reboot system. */
+> 	reboot(RB_ENABLE_CAD);
+> 
+> 	printf("\n\rThe system is going down NOW !!\n");
+> 	sync();
+> 
+> 	/* Send signals to every process _except_ pid 1 */
+> //	printf("\rSending SIGTERM to all processes.\n");
+> //	kill(-1, SIGTERM);
+> 	sleep(1);
+> 	sync();
+> 
+> //	printf("\rSending SIGKILL to all processes.\n");
+> //	kill(-1, SIGKILL);
+> 	sleep(1);
+> 
+> 	sync();
+> 
+> 	reboot(0xCDEF0123);
+> 	exit(0); /* Shrug */
+48a69,76
+> 
+> /*
+> Local Variables:
+> c-file-style: "linux"
+> c-basic-offset: 4
+> tab-width: 4
+> End:
+> */
+diff -r busybox-1.00-rc2/init/init_shared.c busybox-1.00-rc2_smb/init/init_shared.c
+64c64
+< 	reboot(RB_ENABLE_CAD);
+---
+> 	//reboot(RB_ENABLE_CAD);
+90a91,94
+> 	if(magic==B_HALT_SYSTEM){
+> 		system("Set_Led power_off");
+> 		sleep(2);
+> 	}
+diff -r busybox-1.00-rc2/init/reboot.c busybox-1.00-rc2_smb/init/reboot.c
+35a36,40
+> 	if(!access("/tmp/umount_hdd", F_OK)){
+> 		reboot(RB_AUTOBOOT);
+> 		reboot(0x76543210);
+> 		exit(0);
+> 	}
+40,47c45,72
+< #ifndef CONFIG_INIT
+< #ifndef RB_AUTOBOOT
+< #define RB_AUTOBOOT		0x01234567
+< #endif
+< 	return(bb_shutdown_system(RB_AUTOBOOT));
+< #else
+< 	return kill_init(SIGTERM);
+< #endif
+---
+> 	/* Don't kill ourself */
+> 	signal(SIGTERM,SIG_IGN);
+> 	signal(SIGHUP,SIG_IGN);
+> 	setpgrp();
+> 
+> 	/* Allow Ctrl-Alt-Del to reboot system. */
+> 	reboot(RB_ENABLE_CAD);
+> 
+> 	printf("\n\rThe system is going down NOW !!\n");
+> 	sync();
+> 
+> 	/* Send signals to every process _except_ pid 1 */
+> //	printf("\rSending SIGTERM to all processes.\n");
+> //	kill(-1, SIGTERM);
+> 	sleep(1);
+> 	sync();
+> 
+> //	printf("\rSending SIGKILL to all processes.\n");
+> //	kill(-1, SIGKILL);
+> 	sleep(1);
+> 	sync();
+> 
+> 	reboot(RB_AUTOBOOT);
+> 	sleep(3);
+> 	system("killall -SIGINT detect_hdd 2>/dev/null");
+> 	sleep(3);
+> 	reboot(0x76543210);
+> 	exit(0); /* Shrug */
+diff -r busybox-1.00-rc2/libbb/copy_file.c busybox-1.00-rc2_smb/libbb/copy_file.c
+156c156
+< 			dst_fd = open(dest, O_WRONLY|O_TRUNC);
+---
+> 			dst_fd = open(dest, O_WRONLY|O_TRUNC|O_SYNC);
+175c175
+< 			dst_fd = open(dest, O_WRONLY|O_CREAT, source_stat.st_mode);
+---
+> 			dst_fd = open(dest, O_WRONLY|O_CREAT|O_SYNC, source_stat.st_mode);
+diff -r busybox-1.00-rc2/networking/udhcp/dhcpc.h busybox-1.00-rc2_smb/networking/udhcp/dhcpc.h
+5c5
+< #define DEFAULT_SCRIPT  "/usr/share/udhcpc/default.script"
+---
+> #define DEFAULT_SCRIPT  "/etc/udhcpc.script"
+diff -r busybox-1.00-rc2/shell/ash.c busybox-1.00-rc2_smb/shell/ash.c
+11060a11061,11062
+> 	if(strcmp(fname,"/dev/null")==0)
+> 		return 1;
+diff -r busybox-1.00-rc2/sysklogd/syslogd.c busybox-1.00-rc2_smb/sysklogd/syslogd.c
+46a47,49
+> #include <linux/autoconf.h>
+> #include <netinet/in.h>
+> #include <arpa/inet.h>
+48a52,54
+> #ifndef BB_FEATURE_REMOTE_LOG
+> #define	BB_FEATURE_REMOTE_LOG
+> #endif
+56a63
+> #define	SYSLOG_CONF	"/etc/syslog.conf"
+63d69
+< #ifdef CONFIG_FEATURE_ROTATE_LOGFILE
+65,69c71
+< static int logFileSize = 200 * 1024;
+< 
+< /* number of rotated message files */
+< static int logFileRotate = 1;
+< #endif
+---
+> static int logFileMaxSize = 50*1024*1024;
+83a86
+> static int recv_remote = FALSE;
+91a95
+> struct sockaddr_in remoteaddr;
+326,339c330,346
+< 		fcntl(fd, F_SETLKW, &fl);
+< #ifdef CONFIG_FEATURE_ROTATE_LOGFILE
+< 		if ( logFileSize > 0 ) {
+< 			struct stat statf;
+< 			int r = fstat(fd, &statf);
+< 			if( !r && (statf.st_mode & S_IFREG)
+< 				&& (lseek(fd,0,SEEK_END) > logFileSize) ) {
+< 				if(logFileRotate > 0) {
+< 					int i;
+< 					char oldFile[(strlen(logFilePath)+3)], newFile[(strlen(logFilePath)+3)];
+< 					for(i=logFileRotate-1;i>0;i--) {
+< 						sprintf(oldFile, "%s.%d", logFilePath, i-1);
+< 						sprintf(newFile, "%s.%d", logFilePath, i);
+< 						rename(oldFile, newFile);
+---
+> 		fcntl (fd, F_SETLKW, &fl);
+> 		va_start (arguments, fmt);
+> 		vdprintf (fd, fmt, arguments);
+> 		va_end (arguments);
+> 		fl.l_type = F_UNLCK;
+> 		fcntl (fd, F_SETLKW, &fl);
+> 
+> #if 1
+> 		{
+> 			struct stat st;
+> 			char tmp_str[128];
+> 
+> 			if (fstat(fd, &st) != -1){
+> 				if(!strcmp(logFilePath,__LOG_FILE)){
+> 					if(st.st_size >= 16384){
+> 						snprintf(tmp_str, sizeof(tmp_str), "%s.old", logFilePath);
+> 						rename(logFilePath, tmp_str);
+341,352c348,351
+< 					sprintf(newFile, "%s.%d", logFilePath, 0);
+< 					fl.l_type = F_UNLCK;
+< 					fcntl (fd, F_SETLKW, &fl);
+< 					close(fd);
+< 					rename(logFilePath, newFile);
+< 					fd = device_open (logFilePath,
+< 						   O_WRONLY | O_CREAT | O_NOCTTY | O_APPEND |
+< 						   O_NONBLOCK);
+< 					fl.l_type = F_WRLCK;
+< 					fcntl (fd, F_SETLKW, &fl);
+< 				} else {
+< 					ftruncate( fd, 0 );
+---
+> 				}
+> 				else if(st.st_size >= logFileMaxSize){
+> 					snprintf(tmp_str, sizeof(tmp_str), "%s.old", logFilePath);
+> 					rename(logFilePath, tmp_str);					
+357,361d355
+< 		va_start(arguments, fmt);
+< 		vdprintf(fd, fmt, arguments);
+< 		va_end(arguments);
+< 		fl.l_type = F_UNLCK;
+< 		fcntl(fd, F_SETLKW, &fl);
+382c376
+< static void logMessage(int pri, char *msg)
+---
+> static void logMessage (int pri, char *msg, char *hostname)
+417,432c411,420
+< 		static const int IOV_COUNT = 2;
+< 		struct iovec iov[IOV_COUNT];
+< 		struct iovec *v = iov;
+< 
+< 		memset(&res, 0, sizeof(res));
+< 		snprintf(res, sizeof(res), "<%d>", pri);
+< 		v->iov_base = res;
+< 		v->iov_len = strlen(res);
+< 		v++;
+< 
+< 		v->iov_base = msg;
+< 		v->iov_len = strlen(msg);
+< 	  writev_retry:
+< 		if ((-1 == writev(remotefd, iov, IOV_COUNT)) && (errno == EINTR)) {
+< 			goto writev_retry;
+< 		}
+---
+> 		char buffer[1024];
+> 
+> writev_retry:
+> 			snprintf(buffer, 1024, "<%d>%s [%s] %s %s%s", pri, timestamp, LocalHostName, msg, "", "");
+> 	  
+> 			if ( -1 == sendto(remotefd, buffer, strlen(buffer), 0,
+> 				(struct sockaddr *)&remoteaddr, sizeof(remoteaddr))){
+> 					
+> 				if (errno == EINTR) goto writev_retry;
+> 			}
+433a422
+> 
+441c430
+< 			message("%s %s %s %s\n", timestamp, LocalHostName, res, msg);
+---
+> 			message("%s %s %s %s\n", timestamp, hostname, res, msg);
+447c436
+< 	logMessage(LOG_SYSLOG | LOG_INFO, "System log daemon exiting.");
+---
+> 	logMessage(LOG_SYSLOG | LOG_INFO, "System log daemon exiting.",LocalHostName);
+459c448
+< 		logMessage(LOG_SYSLOG | LOG_INFO, "-- MARK --");
+---
+> 		logMessage(LOG_SYSLOG | LOG_INFO, "-- MARK --", LocalHostName);
+466c455
+< static int serveConnection(char *tmpbuf, int n_read)
+---
+> static int serveConnection (char* tmpbuf, int n_read, char *hostname)
+502c491
+< 		logMessage(pri, line);
+---
+> 		logMessage (pri, line, hostname);
+512d500
+< 	struct sockaddr_in remoteaddr;
+537d524
+< 
+546,547c533,535
+< 
+< 	int sock_fd;
+---
+> 	
+> 	struct sockaddr_in local_sock,remote_sock;
+> 	int sock_fd,listen_fd=-1,max_fd=0;
+594,595c582,592
+< 
+< 	logMessage(LOG_SYSLOG | LOG_INFO, "syslogd started: " BB_BANNER);
+---
+> 	if(recv_remote==TRUE){
+> 		local_sock.sin_family = AF_INET;
+> 		local_sock.sin_addr.s_addr = htonl(INADDR_ANY);
+> 		local_sock.sin_port = htons(514); /** UDP port ***/
+> 		if((listen_fd=socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP))<0)
+> 			bb_perror_msg_and_die ("Couldn't get file descriptor for socket " _PATH_LOG);
+> 		
+> 		if(bind( listen_fd,(struct sockaddr *)&local_sock,sizeof(struct sockaddr))<0)
+> 			bb_perror_msg_and_die ("Could not connect to socket " _PATH_LOG);
+> 	}
+> 	logMessage(LOG_SYSLOG | LOG_INFO, "syslogd started: " BB_BANNER, LocalHostName);
+600a598,603
+> 		max_fd=sock_fd;
+> 		if(recv_remote==TRUE){
+> 			FD_SET (listen_fd, &fds);
+> 			if(listen_fd>sock_fd)
+> 				max_fd=listen_fd;
+> 		}
+602c605
+< 		if (select(sock_fd + 1, &fds, NULL, NULL, NULL) < 0) {
+---
+> 		if (select(max_fd + 1, &fds, NULL, NULL, NULL) < 0) {
+609d611
+< 
+617c619
+< 				serveConnection(tmpbuf, i);
+---
+> 				serveConnection(tmpbuf, i,LocalHostName);
+622a625,639
+> 		if (recv_remote==TRUE && FD_ISSET (listen_fd, &fds)) {
+> 		       int   i,out_len;
+> 		       RESERVE_CONFIG_BUFFER(tmpbuf, BUFSIZ + 1);
+> 
+> 				out_len = sizeof(struct sockaddr);
+> 				memset(tmpbuf, '\0', BUFSIZ+1);
+> 				if((i=recvfrom(listen_fd,tmpbuf,BUFSIZ,0,(struct sockaddr*)&remote_sock,&out_len ))){
+> 					serveConnection(tmpbuf, i,(char *) inet_ntoa(remote_sock.sin_addr));
+> 				}
+> 				else {
+> 					bb_perror_msg_and_die ("UNIX socket error");
+> 				}
+> 				RELEASE_CONFIG_BUFFER (tmpbuf);
+> 		}/* FD_ISSET() */		
+> 		
+629c646
+< 
+---
+> 	FILE *fp=NULL;
+635c652
+< 	while ((opt = getopt(argc, argv, "m:nO:s:Sb:R:LC::")) > 0) {
+---
+> 	while ((opt = getopt(argc, argv, "m:nrO:s:Sb:R:LC::")) > 0) {
+645a663,666
+> 		case 'r':
+> 			recv_remote = TRUE;
+> 			break;
+> 			
+648c669
+< 			logFileSize = atoi(optarg) * 1024;
+---
+> //			logFileSize = atoi(optarg) * 1024;
+651,652c672,673
+< 			logFileRotate = atoi(optarg);
+< 			if( logFileRotate > 99 ) logFileRotate = 99;
+---
+> //			logFileRotate = atoi(optarg);
+> //			if( logFileRotate > 99 ) logFileRotate = 99;
+692a714,744
+> 	fp=fopen(SYSLOG_CONF, "rt");
+> 	if(fp){
+> 		char buf1[64]={0},*p0=NULL,*p1=NULL;
+> 		
+> 		while(fgets(buf1, sizeof(buf1)-1, fp)){
+> 			if (strstr(buf1, "recv_remote")) {
+> 				p0 = strchr(buf1, ' ');
+> 				if(p0) {
+> 					recv_remote = atoi(p0+1);
+> 				}
+> 			}				
+> 			else if(strstr(buf1, "syslog")){
+> 				p0=strchr(buf1, ' ');
+> 				if(p0){
+> 					p1=strchr(p0+1, ' ');	
+> 					if(p1){
+> 						*p1=0;	
+> 						if(strlen(p0+1)){
+> 							RemoteHost=strdup(p0+1);
+> 							doRemoteLog = TRUE;	
+> 							RemotePort=514;
+> 						}
+> 					}
+> 				}
+> 			
+> 			}
+> 		}
+> 		fclose(fp);
+> 	}
+> 	if(doRemoteLog == TRUE)
+> 		local_logging = FALSE;
+diff -r busybox-1.00-rc2/util-linux/umount.c busybox-1.00-rc2_smb/util-linux/umount.c
+36c36
+< 
+---
+> #define CONFIG_FEATURE_MOUNT_FORCE
+57c57
+< 
+---
+> static int doLazy = FALSE;
+167a168
+> #define	MNT_DETACH	2
+183a185,190
+> 	if (status != 0 && doLazy == TRUE) {
+> 		status = umount2(blockDevice, MNT_DETACH);
+> 		if (status != 0) {
+> 			bb_error_msg_and_die("Lazy umount of %s failed!", blockDevice);
+> 		}
+> 	}
+261a269,271
+> 			case 'L':
+> 				doLazy = TRUE;
+> 				break;
+289,297c299,306
+< 
+< 	do {
+< 		if (realpath(*argv, path) != NULL)
+< 			if (do_umount(path))
+< 				continue;
+< 		bb_perror_msg("%s", path);
+< 		result++;
+< 	} while (--argc > 0 && ++argv);
+< 	return result;
+---
+> //	if (realpath(*argv, path) == NULL)
+> //	if(myrealpath(*argv, path, PATH_MAX) == NULL)
+> //		perror_msg_and_die("%s", path);
+> 	strcpy(path, *argv);
+> 	if (do_umount(path) == TRUE)
+> 		return EXIT_SUCCESS;
+> 	bb_perror_msg("%s", *argv);
+> 	exit(-1);
+298a308
+> 
