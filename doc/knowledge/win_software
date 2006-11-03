@@ -1,0 +1,33 @@
+##
+# win_softeware
+# $Header$
+##
+
+ * - ISO tools
+ * 7-zip - zip tool
+ * 360safe + Kaspersky
+ * Alumni - Chinaren Alumni Client
+ * Audacity - audio editor
+ * CPU-Z - gather info of h/w
+ * FileZilla - FTP Client/Server
+ * FinePrint - Printing tools
+ * Firefox - Web Browser
+ * Freemind - mindmap
+ * Foxit Reader - PDF reader
+ * Gaim - IM
+ * Google Desktop - Desktop Search
+ * Google Talk - IM
+ * Lotus Notes - Mail for work
+ * MemTest - Memory test
+ * mplayer - movie player
+ * OpenOffice
+ * Opera - Web Browser
+ * PPLive - web tv
+ * StarDict + gtk
+ * unispim5 - Chinese input method
+ * Vim - Text Editor
+ * WPS office - lite office
+ * wxMusik - multimedia player and library
+ * xenu
+
+# vim:ft=text:

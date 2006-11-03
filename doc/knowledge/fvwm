@@ -1,0 +1,42 @@
+##
+# fvwm - F? Virtual Window Manager for X11
+# $Header: /opt/cvsroot/doc/tech/fvwm,v 1.2 2006/08/10 17:09:22 jick Exp $
+
+= Document =
+ * http://dev.gentoo.org/~taviso/
+ * http://desintegr.free.fr/?page=linux/fvwm
+ * http://www.ikaro.dk/
+ * http://www.zensites.net/fvwm/guide/
+ * http://www.lynucs.org/
+ * http://learn.tsinghua.edu.cn:8080/2001315450/fvwm_frame.html
+
+= Features =
+ * the most configurable window manager
+ * simple
+ * ICCCM-compliant
+
+= Modules =
+ * FvwmEvent
+   * a module which allows listening for various events, and acting upon them
+     when they occur
+   * FvwmEvent: conditional window checking by example:
+     http://linuxgazette.net/127/adam1.html
+
+= Min Features =
+ * Auto-Hide Console
+ * System status using conky
+ * Min Menu System
+ * Min Key bindings
+ * Min Mouse bindings
+ * Thumbnail
+ * screensaver using autolock + xlockmore
+ * show message using tail + xosd
+
+= More Features =
+ * Mouse Gesture
+ * Desktop image
+ * icon set
+ * File manager using ROX-filer
+ * PackWrapperUp/Down/Left/Right
+
+# vim: ft=text:

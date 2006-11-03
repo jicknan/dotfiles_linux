@@ -1,0 +1,14 @@
+##
+# lin_software
+# $Header$
+##
+
+ * conky
+ * fvwm
+ * opera
+ * rdesktop
+ * rox-filer
+ * rxvt-unicode
+ * vim
+
+# vim:ft=text:

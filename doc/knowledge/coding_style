@@ -1,0 +1,53 @@
+== Coding Style ==
+  * http://lxr.linux.no/source/Documentation/CodingStyle
+  * Recommended C Style and Coding Standards:
+    http://www.chris-lott.org/resources/cstyle/indhill-cstyle.html
+  *
+
+=== Indentation ===
+  * 8-char indent
+  * If you need more than 3 levels of indentation, you're screwed anyway, and
+    should fix your program.
+  * Don't put multiple statements on a single line unless you have something
+    to hide.
+  * Get a decent editor, and don't leave whitespace at the end of lines.
+
+=== Breaking long lines and strings ===
+  * Coding style is all about readability and maintainabilty using commonly
+    avaible tools.
+  * The limit on the length of lines is 80 colums and this is a hard limit.
+
+=== Placing braces ===
+  * The preferred way, as shown to us by the prophets Kernighan and Ritchie,
+    is to put the opening brace last on the line, and put the closing brace
+    first.
+  * namely function have the opening brace at the begining of the next line.
+
+=== Naming ===
+  * C is a Spartan language, and so should your naming be.
+  * GLOBAL variables (to be used only if you _really_need them) need to have
+    descriptive name, as do global functions.
+  * LOCAL variable name should be short, and to the point.
+
+=== Fuctions ===
+  * Fuctions should be short and sweet, and do just one thind.
+  * Another measure of the functions is the number of local variables, They
+    shouldn't exceed 5-10, or you're doing something wrong.
+
+=== Commenting ===
+  * Comments are good, but there is also a demage of over-commenting.
+  * Generally, you want your comments to tell WHAT your code does, not HOW.
+
+=== Data structures ===
+  * Data structures that have visibility outside the single-threaded
+    environment they are created and destoryed in should always have reference
+    counts.
+  * Locking is _not_ a replacement for reference counting.
+  * If another thread can find your data structure, and you don't have a
+    reference count on it, you almost certainly have a bug.
+
+=== Macros, Enums, Inline functions and RTL ===
+  * Names of macros defining contants and labels in enums are capitalized.
+  * Enums are preferred when defining serval related constants.
+  * Generally, inline functions are preferable to macros resembling functions.
+  * Macros with multiple statements should be enclosed in a do-while block.

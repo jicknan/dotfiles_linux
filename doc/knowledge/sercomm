@@ -1,0 +1,87 @@
+##
+# sercomm - tech. used by sercomm.
+# $Header$
+
+= Content =
+ * mipsBind
+ * upgrade(redboot)
+ * sercomm_dl(source)
+ * download
+
+= mipsBind =
+ * par file, WNS54.par as example:
+	:redboot.bin                           &00000000
+	:zImage                                &00060000
+	:WNS54.ram                        &00160000
+	%WNS54.pid                        &0003FFFF &007FFFF0
+	$SIZE                                  &2000
+   * ':' for files to bind
+   * '%' for PID file, WNS54.pid as example:
+	000900000470319558100000002800000000000000000000000000000000000000000000000000020000000000000003000032060000004
+	* 1st is whole PID end address, 70bytes, with dinimiters("sErCoMm") at 2 end and 56 PID info.
+	* 2en is part PID
+	* struct of PID
+	  typedef struct S_PID {
+		  unsigned char pid_version[4];
+		  unsigned char download_control[4];
+		  unsigned char card_no[6];
+		  unsigned char card_reserve[4];
+		  unsigned char network_port;
+		  unsigned char serial_port;
+		  unsigned char parallel_port;
+		  unsigned char unknown[55];
+		  unsigned char product_id[4];
+		  unsigned char product_mask[4];
+		  unsigned char protocol_stack[4]; // only 2 bytes is ok.
+		  unsigned char protocol_mask[4];
+		  unsigned char function_id[4];
+		  unsigned char function_mask[4];
+		  unsigned char fw_version[4];
+		  unsigned char code_segment[4];
+		  unsigned char code_size[4]; // host format "value"
+	  } __attribute__((packed)) PID;
+   * '$' for out bin file size, unit: KB.
+ * Checksum
+   * Checksum algorithm:
+     ~sum + 1 + sum = 0;
+     note: sum is char type
+   * Checksum value(char, one byte) will be put at the address of 1 byte
+     before the 1st whole PID's start address.
+ * Flash map, WNS54.bin as example:
+
+	0x800000 +==========+
+			 | Part PID | - ProductID, ProtocolID, FWVersion,
+	   -0x10 +----------+ - magic number, Delimiter
+			 |          |
+			 |    R     |
+			 |    O     |
+			 |    M     |
+			 |    D     | (romdisk.sqaush)
+			 |    I     |
+			 |    S     |
+			 |    K     |
+			 |          |
+	   +0x10 +----------+
+			 |          | reserve 16 bytes for code size
+	0x160000 +==========+ (mtdblock3)
+			 |    K     |
+			 |    E     |
+			 |    R     |
+			 |    N     | (zImage)
+			 |    E     |
+			 |    L     |
+	   +0x10 +----------+
+			 |          | reserve 16 bytes for code size
+	0x060000 +==========+ (mtdblock2)
+			 |   CONF   | (NULL)
+			 |          |
+	0x040000 +==========+ (mtdblock1)
+			 | WholePID | (WNS54.pid)
+	   -0x46 +----------+
+	   -0x47 +----------+ checksum
+			 |          |
+			 | REDBOOT  | (redboot.bin)
+			 |          |
+	0x000000 +==========+ (mtdblock0)
+
+# vim:ft=text:
