@@ -1,0 +1,44 @@
+##
+# fonts - fonts for linux
+# $Header$
+##
+
+= Documents =
+ * /usr/X11R6/lib/X11/doc/README.fonts
+ * man fonts-conf
+
+= Two Font Systems =
+ * core x11 fonts system
+ * xft - configured and customized by fontconfig
+
+= Font backends load by Xserver (/etc/X11/xorg.config) =
+ * "bitmap": bitmap fonts (`*.bdf', `*.pcf' and `*.snf');
+ * "freetype": TrueType fonts (`*.ttf' and `*.ttc'), OpenType fonts 
+   (`*.otf' and `*.otc') and Type 1 fonts (`*.pfa' and `*.pfb');
+ * "type1": alternate Type 1 backend (`*.pfa' and `*.pfb') and CIDFont
+   backend;
+ * "xtt": alternate TrueType backend (`*.ttf' and `*.ttc').
+
+= Font Types =
+ * Serif
+ * Sans-Serif
+ * Bitstream Vera {Serif|Sans}
+ * WenQuanYi Bitmap Song
+ * MingLiu
+ * 
+ * Tahoma
+ * Simsun
+
+= Font Packages (Slackware) =
+ * l/freetype
+ * x/fontconfig
+   * fonts.conf
+   * fc-list ":lang=zh"
+ * x/x11-fonts-xxx
+ * x/dejavu-ttf
+
+= xft for apps =
+ * xterm -fa "Courier"
+ * XTerm*facename: Courier
+
+# vim:ft=text:

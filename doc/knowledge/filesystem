@@ -1,0 +1,77 @@
+##
+# filesystem - feactures of types of filesystem
+# $Header: /opt/cvsroot/doc/tech/filesystem,v 1.3 2006/06/28 10:53:33 jick Exp $
+
+= Document =
+ * Filesystems (ext3, reiser, xfs, jfs) comparison on Debian Etch:
+   http://www.debian-administration.org/articles/388
+
+= YAFFS =
+ * Yet Another Flash File System
+ * Documnets:
+   * Introducing YAFFS, the first NAND-specific flash file system:
+     http://linuxdevices.com/articles/AT9680239525.html
+
+= Cramfs =
+ * Compressed ROM filesystem
+ * http://en.wikipedia.org/wiki/Cramfs
+
+= Ext3 =
+ * 稳定，中庸
+
+= JFFS2 =
+ * Journaling Flash File System 2
+ * Provides a fs directly on Flash, instead of emulating a block device
+ * Resides on NOR and NAND Flash ROM chips
+ * Performs wear-leveling to extend Flash file by ensuring equal write
+   commands across the Flash bocks
+ * Stores the Flash directory structure in RAM at all times
+ * Implements a log-structured filesystem
+
+= JFS =
+ * JFS is the lowest CPU-usage FS
+
+= ReiserFS =
+ * It's the only filesystem that supports shrinking a filesystem now.
+ * Nothing here will shake my own choice of ReiserFS for most general purpose
+   filesystems, it has a good performance on real world benchmarks, and is the
+   most mature of the journalling file systems presented.(simonw)
+
+= XFS =
+ * Sillion Graphic Inc.
+ * Technical Specifications:
+   * Journaled 64-bit filesystem with guaranteed filesystem consistency.
+   * Online Administration: XFS supports filesystem growth for mounted
+     volumes, allows filesystem "freeze" and "thaw" operations to support
+     volume level snapshots, and provides an online file defragmentation
+     utility.
+   * Quotas: XFS supports user and group quotas. XFS considers quota
+     information as filesystem metadata and uses journaling to avoid the need
+     for lengthy quota consistency checks after a crash. 
+   * XFS supports the ACL semantics and interfaces described in the draft
+     POSIX 1003.1e standard.
+ * XFS appears to be the most appropriate filesystem to install on a file
+   server for home or small-business needs :
+    * It uses the maximum capacity of your server hard disk(s)
+    * It's the quickest FS to create, mount and unmount
+    * It's the quickest FS for operations on large files (>500MB)
+    * This FS gets a good place for operations on a large number of small to
+      moderate-size files and directories
+    * It constitutes a good CPU vs time compromise for large directory listing
+      or file search
+ * Documents:
+   * http://en.wikipedia.org/wiki/XFS
+   * File System Design part 1: XFS:
+     http://www.madpenguin.org/cms/html/67/6045.html
+   * IRIX® Admin: Disks and Filesystems:
+     http://www.cepba.upc.es/docs/sgi_doc/SGI_Admin/books/IA_DiskFiles/sgi_html/index.html
+
+= YAFFS =
+ * Yet Another Flash File System
+ * designed and optimized for NAND Flash chips
+ * larger Flash size and faster erase and write processes
+ * journaling support that autonotically provides automatic wear-leveling and
+   power-failure recovery
+ * scalability that reduces RAM usages and provides faster boot times
+
+# vim: ft=text:

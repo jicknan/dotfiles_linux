@@ -1,0 +1,105 @@
+##
+# roofs  - ramdisk, initrd, cramfs, squashfs, etc.
+#	 - Reduction of RAM consumption
+# $Header: /opt/cvsroot/doc/tech/rootfs,v 1.10 2006/07/05 06:55:14 jick Exp $
+
+= Table =
+FS		Writable?	永久性？	断电可靠性？	Compressed?	存在于 RAM ?
+CRAMFS		No		-		-		Yes		No
+SquashFS	No		-		-		Yes		Yes/No
+JFF2		Yes		Yes		Yes		Yes		No
+RAMDISK(ext2)	Yes		No		No		No		Yes
+
+= Document =
+ * Documentation/filesystems/ramfs-rootfs-initramfs.txt
+
+= initrd = 
+ * bootloader initialized RAM Disk
+ * init/mian.c: start_kernel()
+ * Make image-initrd:
+      dd if=/dev/zero of=./tmp/ramroofs bs=1k count=13312
+      mkfs.ext2 -F -m 0 -i 2000 ./tmp/ramroofs
+      mount -o loop -t ext2 ./tmp/ramroofs ./tmp/mnt
+      cp -a ramdisk/* ./tmp/mnt
+      umount ./tmp/mnt
+      cat ./tmp/ramrootfs | gzip -9 > ./rootfs.ram
+ * Make cpio-initrd:
+      (cd ramdisk; find . | cpio -c -o > ../ramrootfs)
+      cat ./ramrootf | gzip -9 > ./rootfs.ram
+
+= Cramfs =
+ * Compressed ROM Filesystem
+ * File sizes are limited to less than 16MB.
+ * Maximum filesystem size is a little over 256MB; the last file on the
+   filesystem is allowed to extend past 256MB.
+ * Only the low 8 bits of gid are stored.
+ * Hard links are supported, but hard linked files will still have a link
+   count of 1 in the cramfs image.
+ * Cramfs directories have no '.' or '..' entries.
+ * No timestamps are stored in a cramfs, so these default to the epoch (1970
+   GMT).
+Endianness:
+ * cramfs userspaces tool - mkcramfs: little-endian, and have a big-endian
+   patch.
+ * fs/cramfs/: middle-endian, default: little-endian. 
+   cramfs 的 kernel 模块具有自己调整的能力，可以同时适用两种 endian.
+Write to Flash:
+ * mipsBind 写了 0x10 byte 的头，致使 cramfs 从 0x00160010 开始，需要调整。
+Misc:
+ * tmpfs for /tmp
+ * ramfs for /etc, /var
+ * mount -o loop -t cramfs /usr.img /usr
+
+= SquashFS =
+ * http://squashfs.sourceforge.net/
+ * use zlib compression to compress both files, inodes and directories.
+ * both big endian and little endian. (-le, -be)
+ * File duplicates are detected and removed.
+ * using: mount -t squashfs image /mnt -o loop
+
+= RAMdisk vs. Cramfs vs. SquashFS =
+RAMdisk:
+ * gzip -9 压缩比例，占用 Flash 少
+ * RAM 中 FS 未压缩，占用大量 RAM
+ * RAM 比 Flash 耗电
+Cramfs:
+ * Compressed block: 4KB Fixed
+SquashFS:
+ * Compressed block: 0.5 ~ 64 KB
+ * Metadata Compression
+ * Fragment block compression
+ * Reducing RAM consumption by using Demand Paging for the text data of the
+   application, but the preformace of the application, especially boot time,
+   get slow...(can avoid with enhancement of SquashFS)
+ * Reduce the size of the binary image on NAND Flash.
+ * Reduce the usage of RAM.
+
+= Execute-in-place (XIP) =
+ * https://lwn.net/Articles/135472/
+
+= 补充说明 =
+ * 嵌入式系统中主要的存储介质 Flash 是稀有资源，为数不多的 RAM 也是。在嵌入式
+   系统开发中，开发人员十分珍惜这两种资源，也想出了许多办法解决资源短缺的问题。
+ * Linux 中，rootfs 是必不可少的。PC 上主要实现有 ramdisk 和直接挂载 HD（
+   Harddisk，硬盘） 上的根文件系统；嵌入式中一般不从 HD 启动，而是从 Flash 启
+   动，最简单的方法是将 rootfs load 到 RAM 的 RAMDisk，稍复杂的就是 直接从
+   Flash 读取的 Cramfs，更复杂的是在 Flash 上分区，并构建 JFFS2 等文件系统。
+ * RAMDisk 将制作好的 rootfs 压缩后写入 Flash，启动的时候由 Bootloader load 到
+   RAM，解压缩，然后挂载到 /。这种方法操作简单，但是在 RAM 中的文件系统不是压
+   缩的，因此需要占用许多嵌入式系统中稀有资源 RAM。
+ * initrd 是 RAMDisk 的格式，kernel 2.4 之前都是 image-initrd，Kernel 2.5 引入
+   了 cpio-initrd，大大简化了 Linux 的启动过程，附合 Linux 的基本哲学：Keep it
+   simple, stupid(KISS). 不过，cpio-initrd 作为新的格式，还没有经过广泛测试，
+   嵌入式 Linux 中主要采用的还是 image-initrd。
+ * Cramfs 是 Linus 写的很简单的文件系统，有很好的压缩率，也可以直接从 Flash 上
+   运行，不须 load 到 RAM 中，因此节约了 RAM。但是 Cramfs 是只读的，对于需要运
+   行时修改的目录（如： /etc, /var, /tmp）多有不便，因此，一般将这些目录做成
+   ramfs 等可写的 fs。
+ * SquashFS 是对 Cramfs 的增强。突破了 Cramfs 的一些限制，在 Flash 和 RAM 的使
+   用量方面也具有优势。不过，据开发者介绍，在性能上可能不如 Cramfs。这也是一种
+   新方法，在嵌入式系统采用之前，需要经过更多的测试。
+ * XIP（exece-in-place，就地运行) 是一种不须将应用程序 load 到 RAM 就可以运行
+   的技术，无疑可以减少 RAM 的使用。不过在嵌入式系统我还没有遇到这种技术的使用
+   。
+
+# vim: ft=text:

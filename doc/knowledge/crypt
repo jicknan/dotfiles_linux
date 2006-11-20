@@ -1,0 +1,28 @@
+##
+# crypt -
+# $Header$
+
+= algorithm =
+ * Digest/Hash: CRC, MD5(1991), SHA1
+ * systemic: RC4, RC5, DES(1970s), AES(2001-11), BLOWFISH
+ * non-systemic: RSA, DSA
+
+= Terms =
+ * cipher
+ * code
+ * plaintext
+ * ciphertext
+ * key
+ * cryptology
+ * substitution cipher
+ * transposition cipher
+ * one-time pad
+ * symmetric-key algorithm
+ * round
+ *
+
+= 两个密码学基本原则 =
+ * 消息必须包含一定的冗余度
+ * 需要采取某种方法来对抗重放攻击
+
+# vim:ft=text:

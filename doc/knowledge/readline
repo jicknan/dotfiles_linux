@@ -1,0 +1,32 @@
+##
+# readline -
+# $Header$
+##
+
+= shortcuts =
+ * C-b: Move back one character
+ * C-f: Move foward one character
+ * C-d: Delete the character underneath the cursor
+ * C-_, C-x, C-u: undo the last editing command
+ * C-a: move to the start of the line
+ * C-e: move to the end of the line
+ * M-f: move forward a word
+ * M-b: move backware a word
+ * C-l: clear the screen, reprinting the current line at the top
+ * C-k: kill the text from the current cursor position to the end of the line
+ * M-d: kill from the cursor to the end of the current word
+ * M-<DEL>: kill from the cursor to the start of the current word
+ * C-w: kill from the cursor to the previous whitspace
+ * C-y: Yank the most recently killed text back into the buffer at the cursor
+ * M-y: rotate the kill, and yank the new top
+ * C-P: previous history
+ * C-n: next history
+ * M-<: begin of history
+ * M->: end of history
+ * C-r: reverse search history
+ * C-s: forward search history
+ * M-., M-_: yank last arg
+
+
+
+# vim:ft=text:
