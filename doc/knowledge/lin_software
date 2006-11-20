@@ -4,11 +4,19 @@
 ##
 
  * conky
- * fvwm
+ * fvwm as window manager
+ * irssi for IRC and IM(CLI)
+ * links for browser(CLI)
+ * mc for file management(CLI)
+ * mutt for email(CLI)
  * opera
  * rdesktop
- * rox-filer
+ * rox-filer for file management
  * rxvt-unicode
- * vim
+ * screen for mutliple terminals
+ * snownews for RSS feeds(CLI)
+ * tin for news groups(CLI)
+ * top for system monitoring
+ * vim(CLI)
 
 # vim:ft=text:
