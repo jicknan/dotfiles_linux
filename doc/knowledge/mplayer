@@ -1,0 +1,37 @@
+##
+# mplayer
+#
+
+= Commands =
+ * <-, ->: Back/Forward 10s
+ * up, down: B/F 1m
+ * pgup, pgdown: B/F 10m
+ * [, ]: down/up speed 10%
+ * {, }: half/dual speed
+ * backspace: nomal speed
+ * <, >: next/previous playelist
+ * ENTER: next playlist
+ * HOME, END: next/previous playtree entry in the parent list
+ * INS, DEL: next/previous alternative source.
+ * p/SPACE: pause
+ * q/ESC: quit
+ * +/-: sound 0.1s
+ * 9, 0: +- sound
+ * m: 静音
+ *  # (MPEG and Matroska only):  换音轨
+ * f: full-screen
+ * T: on TOP screen
+ * w, e: 增减屏幕幅面
+ * o: 切换屏幕显示
+ * d: 切换丢帧模式
+ * v: 切换字幕显示
+ * b/j: 切换不同字幕
+ * y/g: Step forward/backward in the subtitle list.
+ * F: Toggle displaying “forced subtitles”.
+ * a: 切换字幕位置
+ * r/t: 字幕上下移动
+ * S (-vf screenshot only):  开始/停止抓屏
+ * I: 屏幕上显示播放文件名
+ * !, @: 前/后一节
+
+# vim:ft=text:
