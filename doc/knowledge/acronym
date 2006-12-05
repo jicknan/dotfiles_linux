@@ -37,6 +37,7 @@ BLOB	: Binary Large OBject
 BSP	: Board-Support Package
 CCD	:
 CEO	: Chief Executive Officer
+CGI	: Common Gateway Interface
 CIFS	: Common Internet File System
 CISC	:
 CLI	: Command Line Interface
@@ -93,6 +94,7 @@ NTP	: Network Time Protocol
 ODF	: Open Document Format
 ODM	: Original Design Manufacturers
 OEM	: Original Equipment Manufacturers
+OSDL	: Open Source Development Labs
 PA	: Production Assistant
 PAM	: Pluggable Authentication Modules
 PCB	: Program Control Block
@@ -103,10 +105,14 @@ POSIX	: Portable Operating System Interface Standard
 PSP	: Play Station Portable
 RAM	:
 RAID	: Redundant Array of Independent Disks
+RDF	: Resource Description Framework
 RF	: Radio Frequency
 RISC	: Reduced Instruction Set Computer
 RMS	: Richard M. Stallman
-ROM	:
+ROM	: Read-Only Memeroy
+RSS	: Really Simple Syndication(RSS 2.0)
+	: RDF Site Summary(RSS 0.91, RSS 1.0)
+	: Rich Site Summary(RSS 0.9 and 1.0)
 RTC	: Real Time Clock
 SAN	: Storage Area Network
 SCM	: Software Configuration Management
@@ -119,8 +125,10 @@ SSH	: The Secure Shell
 TCP	:
 UAM	: Universal Access Method
 UART	: Universal Asynchronous Reciever-Transmitter
+UCS	: Universal Character Set (ISO 10646)
 UNIX	:
 USB	: Universal Serial Bus
+UTF	: UCS Transformation Format
 VFS	: Virtual File System
 VPN	: Virtual Private Network
 WAPI	: Wired Authentication and Privacy Infrastructure
