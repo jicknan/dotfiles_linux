@@ -1,16 +1,27 @@
 ##
 # firefox
-# $Header$
+##
 
-= Addons, I used =
-* Adblock
+= Addons =
+o Adblock Plus - ad block
+* Forecastfox - wheather report
+* FoxyProxy
+  * FoxyProxy的方便之处在于大部分网站浏览是无代理模式，可以针对部分长期阻尼的网
+    站通过URL模板进行匹配，自动切换到加密代理模式访问。
+		WikiPedia: *.wikipedia.org/*
+		BlogSpot: *.blogspot.com/*
+		GoogleCache: 72.14.235.104/*
+	http://www.flickr.com/photos/chedong/316319798/
 * Google Browser Sync
 * Google Notebook
-* Greasemonkey for custom js
+* Google Toolbar for Firefox
+o Grease Monkey - custom javascript
+* IE tab
 * LiveHTTPHeaders
-* OperaView
-* Performancing for Blogger Beta posting
-* ProxySwitch
-* SearchStatus for PR
+* Opera View
+* Preformancing for Firefox
+* SearchStatus
+* Sessionsaver
+* Web Developer
 
 # vim:ft=text:
