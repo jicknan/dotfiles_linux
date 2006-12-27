@@ -1,0 +1,14 @@
+##
+# wireshark - a network traffic analyzer or sniffer
+#
+
+= Kernel Options =
+ * Packet socket (CONFIG_PACKET)
+ * Socket filtering (CONFIG_FILTER)
+
+= Requrements =
+ * GTK+
+ * GLib
+ * libpcap
+
+# vim:ft=text:
