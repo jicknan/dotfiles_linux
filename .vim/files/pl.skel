@@ -1,0 +1,6 @@
+#!/usr/bin/perl -w
+# Copyright (c) 2006 Jick Nan <jick.nan@gmail.com>.
+# $Header: /opt/cvsroot/vimrcs/files/pl.skel,v 1.3 2006/04/25 14:11:04 jick Exp $
+
+# _filename_
+# Create at _datetime_ by jick.
