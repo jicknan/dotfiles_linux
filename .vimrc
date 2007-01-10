@@ -18,12 +18,12 @@ set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\
 set history=100		" keep 100 lines of command line history
 set incsearch		" do incremental searching
 set ruler		" always show the cursor position along the bottom
-set number
 set showcmd		" display incomplete commands
 set shiftwidth=4	" set autoindent step
 set background=dark	" background you're used: dark | light
 "colorscheme InkPot	" colorscheme
-"set number		" show line numbers
+set number		" show line numbers
+set winminheight=0      " win min heitht, default 1
 "set path=/usr/include/*	" where gf, ^Wf, find will search
 set backup		" keep a backup file
 set backupdir=~/.tmp	" put backup file here
@@ -39,9 +39,9 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-if has('mouse')
-    set mouse=a	" use mouse everywhere
-endif
+"if has('mouse')
+"    set mouse=a	" use mouse everywhere
+"endif
 set scrolloff=10	" min lines to keep above and below the cursor
 
 if has('multi_byte') && v:version > 601
@@ -70,6 +70,12 @@ imap <C-F9> <C-O>:Tlist<CR>
 nmap <C-F11> :cn<CR>
 nmap <C-F12> :cp<CR>
 
+" Key mapping for switch between splits
+nmap <C-J> <C-W>j<C-W>_
+nmap <C-K> <C-W>k<C-W>_
+nmap <C-L> <C-W>L<bar>
+nmap <C-H> <C-W>H<bar>
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
@@ -97,6 +103,8 @@ if has("autocmd")
 
   " Tags file
   autocmd BufEnter /work/WNS54/* setlocal tags+=/work/WNS54/tags
+  autocmd BufEnter /work/WNS54_sitsang/* setlocal tags+=/work/WNS54_sitsang/tags
+  autocmd BufEnter /work/simple_nas/* setlocal tags+=/work/simple_nas/tags
   autocmd BufEnter /usr/src/linux/* setlocal tags+=/usr/src/linux/tags
   autocmd BufEnter /work/redboot/* setlocal tags+=/work/redboot/tags
 endif " has("autocmd")
