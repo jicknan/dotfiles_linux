@@ -6,5 +6,6 @@ PATH=$PATH:/opt/arm-linux-gnueabi/bin:/work/tools/H-i686-pc-linux-gnulibc2.2/bin
 PATH=$PATH:/opt/crosstool/gcc-3.4.5-glibc-2.3.6/arm-xscale-linux-gnu/bin
 # Default CVSROOT path 
 CVSROOT=:pserver:jick@scs:/home/nas-cvsroot
+SVN_EDITOR="vi"
 
-export PATH CVSROOT
+export PATH CVSROOT SVN_EDITOR

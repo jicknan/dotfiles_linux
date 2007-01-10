@@ -13,7 +13,7 @@
 
 # For loopbacking.
 127.0.0.1		localhost
-127.0.0.1		darkstar
+127.0.0.1		9JickNan1
 127.0.0.1		www.nan.org nan
 
 # CVSROOT
@@ -24,21 +24,23 @@
 218.30.103.84	www.lqqm.com	lqqm.com
 
 # Wikipedia IPs
-145.97.39.132	en.wikipedia.org
-145.97.39.132	zh.wikipedia.org
-145.97.39.132	jp.wikipedia.org
-145.97.39.132	upload.wikimedia.org
+#145.97.39.132	en.wikipedia.org
+#145.97.39.132	zh.wikipedia.org
+#145.97.39.132	jp.wikipedia.org
+#145.97.39.132	upload.wikimedia.org
+
 # Google Ips
 #64.233.171.99	www.google.com		google.com
 #216.239.53.99	google.com
-66.102.15.100	www.blogger.com		blogger.com
-71.14.207.191	www.blogspot.com	blogspot.com
+#66.102.15.100	www.blogger.com		blogger.com
+#71.14.207.191	www.blogspot.com	blogspot.com
+#71.14.207.190	beta.blogspot.com	blogspot.com
 
 # Other hosts
-207.7.108.235	www.wordpress.com	wordpress.com
-192.43.244.18	time.nist.gov
+#207.7.108.235	www.wordpress.com	wordpress.com
+#192.43.244.18	time.nist.gov
 #64.233.187.99	www.google.com/ig?hl=en
 #59.151.41.69	www.douban.com	douban.com
-61.135.170.233	my.donews.com
+#61.135.170.233	my.donews.com
 # End of hosts.
 
