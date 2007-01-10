@@ -213,16 +213,16 @@ Key Space	A	M	PopUp "MenuFvwmWindowOps"
 # osd_cat comes from the xosd package.
 #################
 AddToFunc StartFunction
++ I Test (init) Test (x urxvtd) Exec exec urxvtd
 + I Module FvwmCommandS
 + I Module FvwmAnimate
 + I Module FvwmEvent
 + I Module FvwmAuto FvwmAutohide -menter FuncAutoEnter
-+ I Test (init) Test (x urxvtd) Exec exec urxvtd
 + I Test (Init) Test (x osd_cat) Exec exec tail -n0 -f /var/log/messages | osd_cat -a30 -Aleft -o10 -i10 -cwhite -d10 -s1
 + I Test (Init) Test (x urxvtc) StartHiddenConsole
 + I Test (Restart) All (Iconic) Test (f $[FVWM_USERDIR]/icon.tmp.$[w.id].png) WindowStyle IconOverride, Icon $[FVWM_USERDIR]/icon.tmp.$[w.id].png
 + I Test (Init) Test (x conky) Exec exec conky 2>/dev/null 1>/dev/null
-+ I Test (Init) Test (x xautolock) Exec exec xautolock -time 10  -locker xlock
++ I Test (Init) Test (x xautolock) Exec exec xautolock -time 10 -locker xlock
 + I Test (Init) Test (x stardict) Exec exec stardict > /dev/null
 
 #####
