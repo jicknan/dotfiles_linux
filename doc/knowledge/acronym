@@ -42,6 +42,7 @@ CIFS	: Common Internet File System
 CISC	:
 CLI	: Command Line Interface
 CRC	: Cyclic Redundancy Check
+DBMS	: DataBase Management System
 DES	: Data Encryption Standard
 DMA	: Direct Memory Access
 DNS	: Distributed Name Server
