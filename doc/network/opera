@@ -1,0 +1,24 @@
+##
+# opera - Opera browser software, 9 series
+# $Header: /opt/cvsroot/doc/tech/opera,v 1.2 2006/08/10 17:10:47 jick Exp $
+
+= Document =
+ * http://www.opera.com/support/tutorials/nomouse/
+
+== Tips ==
+  * Multi-tab: Ctrl-t:new Ctrl-w:close '1':previous '2':forward Ctrl-Tab: switch
+  * Resize with only one key press, using '0', '9'
+  * Reopen with Ctrl-z
+  * Fastest speed
+  * Mouse Genust: don't used, but it's really cool!
+  * Content blocker
+  * Site preference
+  * F9: 激活快捷键。如在编辑区，需要先激活。
+  * Q: 上一个链接 A: 下一个链接 W: 上一个标题 S: 下一个标题 E: 上一句 D: 下一句
+  * Shift + ← ↑ → ↓ : 定位超链接
+  * Ctrl + L 聚焦到地址栏
+  * Z: 后退 X: 前进
+  * Ctrl + Enter 自动已保存的输入密码
+  * Ctrl + B: 打开剪贴板中的地址（不用聚焦到地址栏）Ctrl + shift + B: 在后台打开剪贴板中的地址
+
+# vim: ft=text:
