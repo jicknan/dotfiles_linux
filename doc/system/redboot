@@ -9,8 +9,12 @@ Flash and RAM operators:
     mcmp -s 0x01000000 -d 0x50160000 -l 200
     dump -b 0x50160000 -l 0x200
 
-= Task =
-To load ramdisk and kernel:
+Burn redboot.bin to Flash
+	ip_address -h 172.21.4.152 -l 172.21.4.254
+	load -r -v -b 0x01000000 redboot.bin
+	fis write -b 0x01000000 -l 0x00040000 -f 0x50000000
+
+T load ramdisk and kernel:
     ip_address -h 172.21.4.60 -l 172.21.4.253
     load -r -v -b 0x01000000 WNS54.ram
     load -r -v -b 0x01d00000 zImage
