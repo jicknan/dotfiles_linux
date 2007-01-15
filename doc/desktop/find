@@ -1,0 +1,10 @@
+##
+# find
+#
+
+find -name "root"|xargs sed -i s/172.31.11.234/scs/
+find . -type f \( -perm -04000 -o -perm -02000 \) -exec ls -lg {} \;
+find . -size 0
+find . -ctime +3
+
+# vim:ft=text:
