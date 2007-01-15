@@ -1,0 +1,47 @@
+##
+# configure - 
+# $Header: /opt/cvsroot/doc/tech/configure,v 1.1 2006/07/17 07:34:24 jick Exp $
+
+= Documents =
+ * GNU autoconf, automake, and libtool: http://sourceware.org/autobook/
+
+= Extra Configure Options =
+
+'--disable-libtool-lock'
+	In normal operation, libtool will build two objects for every source file
+	in a package, one PIC(19) and one non-PIC. With gcc and some other
+	compilers, libtool can specify a different output location for the PIC
+	object:
+
+		$ libtool gcc -c shell.c
+		gcc -c -pic -DPIC shell.c -o .libs/shell.lo
+		gcc -c foo.c -o shell.o >/dev/null 2>&1
+
+	When using a compiler that doesn't accept both `-o' and `-c' in the same
+	command, libtool must compile first the PIC and then the non-PIC object to
+	the same destination file and then move the PIC object before compiling
+	the non-PIC object. This would be a problem for parallel builds, since one
+	file might overwrite the other. libtool uses a simple shell locking
+	mechanism to avoid this eventuality.
+
+	If you find yourself building in an environment that has such a compiler,
+	and not using parallel make, then the locking mechanism can be safely
+	turned off by using `--disable-libtool-lock' to gain a little extra speed
+	in the overall compilation.
+
+	PIC(19)
+	Position Independent Code -- suitable for shared libraries which might be
+	loaded to different addresses when linked by the runtime loader.
+
+'--with-pic'
+	In normal operation, Libtool will build shared libraries from PIC objects
+	and static archives from non-PIC objects, except where one or the other is
+	not provided by the target host. By specifying `--with-pic' you are asking
+	libtool to build static archives from PIC objects, and similarly by
+	specifying `--without-pic' you are asking libtool to build shared
+	libraries from non-PIC objects.
+
+	libtool will only honour this flag where it will produce a working
+	library, otherwise it reverts to the default.
+
+# vim:ft=text:

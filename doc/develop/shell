@@ -1,0 +1,200 @@
+##
+# shell
+# $Header$
+##
+
+ * {xxx,yyy,zzz} - Brace expansion
+ * {a..z} - Extended Brace expansion
+ * (()) - integer expansion
+ * cmd &>filename - both stdout and stderr
+ * cmd >&2 - stdout to stderr
+ * [i]<>filename - opens file filename for reading and writing, and assigns fd
+   i to it. If filename does not exist, create it.
+ * \<,\> - word boundary in a regular expression.
+ * >| - force direction (even if the noclobber option is set).
+ * ^S - Suspend, ^Q - restore input
+ * ^W - erase from the char under cursor back to the first whitespace
+
+= builtin variable =
+ * $BASH - /bin/bash
+ * $BASH_VERSION - 3.1.17(2)-release
+ * $EDITOR - vi or emacs
+ * $FUNCNAME - function name now running
+ * $GROUPS - 100
+ * $HOME - /home/jick
+ * $HOSTNAME - darkstar
+ * $HOSTTYPE - i486
+ * $MACHTYPE - i486-slackware-linux-gnu
+ * $IFS - internal field separator
+ * $LC_COLLATE
+ * $LC_CTYPE
+ * $LINENO - line number (__LINE__)
+ * $OLDPWD
+ * $OSTYPE - linux-gnu
+ * $PATH
+ * $PPID
+ * $PS{1,2,3,4}
+ * $PWD
+ * $SHELLOPTS - braceexpand:emacs:hashall:histexpand:history:interactive-comments:monitor
+ * $UID - 1000
+ * $LOGNAME - jick
+ * $TERM - screen
+ * $MAIL - /var/spool/mail/jick
+ * $USER - jick
+
+ * $! - PID of last job run in background
+ * $_ - Special variable set to last argument of previous command executed
+ * $? - exit status of a command, function, or the script itself
+ * $$ - PID of script, often used in scripts to construct temp file name
+ * $0 - the name of the script itself
+ * $* - All of the positional parameters, seen as a single word.
+ * $@ -
+ * $# - the number of arguments passed
+ * ${!#} - last arg
+ * ${!args} - last arg
+ * $RANDOM
+  
+== String Length ==
+ * ${#string}
+ * expr length $string
+ * expr "$string" : '.*'
+
+== Length of Matching Substring at Beginning of String =
+ * expr match "$string" '$substring' ($substring is a regexp)
+ * expr "$string" : '$substring'
+ * expr match "$string" '.*\($substring\)' - end of string
+ * expr "$string" : '.*\($substring\)'
+
+== Index ==
+ * expr index $string $substring - like strchr()
+
+== Substring Extraction ==
+ * ${string:position}
+ * ${string:position:length} - awk '{ print substr(string,pos,length) }'
+ * expr substr $string $position $length
+
+== Substring Removal ==
+ * ${string#substring} - strip shortest match
+ * ${string##substring} - strip longest match
+ * ${string%substring} - back of string
+ * ${string%%substring}
+
+== Substring Replacement ==
+ * ${string/substring/replacement} - just first match
+ * ${string//substring/replacement} - all match
+ * ${string/#substring/replacement}
+ * ${string/%substring/replacement}
+
+= Parameter Substitution =
+ * ${parameter}
+ * ${parameter-default}, ${parameter:-default}
+ * ${parameter=default}, ${parameter:=default}
+ * ${parameter+alt_value}, ${parameter:+alt_value}
+ * ${parameter?err_msg}, ${parameter:?err_msg}
+ * ${!varprefix*}, ${!varprefix@}
+
+= keywords=
+ * [[
+ * ]]
+ * if
+ * then
+ * else
+ * fi
+ * else if == elif
+
+= Bash builtin cmd =
+ * [
+ * echo
+ * test
+ * type
+ * shift
+
+= test =
+ * if test condition-true == if [ condition-true ]
+ * [[...]]
+ * ((...)) - expands and evaluates an arithmetic expression
+ *
+ * -e - file exists
+ * -a - file exists (deprecated)
+ * -f - regular file (not dir or device)
+ * -s - file is not zero size
+ * -d - directory
+ * -b - block device
+ * -c - character device
+ * -p - pipe
+ * -h - symbolic link
+ * -L - symbolic link
+ * -S - socket
+ * -t - file is associated with a terminal device
+ * -r - read
+ * -w - write
+ * -x - execute
+ * -g - set-group-id(sgid) flag set
+ * -u - set-user-id(suid) flag
+ * -k - sticky bit set
+ * -O - owner
+ * -G - group member
+ * -N - file modified since it was last read
+ * f1 -nt f2 - newer than
+ * f1 -ot f2 - old than
+ * f1 -ef f2 - files f1 and f2 are hard links to the same file
+ * 
+ * integer comparison
+ * -eq - equal to
+ * -ne - not equal to
+ * -gt - greater than
+ * -ge - greater or equal
+ * -lt - less than
+ * -le - less or equal
+ *
+ * within (())
+ * < - less than
+ * <= -
+ * >
+ * >=
+ *
+ * string comparison
+ * = - equal to
+ * == -  a synonym for =
+ * != - not equal to
+ * < - less than. if [[ $a < $b ]] == if [ $a \< $b ]
+ * > - greater than. see '<'
+ * -z - string is "null", that is ,has zero length.
+ * -n - not null
+ *
+ * -a - logical and
+ * -o - logical or
+
+= Loops =
+ * for arg in [list]
+   do
+     command(s)...
+   done
+ * while [condition]
+   do
+     command(s)...
+   done
+ * until [condition-is-true]
+   do
+     command(s)...
+   done
+ * break, continue
+
+= Test and Branch =
+ * case "$var" in
+   "$condition1")
+     command...
+     ;;
+   "$condition2")
+     command...
+     ;;;
+  esac
+ * select
+
+= cmds =
+ * basename - strip directory and suffix from filenames
+
+
+
+
+# vim:ft=text:
