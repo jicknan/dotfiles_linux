@@ -30,7 +30,7 @@
   * LOCAL variable name should be short, and to the point.
 
 === Fuctions ===
-  * Fuctions should be short and sweet, and do just one thind.
+  * Fuctions should be short and sweet, and do just one thing.
   * Another measure of the functions is the number of local variables, They
     shouldn't exceed 5-10, or you're doing something wrong.
 
