@@ -2,6 +2,36 @@
 # mp3
 #
 
+= MP3/4 =
+ * Chip = DSP + IP core(8-bit Z80, 32-bit ARM, MIPS)
+   * Sou.K Telechips' TCC76x/77x (ARM9TDMI + DSP)
+   * SigmaTel's STMP 35xx/36xx (ARM9TDMI + DSP)
+   * Philips's PNX010x (ARM7TDMI + DSP)
+   * Actions' ATJ 208x/209x (Z80 + DSP)
+   * Samsung's ARM 0529 (ARM9TDMI + DSP)
+   * Portal Player(90%->iPod)'s
+   * Broadcom
+ * Nand Flash: Samsung
+ * OEM: 天佑科技(國內最大的 MP3 供應商之一)
+ * iPod: Samsung, Portal Player
+ * aigo: 炬力->SigmaTel
+ * SigmaTel: STMP3600(Creative, Samsung)
+ * Actions
+   * ATJ2097: 台电C133+、昂达VX939、艾诺V80
+   * ATJ2085: 纽曼M815
+   * 75xx
+   * 13xx(32bit MIPS + 24bit DSP + Linux)
+ * pl188
+   * 1G Flash
+   * MP1, MP2, MP3, WMA, WMV, ASF, WAV
+   * AMV
+   * FM Radio
+   * USB 2.0 (FS)
+   * 1.8" 65K, 160x128, CSTN
+   * >85dB
+   * 10mW
+   * 66x40x16mm
+ *
 
 
 # vi:ft=text:
