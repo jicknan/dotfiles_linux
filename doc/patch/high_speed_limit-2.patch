@@ -1,0 +1,384 @@
+Index: CHANGES
+===================================================================
+RCS file: /cvsroot/curl/curl/CHANGES,v
+retrieving revision 1.857
+diff -u -r1.857 CHANGES
+--- CHANGES	19 Jun 2006 21:39:57 -0000	1.857
++++ CHANGES	20 Jun 2006 07:09:36 -0000
+@@ -6,6 +6,15 @@
+ 
+                                   Changelog
+ 
++Daniel (20 June 2006)
++- Peter introduced CURLOPT_MAX_SEND_PER_SECOND and CURLOPT_MAX_RECV_PER_SECOND
++  that limits tha maximum rate libcurl is allowed to transfer data. This kind
++  of adds the the command line tool's option --limit-rate to the library.
++
++  The rate limiting logic in the curl app is now removed and is instead
++  provided by libcurl itself. Transfer rate limiting will now also work for -d
++  and -F, which it didn't before.
++
+ Daniel (19 June 2006)
+ - Made -K on a file that couldn't be read cause a warning to be displayed.
+ 
+Index: include/curl/curl.h
+===================================================================
+RCS file: /cvsroot/curl/curl/include/curl/curl.h,v
+retrieving revision 1.298
+diff -u -r1.298 curl.h
+--- include/curl/curl.h	12 Jun 2006 20:33:05 -0000	1.298
++++ include/curl/curl.h	20 Jun 2006 07:09:36 -0000
+@@ -973,6 +973,11 @@
+      Note that this is used only for SSL certificate processing */
+   CINIT(CONV_FROM_UTF8_FUNCTION, FUNCTIONPOINT, 144),
+ 
++  /* if the connection proceeds too quickly then need to slow it down */
++  /* limit-rate: maximum number of bytes per second to send or receive */
++  CINIT(MAX_SEND_PER_SECOND, LONG, 145),
++  CINIT(MAX_RECV_PER_SECOND, LONG, 146),
++
+   CURLOPT_LASTENTRY /* the last unused */
+ } CURLoption;
+ 
+Index: lib/multi.c
+===================================================================
+RCS file: /cvsroot/curl/curl/lib/multi.c,v
+retrieving revision 1.79
+diff -u -r1.79 multi.c
+--- lib/multi.c	27 May 2006 22:26:16 -0000	1.79
++++ lib/multi.c	20 Jun 2006 07:09:36 -0000
+@@ -68,6 +68,7 @@
+   CURLM_STATE_DOING,       /* sending off the request (part 1) */
+   CURLM_STATE_DO_MORE,     /* send off the request (part 2) */
+   CURLM_STATE_PERFORM,     /* transfer data */
++  CURLM_STATE_TOOFAST,     /* wait because limit-rate exceeded */
+   CURLM_STATE_DONE,        /* post data transfer operation */
+   CURLM_STATE_COMPLETED,   /* operation complete */
+ 
+@@ -156,6 +157,7 @@
+     "DOING",
+     "DO_MORE",
+     "PERFORM",
++    "TOOFAST",
+     "DONE",
+     "COMPLETED",
+   };
+@@ -440,6 +442,7 @@
+                          int numsocks)
+ {
+   switch(easy->state) {
++  case CURLM_STATE_TOOFAST:  /* returns 0, so will not select. */
+   default:
+     return 0;
+ 
+@@ -771,7 +774,37 @@
+       }
+       break;
+ 
++    case CURLM_STATE_TOOFAST: /* limit-rate exceeded in either direction */
++      /* if both rates are within spec, resume transfer */
++      Curl_pgrsUpdate(easy->easy_conn);
++      if ( ( ( easy->easy_handle->set.max_send_per_second == 0 ) ||
++             ( easy->easy_handle->progress.ulspeed <
++               easy->easy_handle->set.max_send_per_second ) )  &&
++           ( ( easy->easy_handle->set.max_recv_per_second == 0 ) ||
++             ( easy->easy_handle->progress.dlspeed <
++               easy->easy_handle->set.max_recv_per_second ) )
++        )
++        multistate(easy, CURLM_STATE_PERFORM);
++
++      break;
++
+     case CURLM_STATE_PERFORM:
++
++      /* check if over speed */
++      if ( (  ( easy->easy_handle->set.max_send_per_second > 0 ) &&
++              ( easy->easy_handle->progress.ulspeed >
++                easy->easy_handle->set.max_send_per_second ) )  ||
++           (  ( easy->easy_handle->set.max_recv_per_second > 0 ) &&
++              ( easy->easy_handle->progress.dlspeed >
++                easy->easy_handle->set.max_recv_per_second ) )
++        ) {
++        /* Transfer is over the speed limit. Change state.  TODO: Call
++         * Curl_expire() with the time left until we're targeted to be below
++         * the speed limit again. */
++        multistate(easy, CURLM_STATE_TOOFAST );
++        break;
++      }
++
+       /* read/write data if it is ready to do so */
+       easy->result = Curl_readwrite(easy->easy_conn, &done);
+ 
+@@ -825,6 +858,7 @@
+         }
+       }
+       break;
++
+     case CURLM_STATE_DONE:
+       /* post-transfer command */
+       easy->result = Curl_done(&easy->easy_conn, CURLE_OK);
+Index: lib/transfer.c
+===================================================================
+RCS file: /cvsroot/curl/curl/lib/transfer.c,v
+retrieving revision 1.300
+diff -u -r1.300 transfer.c
+--- lib/transfer.c	15 Jun 2006 21:30:32 -0000	1.300
++++ lib/transfer.c	20 Jun 2006 07:09:36 -0000
+@@ -1628,15 +1628,33 @@
+ 
+     interval_ms = 1 * 1000;
+ 
+-    if(k->keepon & KEEP_READ)
+-      fd_read = conn->sockfd;
+-    else
+-      fd_read = CURL_SOCKET_BAD;
+-
+-    if(k->keepon & KEEP_WRITE)
+-      fd_write = conn->writesockfd;
+-    else
++    /* limit-rate logic: if speed exceeds threshold, then do not include fd in
++       select set */
++    if ( ( conn->data->set.max_send_per_second > 0 ) &&
++         ( (curl_off_t)conn->data->progress.ulspeed >
++           conn->data->set.max_send_per_second ) )  {
+       fd_write = CURL_SOCKET_BAD;
++      Curl_pgrsUpdate(conn);
++    }
++    else {
++      if(k->keepon & KEEP_WRITE)
++        fd_write = conn->writesockfd;
++      else
++        fd_write = CURL_SOCKET_BAD;
++    }
++
++    if ( ( conn->data->set.max_recv_per_second > 0 ) &&
++         ( (curl_off_t)conn->data->progress.dlspeed >
++           conn->data->set.max_recv_per_second ) ) {
++      fd_read = CURL_SOCKET_BAD;
++      Curl_pgrsUpdate(conn);
++    }
++    else {
++      if(k->keepon & KEEP_READ)
++        fd_read = conn->sockfd;
++      else
++        fd_read = CURL_SOCKET_BAD;
++    }
+ 
+     switch (Curl_select(fd_read, fd_write, interval_ms)) {
+     case -1: /* select() error, stop reading */
+@@ -1651,6 +1669,7 @@
+       continue;
+     case 0:  /* timeout */
+     default: /* readable descriptors */
++
+       result = Curl_readwrite(conn, &done);
+       break;
+     }
+Index: lib/url.c
+===================================================================
+RCS file: /cvsroot/curl/curl/lib/url.c,v
+retrieving revision 1.505
+diff -u -r1.505 url.c
+--- lib/url.c	8 Jun 2006 06:12:31 -0000	1.505
++++ lib/url.c	20 Jun 2006 07:09:36 -0000
+@@ -1039,6 +1039,22 @@
+      */
+     data->set.low_speed_limit=va_arg(param, long);
+     break;
++  case CURLOPT_MAX_SEND_PER_SECOND:
++    /*
++     * The max speed limit that sends transfer more than
++     * CURLOPT_MAX_SEND_PER_SECOND bytes per second the transfer is
++     * throttled..
++     */
++    data->set.max_send_per_second=va_arg(param, long);
++    break;
++  case CURLOPT_MAX_RECV_PER_SECOND:
++    /*
++     * The max speed limit that sends transfer more than
++     * CURLOPT_MAX_RECV_PER_SECOND bytes per second the transfer is
++     * throttled..
++     */
++    data->set.max_recv_per_second=va_arg(param, long);
++    break;
+   case CURLOPT_LOW_SPEED_TIME:
+     /*
+      * The low speed time that if transfers are below the set
+Index: lib/urldata.h
+===================================================================
+RCS file: /cvsroot/curl/curl/lib/urldata.h,v
+retrieving revision 1.291
+diff -u -r1.291 urldata.h
+--- lib/urldata.h	26 May 2006 11:26:42 -0000	1.291
++++ lib/urldata.h	20 Jun 2006 07:09:36 -0000
+@@ -1039,6 +1039,8 @@
+   curl_off_t infilesize;      /* size of file to upload, -1 means unknown */
+   long low_speed_limit; /* bytes/second */
+   long low_speed_time;  /* number of seconds */
++  long max_send_per_second; /* high speed limit in bytes/second for upload */
++  long max_recv_per_second; /* high speed limit in bytes/second for download */
+   curl_off_t set_resume_from;  /* continue [ftp] transfer from here */
+   char *cookie;         /* HTTP cookie string to send */
+   struct curl_slist *headers; /* linked list of extra headers */
+Index: src/main.c
+===================================================================
+RCS file: /cvsroot/curl/curl/src/main.c,v
+retrieving revision 1.360
+diff -u -r1.360 main.c
+--- src/main.c	19 Jun 2006 21:39:58 -0000	1.360
++++ src/main.c	20 Jun 2006 07:09:37 -0000
+@@ -2660,9 +2660,7 @@
+   size_t rc;
+   struct OutStruct *out=(struct OutStruct *)stream;
+   struct Configurable *config = out->config;
+-  curl_off_t size = (curl_off_t)(sz * nmemb); /* typecast to prevent
+-                                                 warnings when converting from
+-                                                 unsigned to signed */
++
+   if(out && !out->stream) {
+     /* open file for writing */
+     out->stream=fopen(out->filename, "wb");
+@@ -2679,55 +2677,6 @@
+     }
+   }
+ 
+-  if(config->recvpersecond) {
+-    /*
+-     * We know when we received data the previous time. We know how much data
+-     * we get now. Make sure that this is not faster than we are told to run.
+-     * If we're faster, sleep a while *before* doing the fwrite() here.
+-     */
+-
+-    struct timeval now;
+-    long timediff;
+-    long sleep_time;
+-
+-    static curl_off_t addit = 0;
+-
+-    now = curlx_tvnow();
+-    timediff = curlx_tvdiff(now, config->lastrecvtime); /* milliseconds */
+-
+-    if((config->recvpersecond > CURL_MAX_WRITE_SIZE) && (timediff < 100) ) {
+-      /* If we allow a rather speedy transfer, add this amount for later
+-       * checking. Also, do not modify the lastrecvtime as we will use a
+-       * longer scope due to this addition.  We wait for at least 100 ms to
+-       * pass to get better values to do better math for the sleep. */
+-      addit += size;
+-    }
+-    else {
+-      size += addit; /* add up the possibly added bonus rounds from the
+-                        zero timediff calls */
+-      addit = 0; /* clear the addition pool */
+-
+-      if( size*1000 > config->recvpersecond*timediff) {
+-        /* figure out how many milliseconds to rest */
+-        sleep_time = (long)(size*1000/config->recvpersecond - timediff);
+-
+-        /*
+-         * Make sure we don't sleep for so long that we trigger the speed
+-         * limit.  This won't limit the bandwidth quite the way we've been
+-         * asked to, but at least the transfer has a chance.
+-         */
+-        if (config->low_speed_time > 0)
+-          sleep_time = MIN(sleep_time,(config->low_speed_time * 1000) / 2);
+-
+-        if(sleep_time > 0) {
+-          go_sleep(sleep_time);
+-          now = curlx_tvnow();
+-        }
+-      }
+-      config->lastrecvtime = now;
+-    }
+-  }
+-
+   rc = fwrite(buffer, sz, nmemb, out->stream);
+ 
+   if((sz * nmemb) == rc) {
+@@ -2772,62 +2721,6 @@
+ {
+   size_t rc;
+   struct InStruct *in=(struct InStruct *)userp;
+-  struct Configurable *config = in->config;
+-  curl_off_t size = (curl_off_t)(sz * nmemb);  /* typecast to prevent warnings
+-                                                  when converting from
+-                                                  unsigned to signed */
+-
+-  if(config->sendpersecond) {
+-    /*
+-     * We know when we sent data the previous time. We know how much data
+-     * we sent. Make sure that this was not faster than we are told to run.
+-     * If we're faster, sleep a while *before* doing the fread() here.
+-     * Also, make no larger fread() than should be sent this second!
+-     */
+-
+-    struct timeval now;
+-    long timediff;
+-    long sleep_time;
+-
+-    static curl_off_t addit = 0;
+-
+-    now = curlx_tvnow();
+-    timediff = curlx_tvdiff(now, config->lastsendtime); /* milliseconds */
+-
+-    if((config->sendpersecond > CURL_MAX_WRITE_SIZE) &&
+-       (timediff < 100)) {
+-      /*
+-       * We allow very fast transfers, then allow at least 100 ms between
+-       * each sleeping mile-stone to create more accurate long-term rates.
+-       */
+-      addit += size;
+-    }
+-    else {
+-      /* If 'addit' is non-zero, it contains the total amount of bytes
+-         uploaded during the last 'timediff' milliseconds. If it is zero,
+-         we use the stored previous size. */
+-      curl_off_t xfered = addit?addit:(curl_off_t)config->lastsendsize;
+-      addit = 0; /* clear it for the next round */
+-
+-      if( xfered*1000 > config->sendpersecond*timediff) {
+-        /* figure out how many milliseconds to rest */
+-        sleep_time = (long)(xfered*1000/config->sendpersecond - timediff);
+-        if(sleep_time > 0) {
+-          go_sleep (sleep_time);
+-          now = curlx_tvnow();
+-        }
+-      }
+-      config->lastsendtime = now;
+-
+-      if(size > config->sendpersecond) {
+-        /* lower the size to actually read */
+-        nmemb = (size_t)config->sendpersecond;
+-        sz = 1;
+-      }
+-    }
+-
+-    config->lastsendsize = sz*nmemb;
+-  }
+ 
+   rc = fread(buffer, sz, nmemb, in->stream);
+ #if 0
+@@ -3890,11 +3783,10 @@
+         curl_easy_setopt(curl, CURLOPT_IOCTLDATA, &input);
+         curl_easy_setopt(curl, CURLOPT_IOCTLFUNCTION, my_ioctl);
+ 
+-        if(config->recvpersecond) {
++        if(config->recvpersecond)
+           /* tell libcurl to use a smaller sized buffer as it allows us to
+              make better sleeps! 7.9.9 stuff! */
+           curl_easy_setopt(curl, CURLOPT_BUFFERSIZE, config->recvpersecond);
+-        }
+ 
+         /* size of uploaded file: */
+         curl_easy_setopt(curl, CURLOPT_INFILESIZE_LARGE, uploadfilesize);
+@@ -3946,6 +3838,11 @@
+         curl_easy_setopt(curl, CURLOPT_FTPPORT, config->ftpport);
+         curl_easy_setopt(curl, CURLOPT_LOW_SPEED_LIMIT, config->low_speed_limit);
+         curl_easy_setopt(curl, CURLOPT_LOW_SPEED_TIME, config->low_speed_time);
++        curl_easy_setopt(curl, CURLOPT_MAX_SEND_PER_SECOND,
++                         config->sendpersecond);
++        curl_easy_setopt(curl, CURLOPT_MAX_RECV_PER_SECOND,
++                         config->recvpersecond);
++
+         curl_easy_setopt(curl, CURLOPT_RESUME_FROM_LARGE,
+                          config->use_resume?config->resume_from:0);
+         curl_easy_setopt(curl, CURLOPT_COOKIE, config->cookie);
