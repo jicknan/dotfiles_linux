@@ -1,0 +1,54 @@
+##
+# xchat - 
+# $Header: /opt/cvsroot/doc/tech/xchat,v 1.6 2006/08/10 17:12:31 jick Exp $
+
+== IRC channel ==
+  * irc.freenode.net
+    * #cc
+	* #conky
+	* #madwifi
+    * ##debian-zh
+	* #dot // Debian of Taiwan
+    * #fvwm
+	* #handhelds.org
+    * #nslu2-general // for end-user
+    * #nslu2-linux   // for core development
+    * #openezx
+    * #openfiler
+    * #openslug
+    * #osflash // Open Source Flash
+	* #s1mp3
+	* ##slackware
+	* #svn
+	* #wikipedia
+  * www.linuxsir.org/6777
+    * #debianer
+  * irc.pchome.net/6777
+    * #unix
+	* #geekbone
+	* #Eden
+  * irc.linuxfans.org/6777
+
+= Command =
+	/mode yourname +x 隐藏你的真实ip地址 
+	/nick newname 改名 
+	/list 列出所有的房间列表 
+	/join 加入房间 
+	/part 退出房间 
+	/part 退出语 附加退出语并退出房间 
+	/quit 退出语 附加退出语并掉线离开服务器 
+	/query nickname 开其他人小窗，也可以双击对方名字。 
+	/topic #channel newtopic 更改聊天室房间的主题。 
+	/whois nickname 查看对象的一些资料 
+	/mode #channel +o nickname 给别人加帽 
+	/charset utf-8 切换到 UTF-8 编码 
+	/msg nickserv help 注册相关帮助信息 
+	/nickserv register <password> - Register a nickname 
+	/nickserv idenity <password> - Identify yourself with your password 
+	/nickserv access - Modify the list of authorized addresses 
+	/nickserv set - Set various options for your nickname 
+	/nickserv list - Display list of nicks matching a pattern 
+	/nickserv recover - Kill another user who has taken your nick 
+	/nickserv ghost - Kill a ghosted nickname
+
+# vim: ft=text:
