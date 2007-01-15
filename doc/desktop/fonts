@@ -33,6 +33,7 @@
  * l/freetype
  * x/fontconfig
    * fonts.conf
+   * fc-cache -v -f
    * fc-list ":lang=zh"
  * x/x11-fonts-xxx
  * x/dejavu-ttf
