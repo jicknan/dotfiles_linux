@@ -1,0 +1,20 @@
+##
+# qemu - open source processor emulator
+# $Header: /opt/cvsroot/doc/tech/qemu,v 1.1 2006/06/30 05:32:30 jick Exp $
+
+
+= qemu =
+ -nographic
+ -M ? 		: list emulated machine
+ -fda file	: '/dev/fd0' for host floppy
+ -hda file	: Hard disk file
+ -cdrom file	: '/dev/cdrom' for host
+ -boot [a|c|d]	: Boot on floppy (a), harddisk (c, default), cdrom (d).
+
+= usage =
+ * dd of=winxp.img seek=2000000 count=0
+ * qemu-img create -f raw gentoo.img 2G
+ * qemu -hda gentoo.img -cdrom gentoo.iso -boot d
+ * qemu -hda gentoo.img -cdrom /dev/cdrom -boot d -m 512 -kernel-kqemu
+
+# vim:ft=text:
