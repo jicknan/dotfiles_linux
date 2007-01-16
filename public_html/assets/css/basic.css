@@ -1,0 +1,341 @@
+body {
+	margin: 0;
+	padding: 0;	
+	font: 0.85em/1.5 Verdana, Trebuchet, Lucida, Arial, sans-serif;
+	color: #333;/*
+	background: #FFF url(/assets/img/bg.jpg) fixed center;*/
+	background: #FFF;
+	}
+
+	/*  Set up general page elements 	*/ 
+
+p {
+	margin:0 0 1em 0;
+	padding:0;
+	text-indent: 2em;
+	}
+#content>p {text-indent:2em; margin:0;}
+#content>p+p {text-indent:2em; margin-top: 1ex;}
+
+img {
+	display: block;
+	border: 0;
+	}
+
+a:link {
+	font-weight : bold; 
+	text-decoration : underline;
+	background: transparent; 
+	}
+
+a:visited {
+	font-weight : bold; 
+	text-decoration : underline;
+	color: #696969;
+	background: transparent; 
+	}
+
+a:hover {
+	font-weight : bold; 
+	text-decoration : none;
+	color: #000;
+	background: transparent; 
+	}
+
+a:active {
+	font-weight : bold; 
+	text-decoration : underline;
+	color: #95a580;
+	background: transparent;  
+	}
+
+	/*   Gather ye headlines.  */
+
+/*
+h1, h2, h3, h4, h5, h6	{
+	font-weight: normal;
+	font-family: Verdana, Lucida, Helvetica, sans-serif;
+	}
+*/
+h1	{
+	font-size: 32px;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-transform: lowercase;
+	}
+
+h2	{
+	font-size: 24px;
+	margin-top: 25px;
+	margin-bottom: 0;
+	letter-spacing: 1px;
+	}
+
+h3	{
+	font-size: 16px;
+	margin-top: 5px;
+	margin-bottom: 0; 
+    }
+
+h4	{
+	font-size: 13px;
+	margin: 5px 0;
+	padding: 0;
+	letter-spacing: 1px;
+	}
+
+	/*  Establish general layout parameters */
+
+#header	{
+	margin: 20px 0 10px 0;
+	padding: 1.5ex 0 1.5ex 20px;
+	vertical-align: middle;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px 0; 
+	background-color: #eee;
+	height: 27px;	/* False value for IE4-5.x/Win */
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	height: 25px;	/* UNTESTED!  Was 14px */
+	}
+body>#header {
+	height: 25px;	/* Be nice to Opera */
+	}
+
+#logo {
+	float: left;	
+	text-align: left;
+	font-size:  large;
+	font-weight: bold;
+	}
+
+#banner {/*
+	display: none;*/
+	float: center;
+	font-size: medium;
+	text-align: center;
+	vertical-align: middle;
+	}
+	
+#mtime {
+	float: right;
+	text-align: right;
+	font-size: medium;
+	font-weight: bold;
+	}
+	
+#sidebar {
+	position: absolute;
+	left: 20px;
+	top: 70px;
+	margin: 10px;
+	text-align: center;
+	padding: 10px;
+	background-color: #eee;
+	border: 1px dashed #999;	
+	width: 162px;	/* Again, the ugly brilliant hack. */
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	width: 120px;
+	}
+
+body>#sidebar {width: 120px;}	/* Again, "be nice to Opera". */
+	/*  Create buttons 	*/ 
+
+#sidebartop	{
+	border-top: 1px solid #033;
+	}
+
+#sidebar ul  {
+	list-style: none;
+	padding: 0;
+	margin: 15px 0;
+	border: 0;
+	}
+
+#menu li  {
+	text-align: center;
+	border-bottom: 1px solid #000;
+	width: 120px;
+	margin: 0;
+	padding: 0;
+	font: 0.85em/17px Verdana, Lucida, Arial, sans-serif;
+	color: #000;
+	}
+
+#menu li a {
+	display: block;
+	font-weight: normal;
+	padding: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	background: #f5f5f5;
+	color: #000;
+	text-decoration: none;
+	width: 120px; 	/* False value for IE4-5.x/Win. */
+ 	voice-family: "\"}\""; 
+  	voice-family:inherit;
+	width: 118px;	/* You get it. Good value for compliant browers. */	
+	}
+	
+html>#menu li a {
+	width: 118px;	 /* Be nice to Opera */
+	}
+	
+#menu li a:hover {
+	font-weight: normal;
+	background: #696969;
+	color: #fff;
+	text-decoration: none;
+	}
+
+	
+	/* Contrast */
+#contrast ul {
+	margin-left: 0;
+	padding-left: 0;
+	display: inline;
+	font-size: small;
+	}
+	
+#contrast ul li {
+	margin-left: 0;
+	padding: 3px 3px;
+	border-left: 1px solid #000;
+	list-style: none;
+	display: inline;
+	}
+	
+#contrast ul li.first {
+	margin-left: 0;
+	border-left: none;
+	list-style: none;
+	display: inline;
+	}
+	
+	/*  Text treatments for primary content zone 	*/ 
+
+#content {
+	margin: 20px 50px 50px 12.5em;	/* Left margin is menu width + 4.5em */
+	padding:15px 25px;
+	background-color:#fdfdfd;
+	}
+
+#content li {
+	text-align: left;     
+	margin-bottom: 0.5em;        
+    }
+
+#content h2 {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(136, 136, 136);
+    margin-top: 0pt;
+    margin-right-value: 0pt;
+    margin-bottom: 0pt;
+    margin-left-value: 0pt;
+    margin-left-ltr-source: physical;
+    margin-left-rtl-source: physical;
+    margin-right-ltr-source: physical;
+    margin-right-rtl-source: physical;
+    padding-top: 0pt;
+    padding-right-value: 0pt;
+    padding-bottom: 0pt;
+    padding-left-value: 0pt;
+    padding-left-ltr-source: physical;
+    padding-left-rtl-source: physical;
+    padding-right-ltr-source: physical;
+    padding-right-rtl-source: physical;
+    font-size: 1.5em;
+    line-height: 1;
+    }
+    
+#content dt {
+	font-weight: bold;
+}
+
+#content dd	{
+	margin-bottom: 0.5em;
+	}
+
+#content dd, dt {
+	text-align: left;          
+    }
+
+p+h3	{
+	margin-top: 20px;
+	}
+	
+#content code	{
+	font: 12px "Andale Mono", monaco, courier, "Courier New", monospace;
+	border-bottom: 1px dotted #999;
+	}
+
+#content pre	{
+	border: #777777 1px solid;
+	padding: 0.5em;
+    margin: 0 1em 0 2em;
+    white-space: pre;
+    background-color: #fffafa;
+    color: black;
+    font: 12px/16px "Andale Mono", monaco, courier, "Courier New", monospace;
+	}
+
+/* fortune */
+
+#fortune
+{
+  background-color:#eee;
+  border:1px dashed #999;
+  margin: 15px;
+  padding: 15px;
+  text-indent: 0;
+}
+
+#sign
+{
+  float: right;
+}
+
+	/*  Lay out footer 	*/ 
+
+#footer	{
+	margin: 25px 0 50px 0;
+	text-align: center;
+	}
+#footer img, #bookmark img {
+	display: inline;
+	}
+	
+	/*  Odd bits and miscellanies 	*/ 
+
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+.right {
+	text-align: right;
+	}
+
+.hide {
+	display: none;
+	}
+
+.inline {
+	display: inline;
+	}
+		
+.small {
+	font-size: small;
+	}
+	
+.notebox {
+	background-color:#eee;
+	border:1px dashed #999;
+	margin: 15px;
+	font-size:small;
+	text-indent: 0;
+}
