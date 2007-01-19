@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# slackware-mirror
+# Copyright (C) 2006 Renato "trovao" Cunha
+
+RSYNC="rsync"
+SLACKWARE_RELEASES="slackware-11.0 slackware-current"
+#SOURCE="rsync://inferno.bioinformatics.vt.edu/slackware/"
+SOURCE="rsync://slackware.mirrors.tds.net/slackware/"
+OPTIONS="-avzP --delete --delete-after"
+EXCLUDE="pasture kdei"
+DEST="/jick/slackware/"
+LOG="/jick/mirrorlog/slackware-`date +%m-%d-%Y`"
+
+case "$1" in
+  "check" )
+    echo "Checking…"
+    for e in $EXCLUDE
+    do
+      excluded="$excluded --exclude=$e"
+    done
+    for sr in $SLACKWARE_RELEASES
+    do
+      $RSYNC $OPTIONS --dry-run ${excluded} "${SOURCE}${sr}" "${DEST}"
+    done
+    ;;
+  "download" )
+    echo "Downloading…"
+    for e in $EXCLUDE
+    do
+      excluded="$excluded --exclude=$e"
+    done
+    for sr in $SLACKWARE_RELEASES
+    do
+      $RSYNC $OPTIONS ${excluded} "${SOURCE}${sr}" "${DEST}" 2>&1 > ${LOG}
+    done
+    ;;
+  * )
+    echo "Usage: `basename $0` {check|download}"
+    echo -e "tcheck:    Check for updates"
+    echo -e "tdownload: Download updates"
+    exit
+    ;;
+esac

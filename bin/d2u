@@ -1,0 +1,10 @@
+#!/bin/sh
+# dos2unix.sh
+# Convert format from Dos to Unix.
+
+# See http://www.technocage.com/~caskey/dos2unix/ for detail.
+if [ $# -eq 1 ]; then
+    perl -pi -e 's/\r\n/\n/;' $1
+else
+    echo "Usage: $0 <*.c>"
+fi
