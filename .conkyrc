@@ -29,10 +29,19 @@ alignment bottom_right
 # Force UTF8? note that UTF8 support required XFT
 #override_utf8_locale no
 
+#${color #98c2c7}CPU:	$cpu%	(up: $uptime)
+#${color lightgrey}$nodename - $sysname $kernel $machine
+#Name              PID     CPU%   MEM%
+# ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+# ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+# ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+# ${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}
+# ${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
+# ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
 # stuff after 'TEXT' will be formatted on screen
 TEXT
-${color lightgrey}$nodename - $sysname $kernel $machine
-${color #98c2c7}CPU:	$cpu%	(up: $uptime)
+${color lightgrey} $nodename - $sysname $kernel
+${color #98c2c7}CPU: $freq_dyn_g GHZ $cpu%	($uptime)
 ${cpubar 8}
 ${cpugraph}
 	(Load: $loadavg)
@@ -46,4 +55,5 @@ Down:	k/s:${downspeedf eth0}	${alignr}${totaldown eth0}
 ${downspeedgraph eth0}
 Up:	k/s:${upspeedf eth0}	${alignr}${totalup eth0}
 ${upspeedgraph eth0}
-${color lightgrey}${time %a %b %e %H:%M:%S %Z %G}
+${execi 1800 ~/.conky/weather/weather.sh CHXX0116}
+${color lightgrey} ${time %a %b %e %H:%M:%S %Z %G}
