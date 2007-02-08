@@ -41,6 +41,7 @@ CGI	: Common Gateway Interface
 CIFS	: Common Internet File System
 CISC	:
 CLI	: Command Line Interface
+CPI	: Consumer Price Index
 CRC	: Cyclic Redundancy Check
 DBMS	: DataBase Management System
 DES	: Data Encryption Standard
@@ -103,6 +104,7 @@ PCBA	: Printed Circuit Board Assemblies
 PCI	: Peripheral Component Interconnect
 PCMCIA	: Personal Computer Memory Card International Association
 POSIX	: Portable Operating System Interface Standard
+PPI	: Productor Price Index
 PSP	: Play Station Portable
 RAM	:
 RAID	: Redundant Array of Independent Disks
