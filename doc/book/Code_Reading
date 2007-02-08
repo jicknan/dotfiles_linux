@@ -1,0 +1,18 @@
+##
+# Code Reading - The Open Source Perspective
+#
+
+书名：	代码阅读方法与实践
+		Code Reading - The Open Source Perspective
+作者：	Diomidis Spinellis
+译者：	赵学良
+出版社：清华大学出版社
+版次：	2004年3月第1版 2004年5月第2次印刷
+来源：	Bob Zhang
+时间：	2007-2-3
+
+= C2：基本编程元素 =
+* 我们所观测到的不是自然本身，而是大自然在我们所用的观测方法下呈现出来的特性。
+* (Werner Heisenberg)
+* 在检查代码时，一个好的做法是确保所有只用于单一文件的变量都声明为 static。
+# vim:ft=text:
