@@ -67,3 +67,6 @@ Try "rxvtd -f -o", which tells rxvtd to open the display, create the listening s
 
 = Network Video Sharing =
  * youtube-dl + flashplayer(ffplay, mplager)
+
+Backup del.icio.us:
+wget -O del.icio.us-`date --iso-8601`.xml --http-user=jicknan --http-passwd=<passwd> https://api.del.icio.us/v1/posts/get
