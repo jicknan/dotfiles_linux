@@ -1,8 +1,6 @@
 ##
-# gphoto2 
-# $Header$
-##
-
+# gphoto2 - fetch pictures from digital camera
+#
 
 = Levels =
  * Driver: Linux-usb, usbfs, hotplug
@@ -54,6 +52,5 @@
  * by Mircosoft, based on PTP/IP
  * allows transfer other media aside from pictures, as well as for tagging
  * objects with extended metadata (such as title, artist and similar).
-
 
 # vim:ft=text:
