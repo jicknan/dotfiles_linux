@@ -9,28 +9,25 @@
  * http://www.zensites.net/fvwm/guide/
  * http://www.lynucs.org/
  * http://learn.tsinghua.edu.cn:8080/2001315450/fvwm_frame.html
+ * http://www.fvwm.org/documentation/faq/#toc_3.23
 
 = Features =
  * the most configurable window manager
  * simple
  * ICCCM-compliant
 
-= Base Features =
+= Config Features =
  * Auto-hiding console
  * System status using conky
- * Min Menu System
- * Min Key bindings
- * Min Mouse bindings
- * Thumbnail
- * screensaver using autolock + xlockmore
- * show message using tail + xosd
-
-= More Features =
+ * Thumbnailed minimization (imagemagick)
+ * Translucent/RootTransparent (Esetroot)
+ * Show message using tail + xosd
  * Mouse gesture
  * Menu-based wallpaper selection with thumbnails
- * icon set
- * File manager using ROX-filer
  * PackWrapperUp/Down/Left/Right
+ * Multiple window decorations
+ * Minization bar
+ * program-launching dock
 
 = Commands =
 == The virtual desktop ==
@@ -89,5 +86,8 @@
      when they occur
    * FvwmEvent: conditional window checking by example:
      http://linuxgazette.net/127/adam1.html
+ * FvwmButtons
+   * provides a window of buttons which sits on the X  terminal's root window.
+ *
 
 # vim: ft=text:
