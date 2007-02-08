@@ -1,0 +1,29 @@
+##
+# fetchcast - a command-line based podcast fetcher/downloaded/client written
+# 			in C.
+#
+
+= Features =
+ * simple to config
+ * CLI based
+ * Full version of Podcast RSS support
+ * Download limit
+ * opml import
+ * id3tag
+ * CJK support
+
+= Types =
+ * planned
+ * in gress
+ * optional
+
+= Common =
+ * version control by nongun.org's CVS
+ * Bug tracker access by nongun.org
+ * mailing-lists
+ * IRC channels
+ * forums
+ * maitain a FAQ
+ * Documents
+
+# vim:ft=text:
