@@ -11,8 +11,7 @@
    export CVSROOT CVS_RSH
  * cvs import -m "write some comments here" project_name vendor_tag release_tag
  * 修改某个版本注释：cvs admin -m 1.3:"write some comments here" file_name
- * cd dir; cvs import WNS54/source/LVM2.2.2 Sercomm R_1_0 // import a dir to
- * cvs server
+ * cd dir; cvs import WNS54/source/LVM2.2.2 Sercomm R_1_0 // import a dir to cvs server
 
 = CVS Branch =
  * cvs tag release_1_0
