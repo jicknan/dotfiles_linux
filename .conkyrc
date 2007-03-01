@@ -2,7 +2,7 @@
 # use default value set by function set_default_configurations() heavily.
 
 use_xft yes
-xftfont Bitstream Vera Sans Mono:size=10
+xftfont DejaVu Sans:size=10
 xftalpha 0.8
 
 # Update interval in seconds
