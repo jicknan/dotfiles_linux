@@ -1,0 +1,12 @@
+# /dev/ttyS0
+port Serial0_115200
+type direct
+device /dev/ttyS0
+speed 115200
+hardflow false
+
+port ACM0_38400
+type direct
+device /dev/ttyACM0
+speed 38400
+hardflow false
