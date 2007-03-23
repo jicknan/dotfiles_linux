@@ -61,7 +61,7 @@
 	if (search.google_blog.checked)
 	  window.open("http://blogsearch.google.com/blogsearch?hl=en&q="+search.key.value);
 	if (search.google_blog_zh_CN.checked)
-	  window.open("http://blogsearch.google.com/blogsearch?hl=en&lr=lang_zh_CN&as_q="+search.key.value);
+	  window.open("http://blogsearch.google.com/blogsearch?num=10&hl=en&ctz=0&c2coff=1&btnG=Search+Blogs&as_epq=&as_oq=&as_eq=&bl_pt=&bl_bt=&bl_url=&bl_auth=&as_drrb=q&as_qdr=a&as_mind=1&as_minm=1&as_miny=2000&as_maxd=27&as_maxm=1&as_maxy=2007&lr=lang_zh-CN&safe=offas_q="+search.key.value);
 	if (search.google_code.checked)
 	  window.open("http://www.google.com/codesearch?btnG=Search+Code&q="+search.key.value);
 	if (search.google_cache.checked)
@@ -90,6 +90,9 @@
 	if (search.baidu_zhidao.checked)
 	  window.open("http://zhidao.baidu.com/q?ct=17&pn=0&tn=ikaslist&rn=10&word="+search.key.value);
 	
+	if (search.baidu_blog.checked)
+	    window.open("http://blogsearch.baidu.com/s?tn=baidublog&bsm=0&ct=2097152&cl=3&wd="+search.key.value);
+
 	if (search.tianwang.checked)
 	  window.open("http://file.tianwang.com/cgi-bin/search?word="+search.key.value);
 	if (search.sfsearch.checked)
@@ -135,16 +138,12 @@
 
 	if (search.icerocket.checked)
 	  window.open("http://blogs.icerocket.com/search?q="+search.key.value);
-	if (search.feedss.checked)
-	    window.open("http://www.feedss.com/html/1/1/"+search.key.value);
-	if (search.booso.checked)
-	    window.open("http://www.booso.com/search?radiobutton=orderByRelate&keyword="+search.key.value);
-	if (search.bloblome.checked)
-	    window.open("http://www.bloblome.com/s?ac=search&kil="+search.key.value);
 	if (search.qihoo.checked)
 	    window.open("http://search.blog.qikoo.com/index.html?kw="+search.key.value);
 	if (search.souyo.checked)
 	    window.open("http://www.souyo.com/search?q="+search.key.value);
+	if (search.youdao.checked)
+	    window.open("http://blog.yodao.com/search?keyfrom=blog.index&q="+search.key.value);
 
 	if (search.IPlookup.checked)
 	  window.open("http://ip-lookup.net/?ip="+search.key.value);
@@ -166,12 +165,23 @@
 	
 	return false;
       }
+
+function checkMobile(){
+    var sMobile = document.mobileform.mobile.value
+	if(!(/^1[3|5][0-9]\d{4,8}$/.test(sMobile))){
+	    alert("不是完整的11位手机号或者正确的手机号前七位");
+	    document.mobileform.mobile.focus();
+	    return false;
+	}
+    window.open('', 'mobilewindow', 'height=197,width=350,status=yes,toolbar=no,menubar=no,location=no')
+}
+
     </script>
     <form name="search" onsubmit="return(search4())">
       <br />IP:
       <br />
       <input type="checkbox" name="IPlookup" value="IPlookup" /><a href="http://ip-lookup.net/">IP Lookup</a>(IP 反查)
-      <input type="checkbox" name="IPsearch" value="IPsearch" /><a href="http://www.intron.ac/service/index.html">IP 查询</a>
+      <input type="checkbox" name="IPsearch" value="IPsearch" /><a href="http://www.intron.ac/service/index.php">IP 查询</a>
       <br />
       <input type="checkbox" name="btn" value="btn" /><a href="http://behindthename.com/">Behind the Name</a>: 以英文名为关键字
       <br />
@@ -211,9 +221,8 @@
 	<input type="checkbox" name="qihoo" value="qihoo" /><a href="blog.qihoo.com">Qihoo blog</a>
 	<input type="checkbox" name="technorati_search" value="technorati_search" /><a href="http://www.technorati.com">Technorati</a>(GFWed)
 	<input type="checkbox" name="icerocket" value="icerocket" />ICEROCKET
-	<input type="checkbox" name="feedss" value="feedss" />FeedsS
-	<input type="checkbox" name="booso" value="booso" />Booso
-	<input type="checkbox" name="bloblome" value="bloblome" />Bloblome
+	<input type="checkbox" name="baidu_blog" value="baidu_blog" /> Baidu Blog
+	<input type="checkbox" name="youdao" value="youdao" /> Youdao Blog
       </div>
       <div id="image">
         <input type="checkbox" name="google_image" value="google_image" />Google Image
@@ -224,7 +233,7 @@
         <input type="checkbox" name="baidu_mp3" value="baidu_mp3" />百度 MP3
       </div>
       <div id="knowlege">
-        <input type="checkbox" name="google_code" value="google_code" />CodeSearch
+        <input type="checkbox" name="google_code" value="google_code" />Google Code Search
         <input type="checkbox" name="answers" value="answers" />Answers.com/Wikipedia
 	<input type="checkbox" name="delicious" value="delicious" /><a href="http://del.icio.us">美味书签</a>
 	<input type="checkbox" name="baidu_zhidao" value="baidu_zhidao" />百度知道
@@ -247,6 +256,12 @@
       </div>
     </form>
     
+    <h2>手机归属地(ip138)</h2>
+    <form action="http://www.ip138.com:8080/search.asp" method="post" onsubmit="return checkMobile();" target="mobilewindow" name="mobileform">
+      手机号码(段): <input name="mobile" size="15" />
+      <input type="submit" value="Submit" />
+      <input type="hidden" name="action" value="mobile" />
+    </form>
     <h2>Mail Rss</h2>
     <div>
 	<form action='http://www.r-mail.org/' method='post'><div>
