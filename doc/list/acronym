@@ -51,7 +51,7 @@ DRM	: Digital Restrictions Management
 	: Digital Rights Mismanagement(RMS)
 DSP	:
 EEPROM	:
-ELF	: Executable and Linkable Format
+ELF	: Executable and Linking Format
 EPS	: Earning Pre Share
 etc	: et cetera
 	: everything that configures
@@ -84,6 +84,7 @@ LDAP	:
 LED	: Light-Emitting Diode
 LOL	: Laugh Out Loud
 	: Lots Of Laughter
+LSB	: Linux Standard Base
 LUKS	: Linux Unified Key Setup
 MAC	: Machine Access Control
 MBR	: Master Boot Record
@@ -92,6 +93,7 @@ MMU	: Memory Management Unit
 MTBF	: Mean Time Between Failure
 NAS	: Network-Attached Storage 
 NIC	: Network Interface Card
+NSS	: Name Service Switch
 NTP	: Network Time Protocol
 ODF	: Open Document Format
 ODM	: Original Design Manufacturers
@@ -133,11 +135,13 @@ UNIX	:
 USB	: Universal Serial Bus
 UTF	: UCS Transformation Format
 VFS	: Virtual File System
+VMA	: Virtual Memeroy Area
 VPN	: Virtual Private Network
 WAPI	: Wired Authentication and Privacy Infrastructure
 WEP	: Wired Equivalent Privacy
 WiFi	: Wireless Fidelity
 WPA	: WiFi Protected Access
+XD	: laughing face
 XIP	: 
 
 # vim:ft=text:ts=8
