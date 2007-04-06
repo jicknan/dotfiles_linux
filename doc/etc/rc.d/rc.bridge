@@ -1,0 +1,5 @@
+#!/bin/sh
+/sbin/ifconfig eth0 0.0.0.0 promisc up
+/usr/sbin/brctl addbr br0
+/usr/sbin/brctl addif br0 eth0
+/sbin/dhcpcd -d -t 60 br0
