@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ $# != 2 ]; then
+    echo "Usage: ogg2mp3 <file.ogg> <file.mp3>"
+fi
+
+oggdec $1 -o - | lame - $2
