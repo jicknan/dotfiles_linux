@@ -13,15 +13,15 @@
 
 # For loopbacking.
 127.0.0.1		localhost
-127.0.0.1		9JickNan1
+127.0.0.1		9JickNan1 jick
 127.0.0.1		www.nan.org nan
 
 # CVSROOT
 172.21.1.234	scs
 
 # Telnet bbs
-61.182.213.238	www.newsmth.net	newsmth.net
-218.30.103.84	www.lqqm.com	lqqm.com
+#61.182.213.238	www.newsmth.net	newsmth.net
+#218.30.103.84	www.lqqm.com	lqqm.com
 
 # Wikipedia IPs
 #145.97.39.132	en.wikipedia.org
@@ -32,9 +32,6 @@
 # Google Ips
 #64.233.171.99	www.google.com		google.com
 #216.239.53.99	google.com
-#66.102.15.100	www.blogger.com		blogger.com
-#71.14.207.191	www.blogspot.com	blogspot.com
-#71.14.207.190	beta.blogspot.com	blogspot.com
 
 # Other hosts
 #207.7.108.235	www.wordpress.com	wordpress.com
