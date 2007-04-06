@@ -1,0 +1,53 @@
+MenuStyle * Font "Shadow=1 1 SE:xft:Dejava Sans Mono:style=Roman:size=10"
+MenuStyle * Font "Shadow=0 1 SE:xft:Dejava Sans Mono:style=Roman:size=10"
+MenuStyle * Font "Shadow=0 1 SE:xft:Dejava Sans Mono:size=10"
+MenuStyle * Font "Shadow=0 1 SE:xft:Dejava Sans Mono:size=14"
+MenuStyle * Font "Shadow=0 1 SE:xft:Dejava Sans Mono:size=12"
+MenuStyle * Font "Shadow=0 1 SE:xft:Dejava Sans Mono:style=Roman:size=14"
+MenuStyle * Font "Shadow=0 1 SE:xft:Dejava Sans Mono:size=12"
+MenuStyle * Font "Shadow=0 1 SE:xft:Dejava Sans Mono:style=Roman:size=14"
+MenuStyle * Font "Shadow=0 1 SE:xft:Dejava Sans:style=Roman:size=14"
+MenuStyle * Font "Shadow=1 1 SE:xft:Dejava Sans:style=Roman:size=14"
+MenuStyle * Font "Shadow=1 1 C:xft:Dejava Sans:style=Roman:size=14"
+MenuStyle * Font "Shadow=1 C:xft:Dejava Sans:style=Roman:size=14"
+MenuStyle * Font "Shadow=0 C:xft:Dejava Sans:style=Roman:size=14"
+MenuStyle * Font "Shadow=1 C:xft:Dejava Sans:style=Roman:size=14"
+MenuStyle * Font "Shadow=1 SE:xft:Dejava Sans:style=Roman:size=14"
+MenuStyle * Font "Shadow=1 1 SE:xft:Dejava Sans:style=Roman:size=14"
+Key     Tab     A       M       WindowList Root c c NoGeometry, CurrentAtEnd, IconifiedAtEnd
+Key     Tab     A       M       WindowList Root c c NoGeometry, CurrentAtEnd, IconifiedAtEnd
+Key     Tab     A       M       WindowList Root c c CurrentPage,NoGeometry, CurrentAtEnd, IconifiedAtEnd
+Key     Tab     A       M       WindowList Root c c ShowPage,NoGeometry, CurrentAtEnd, IconifiedAtEnd
+Key     Tab     A       M       WindowList Root c c ShowPage,NoGeometry, CurrentAtEnd, IconifiedAtEnd
+Key     Tab     A       M       WindowList Root c c ShowPage,NoGeometry, CurrentAtEnd, IconifiedAtEnd, Icons
+Colorset 0 fg black, bg grey,  RootTransparent Buffer
+Colorset 0 fg black, bg grey,  RootTransparent Buffer, Tint 70
+Colorset 0 fg black, bg grey,  RootTransparent Buffer, Tint #c6cbd6 70
+Colorset 0 fg black, bg grey,  RootTransparent Buffer, Tint #c6cbd6 10
+Colorset 0 fg black, bg grey,  RootTransparent Buffer, Tint #c6cbd6 90
+Colorset 0 fg black, bg grey,  RootTransparent Buffer, Tint #c6cbd6 70
+Colorset 14 fg white, bg black, RootTransparent Buffer, Tint #eeefcf 10
+Colorset 14 fg white, bg black, RootTransparent Buffer, Tint #eeefcf 70
+*FvwmPager: Geometry        87x79-0+0
+Colorset 0 fg black, bg grey,  Translucent
+Colorset 0 fg black, bg grey,  Translucent, Tint #c6cbd6 70
+Colorset 0 fg black, bg grey,  Translucent #c6cbd6 70
+Colorset 0 fg black, bg grey,  Translucent #c6cbd6 90
+Colorset 0 fg black, bg grey,  Translucent #c6cbd6 80
+Style * Font "Shadow=0 1 SE:xft:Dejava Sans:size=12"
+Style * Font "Shadow=0 1 SE:xft:Dejava Sans:size=22"
+MenuStyle * Font "xft:DejaVu Sans:style=Roman:size=12"
+Style * Font "xft:DejaVu Sans:style=Roman:size=12"
+Style * Font "xft:DejaVu Sans:style=Roman:size=12;xft:WenQuanYi Bitmap Song:size=12"
+Style * Font "xft:WenQuanYi Bitmap Song:size=12"
+MenuStyle * Font "xft:WenQuanYi Bitmap Song:size=12"
+Style * Font "xft:DejaVu Sans:style=Roman:size=12:encoding=iso8859-1"
+MenuStyle * Font "xft:DejaVu Sans:style=Roman:size=12:encoding=iso8859-1"
+MenuStyle * Font "xft:DejaVu Sans:style=Roman:size=12:encoding=iso8859-1"
+MenuStyle * Font "xft:DejaVu Sans:style=Roman:size=12:encoding=iso8859-1:xft:WenQuanYi Bitmap Song:size=12"
+* GrabFocusOff, NoIconTitle, !AllowMaximizeFixedSize, FPReleaseFocus, IndexedIconName
+Style * Font "xft:WenQuanYi Bitmap Song:size=12;xft:DejaVu Sans:style=Roman:size=12"
+Style * Font "xft:DejaVu Sans:style=Roman:size=12"
+*FvwmIconMan: ReliefThickness 1
+*FvwmIconMan: ReliefThickness 12
+*FvwmIconMan: ReliefThickness 1
