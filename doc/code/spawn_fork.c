@@ -15,9 +15,9 @@ int spawn(char *prog, char **arg_list)
 
 	child = fork();
 
-	if (child != 0) {
+	if (child != 0) { // parent
 		return child;
-	} else {
+	} else { // child
 		execvp(prog, arg_list);
 		fprintf(stderr, "spawn error\n");
 		return -1;
