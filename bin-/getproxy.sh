@@ -12,7 +12,7 @@ green="\033[32m"
 yellow="\033[33m"
 end="\033[0m"
 
-test_page="pkblogs.com/jicknan"
+test_page="zh.wikipedian.org"
 timeout=20
 
 if [ "$#" = 0 ]
