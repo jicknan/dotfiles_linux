@@ -1,0 +1,14 @@
+#!/bin/sh
+rootdir=/slack2
+pkgdir=/jick/slackware/slackware-current/slackware/$1
+tagfile=/jick/slackware/tagfile/$1
+
+pkg=`cat $tagfile/tagfile | awk 'BEGIN{FS=":"} /^[a-z].*: [^SKP].*/ {print $1}'`
+
+for i in $pkg; 
+do
+    df -h /dev/hda2
+    installpkg -root $rootdir $pkgdir/$i*.tgz
+    echo "Press Enter to continue..."
+    read
+done
