@@ -1,6 +1,0 @@
-#!/bin/sh
-
-for i in `ls $1`;
-do
-    du -sh $1/$i
-done
