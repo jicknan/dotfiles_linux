@@ -1,1 +1,0 @@
-ps -ef | awk '{ print "AddToMenu MenuProcess \""$2"   "$8"\" Exec kill -9 "$2 }'
