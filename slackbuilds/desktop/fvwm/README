@@ -1,0 +1,12 @@
+fvwm (a small and fast virtual window manager for X)
+
+Fvwm is the classic highly-configurable virtual window manager for
+X11.  It is a derivative of twm, redesigned to minimize memory
+consumption, provide a 3-D look to window frames, and provide a simple
+virtual desktop.
+
+This is the development version of fvwm, and build with libstroke from
+SBo/libraries.
+
+A translucent-menu patch is applied to this version too, which is stolen
+from Gentoo.
