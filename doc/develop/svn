@@ -1,9 +1,0 @@
-##
-# svn - subversion
-# $Header: /opt/cvsroot/doc/tech/svn,v 1.1 2006/08/10 17:15:29 jick Exp $
-
-= command =
- * svnadmin create /path/to/repos
- * svn import -m "New import." file:///opt/svnrepos/etc
-
-# vim:ft=text:
