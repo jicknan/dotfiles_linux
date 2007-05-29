@@ -1,0 +1,11 @@
+rxvt-unicode: rxvt-unicode (rxvt derivative with Unicode support and tabs)
+rxvt-unicode:
+rxvt-unicode: Its main features (many of them unique) over rxvt are:
+rxvt-unicode: * Stores text in Unicode (either UCS-2 or UCS-4).
+rxvt-unicode: * Uses locale-correct input, output and width.
+rxvt-unicode: * Daemon mode: one daemon can open multiple windows on multiple displays.
+rxvt-unicode: * Embedded perl for customization, such as tabbed terminal support.
+rxvt-unicode: * ... and much more.
+rxvt-unicode:
+rxvt-unicode: rxvt-unicode home: http://software.schmorp.de/pkg/rxvt-unicode.html
+rxvt-unicode:
