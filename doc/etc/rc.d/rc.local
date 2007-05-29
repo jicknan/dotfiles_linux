@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# /etc/rc.d/rc.local:  Local system initialization script.
+#
+# Put any local startup commands in here.  Also, if you have
+# anything that needs to be run at shutdown time you can
+# make an /etc/rc.d/rc.local_shutdown script and put those
+# commands in there.
+
+# Start Tor+Privoxy server.
+if [ -x /etc/rc.d/rc.tor ]; then
+    /etc/rc.d/rc.tor start
+fi
+if [ -x /etc/rc.d/rc.privoxy ]; then
+    /etc/rc.d/rc.privoxy start
+fi
+
+# for mplayer
+echo 1024 > /proc/sys/dev/rtc/max-user-freq
+
+# D-bus
+if [ -x /etc/rc.d/rc.messagebus ]; then
+    /etc/rc.d/rc.messagebus start
+fi
+
