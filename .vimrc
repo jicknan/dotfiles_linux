@@ -40,7 +40,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 "if has('mouse')
-"    set mouse=a	" use mouse everywhere
+    set mouse=v	" use mouse everywhere
 "endif
 set scrolloff=10	" min lines to keep above and below the cursor
 
@@ -103,7 +103,6 @@ if has("autocmd")
 
   " Tags file
   autocmd BufEnter /work/WNS54/* setlocal tags+=/work/WNS54/tags
-  autocmd BufEnter /work/WNS54_sitsang/* setlocal tags+=/work/WNS54_sitsang/tags
   autocmd BufEnter /work/simple_nas/* setlocal tags+=/work/simple_nas/tags
   autocmd BufEnter /usr/src/linux/* setlocal tags+=/usr/src/linux/tags
   autocmd BufEnter /work/redboot/* setlocal tags+=/work/redboot/tags
