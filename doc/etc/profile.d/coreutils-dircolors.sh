@@ -56,10 +56,10 @@ alias v=vdir;
 
 # Set up the LS_COLORS environment:
 if [ -f $HOME/.dir_colors ]; then
-  eval `dircolors -b $HOME/.dir_colors`
+  eval `/bin/dircolors -b $HOME/.dir_colors`
 elif [ -f /etc/DIR_COLORS ]; then
-  eval `dircolors -b /etc/DIR_COLORS`
+  eval `/bin/dircolors -b /etc/DIR_COLORS`
 else
-  eval `dircolors -b`
+  eval `/bin/dircolors -b`
 fi
 

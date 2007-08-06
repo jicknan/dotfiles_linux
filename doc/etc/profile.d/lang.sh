@@ -16,7 +16,7 @@
 # some programs are not yet able to handle UTF-8 and will fail to
 # run properly.  In those cases, you can set LANG=C before
 # starting them.  Still, I'd avoid UTF unless you actually need it.
-export LANG=en_US.utf8
+export LANG=en_US.UTF-8
 
 # Another option for en_US:
 #export LANG=en_US.ISO8859-1
