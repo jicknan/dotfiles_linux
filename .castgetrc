@@ -1,0 +1,80 @@
+#
+# Global settings.
+#
+
+# This will set the ID3 tag "content type" to "Podcast"
+# and use the directory /home/tom/podcasts for downloading 
+# enclosures.
+[*]
+id3contenttype=Podcast
+spool=/home/Desktop/podcast
+playlist=castget
+#limit_rate=100K
+
+#
+# Per-channel settings.
+#
+
+# This will define a channel with the identifier "dsc", set the RSS 
+# feed URL for the channel, override the download directory defined
+# in the global settings section, and append file names of downloaded
+# enclosures to /home/tom/podcasts.m3u.
+#[dsc]
+#url=http://radio.weblogs.com/0001014/categories/dailySourceCode/rss.xml
+#spool=/home/jick/podcasts/dsc
+
+[QiangQiang3]
+url=http://www.podlook.com/rss/channel/276691
+#limit_rate=100k
+
+[my1510]
+url=http://feeds.feedburner.com/my1510podcast
+
+[AntiWave]
+url=http://www.antiwave.net/index.xml
+
+[ESLPod]
+url=http://feeds.feedburner.com/EnglishasaSecondLanguagePodcast
+
+[LQRadio]
+url=http://feeds.feedburner.com/linuxquestions/LQRadioALL
+#limit_rate=10k
+
+[Bookast]
+url=http://www.bookast.com/mp3/bookast_rss.xml
+#limit_rate=30k
+
+[pdh]
+url=http://www.podlook.com/rss/channel/1004
+#url=http://www.lifepop.com/asp/rss.asp?domain=yyse
+
+[kijiji]
+url=http://podcast.kijiji.com.cn/podcast.xml
+#limit_rate=100k
+
+[QiuAo]
+url=http://ifire.cn/feed/rss.xml
+
+#[JackGu]
+#url=http://www.podlook.com/rss/channel/15534
+
+#[IFWDaily]
+#url=http://weblog.infoworld.com/daily/podcast.xml
+
+#[dw-world]
+#url=http://rss.dw-world.de/xml/podcast_radio_china
+
+#[hopesome]
+#url=http://hopesome.com/wp-ipodder.php
+
+#[Podbible]
+#url=http://podbible.com/rss
+# This will define a channel with the identifier "yeast", set the RSS
+# feed URL for the channel, and set several ID3 tags.
+#[yeast]
+#url=http://feeds.feedburner.com/YeastRadio
+#id3album=Yeast Radio
+#id3leadartist=Madge Weinstein
+#id3comment=
+#id3title=Yeast Radio
+#id3year=2005
