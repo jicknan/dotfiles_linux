@@ -3,7 +3,7 @@
 
 # Set the values for some environment variables:
 export MINICOM="-c on"
-export MANPATH=/usr/local/man:/usr/man:/usr/X11R6/man
+export MANPATH=/usr/local/man:/usr/man
 export HOSTNAME="`cat /etc/HOSTNAME`"
 export LESSOPEN="|lesspipe.sh %s"
 export LESSCHARSET=utf-8
@@ -25,7 +25,7 @@ if [ ! -r "$HOME/.inputrc" ]; then
 fi
 
 # Set the default system $PATH:
-PATH="/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/usr/games:/opt/bin:~/bin"
+PATH="/usr/local/bin:/usr/bin:/bin:/usr/games:$HOME/bin"
 
 # For root users, ensure that /usr/local/sbin, /usr/sbin, and /sbin are in
 # the $PATH.  Some means of connection don't add these by default (sshd comes
@@ -79,20 +79,11 @@ xterm*|rxvt*)
     ;;
 esac
 
-export PATH DISPLAY LESS TERM PS1 PS2 CVSROOT
+export PATH DISPLAY LESS TERM PS1 PS2
 
 # Default umask.  A umask of 022 prevents new files from being created group
 # and world writable.
 umask 022
-
-# Set up the LS_COLORS and LS_OPTIONS environment variables for color ls:
-if [ "$SHELL" = "/bin/zsh" ]; then
- eval `dircolors -z`
-elif [ "$SHELL" = "/bin/ash" ]; then
- eval `dircolors -s`
-else
- eval `dircolors -b`
-fi
 
 # Notify user of incoming mail.  This can be overridden in the user's
 # local startup file (~/.bash.login or whatever, depending on the shell)
