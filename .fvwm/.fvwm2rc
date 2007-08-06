@@ -59,7 +59,7 @@ BugOpts FlickeringMoveWorkaround True
 # Menu Settings.
 #################
 MenuStyle * Hilight3DThin, PopupOffset 0 100, PopupDelay 300
-MenuStyle * Font "xft:DejaVu Sans:style=Roman:size=12"
+MenuStyle * Font "xft:DejaVu Sans:style=Roman:size=12,xft:WenQuanYi Bitmap Song:style=Regular:size=12"
 MenuStyle * MenuColorset 0, HilightBack, ActiveColorset 1
 MenuStyle * BorderWidth 1, TitleUnderlines1, SeparatorsLong, TrianglesSolid, Animation
 MenuStyle * ItemFormat "%.2|%.5i%.5l%.5i%2.3>%2|"
@@ -68,7 +68,7 @@ MenuStyle * AutomaticHotKeys
 ######
 # Default window Styles.
 #################
-Style * Font "xft:DejaVu Sans:style=Roman:size=12"
+Style * Font "xft:DejaVu Sans:style=Roman:size=12,xft:WenQuanYi Bitmap Song:style=Regular:size=12"
 Style * BorderWidth 1, HandleWidth 1
 Style * Colorset 10, HilightColorset 11, MWMFunctions, MWMDecor, HintOverride
 Style * DecorateTransient, NoPPosition, IconBox 70 40 150 -65, IconGrid 3 3, IconFill left top
@@ -126,7 +126,8 @@ Style * UseDecor DefaultDecor
 # Startup and exit functions
 ###########
 AddToFunc StartFunction
-+ I Test (init) Test (x urxvtd) Exec exec urxvtd
+# I start urxvtd in ~/.xinitrc since can't control the time
+#+ I Test (init) Test (x urxvtd) Exec exec urxvtd -q -f -o
 + I Test (init) Test (x Esetroot) exec exec Esetroot -scale $[fvwm_wallpaper]/.current
 + I Module FvwmAnimate
 + I Module FvwmEvent
@@ -137,9 +138,10 @@ AddToFunc StartFunction
 + I Module FvwmButtons IkaroPanel
 + I Module FvwmButtons FvwmDock
 + I Test (Restart) All (Iconic) Test (f $[fvwm_temp]/icon.tmp.$[w.id].png) WindowStyle IconOverride, Icon $[fvwm_temp]/icon.tmp.$[w.id].png
-+ I Test (Init) Test (x xautolock) Exec exec xautolock -time 10 -locker xlock
+#+ I Test (Init) Test (x xautolock) Exec exec xautolock -time 10 -locker xlock
 + I Test (Init) Test (x conky) Exec exec conky 2>/dev/null 1>/dev/null
 + I Test (Init) Test (x stardict) Exec exec stardict > /dev/null
++ I Test (Init) test (x trayer) Exec exec trayer --widthtype request --edge top --align right --transparent true
 #+ I test (!Restart) exec exec 3ddeskd
 
 #####
@@ -151,7 +153,7 @@ AddToFunc ExitFunction
 + I Test (!ToRestart) KillModule FvwmAnimate
 #+ I test (!torestart) exec exec killall -9 xcompmgr
 #+ I test (!torestart) exec exec 3ddesk --stop
-+ I Test (!ToRestart) Exec killall stardict urxvtd tail
++ I Test (!ToRestart) Exec killall stardict urxvtd osd_cat trayer
 + I Exec sync
 
 #####

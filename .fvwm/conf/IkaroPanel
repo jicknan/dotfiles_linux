@@ -6,11 +6,12 @@ Style IkaroPanel 	Sticky, NoTitle, Handlewidth 1, Borderwidth 1, \
 *IkaroPanel: Columns 5                                                          
 # 162 = (1024-700)/2
 *IkaroPanel: Geometry 700x24+162+0
-*IkaroPanel: Font "Shadow=1 b bl r br r :xft:Lucida Grande:bold:pixelsize=12:minspace=True"
+*IkaroPanel: Font "Shadow=1 b bl r br r :xft:Lucida Grande:bold:pixelsize=12:minspace=True,xft:WenQuanYi Bitmap Song:style=Regular:size=12:minspace=True"
 *IkaroPanel: Colorset 30
 *IkaroPanel: Frame 1
 *IkaroPanel: Padding 2 2
 *IkaroPanel: (1x2+0+0, ActionOnPress, Icon fvwm_small.png, \
 		Action(Mouse 1) `Menu MenuFvwmRoot Rectangle +$left+$top 0 -100m`)
 *IkaroPanel: (12x2, Swallow "FvwmIconMan" "FvwmIconMan")
+#*IkaroPanel: (1x2, Swallow(Kill, UseOld) "trayer" `Exec exec trayer --widthtype request --SetDockType true`)
 # vim:ft=fvwm:

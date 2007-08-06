@@ -16,7 +16,7 @@ DestroyModuleConfig FvwmPager: *
 *FvwmPager: Balloons	    All
 *FvwmPager: SmallFont	    none
 *FvwmPager: Font	    none
-*FvwmPager: BalloonFont	    "xft:DejaVu Sans:regular:pixelsize=12:antialias=True"
+*FvwmPager: BalloonFont	    "xft:DejaVu Sans:style=regular:pixelsize=12:antialias=True,xft:WenQuanYi Bitmap Song:style=Regular:size=12"
 *FvwmPager: BallonYOffset   +2
 *FvwmPager: WindowBorderWidth 1
 *FvwmPager: WindowLabelFormat ""
@@ -47,7 +47,7 @@ DestroyModuleConfig FvwmIconMan: *
 *FvwmIconMan: PlainColorset	5
 *FvwmIconMan: IconColorset 	5
 *FvwmIconMan: SelectColorset	4
-*FvwmIconMan: Font "xft:DejaVu Sans:pixelsize=12"
+*FvwmIconMan: Font "xft:DejaVu Sans:pixelsize=12,xft:WenQuanYi Bitmap Song:style=Regular:size=12"
 #*FvwmIconMan: Format		"%t"
 *FvwmIconMan: ManagerGeometry 8x1+0+0
 *FvwmIconMan: ReliefThickness 	2

@@ -15,7 +15,7 @@ DestroyModuleConfig FvwmDock: *
 *FvwmDock: Geometry 50x450+0+159
 #***FvwmDock: Columns 60
 *FvwmDock: Colorset 30
-*FvwmDock: Font "Shadow=1 b bl r br r :xft:Lucida Grande:bold:pixelsize=12:minspace=True"
+*FvwmDock: Font "Shadow=1 b bl r br r :xft:Lucida Grande:bold:pixelsize=12:minspace=True,xft:WenQuanYi Bitmap Song:style=Regular:size=12:minspace=True"
 #5x2 til horizontal
 *FvwmDock: (1x1, Icon rox.png, ActionOnPress, \
 	Action(Mouse 1) `DockLaunch rox ROX-Filer $left $top`, \
