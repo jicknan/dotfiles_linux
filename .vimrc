@@ -29,8 +29,8 @@ set backup		" keep a backup file
 set backupdir=~/.tmp	" put backup file here
 set directory=~/.tmp	" put .swap file here
 set fileencoding=utf-8	" default file encoding
-set fileencodings=ucs-bom,utf-8,gbk,big5
-set termencoding=utf-8
+set fileencodings=ucs-bom,utf-8,gbk,big5 " fileconding detection order
+set termencoding=utf-8 " support Chinese display in rxvt-unicode
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
