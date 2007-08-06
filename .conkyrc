@@ -31,6 +31,7 @@ alignment bottom_right
 
 #${color #98c2c7}CPU:	$cpu%	(up: $uptime)
 #${color lightgrey}$nodename - $sysname $kernel $machine
+#ibm_fan:${ibm_fan} 
 #Name              PID     CPU%   MEM%
 # ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
 # ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
@@ -40,20 +41,24 @@ alignment bottom_right
 # ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
 # stuff after 'TEXT' will be formatted on screen
 TEXT
-${color lightgrey} $nodename - $sysname $kernel
-${color #98c2c7}CPU: $freq_dyn_g GHZ $cpu%	($uptime)
+${alignc}${color lightgrey} $nodename - $sysname $kernel
+${color #98c2c7}CPU: ${alignr}${freq_dyn_g}GHZ $cpu% ${ibm_temps 0}C
 ${cpubar 8}
 ${cpugraph}
-	(Load: $loadavg)
-RAM:	$memperc%	$mem/$memmax
+${alignr}(Time:$uptime Load:$loadavg)
+RAM:	$memperc%	${alignr}$mem/$memmax
 ${membar 8}
-Swap:	$swapperc%	$swap/$swapmax
+Swap: ${alignc}$swapperc%${alignr}$swap/$swapmax
 ${swapbar 8}
-DISK I/O:	$diskio
+DISK ${alignr}${diskio}/s
 ${diskiograph}
-Down:	k/s:${downspeedf eth0}	${alignr}${totaldown eth0}
+Down: ${alignc}${downspeedf eth0}k/s ${alignr}${totaldown eth0}
 ${downspeedgraph eth0}
-Up:	k/s:${upspeedf eth0}	${alignr}${totalup eth0}
+Up: ${alignc}${upspeedf eth0}k/s ${alignr}${totalup eth0}
 ${upspeedgraph eth0}
+${alignr}AC Adpter:${acpiacadapter} Fan:${acpifan}
+${alignr}Battery:${battery}(${battery_time})
+${alignr}Volume:${ibm_volume} Brightness:${ibm_brightness}
+${alignr}WiFi:${linkstatus eth0}
 ${execi 1800 ~/.conky/weather/weather.sh CHXX0116}
-${color lightgrey} ${time %a %b %e %H:%M:%S %Z %G}
+${color lightgrey}${alignc}${time %a %b %e %H:%M:%S %Z %G}
