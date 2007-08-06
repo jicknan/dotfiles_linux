@@ -1,13 +1,79 @@
 ! ~/.Xresource - X resource settings
-! $Id:$
-! more colour settings in /usr/X11R6/lib/X11/rgb.txt
+! This is an amalgam of settings from
+! http://forums.gentoo.org/viewtopic-t-289943.html
+
+! xterm
+! XTerm section starts...
+
+! Requires the Terminus font from
+! http://www.is-vn.bg/hamster/terminus-font-4.20.tar.gz
+
+!XTerm*faceName:    Terminus
+XTerm*facefont:		DejaVu Sans Mono
+!XTerm*font: -*-courier-medium-r-*-*-14-140-*-75-*-*-*-*
+!XTerm*boldFont: -*-courier-bold-r-*-*-14-140-*-75-*-*-*-*
+
+! Xterm settings (aterm/rxvt inherits, urxvt does not)
+
+! Choose ONE. If "locale" doesn't give you utf8 support then use
+! "utf8" instead.
+! XTerm*locale: true
+XTerm*utf8: 2
+
+XTerm*loginshell:       true
+XTerm*faceSize:      10
+XTerm*scrollBar:   false
+! Don't scroll output when the paged up
+XTerm*scrollTtyOutput:   false
+XTerm*background:   grey10
+XTerm*foreground:   WhiteSmoke
+XTerm*cursorColor:   red
+! Don't remember...
+XTerm*charClass:   33:48,37:48,45-47:48,64:48
+! No bold chars
+XTerm*boldMode:         false
+! Makes scrolling faster allowing it to jump whole screens at a time
+XTerm*jumpScroll:   true
+! Makes scrolling faster allowing it to skip over content when scrolling fast
+XTerm*multiScroll:   true
+XTerm*autoWrap:      true
+XTerm*cursorBlink:   true
+! Fixes delete problems in emacs and creates problems in vim
+!XTerm*deleteIsDEL:   true
+! How much scrollback to save
+XTerm*saveLines:  32768 
+! This fixes odd behavior with alt
+XTerm*eightBitInput:   false
+! Not sure what this does
+XTerm*metaSendsEscape:   true
+
+XTerm*color0:           #000000
+XTerm*color1:           #CD0000
+XTerm*color2:           #00CD00
+XTerm*color3:           #CDCD00
+XTerm*color4:           #4B4BED
+XTerm*color5:           #CD00CD
+XTerm*color6:           #00CDCD
+XTerm*color7:           #b3b3b3
+XTerm*color8:           #404040
+XTerm*color9:           #FF0000
+XTerm*color10:          #49DC49
+XTerm*color11:          #FFFF00
+XTerm*color12:          #5858E5
+XTerm*color13:          #FF00FF
+XTerm*color14:          #00FFFF
+XTerm*color15:          #FFFFFF
+
+! URvt section starts
+
+Urxvt*borderLess: 	true
+Urxvt*loginShell: 	true
+Urxvt*inheritPixmap: 	true
 URxvt*geometry: 	100x30
-URxvt*saveLines: 	2000
-
-!URxvt*multichar_encoding: en_US.UTF-8
-URxvt*imlocale:		zh.CN.utf8
-URxvt*inputMethod:	scim
-
+urxvt*scrollBar: 	false
+URxvt*saveLines: 	3000
+urxvt*externalBorder: 	2
+urxvt*internalBorder: 	0
 ! scroll bar settings
 URxvt*scrollBar:	False
 !URxvt*scrollBar_right: True
@@ -15,11 +81,16 @@ URxvt*scrollBar:	False
 !URxvt*scrollTtyOutputInhibit:	True
 !URxvt*shading:	10
 !URxvt*scrollWithBuffer:	True
+!URxvt*multichar_encoding: en_US.UTF-8
+URxvt*imlocale:		zh.CN.utf8
+URxvt*inputMethod:	scim
+
 
 ! font settings
+!Urxvt*font: xft:Terminus:pixelsize=16
 !URxvt*font:		xft:DejaVu Sans Mono
-URxvt*font:		xft:DejaVu Sans Mono:pixelsize=15,\
-			xft:WenQuanYi Bitmap Song:pixelsize=15,\
+URxvt*font:		xft:DejaVu Sans Mono:pixelsize=14,\
+			xft:WenQuanYi Bitmap Song:pixelsize=14,\
 			[codeset=GB2312]xft:WenQuanYi Bitmap Song:antialias=false,\
 			[codeset=GBK]xft:WenQuanYi Bitmap Song:antialias=false,\
 			[codeset=GB18030]xft:WenQuanYi Bitmap Song:antialias=false,\
@@ -27,6 +98,7 @@ URxvt*font:		xft:DejaVu Sans Mono:pixelsize=15,\
 !URxvt*italicFont:        xft:Bitstream Vera Sans Mono:italic:autohint=true
 
 ! VIM-like colors
+urxvt*tintColor: 	#373C57
 URxvt*background: 	gray16
 URxvt*foreground:	#ffffbf
 URxvt*colorBD:		white
@@ -48,9 +120,5 @@ URxvt*color13:	  	#A800A8
 URxvt*color14:     	#f1be2e
 URxvt*color15:     	#ffffff
 
-! xterm
-XTerm*background: 	gray16
-XTerm*foreground:	#ffffbf
-XTerm*facefont:		DejaVu Sans Mono
-XTerm*font: -*-courier-medium-r-*-*-14-140-*-75-*-*-*-*
-XTerm*boldFont: -*-courier-bold-r-*-*-14-140-*-75-*-*-*-*
+! This is here for compatibity with w3m.
+URxvt*termName:         xterm
