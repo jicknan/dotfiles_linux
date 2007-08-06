@@ -26,10 +26,22 @@ fi
 
 # start some nice programs
 
-#export LANG=zh_CN.utf8
-export GTK_IM_MODULE="xim"
-export XMODIFIERS="@im=SCIM"
-scim -d 1> /dev/null 2> /dev/null
+if [ -x /usr/bin/scim ]; then 
+    #export LANG=zh_CN.utf8
+    echo "Setting and starting SCIM: scim -d"
+    export GTK_IM_MODULE="xim"
+    export XMODIFIERS="@im=SCIM"
+    scim -d
+fi
 
+
+if [ -x /usr/bin/urxvtd ]; then
+    echo "Starting urxvtd: urxvtd -q -o -f"
+    urxvtd -q -o -f
+fi
+
+echo "Setting screen root: xsetroot -solid SteelBlue"
 xsetroot -solid SteelBlue
+
+echo "Starting fvwm: fvwm2"
 fvwm2
