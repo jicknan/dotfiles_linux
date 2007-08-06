@@ -7,19 +7,25 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 
-# Start Tor+Privoxy server.
-if [ -x /etc/rc.d/rc.tor ]; then
-    /etc/rc.d/rc.tor start
-fi
-if [ -x /etc/rc.d/rc.privoxy ]; then
-    /etc/rc.d/rc.privoxy start
+# Optimizing disk
+if [ -x /usr/sbin/hdparm ]; then
+    /usr/sbin/hdparm -q -d1 -c3 -W1 -u1 -m 16 /dev/hda
 fi
 
-# for mplayer
+# Optimizing mplayer
 echo 1024 > /proc/sys/dev/rtc/max-user-freq
 
-# D-bus
-if [ -x /etc/rc.d/rc.messagebus ]; then
-    /etc/rc.d/rc.messagebus start
+# Settting up wine execute:
+if [ -x /usr/bin/wine ]; then
+    echo ':windows:M::MZ::/usr/bin/wine:' > /proc/sys/fs/binfmt_misc/register
+    echo ':windowsPE:M::PE::/usr/bin/bine:' > /proc/sys/fs/binfmt_misc/register
 fi
 
+# start cpufreqd
+if [ -x /usr/sbin/cpufreqd ]; then
+    echo "Starting cpufreqd daemon: /usr/sbin/cpufreqd -D&"
+    /usr/sbin/cpufreqd -D &
+fi
+
+# Enable ibm-acpi hotkey
+echo enable,0xffff >/proc/acpi/ibm/hotkey 
