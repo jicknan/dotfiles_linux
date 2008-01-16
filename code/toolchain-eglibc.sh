@@ -177,13 +177,13 @@ $src/$gccv/configure \
     --prefix=$tools \
     --with-sysroot=$sysroot \
     --disable-libssp --disable-libgomp --disable-libmudflap \
-    --enable-languages=c,c++ $additional_gcc_configure_opts
-PATH=$tools/bin:$PATH make -j $parallelism
-PATH=$tools/bin:$PATH make -j $parallelism install
+    --enable-languages=c,c++ $additional_gcc_configure_opts || exit
+PATH=$tools/bin:$PATH make -j $parallelism || exit
+PATH=$tools/bin:$PATH make -j $parallelism install || exit
 
 
-cp -d $tools/$target/lib/libgcc_s.so* $sysroot/lib
-cp -d $tools/$target/lib/libstdc++.so* $sysroot/usr/lib
+cp -d $tools/$target/lib/libgcc_s.so* $sysroot/lib || exit
+cp -d $tools/$target/lib/libstdc++.so* $sysroot/usr/lib || exit
 
 # testing eglibc in cross env
 
