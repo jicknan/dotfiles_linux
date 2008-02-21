@@ -53,21 +53,6 @@ a:hover {
 	background-color:#ccc;
 	}
 
-
-
-
-pre {
-      border: #777777 1px solid;
-      padding: 0.5em;
-      margin-left: 1em;
-      margin-right: 2em;
-      white-space: pre;
-      background-color: snow;
-      color: black;
-      font-family : Luxi Mono, Luxi Sans, Monospace, sans-serif, ËÎÌו;    
-      font-size : 11pt;
-      }
-
 #header	{
 	margin: 20px 0 10px 0;
 	padding: 0.3ex 0 1.3ex 20px;
@@ -93,13 +78,6 @@ body>#header {
 	font-weight: bold;
 	}
 
-#banner {
-	float: center;
-	font-size: medium;
-	text-align: center;
-	vertical-align: middle;
-	}
-	
 #mtime {
 	float: right;
 	text-align: right;

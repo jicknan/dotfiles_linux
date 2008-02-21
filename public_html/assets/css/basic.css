@@ -110,14 +110,6 @@ body>#header {
 	font-weight: bold;
 	}
 
-#banner {/*
-	display: none;*/
-	float: center;
-	font-size: medium;
-	text-align: center;
-	vertical-align: middle;
-	}
-	
 #mtime {
 	float: right;
 	text-align: right;
@@ -217,7 +209,7 @@ html>#menu li a {
 	/*  Text treatments for primary content zone 	*/ 
 
 #content {
-	margin: 20px 50px 50px 12.5em;	/* Left margin is menu width + 4.5em */
+	margin: 20px 50px 20px 12.5em;	/* Left margin is menu width + 4.5em */
 	padding:15px 25px;
 	background-color:#fdfdfd;
 	}
@@ -232,21 +224,13 @@ html>#menu li a {
     border-bottom-style: solid;
     border-bottom-color: rgb(136, 136, 136);
     margin-top: 0pt;
-    margin-right-value: 0pt;
+    margin-right: 0pt;
     margin-bottom: 0pt;
-    margin-left-value: 0pt;
-    margin-left-ltr-source: physical;
-    margin-left-rtl-source: physical;
-    margin-right-ltr-source: physical;
-    margin-right-rtl-source: physical;
+    margin-left: 0pt;
     padding-top: 0pt;
-    padding-right-value: 0pt;
+    padding-right: 0pt;
     padding-bottom: 0pt;
-    padding-left-value: 0pt;
-    padding-left-ltr-source: physical;
-    padding-left-rtl-source: physical;
-    padding-right-ltr-source: physical;
-    padding-right-rtl-source: physical;
+    padding-left: 0pt;
     font-size: 1.5em;
     line-height: 1;
     }
@@ -273,8 +257,8 @@ p+h3	{
 	}
 
 #content pre	{
-	border: #777777 1px solid;
-	padding: 0.5em;
+    border: #777777 1px solid;
+    padding: 0.5em;
     margin: 0 1em 0 2em;
     white-space: pre;
     background-color: #fffafa;
@@ -293,15 +277,10 @@ p+h3	{
   text-indent: 0;
 }
 
-#sign
-{
-  float: right;
-}
-
 	/*  Lay out footer 	*/ 
 
 #footer	{
-	margin: 25px 0 50px 0;
+	margin: 5px 0 0 0;
 	text-align: center;
 	}
 #footer img, #bookmark img {
@@ -319,6 +298,11 @@ p+h3	{
 .right {
 	text-align: right;
 	}
+
+.aright
+{
+  float: right;
+}
 
 .hide {
 	display: none;

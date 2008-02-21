@@ -1,4 +1,4 @@
-    <script language="JavaScript" type="text/javascript">
+    <script type="text/javascript">
       var showit = "block";
       var hideit = "none";
       
@@ -60,20 +60,8 @@
 	  window.open("http://news.google.com/news?hl=en&ned=us&q="+search.key.value);
 	if (search.google_blog.checked)
 	  window.open("http://blogsearch.google.com/blogsearch?hl=en&q="+search.key.value);
-	if (search.google_blog_zh_CN.checked)
-	  window.open("http://blogsearch.google.com/blogsearch?num=10&hl=en&ctz=0&c2coff=1&btnG=Search+Blogs&as_epq=&as_oq=&as_eq=&bl_pt=&bl_bt=&bl_url=&bl_auth=&as_drrb=q&as_qdr=a&as_mind=1&as_minm=1&as_miny=2000&as_maxd=27&as_maxm=1&as_maxy=2007&lr=lang_zh-CN&safe=offas_q="+search.key.value);
 	if (search.google_code.checked)
 	  window.open("http://www.google.com/codesearch?btnG=Search+Code&q="+search.key.value);
-	if (search.google_cache.checked)
-	    window.open("http://66.102.7.104/search?q=cache:"+search.key.value);
-	if (search.google_translate.checked)
-	    window.open("http://www.google.com/translate?langpair=en|en&u="+search.key.value);
-	if (search.google_mobile.checked)
-	    window.open("http://www.google.com/gwt/n?u="+search.key.value);
-	if (search.google_en2zh.checked)
-	    window.open("http://translate.google.com/translate?hl=zh-CN&sl=en&u="+search.key.value);
-	if (search.google_zh2en.checked)
-	    window.open("http://translate.google.com/translate?hl=en&sl=zh-CN&u="+search.key.value);
 
 	if (search.yahoo.checked)
 	  window.open("http://search.yahoo.com/search?ei=UTF-8&fr=moz3&p="+search.key.value);
@@ -93,14 +81,12 @@
 	if (search.baidu_blog.checked)
 	    window.open("http://blogsearch.baidu.com/s?tn=baidublog&bsm=0&ct=2097152&cl=3&wd="+search.key.value);
 
-	if (search.tianwang.checked)
-	  window.open("http://file.tianwang.com/cgi-bin/search?word="+search.key.value);
 	if (search.sfsearch.checked)
 	  window.open("http://sf.ir-lab.org/search.php?String="+search.key.value);
 	if (search.windtear.checked)
 	  window.open("http://search.ipcn.org/cgi-bin/ftpsearch?Submit=+%CB%D1%CB%F7&query="+search.key.value);
 	if (search.jicknan.checked)
-	  window.open("http://www.google.com/custom?cx=000955040325138658314%3Aldu_jtkwi-m&sa=Search&cof=CX%3AJick%2520Nan%2527s%2520Search%2520Engine%3BFORID%3A1&q="+search.key.value);
+	  window.open("http://www.google.com/cse?cx=000955040325138658314%3Aldu_jtkwi-m&sa=Search&q="+search.key.value);
 	if (search.yahoo_cn.checked)
 	  window.open("http://www.yahoo.com.cn/search?ei=CP936&meta=vl%3Dlang_zh-CN%26vl%3Dlang_zh-TWi&p="+search.key.value);
 
@@ -128,7 +114,7 @@
 	if (search.linuxpackages.checked)
 	    window.open("http://www.linuxpackages.net/search_view.php?by=name&name="+search.key.value);
 	if (search.linuxsearch.checked)
-	    window.open("http://www.google.com/custom?cx=000955040325138658314%3Ao-se1quwql4&sa=Search&cof=GFNT%3A%23000000%3BGALT%3A%23008000%3BLH%3A42%3BCX%3ALinux%2520World%2520Search%2520Engine%3BVLC%3A%23663399%3BDIV%3A%23336699%3BFORID%3A1%3BT%3A%23000000%3BALC%3A%230000CC%3BLC%3A%230000CC%3BS%3Ahttp%3A%2F%2Fsearch%2Efreelamp%2Enet%2F%3BL%3Ahttp%3A%2F%2Fwww%2Egoogle%2Ecom%2Fintl%2Fen%2F%2Fsitesearch%2Flinux%2Egif%3BGIMP%3A%23000000%3BLP%3A1%3BBGC%3A%23FFFFFF%3BAH%3Aleft&q="+search.key.value);
+	    window.open("http://www.google.com/cse?cx=000955040325138658314%3Ao-se1quwql4&sa=Search&q="+search.key.value);
 
 	if (search.whois.checked)
 	  window.open("http://whois.webhosting.info/"+search.key.value);
@@ -153,16 +139,6 @@
 	if (search.btn.checked)
 	    window.open("http://behindthename.com/php/search.php?nmd=n&submit=Go&terms="+search.key.value);
 
-
-	if (search.nyud.checked)
-	    window.open(search.key.value+".nyud.net:8090");
-	if (search.proxy.checked)
-	    window.open("http://proxy.org/proxy.pl?url="+search.key.value);
-	if (search.browseatwork.checked){
-	    search.key.value=initUrl.replace("http://","");
-	    window.open("http://browseatwork.com/nph-proxy.cgi/000000A/http/"+search.key.value);
-	}
-	
 	return false;
       }
 
@@ -178,105 +154,77 @@ function checkMobile(){
 
     </script>
     <form name="search" onsubmit="return(search4())">
-      <br />IP:
-      <br />
-      <input type="checkbox" name="IPlookup" value="IPlookup" /><a href="http://ip-lookup.net/">IP Lookup</a>(IP 反查)
-      <input type="checkbox" name="IPsearch" value="IPsearch" /><a href="http://www.intron.ac/service/index.php">IP 查询</a>
-      <br />
-      <input type="checkbox" name="btn" value="btn" /><a href="http://behindthename.com/">Behind the Name</a>: 以英文名为关键字
-      <br />
-      <br />域名:<br />
-      <input type="checkbox" name="whois" value="whois" />WHOIS by WebHosting.Info
-      <input type="checkbox" name="netcraft" value="netcraft" />Site System by Netcraft
-      <br />在线代理(keyword=URL):
-      <br />
-      <input type="checkbox" name="nyud" value="nyud" />nyud.net:8090
-      <input type="checkbox" name="proxy" value="proxy" />proxy.org
-      <input type="checkbox" name="browseatwork" value="" />browse@work
-      <input type="checkbox" name="google_cache" value="" />Google Cache
-      <input type="checkbox" name="google_translate" value="" />Google Translate
-      <input type="checkbox" name="google_mobile" value="" />Google mobile
-      <input type="checkbox" name="google_en2zh" value="" />Google 英译汉
-      <input type="checkbox" name="google_zh2en" value="" />Google 汉译英
-      <br /> 
-      <div id="quick">
-	Quick select: <input type="checkbox" name="web" value="web" onClick="setWeb();" />Web
-	<input type="checkbox" name="blog" value="blog" onClick="setBlog();" />blog
-	<input type="checkbox" name="chinese" value="chinese" onClick="setChinese();" />Chinese
-      </div>
-      Keyword: <input type="text" name="key" size="55" maxlength="255" value="" />
-      <input type="submit" name="sa" value="Search" />
-      <br />
-      <div id="web">
-        <input type="checkbox" name="google_web" value="google_web" />Goolge Web
-	<input type="checkbox" name="google_cn" value="google_cn" />Goolge 中文
-	<input type="checkbox" name="baidu_web" value="baidu_web" />百度
-	<input type="checkbox" name="yahoo" value="yahoo" /> Yahoo! Web
-	<input type="checkbox" name="yahoo_cn" value="yahoo_cn" />雅虎中国
-      </div>
-      <div id="blog">
-        <input type="checkbox" name="google_blog" value="google_blog" />Google Blog
-        <input type="checkbox" name="google_blog_zh_CN" value="google_blog_zh_CN" />Google Blog 中文
-	<input type="checkbox" name="souyo" value="souyo" /><a href="www.souyo.com">Souyo</a>
-	<input type="checkbox" name="qihoo" value="qihoo" /><a href="blog.qihoo.com">Qihoo blog</a>
-	<input type="checkbox" name="technorati_search" value="technorati_search" /><a href="http://www.technorati.com">Technorati</a>(GFWed)
-	<input type="checkbox" name="icerocket" value="icerocket" />ICEROCKET
-	<input type="checkbox" name="baidu_blog" value="baidu_blog" /> Baidu Blog
-	<input type="checkbox" name="youdao" value="youdao" /> Youdao Blog
-      </div>
-      <div id="image">
-        <input type="checkbox" name="google_image" value="google_image" />Google Image
-	<input type="checkbox" name="baidu_image" value="baidu_image" />百度图片
-	<input type="checkbox" name="flickr" value="flickr" /><a href="http://flickr.com">Flickr</a>
-      </div>
-      <div id="music">
-        <input type="checkbox" name="baidu_mp3" value="baidu_mp3" />百度 MP3
-      </div>
-      <div id="knowlege">
-        <input type="checkbox" name="google_code" value="google_code" />Google Code Search
-        <input type="checkbox" name="answers" value="answers" />Answers.com/Wikipedia
-	<input type="checkbox" name="delicious" value="delicious" /><a href="http://del.icio.us">美味书签</a>
-	<input type="checkbox" name="baidu_zhidao" value="baidu_zhidao" />百度知道
-	<input type="checkbox" name="dW" value="dW" />developerWorks
-	<input type="checkbox" name="dW_cn" value="dW_cn" />developerWorks CN
-      </div>
-      <div id="Linux">
-        <input type="checkbox" name="kerneltrap" value="kerneltrap" /><a href="http://kerneltrap.org">KernelTrap</a>
-	<input type="checkbox" name="lwn" value="lwn" /><a href="http://lwn.net/Search">LWN</a>
-	<input type="checkbox" name="nslu2" value="nslu2" /><a href="http://www.nslu2-linux.com">NSLU2</a>
-	<input type="checkbox" name="linuxpackages" value="linuxpackages" /><a href="http://linuxpackages.net">LinuxPackages</a>
-	<input type="checkbox" name="linuxsearch" value="linuxsearch" /><a href="http://www.google.com/coop/cse?cx=000955040325138658314%3Ao-se1quwql4">Linux SE</a>
-      </div>
-      <div id="other">
-        <input type="checkbox" name="google_news" value="google_news" />Google News
-	<input type="checkbox" name="tianwang" value="tianwang" />天网 FTP
-	<input type="checkbox" name="sfsearch" value="sfsearch" />SF Search
-	<input type="checkbox" name="windtear" value="windtear" />windtear
-	<input type="checkbox" name="jicknan" value="jicknan" /><a href="http://www.google.com/coop/cse?cx=000955040325138658314%3Aldu_jtkwi-m">SE4jick</a>
-      </div>
+	<div><br />IP: 
+	    <input type="checkbox" name="IPlookup" value="IPlookup" /><a href="http://ip-lookup.net/">IP Lookup</a>(IP 反查)
+	    <input type="checkbox" name="IPsearch" value="IPsearch" /><a href="http://www.intron.ac/service/index.php">IP 查询</a>
+	    <input type="checkbox" name="btn" value="btn" /><a href="http://behindthename.com/">Behind the Name</a>: 以英文名为关键字
+	    <br />域名: 
+	    <input type="checkbox" name="whois" value="whois" />WHOIS by WebHosting.Info
+	    <input type="checkbox" name="netcraft" value="netcraft" />Site System by Netcraft
+	    <br /> 
+	    <div id="quick">
+		Quick select: <input type="checkbox" name="web" value="web" onClick="setWeb();" />Web
+		<input type="checkbox" name="blog" value="blog" onClick="setBlog();" />blog
+		<input type="checkbox" name="chinese" value="chinese" onClick="setChinese();" />Chinese
+	    </div>
+	    Keyword: <input type="text" name="key" size="55" maxlength="255" value="" />
+	    <input type="submit" name="sa" value="Search" />
+	    <br />
+	    <div id="web">
+		<input type="checkbox" name="google_web" value="google_web" />Goolge Web
+		<input type="checkbox" name="google_cn" value="google_cn" />Goolge 中文
+		<input type="checkbox" name="baidu_web" value="baidu_web" />百度
+		<input type="checkbox" name="yahoo" value="yahoo" /> Yahoo! Web
+		<input type="checkbox" name="yahoo_cn" value="yahoo_cn" />雅虎中国
+	    </div>
+	    <div id="blog">
+		<input type="checkbox" name="google_blog" value="google_blog" />Google Blog
+		<input type="checkbox" name="souyo" value="souyo" /><a href="www.souyo.com">Souyo</a>
+		<input type="checkbox" name="qihoo" value="qihoo" /><a href="blog.qihoo.com">Qihoo blog</a>
+		<input type="checkbox" name="technorati_search" value="technorati_search" /><a href="http://www.technorati.com">Technorati</a>(GFWed)
+		<input type="checkbox" name="icerocket" value="icerocket" />ICEROCKET
+		<input type="checkbox" name="baidu_blog" value="baidu_blog" /> Baidu Blog
+		<input type="checkbox" name="youdao" value="youdao" /> Youdao Blog
+	    </div>
+	    <div id="image">
+		<input type="checkbox" name="google_image" value="google_image" />Google Image
+		<input type="checkbox" name="baidu_image" value="baidu_image" />百度图片
+		<input type="checkbox" name="flickr" value="flickr" /><a href="http://flickr.com">Flickr</a>
+	    </div>
+	    <div id="music">
+		<input type="checkbox" name="baidu_mp3" value="baidu_mp3" />百度 MP3
+	    </div>
+	    <div id="knowlege">
+		<input type="checkbox" name="google_code" value="google_code" />Google Code Search
+		<input type="checkbox" name="answers" value="answers" />Answers.com/Wikipedia
+		<input type="checkbox" name="delicious" value="delicious" /><a href="http://del.icio.us">美味书签</a>
+		<input type="checkbox" name="baidu_zhidao" value="baidu_zhidao" />百度知道
+		<input type="checkbox" name="dW" value="dW" />developerWorks
+		<input type="checkbox" name="dW_cn" value="dW_cn" />developerWorks CN
+	    </div>
+	    <div id="Linux">
+		<input type="checkbox" name="kerneltrap" value="kerneltrap" /><a href="http://kerneltrap.org">KernelTrap</a>
+		<input type="checkbox" name="lwn" value="lwn" /><a href="http://lwn.net/Search">LWN</a>
+		<input type="checkbox" name="nslu2" value="nslu2" /><a href="http://www.nslu2-linux.com">NSLU2</a>
+		<input type="checkbox" name="linuxpackages" value="linuxpackages" /><a href="http://linuxpackages.net">LinuxPackages</a>
+		<input type="checkbox" name="linuxsearch" value="linuxsearch" /><a href="http://www.google.com/coop/cse?cx=000955040325138658314%3Ao-se1quwql4">Linux SE</a>
+	    </div>
+	    <div id="other">
+		<input type="checkbox" name="google_news" value="google_news" />Google News
+		<input type="checkbox" name="sfsearch" value="sfsearch" />SF Search
+		<input type="checkbox" name="windtear" value="windtear" />windtear
+		<input type="checkbox" name="jicknan" value="jicknan" /><a href="http://www.google.com/coop/cse?cx=000955040325138658314%3Aldu_jtkwi-m">SE4jick</a>
+	    </div>
+	</div>
     </form>
-    
+
     <h2>手机归属地(ip138)</h2>
     <form action="http://www.ip138.com:8080/search.asp" method="post" onsubmit="return checkMobile();" target="mobilewindow" name="mobileform">
-      手机号码(段): <input name="mobile" size="15" />
-      <input type="submit" value="Submit" />
-      <input type="hidden" name="action" value="mobile" />
+	<div>手机号码(段): <input name="mobile" size="15" />
+	    <input type="submit" value="Submit" />
+	    <input type="hidden" name="action" value="mobile" />
+	</div>
     </form>
-    <h2>Mail Rss</h2>
-    <div>
-	<form action='http://www.r-mail.org/' method='post'><div>
-		<!--
-	<script type="text/javascript">
-	    var rmail_rss = "http://feeds.feedburner.com/Rmail";
-	    document.write("<input type='hidden' name='rss' value='" + rmail_rss + "' />");
-	</script>
-	-->
-	RSS: <input type='text' name='rss' value='' /><br />
-	Email:<input type='text' name='mailto' value='' /></div>
-    <div><input type='submit' value='Subscribe' /></div> 
-    <div style='font-size:xx-small;'>
-	<a href='http://www.r-mail.org/'>R-mail powered</a></div></form>
-    </div>
 
     <h2><a href="http://www.huoche.com.cn">火车票</a></h2>
     <p>huoche.com.cn is using gbk, and this page utf-8, how to make they work?</p>
