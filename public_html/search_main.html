@@ -6,14 +6,10 @@
 	var cf = document.forms[0];
 
 	cf.baidu_web.checked = true;
-	cf.yahoo_cn.checked = true;
-	cf.google_cn.checked = true;
 
 	if (cf.chinese.checked == false )
 	{
 	  cf.baidu_web.checked = false;
-	  cf.yahoo_cn.checked = false;
-	  cf.google_cn.checked = false;
 	}
       }
 
@@ -21,14 +17,10 @@
 	var cf = document.forms[0];
 
 	cf.google_blog.checked = true;
-	cf.technorati_search.checked = true;
-	cf.souyo.checked = true;
 
 	if (cf.blog.checked == false)
 	{
 	  cf.google_blog.checked = false;
-	  cf.technorati_search.checked = false;
-	  cf.souyo.checked = false;
 	}
       }
 
@@ -54,8 +46,6 @@
 	  window.open("http://www.google.com/search?hl=en&q="+search.key.value);
 	if (search.google_image.checked)
 	  window.open("http://images.google.com/images?hl=en&btnG=Search+Images&q="+search.key.value);
-	if (search.google_cn.checked)
-	  window.open("http://www.google.com/search?hl=en&lr=lang_zh-CN&q="+search.key.value);
 	if (search.google_news.checked)
 	  window.open("http://news.google.com/news?hl=en&ned=us&q="+search.key.value);
 	if (search.google_blog.checked)
@@ -87,8 +77,6 @@
 	  window.open("http://search.ipcn.org/cgi-bin/ftpsearch?Submit=+%CB%D1%CB%F7&query="+search.key.value);
 	if (search.jicknan.checked)
 	  window.open("http://www.google.com/cse?cx=000955040325138658314%3Aldu_jtkwi-m&sa=Search&q="+search.key.value);
-	if (search.yahoo_cn.checked)
-	  window.open("http://www.yahoo.com.cn/search?ei=CP936&meta=vl%3Dlang_zh-CN%26vl%3Dlang_zh-TWi&p="+search.key.value);
 
 	if (search.answers.checked)
 	  window.open("http://www.answers.com/"+search.key.value);
@@ -97,9 +85,6 @@
 	  window.open("http://del.icio.us/search/?all="+search.key.value);
 	if (search.flickr.checked)
 	    window.open("http://www.flickr.com/search/?w=all&q="+search.key.value);
-
-	if (search.technorati_search.checked)
-	  window.open("http://www.technorati.com/search/"+search.key.value);
 
 	if (search.dW.checked)
 	  window.open("http://www-128.ibm.com/developerworks/search/searchResults.jsp?searchType=1&searchSite=dW&searchScope=dW&query="+search.key.value);
@@ -111,8 +96,6 @@
 	  window.open("http://www.google.com/search?hl=en&q=site:lwn.net+"+search.key.value);
 	if (search.nslu2.checked)
 	    window.open("http://www.nslu2-linux.org/wiki/Site/Search?action=search&q="+search.key.value);
-	if (search.linuxpackages.checked)
-	    window.open("http://www.linuxpackages.net/search_view.php?by=name&name="+search.key.value);
 	if (search.linuxsearch.checked)
 	    window.open("http://www.google.com/cse?cx=000955040325138658314%3Ao-se1quwql4&sa=Search&q="+search.key.value);
 
@@ -122,14 +105,8 @@
 	if (search.netcraft.checked)
 	  window.open("http://uptime.netcraft.com/up/graph?site="+search.key.value);
 
-	if (search.icerocket.checked)
-	  window.open("http://blogs.icerocket.com/search?q="+search.key.value);
-	if (search.qihoo.checked)
-	    window.open("http://search.blog.qikoo.com/index.html?kw="+search.key.value);
-	if (search.souyo.checked)
-	    window.open("http://www.souyo.com/search?q="+search.key.value);
-	if (search.youdao.checked)
-	    window.open("http://blog.yodao.com/search?keyfrom=blog.index&q="+search.key.value);
+	if (search.qikoo.checked)
+	  window.open("http://bbs.qikoo.com/search.html?kw="+search.key.value);
 
 	if (search.IPlookup.checked)
 	  window.open("http://ip-lookup.net/?ip="+search.key.value);
@@ -163,42 +140,32 @@ function checkMobile(){
 	    <input type="checkbox" name="netcraft" value="netcraft" />Site System by Netcraft
 	    <br /> 
 	    <div id="quick">
-		Quick select: <input type="checkbox" name="web" value="web" onClick="setWeb();" />Web
+		Quick: <input type="checkbox" name="web" value="web" onClick="setWeb();" />Web
 		<input type="checkbox" name="blog" value="blog" onClick="setBlog();" />blog
 		<input type="checkbox" name="chinese" value="chinese" onClick="setChinese();" />Chinese
 	    </div>
 	    Keyword: <input type="text" name="key" size="55" maxlength="255" value="" />
 	    <input type="submit" name="sa" value="Search" />
 	    <br />
-	    <div id="web">
+	    <div id="google">
 		<input type="checkbox" name="google_web" value="google_web" />Goolge Web
-		<input type="checkbox" name="google_cn" value="google_cn" />Goolge 中文
-		<input type="checkbox" name="baidu_web" value="baidu_web" />百度
-		<input type="checkbox" name="yahoo" value="yahoo" /> Yahoo! Web
-		<input type="checkbox" name="yahoo_cn" value="yahoo_cn" />雅虎中国
-	    </div>
-	    <div id="blog">
 		<input type="checkbox" name="google_blog" value="google_blog" />Google Blog
-		<input type="checkbox" name="souyo" value="souyo" /><a href="www.souyo.com">Souyo</a>
-		<input type="checkbox" name="qihoo" value="qihoo" /><a href="blog.qihoo.com">Qihoo blog</a>
-		<input type="checkbox" name="technorati_search" value="technorati_search" /><a href="http://www.technorati.com">Technorati</a>(GFWed)
-		<input type="checkbox" name="icerocket" value="icerocket" />ICEROCKET
-		<input type="checkbox" name="baidu_blog" value="baidu_blog" /> Baidu Blog
-		<input type="checkbox" name="youdao" value="youdao" /> Youdao Blog
-	    </div>
-	    <div id="image">
+		<input type="checkbox" name="google_code" value="google_code" />Google Code
 		<input type="checkbox" name="google_image" value="google_image" />Google Image
-		<input type="checkbox" name="baidu_image" value="baidu_image" />百度图片
-		<input type="checkbox" name="flickr" value="flickr" /><a href="http://flickr.com">Flickr</a>
+		<input type="checkbox" name="google_news" value="google_news" />Google News
 	    </div>
-	    <div id="music">
+	    <div id="baidu">
+		<input type="checkbox" name="baidu_web" value="baidu_web" />百度
+		<input type="checkbox" name="baidu_zhidao" value="baidu_zhidao" />百度知道
 		<input type="checkbox" name="baidu_mp3" value="baidu_mp3" />百度 MP3
+		<input type="checkbox" name="baidu_blog" value="baidu_blog" /> Baidu Blog
+		<input type="checkbox" name="baidu_image" value="baidu_image" />百度图片
 	    </div>
 	    <div id="knowlege">
-		<input type="checkbox" name="google_code" value="google_code" />Google Code Search
+		<input type="checkbox" name="qikoo" value="qikoo" /><a href="http://bbs.qikoo.com">Qikoo BBS</a>
+		<input type="checkbox" name="flickr" value="flickr" /><a href="http://flickr.com">Flickr</a>
 		<input type="checkbox" name="answers" value="answers" />Answers.com/Wikipedia
 		<input type="checkbox" name="delicious" value="delicious" /><a href="http://del.icio.us">美味书签</a>
-		<input type="checkbox" name="baidu_zhidao" value="baidu_zhidao" />百度知道
 		<input type="checkbox" name="dW" value="dW" />developerWorks
 		<input type="checkbox" name="dW_cn" value="dW_cn" />developerWorks CN
 	    </div>
@@ -206,11 +173,10 @@ function checkMobile(){
 		<input type="checkbox" name="kerneltrap" value="kerneltrap" /><a href="http://kerneltrap.org">KernelTrap</a>
 		<input type="checkbox" name="lwn" value="lwn" /><a href="http://lwn.net/Search">LWN</a>
 		<input type="checkbox" name="nslu2" value="nslu2" /><a href="http://www.nslu2-linux.com">NSLU2</a>
-		<input type="checkbox" name="linuxpackages" value="linuxpackages" /><a href="http://linuxpackages.net">LinuxPackages</a>
 		<input type="checkbox" name="linuxsearch" value="linuxsearch" /><a href="http://www.google.com/coop/cse?cx=000955040325138658314%3Ao-se1quwql4">Linux SE</a>
 	    </div>
 	    <div id="other">
-		<input type="checkbox" name="google_news" value="google_news" />Google News
+		<input type="checkbox" name="yahoo" value="yahoo" /> Yahoo! Web
 		<input type="checkbox" name="sfsearch" value="sfsearch" />SF Search
 		<input type="checkbox" name="windtear" value="windtear" />windtear
 		<input type="checkbox" name="jicknan" value="jicknan" /><a href="http://www.google.com/coop/cse?cx=000955040325138658314%3Aldu_jtkwi-m">SE4jick</a>
@@ -225,40 +191,3 @@ function checkMobile(){
 	    <input type="hidden" name="action" value="mobile" />
 	</div>
     </form>
-
-    <h2><a href="http://www.huoche.com.cn">火车票</a></h2>
-    <p>huoche.com.cn is using gbk, and this page utf-8, how to make they work?</p>
-    <div id="zhanzhan">
-      <div>站站查询 | <a href="#" onclick="zhanzhan.style.display='none';checi.style.display='';chezhan.style.display='none';">车次查询</a> | <a href="#" onclick="zhanzhan.style.display='none';checi.style.display='none';chezhan.style.display='';">车站查询</a></div>
-      <div>
-	<form action="http://www.huoche.com.cn/chaxun/result.asp" method="post">
-	  <p>支持拼音首字母查询，如果<code>北京</code>只需输入<code>bj</code></p>
-	  <p>
-	  出发站：<input name="txtchufa" type="text" size="8" maxlength="10" value=""/>
-	  到达站：<input name="txtdaoda" type="text" size="8" maxlength="10" value=""/>
-	  <input name="search_submit" class="butt" type="submit" value="查询"/>
-	  </p> 
-	</form>
-      </div>
-    </div>
-    <div id="checi" style="display:none">
-      <div><a href="#" onclick="zhanzhan.style.display='';checi.style.display='none';chezhan.style.display='none';">站站查询</a> | 车次查询 | <a href="#" onclick="zhanzhan.style.display='none';checi.style.display='none';chezhan.style.display='';">车站查询</a></div>
-      <div>
-	<form action="http://www.huoche.com.cn/chaxun/resultc.asp" method="post">
-	  <p>搜索<span class="redb">2257</span>趟列车详细时刻和票价</p>
-	  <p>请输入车次：<input name="txtCheci" type="text" size="8" maxlength="10" value=""/>	
-	  <input name="search_submit_checi" class="butt" type="submit" value="查询"/>
-	  </p>
-	</form>
-      </div>
-    </div>
-    <div id="chezhan" style="display:none">
-      <div><a href="#" onclick="zhanzhan.style.display='';checi.style.display='none';chezhan.style.display='none';">站站查询</a> | <a href="#" onclick="zhanzhan.style.display='none';checi.style.display='';chezhan.style.display='none';">车次查询</a> | 车站查询</div>
-      <div>
-	<form action="http://www.huoche.com.cn/chaxun/resultz.asp" method="post">
-	  <p>请输入车站：<input name="txtchezhan" type="text" size="8" maxlength="10" value=""/>
-	  <input name="search_submit" class="butt" type="submit" value="查询"/>
-	  </p>
-	</form>
-      </div>
-    </div>
