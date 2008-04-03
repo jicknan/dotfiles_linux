@@ -1,10 +1,10 @@
 #!/bin/bash
 # Replace with your nickname:remote-key
 # Go to http://friendfeed.com/account/api to get your remote key
-USER="jicknan:"
+USER=":"
 
 function usage {
-    echo "Usage: $0 [-t title] [-l link] [-u nickname:remotekey] [images ...]"
+    echo "Usage: $0 [-t title] [-l link] [-m maxsize] [-c comment] [-u nickname:remotekey] [images ...]"
     exit 1
 }
 
@@ -15,6 +15,7 @@ while getopts m:u:t:l: opt ; do
         l)  LINK="$OPTARG";;
         u)  USER="$OPTARG";;
         m)  MAXSIZE="$OPTARG";;
+	c)  COMMENT="$OPTARG";;
         \?) usage;;
     esac
 done
@@ -25,7 +26,7 @@ TITLE="${TITLE:-$1}"
 
 [ "$TITLE" = "" ] && usage
 
-ARGS=("-F" "title=$TITLE" "-F" "link=$LINK" "-u" "$USER")
+ARGS=("-F" "title=$TITLE" "-F" "link=$LINK" "-F" "comment=$COMMENT" "-u" "$USER")
 FILES=("$@")
 
 for F in "${FILES[@]}" ; do
