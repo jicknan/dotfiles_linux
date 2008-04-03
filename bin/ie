@@ -1,2 +1,0 @@
-#!/bin/bash
-LC_CTYPE=zh_CN.UTF-8 ~/.wine/drive_c/Program\ Files/Internet\ Explorer/iexplore.exe

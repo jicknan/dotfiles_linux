@@ -1,7 +1,7 @@
 #!/bin/bash
 # Replace with your nickname:remote-key
 # Go to http://friendfeed.com/account/api to get your remote key
-USER=":"
+USER="jicknan:sun501friz"
 
 function usage {
     echo "Usage: $0 [-t title] [-l link] [-m maxsize] [-c comment] [-u nickname:remotekey] [images ...]"

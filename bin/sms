@@ -1,0 +1,71 @@
+#!/bin/sh
+# $Header: /opt/cvsroot/vimrcs/files/sh.skel,v 1.3 2006/04/25 14:11:04 jick Exp $
+
+if [ $# != 2 ]; then
+    echo "Usage: $0 <user> <msg>"
+    exit 1
+fi
+
+# Lee
+lee="+8615999097601"
+[ $1 == "lee" ] && num=$lee
+# Chen Liang
+cl="+8613773542426"
+[ $1 == "cl" ] && num=$cl
+# Deng
+deng="+8613630280545"
+[ $1 == "deng" ] && num=$deng
+# Fan Guili
+fan="+8613761063575"
+[ $1 == "fan" ] && num=$fan
+# Gao Xiang
+gx="+8613906205302"
+[ $1 == "gx" ] && num=$gx
+# Li Zhenguo
+lzg="+8613671994631"
+[ $1 == "lzg" ] && num=$lzg
+# Li Zhixin
+lzx="+8613535199877"
+[ $1 == "lzx" ] && num=$lzx
+# Ma Shuai
+mas="+8613914051500"
+[ $1 == "mas" ] && num=$mas
+# Ren
+ren="+8615850253107"
+[ $1 == "ren" ] && num=$ren
+# Shi Yan
+shy="+8615810834177"
+[ $1 == "shy" ] && num=$shy
+# Shi Xianjun
+sxj="+8613651286284"
+[ $1 == "sxj" ] && num=$sxj
+# Xu Yuan
+xuy="+8613291184737"
+[ $1 == "xuy" ] && num=$xuy
+# Yang Jianshe
+[ $1 == "yjs" ] && num="+8613366592063"
+# Zhang Chunlian
+zcl="+8613772130470"
+[ $1 == "zcl" ] && num=$zcl
+# Zhang Dengyao
+zdy="+8613913579791"
+[ $1 == "zdy" ] && num=$zdy
+# Zhang Yahui
+zyh="+8613405060914"
+[ $1 == "zyh" ] && num=$zyh
+# Zhao Lei
+zl="+8613812715147"
+[ $1 == "zl" ] && num=$zl
+# Zhao Yujuan
+zyj="+8613829981133"
+[ $1 == "zyj" ] && num=$zyj
+# Wang Guosheng
+[ $1 == "wgs" ] && num="+8613518616197"
+
+# Groups
+[ $1 == "all" ] &&
+num="$lee,$cl,$deng,$fan,$gx,$lzg,$lzx,$mas,$ren,$shy,$xuy,$yjs,$zcl,$zdy,$zyh,$zl,$zyj"
+
+
+[ "x$num" == "x" ] && (echo "There is no phone number."; exit 1)
+echo "$2" | gnokii --sendsms $num -r && (date; gnokii --smsreader)
