@@ -51,8 +51,7 @@ fi
 
 # Set background image:
 if [ -x /usr/bin/feh ]; then
-	feh --bg-scale /home/jicknan/.config/openbox/collage.jpg &
-	#feh --bg-scale /home/jicknan/project/jicknan/.fvwm/wallpaper/anti-winter.jpg &
+	feh --bg-scale $HOME/.config/openbox/.current &
 fi
 
 #(sleep 2 && fbpanel) &
