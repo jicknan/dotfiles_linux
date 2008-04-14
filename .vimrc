@@ -102,7 +102,7 @@ if has("autocmd")
 "  autocmd FileType conf setlocal fo-=l textwidth=78
 
   " Tags file
-  autocmd BufEnter /work/WNS54/* setlocal tags+=/work/WNS54/tags
+  autocmd BufEnter /work/NS65/* setlocal tags+=/work/NS65/tags
   autocmd BufEnter /work/simple_nas/* setlocal tags+=/work/simple_nas/tags
   autocmd BufEnter /usr/src/linux/* setlocal tags+=/usr/src/linux/tags
   autocmd BufEnter /work/redboot/* setlocal tags+=/work/redboot/tags

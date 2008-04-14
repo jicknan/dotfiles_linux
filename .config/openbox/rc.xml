@@ -135,10 +135,10 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>5</top>
+    <top>0</top>
     <bottom>0</bottom>
-    <left>6</left>
-    <right>3</right>
+    <left>0</left>
+    <right>0</right>
   </margins>
   <dock>
     <position>TopLeft</position>
