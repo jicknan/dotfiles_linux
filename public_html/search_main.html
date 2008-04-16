@@ -85,6 +85,8 @@
 	  window.open("http://del.icio.us/search/?all="+search.key.value);
 	if (search.flickr.checked)
 	    window.open("http://www.flickr.com/search/?w=all&q="+search.key.value);
+	if (search.friendfeed.checked)
+	    window.open("http://friendfeed.com/search?q="+search.key.value);
 
 	if (search.dW.checked)
 	  window.open("http://www-128.ibm.com/developerworks/search/searchResults.jsp?searchType=1&searchSite=dW&searchScope=dW&query="+search.key.value);
@@ -166,6 +168,7 @@ function checkMobile(){
 		<input type="checkbox" name="flickr" value="flickr" /><a href="http://flickr.com">Flickr</a>
 		<input type="checkbox" name="answers" value="answers" />Answers.com/Wikipedia
 		<input type="checkbox" name="delicious" value="delicious" /><a href="http://del.icio.us">美味书签</a>
+		<input type="checkbox" name="friendfeed" value="friendfeed" />FriendFeed
 		<input type="checkbox" name="dW" value="dW" />developerWorks
 		<input type="checkbox" name="dW_cn" value="dW_cn" />developerWorks CN
 	    </div>
