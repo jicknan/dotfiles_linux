@@ -25,6 +25,7 @@ double_buffer yes
 
 # Text alignment, other possible values are commented
 alignment bottom_right
+gap_y 5
 
 # Force UTF8? note that UTF8 support required XFT
 #override_utf8_locale no
@@ -42,23 +43,35 @@ alignment bottom_right
 # stuff after 'TEXT' will be formatted on screen
 TEXT
 ${alignc}${color lightgrey} $nodename - $sysname $kernel
-${color #98c2c7}CPU: ${alignr}${freq_dyn_g}GHZ $cpu% ${ibm_temps 0}C
-${cpubar 8}
+${color #98c2c7}CPU: ${alignc}$cpu%${alignr}${freq_dyn}MHz${if_running cpufreqd}/${voltage_mv}mV${endif}
 ${cpugraph}
-${alignr}(Time:$uptime Load:$loadavg)
+${alignr}(Loadavg:${loadavg})
 RAM:	$memperc%	${alignr}$mem/$memmax
 ${membar 8}
 Swap: ${alignc}$swapperc%${alignr}$swap/$swapmax
 ${swapbar 8}
-DISK ${alignr}${diskio}/s
+DISK: ${alignc}${diskio}/s${alignr}r/w:${diskio_read}/${diskio_write}
 ${diskiograph}
-Down: ${alignc}${downspeedf eth0}k/s ${alignr}${totaldown eth0}
+eth0Down: ${alignc}${downspeedf eth0}K/s ${alignr}${totaldown eth0}
 ${downspeedgraph eth0}
-Up: ${alignc}${upspeedf eth0}k/s ${alignr}${totalup eth0}
+eth0Up: ${alignc}${upspeedf eth0}K/s ${alignr}${totalup eth0}
 ${upspeedgraph eth0}
-${alignr}AC Adpter:${acpiacadapter} Fan:${acpifan}
-${alignr}Battery:${battery}(${battery_time})
-${alignr}Volume:${ibm_volume} Brightness:${ibm_brightness}
-${alignr}WiFi:${linkstatus eth0}
-${execi 1800 ~/.conky/weather/weather.sh CHXX0116}
+eth0:${addr eth0}${alignr}ath0:${addr ath0}
+WiFi: ${alignc}${wireless_bitrate ath0} ${alignr}${wireless_link_qual ath0}/${wireless_link_qual_max ath0}(${wireless_link_qual_perc ath0})
+${wireless_link_bar ath0}
+${alignr}essid:${wireless_essid ath0}
+${alignr}${wireless_ap ath0}
+${alignr}mode:${wireless_mode ath0}
+ath0Down: ${alignc}${downspeedf ath0}K/s ${alignr}${totaldown ath0}
+${downspeedgraph ath0}
+ath0Up: ${alignc}${upspeedf ath0}K/s ${alignr}${totalup ath0}
+${upspeedgraph ath0}
+BAT0:${alignc}${battery_percent}%${alignr}${battery}(${battery_time})
+${battery_bar 5}
+${alignr}AC Adpter:${acpiacadapter}
+${alignr}Fan:${ibm_fan}
+${alignr}Temp:CPU-${ibm_temps 0}C GPU-${ibm_temps 3}C
+${alignr}Volume:${ibm_volume}
+${alignr}Brightness:${ibm_brightness}
+${alignr}Uptime:$uptime 
 ${color lightgrey}${alignc}${time %a %b %e %H:%M:%S %Z %G}
