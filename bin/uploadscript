@@ -51,7 +51,7 @@ ctf=$publish_dir/.ctime.txt
 #	   FTP="-u user -p passwd -P port www.ftp.com  ." 
 #    eg 2. Otherwise, likes me, but please remember  DOSEN'T need the
 #	   last "/" 
-ftp="-u jicknan -p wdlc01 jicknan.bplaced.net ."
+ftp="-u jicknan -p <secret> jicknan.bplaced.net ."
 
 # travel the dir, and upload the modified files
 travel()
