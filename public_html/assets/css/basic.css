@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;	
-	font: 0.85em/1.5 Verdana, Trebuchet, Lucida, Arial, sans-serif;
+	font: 0.85em/1.5 sans-serif;
 	color: #333;/*
 	background: #FFF url(/assets/img/bg.jpg) fixed center;*/
 	background: #FFF;
@@ -152,7 +152,7 @@ body>#sidebar {width: 120px;}	/* Again, "be nice to Opera". */
 	width: 120px;
 	margin: 0;
 	padding: 0;
-	font: 0.85em/17px Verdana, Lucida, Arial, sans-serif;
+	font: 0.85em/17px sans-serif;
 	color: #000;
 	}
 
@@ -252,7 +252,7 @@ p+h3	{
 	}
 	
 #content code	{
-	font: 12px "Andale Mono", monaco, courier, "Courier New", monospace;
+	font: 12px monospace;
 	border-bottom: 1px dotted #999;
 	}
 
@@ -263,7 +263,7 @@ p+h3	{
     white-space: pre;
     background-color: #fffafa;
     color: black;
-    font: 12px/16px "Andale Mono", monaco, courier, "Courier New", monospace;
+    font: 12px/16px monospace;
 	}
 
 /* fortune */
