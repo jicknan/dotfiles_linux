@@ -6,7 +6,7 @@ LIBDIRS = assets/inc
 #SUBDIRS :=
 #SUBDIRS += 
 
-OBJ = index link note search whatsnew
+OBJ = index link note search whatsnew bookmarklet
 
 .PHONY:all
 all: $(OBJ)

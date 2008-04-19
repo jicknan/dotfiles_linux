@@ -40,10 +40,11 @@ gap_y 5
 # ${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}
 # ${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
 # ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
+# ${if_running cpufreqd}/${voltage_mv}mV${endif}
 # stuff after 'TEXT' will be formatted on screen
 TEXT
 ${alignc}${color lightgrey} $nodename - $sysname $kernel
-${color #98c2c7}CPU: ${alignc}$cpu%${alignr}${freq_dyn}MHz${if_running cpufreqd}/${voltage_mv}mV${endif}
+${color #98c2c7}CPU: ${alignc}$cpu%${alignr}${freq_dyn}MHz
 ${cpugraph}
 ${alignr}(Loadavg:${loadavg})
 RAM:	$memperc%	${alignr}$mem/$memmax
@@ -56,7 +57,7 @@ eth0Down: ${alignc}${downspeedf eth0}K/s ${alignr}${totaldown eth0}
 ${downspeedgraph eth0}
 eth0Up: ${alignc}${upspeedf eth0}K/s ${alignr}${totalup eth0}
 ${upspeedgraph eth0}
-eth0:${addr eth0}${alignr}ath0:${addr ath0}
+eth0:${addr eth0}${if_existing /tmp/ath0}${alignr}ath0:${addr ath0}
 WiFi: ${alignc}${wireless_bitrate ath0} ${alignr}${wireless_link_qual ath0}/${wireless_link_qual_max ath0}(${wireless_link_qual_perc ath0})
 ${wireless_link_bar ath0}
 ${alignr}essid:${wireless_essid ath0}
@@ -65,7 +66,7 @@ ${alignr}mode:${wireless_mode ath0}
 ath0Down: ${alignc}${downspeedf ath0}K/s ${alignr}${totaldown ath0}
 ${downspeedgraph ath0}
 ath0Up: ${alignc}${upspeedf ath0}K/s ${alignr}${totalup ath0}
-${upspeedgraph ath0}
+${upspeedgraph ath0}${endif}
 BAT0:${alignc}${battery_percent}%${alignr}${battery}(${battery_time})
 ${battery_bar 5}
 ${alignr}AC Adpter:${acpiacadapter}

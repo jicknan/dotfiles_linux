@@ -65,26 +65,34 @@ XTerm*color14:          #00FFFF
 XTerm*color15:          #FFFFFF
 
 ! URvt section starts
-
 Urxvt*borderLess: 	true
 Urxvt*loginShell: 	true
-Urxvt*inheritPixmap: 	true
 URxvt*geometry: 	100x30
-urxvt*scrollBar: 	false
-URxvt*saveLines: 	3000
-urxvt*externalBorder: 	2
-urxvt*internalBorder: 	0
-! scroll bar settings
-URxvt*scrollBar:	False
+URxvt*saveLines: 	10000
+!URxvt.cursorBlink: 	true
+URxvt*externalBorder: 	2
+URxvt*internalBorder: 	0
 !URxvt*scrollBar_right: True
 ! Turn on/off scroll-to-bottom on TTY output inhibit:
 !URxvt*scrollTtyOutputInhibit:	True
-!URxvt*shading:	10
+URxvt*fading:   	15
+URxvt*tintColor: 	#ffffff
+URxvt*shading:		60
+Urxvt*transparent: 	true
+URxvt*scrollBar:	false
+URxvt*scrollTtyKeypress:    true
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     false
 !URxvt*scrollWithBuffer:	True
+URxvt*scrollstyle:      plain
+URxvt*secondaryScroll:  false
 !URxvt*multichar_encoding: en_US.UTF-8
 URxvt*imlocale:		zh.CN.utf8
 URxvt*inputMethod:	scim
 
+URxvt*urlLauncher:      opera
+*perl-ext-common:	matcher
+*matcher.button: 	M
 
 ! font settings
 !Urxvt*font: xft:Terminus:pixelsize=16
@@ -120,5 +128,7 @@ URxvt*color13:	  	#A800A8
 URxvt*color14:     	#f1be2e
 URxvt*color15:     	#ffffff
 
+URxvt*title:		Terminal
+URxvt*termName:         rxvt-unicode
 ! This is here for compatibity with w3m.
-URxvt*termName:         xterm
+!URxvt*termName:         xterm

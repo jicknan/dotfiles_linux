@@ -108,7 +108,10 @@
     <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>(Unnamed desktop)</name>
+      <name>(mainly)</name>
+      <name>(surfing)</name>
+      <name>(chating)</name>
+      <name>(unset)</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching

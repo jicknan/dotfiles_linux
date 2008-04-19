@@ -6,13 +6,17 @@ PATH=$PATH:$HOME/bin
 export MANPATH=/usr/man:/usr/share/man
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
+export EDITOR="vi"
+
+# enable bash completion when using sudo
+complete -cf sudo
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
 alias ls='ls --color=auto'
-alias ll='ls -l'
+alias ll='ls -lh'
 alias la='ls -a'
 
 # Set TERM to linux for unknown type or unset variable:

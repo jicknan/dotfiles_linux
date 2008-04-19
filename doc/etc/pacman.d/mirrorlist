@@ -3,14 +3,15 @@
 #
 # 10.1Kps
 Server = ftp://ftp.archlinux.org/$repo/os/i686
+Server = ftp://cle.linux.org.tw/pub/ArchLinux/$repos/os/i686
+Server = ftp://cle.linux.org.tw/pub2/ArchLinux/$repos/os/i686
 # 9.6Kps
 Server = http://mirror.lupaworld.com/archlinux/$repo/os/i686
 # 7.2-10.6Kps
 Server = ftp://mirrors.unixheads.org/archlinux/$repo/os/i686
-# 9.6Kps
-Server = http://mirror.lupaworld.com/archlinux/$repo/os/i686
 # can't connect
 Server = http://mirrors.lcuc.org/cn/archlinux/$repo/os/i686
+Server = ftp://ftp.sjtu.edu.cn/pub/mirror2/www.archlinux.org/$repo/os/i686
 Server = ftp://locke.suu.edu/linux/dist/archlinux/$repo/os/i686
 
 # United States

@@ -34,34 +34,47 @@ BG=xsetroot
 test -z $BG || $BG -solid SteelBlue
 #test -z $BG || $BG -solid "#303030"
 
-# scim input platform
+# scim - A Input Method development platform
 if [ -x /usr/bin/scim ]; then 
 	#export LANG=zh_CN.utf8
 	echo "Setting and starting SCIM: scim -d"
 	export XMODIFIERS="@im=SCIM"
 	export GTK_IM_MODULE="scim"
 	export QT_IM_MODULE="scim"
-	scim -d
+	#scim -d &
 fi
 
+# rxvtunicode - an unicode enabled rxvt-clone terminal emulator (urxvt)
 if [ -x /usr/bin/urxvtd ]; then
 	echo "Starting urxvtd: urxvtd -q -o -f"
-	urxvtd -q -o -f
+	urxvtd -q -o -f &
 fi
 
-# Set background image:
+# feh is a fast, lightweight image viewer which uses imlib2
 if [ -x /usr/bin/feh ]; then
 	feh --bg-scale $HOME/.config/openbox/.current &
 fi
 
 #(sleep 2 && fbpanel) &
+# Conky is an advanced, highly configurable system monitor for X based on torsmo
 if [ -x /usr/bin/conky ]; then
-	(sleep 2 && conky) &
+	conky &
 fi
 
-if [ -x /usr/bin/trayer ]; then
-	(sleep 2 && trayer --expand true --widthtype request --transparent true --alpha 255 --edge bottom --align right --SetDockType false) &
+# tpb - Access the special buttons on a ThinkPad-Laptop using xosd
+if [ -x /usr/bin/tpb ]; then
+	tpb &
 fi
+
+# trayer - Swallows GTK 1.2/2.x application docklets, and KDE docklets.
+if [ -x /usr/bin/trayer ]; then
+	trayer --expand true --widthtype request --transparent true --alpha 255 --edge top --align left --SetDockType false &
+fi
+
+# screensaver as wallpaper
+#if [ -x /usr/lib/xscreensaver/glmatrix ]; then
+#    /usr/lib/xscreensaver/glmatrix -root &
+#fi
 
 # Start a wm:
 #twm &
