@@ -1,0 +1,9 @@
+# On X31, X does not recognize the keycode for Num_Lock = Shift + ScrLk
+keycode 77 = Num_Lock
+
+# use the 'page forward' and 'page backward' keys in Firefox
+# In Firefox, type about:config in the address bar and set the values of the
+# variables keyconfig.main.goBackKb2 and keyconfig.main.goBackKb2 to ][][VK_F19
+# and ][][VK_F20 accordingly. ! Can't found in firefox3
+keycode 234 = F19
+keycode 233 = F20
