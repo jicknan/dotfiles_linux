@@ -41,7 +41,7 @@ if [ -x /usr/bin/scim ]; then
 	export XMODIFIERS="@im=SCIM"
 	export GTK_IM_MODULE="scim"
 	export QT_IM_MODULE="scim"
-	#scim -d &
+	scim -d &
 fi
 
 # rxvtunicode - an unicode enabled rxvt-clone terminal emulator (urxvt)

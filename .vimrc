@@ -1,20 +1,17 @@
 " vim:shiftwidth=2:tabstop=8:expandtab
 " ~/.vimrc file
-
-if has('gui_running')
-  let do_syntax_sel_menu=1
-endif
-
-if has('gui_running') && $LANG !~ '\.'
-  set encoding=utf-8
-endif
-
-set nocompatible	" this must be first
-set backspace=indent,eol,start	" backspace over everything in insert mode
+" 设置为非 vi 兼容模式，必须在最前面:
+set nocompatible
+" 自动补全命令时候使用菜单式匹配列表
+set wildmenu
+" 允许退格键删除
+set backspace=2
+"set backspace=indent,eol,start	" backspace over everything in insert mode
+" 启用鼠标
+"set mouse=a
 set autoindent		" always set autoindenting on
 set showmatch		" 在输入括号时光标会短暂地跳到与之相匹配的括号处，不影响输入
 set formatoptions+=mM	" 正确地处理中文字符的折行和拼接
-set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
 set history=100		" keep 100 lines of command line history
 set incsearch		" do incremental searching
 set ruler		" always show the cursor position along the bottom
@@ -31,18 +28,19 @@ set directory=~/.tmp	" put .swap file here
 set fileencoding=utf-8	" default file encoding
 set fileencodings=ucs-bom,utf-8,gbk,big5 " fileconding detection order
 set termencoding=utf-8 " support Chinese display in rxvt-unicode
+" 中文引号显示
+set ambiwidth=double
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
+  " 语法高亮
   syntax on
+  " 搜索高亮
   set hlsearch
 endif
 
-"if has('mouse')
-    set mouse=v	" use mouse everywhere
-"endif
-set scrolloff=10	" min lines to keep above and below the cursor
+set scrolloff=5	        " min lines to keep above and below the cursor
 
 if has('multi_byte') && v:version > 601
   if v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)'
@@ -71,10 +69,10 @@ nmap <C-F11> :cn<CR>
 nmap <C-F12> :cp<CR>
 
 " Key mapping for switch between splits
-nmap <C-J> <C-W>j<C-W>_
-nmap <C-K> <C-W>k<C-W>_
-nmap <C-L> <C-W>L<bar>
-nmap <C-H> <C-W>H<bar>
+"nmap <C-J> <C-W>j<C-W>_
+"nmap <C-K> <C-W>k<C-W>_
+"nmap <C-L> <C-W>L<bar>
+"nmap <C-H> <C-W>H<bar>
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -99,7 +97,9 @@ if has("autocmd")
   autocmd FileType html  setlocal autoindent
   autocmd FileType sh setlocal textwidth=78
   autocmd FileType text setlocal fo+=ro textwidth=78 tabstop=4
-"  autocmd FileType conf setlocal fo-=l textwidth=78
+  "autocmd FileType conf setlocal fo-=l textwidth=78
+  " 让 python 展开Tab，显示行号，缩进4, Tab宽度4
+  autocmd FileType python set et nu sw=4 ts=4 
 
   " Tags file
   autocmd BufEnter /work/NS65/* setlocal tags+=/work/NS65/tags
@@ -119,6 +119,7 @@ if !exists("auto_c")
     ":%s/_filename_/\=bufname("%")
     :"%s/_datetime_/\=strftime("%c")
     au BufNewFile *.pl 0r ~/.vim/files/pl.skel
+    "autocmd BufNewFile *.py 0r ~/.vim/template/simple.py
     ":%s/_filename_/\=bufname("%")
     :"%s/_datetime_/\=strftime("%c")
     map gse <ESC>:%s/_filename_/\=bufname("%")/<CR>:%s/_datetime_/\=strftime("%c")/<CR>
@@ -130,3 +131,20 @@ endif
 if $VIM_HATE_SPACE_ERRORS != '0'
     let c_space_errors=1
 endif
+
+"set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
+"Format the statusline
+"Nice statusbar
+set laststatus=2
+set statusline=
+set statusline+=%2*%-3.3n%0*\ " buffer number
+set statusline+=%f\ " file name
+set statusline+=%h%1*%m%r%w%0* " flag
+set statusline+=[
+set statusline+=%{strlen(&ft)?&ft:'none'}, " filetype
+set statusline+=%{&encoding}, " encoding
+set statusline+=%{&fileformat}] " file format
+set statusline+=%= " right align
+"set statusline+=%2*0x%-8B\ " current char
+set statusline+=0x%-8B\ " current char
+set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
