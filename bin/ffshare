@@ -1,7 +1,11 @@
 #!/bin/bash
 # Replace with your nickname:remote-key
 # Go to http://friendfeed.com/account/api to get your remote key
-USER="jicknan:sun501friz"
+
+# Check $FFUSER.
+[ "$FFUSER" = "" ] && (echo "Please set $FFUSER and export it."; exit 1)
+
+USER="$FFUSER"
 
 function usage {
     echo "Usage: $0 [-t title] [-l link] [-m maxsize] [-c comment] [-u nickname:remotekey] [images ...]"
