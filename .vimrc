@@ -5,11 +5,9 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-" 自动补全命令时候使用菜单式匹配列表
-set wildmenu
+set wildmenu            " 自动补全命令时候使用菜单式匹配列表
 set backspace=indent,eol,start	" backspace over everything in insert mode
-" 启用鼠标
-"set mouse=a
+"set mouse=a            " 启用鼠标
 set autoindent		" always set autoindenting on
 set showmatch		" 在输入括号时光标会短暂地跳到与之相匹配的括号处，不影响输入
 set formatoptions+=mM	" 正确地处理中文字符的折行和拼接
