@@ -1,0 +1,31 @@
+# Makefile
+include Rules.make
+BIN:= TTTT
+OBJS:=main.o
+ifdef DEBUG
+	OBJS+= debug.o
+	CFLAGS+= -D_DEBUG_
+endif
+DEPENDS= $(patsubst %.o,.%.d,${OBJS})
+
+all: $(BIN)
+	@echo "done"
+
+TTTT: $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $^
+
+.%.d: %.c
+	@$(CC) $(CFLAGS) -M $< >$@
+	@sed -i "1s/^$*.o:/$*.o $*.d: Makefile Rules.make/g;" $@
+
+install:
+#         install $(BIN) $(TARGET_DIR)/usr/sbin/
+	$(STRIP) $(TARGET_DIR)/usr/sbin/$(BIN)
+clean:
+	$(RM) $(BIN) $(DEPENDS) $(OBJS)
+
+ifneq ($(MAKECMDGOALS), clean)
+ifneq ($(MAKECMDGOALS), prepare)
+-include $(DEPENDS)
+endif
+endif

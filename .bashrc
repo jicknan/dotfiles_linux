@@ -3,10 +3,12 @@
 
 # Set the values for some environment variables:
 PATH=$PATH:$HOME/bin
-export MANPATH=/usr/man:/usr/share/man
+MANPATH=/usr/man:/usr/share/man
+
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
-export EDITOR="vi"
+# Default text editor
+EDITOR="vi"
 
 # enable bash completion when using sudo
 complete -cf sudo
@@ -17,7 +19,12 @@ shopt -s checkwinsize
 
 alias ls='ls --color=auto'
 alias ll='ls -lh'
-alias la='ls -a'
+alias la='ls -A'
+alias l='ls -CF'
+alias grep="grep --color"
+#        alias cu='sudo chmod 777 /dev/ttyUSB0 && sudo cu -l /dev/ttyUSB0 -s 115200'
+# Needed to get "man" to work properly in Unicode locales:
+alias man='LC_ALL=C man'
 
 # Set TERM to linux for unknown type or unset variable:
 if [ "$TERM" = "" -o "$TERM" = "unknown" ]; then
@@ -29,15 +36,26 @@ PS2='> '
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*)
+xterm* | rxvt*)
     PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
     ;;
 *)
     ;;
 esac
 
-export PATH TERM PS1 PS2
+# hide me
+[ -f $HOME/.hideme ] && . $HOME/.hideme
 
-if [ -f $HOME/.hideme ]; then
-    . $HOME/.hideme
-fi
+# arm-linux compile tools/ GCC 3.3.2 OABI
+#PATH=$PATH:/opt/arm-linux/bin
+#PATH=$PATH:/work/tools/3.3.2/bin
+# Linksys_SMB toolchain/CSL GCC 3.4.3 EABI
+#PATH=$PATH:/opt/arm-linux-gnueabi/bin
+#PATH=$PATH:/opt/arm-none-linux-gnueabi/bin
+CVSROOT=:pserver:jick_nan:82f973@scs:12121/home/nas-cvsroot
+CVS_RSH=ssh
+
+export PATH MANPATH TERM PS1 PS2 CVSROOT CVS_RSH EDITOR
+
+# have fun!
+fortune -c
