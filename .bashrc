@@ -37,3 +37,7 @@ xterm*|rxvt*)
 esac
 
 export PATH TERM PS1 PS2
+
+if [ -f $HOME/.hideme ]; then
+    . $HOME/.hideme
+fi
