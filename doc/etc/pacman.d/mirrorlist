@@ -3,8 +3,8 @@
 #
 # 10.1Kps
 Server = ftp://ftp.archlinux.org/$repo/os/i686
-Server = ftp://cle.linux.org.tw/pub/ArchLinux/$repos/os/i686
-Server = ftp://cle.linux.org.tw/pub2/ArchLinux/$repos/os/i686
+#Server = ftp://cle.linux.org.tw/pub/ArchLinux/$repos/os/i686
+#Server = ftp://cle.linux.org.tw/pub2/ArchLinux/$repos/os/i686
 # 9.6Kps
 Server = http://mirror.lupaworld.com/archlinux/$repo/os/i686
 # 7.2-10.6Kps

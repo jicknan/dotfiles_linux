@@ -49,9 +49,12 @@ esac
 # arm-linux compile tools/ GCC 3.3.2 OABI
 #PATH=$PATH:/opt/arm-linux/bin
 #PATH=$PATH:/work/tools/3.3.2/bin
-# Linksys_SMB toolchain/CSL GCC 3.4.3 EABI
-#PATH=$PATH:/opt/arm-linux-gnueabi/bin
-#PATH=$PATH:/opt/arm-none-linux-gnueabi/bin
+# NS65 toolchain/CSL GCC 3.4.3 EABI
+NS65="$HOME/project/NS65"
+PATH=$PATH:$NS65
+PATH=$PATH:$NS65/arm-linux-gnueabi/bin
+PATH=$PATH:$NS65/arm-none-linux-gnueabi/bin
+# CVS repository for NAS
 CVSROOT=:pserver:jick_nan:82f973@scs:12121/home/nas-cvsroot
 CVS_RSH=ssh
 
