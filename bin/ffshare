@@ -11,7 +11,7 @@ function usage {
 MAXSIZE=""
 while getopts m:u:t:l: opt ; do
     case "$opt" in
-        t)  TITLE="$OPTARG";;
+        t)  TITLE="$OPTARG ...via ffshare;)";;
         l)  LINK="$OPTARG";;
         u)  USER="$OPTARG";;
         m)  MAXSIZE="$OPTARG";;
