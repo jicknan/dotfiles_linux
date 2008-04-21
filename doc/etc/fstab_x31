@@ -1,0 +1,20 @@
+# 
+# /etc/fstab: static file system information
+#
+# <file system>        <dir>         <type>    <options>          <dump> <pass>
+none                   /dev/pts      devpts    defaults            0      0
+none                   /dev/shm      tmpfs     defaults            0      0
+
+/dev/sda5 /mnt/d vfat iocharset=utf8,uid=1000,gid=1000 0 0
+/dev/sda6 /mnt/e vfat iocharset=utf8,uid=1000,gid=1000 0 0
+/dev/sda7 /boot ext3 defaults 0 1
+/dev/sda8 /mnt/slackfs reiserfs defaults 0 0
+/dev/sda10 / ext3 defaults 0 1
+/dev/sda11 /home ext3 defaults 0 0
+UUID=5bf6d51b-bcfb-4c6c-813f-4f204fe313ae swap swap defaults 0 0
+
+/dev/sdb1 /mnt/usb vfat noauto,iocharset=utf8,uid=1000,gid=1000 0 0
+//mynas/audio /mnt/audio cifs noauto,iocharset=utf8,uid=1000,gid=1000,user=admin,pass=196500 0 0
+//mynas/video /mnt/video cifs noauto,iocharset=utf8,uid=1000,gid=1000,user=admin,pass=196500 0 0
+//mynas/DISK /mnt/disk cifs noauto,iocharset=utf8,uid=1000,gid=1000,user=admin,pass=196500 0 0
+//mynas/jick /mnt/jick cifs noauto,iocharset=utf8,uid=1000,gid=1000,user=admin,pass=196500 0 0

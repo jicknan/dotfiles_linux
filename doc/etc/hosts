@@ -18,7 +18,7 @@
 
 # local host
 172.21.1.234		scs
-192.168.0.109		sitsang
+192.168.0.109		mynas
 
 # Telnet bbs
 #61.182.213.238	www.newsmth.net	newsmth.net
