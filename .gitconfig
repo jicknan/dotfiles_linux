@@ -1,0 +1,14 @@
+[user]
+name = Jick Nan
+email = jick.nan@gmail.com
+
+[color]
+diff = auto
+status = auto
+branch = auto
+
+[alias]
+st = status
+rb = svn rebase
+ci = commit -a
+co = checkout
