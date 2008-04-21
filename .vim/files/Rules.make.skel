@@ -1,0 +1,10 @@
+# rules Makefile
+# CROSS_PREFIX:=arm-linux-
+CC= $(CROSS_PREFIX)gcc
+STRIP =$(CROSS_PREFIX)strip
+CFLAGS= -Wall -Werror
+ifndef CROSS_PREFIX
+	CFLAGS+=-DFOR_PC
+endif
+LDFLAGS=
+DEBUG=1

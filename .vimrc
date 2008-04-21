@@ -1,12 +1,13 @@
 " vim:shiftwidth=2:tabstop=8:expandtab
 " ~/.vimrc file
-" 设置为非 vi 兼容模式，必须在最前面:
+"
+
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
 set nocompatible
 " 自动补全命令时候使用菜单式匹配列表
 set wildmenu
-" 允许退格键删除
-set backspace=2
-"set backspace=indent,eol,start	" backspace over everything in insert mode
+set backspace=indent,eol,start	" backspace over everything in insert mode
 " 启用鼠标
 "set mouse=a
 set autoindent		" always set autoindenting on
@@ -22,14 +23,14 @@ set background=dark	" background you're used: dark | light
 set number		" show line numbers
 set winminheight=0      " win min heitht, default 1
 "set path=/usr/include/*	" where gf, ^Wf, find will search
+"set nobackup		" do not keep a backup file, use versions instead
 set backup		" keep a backup file
 set backupdir=~/.tmp	" put backup file here
 set directory=~/.tmp	" put .swap file here
 set fileencoding=utf-8	" default file encoding
-set fileencodings=ucs-bom,utf-8,gbk,big5 " fileconding detection order
-set termencoding=utf-8 " support Chinese display in rxvt-unicode
-" 中文引号显示
-set ambiwidth=double
+set fileencodings=utf-8,gbk,ucs-bom,big5 " fileconding detection order
+set termencoding=utf-8  " support Chinese display in rxvt-unicode
+set ambiwidth=double    " 中文引号显示
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -103,23 +104,21 @@ if has("autocmd")
 
   " Tags file
   autocmd BufEnter /work/NS65/* setlocal tags+=/work/NS65/tags
-  autocmd BufEnter /work/simple_nas/* setlocal tags+=/work/simple_nas/tags
   autocmd BufEnter /usr/src/linux/* setlocal tags+=/usr/src/linux/tags
-  autocmd BufEnter /work/redboot/* setlocal tags+=/work/redboot/tags
 endif " has("autocmd")
 
 if !exists("auto_c")
     let auto_c=1
-    au BufNewFile *.info 0r ~/.vim/files/info.skel
-    au BufNewFile *.SlackBuild 0r ~/.vim/files/SlackBuild.skel
     au BufNewFile *.c 0r ~/.vim/files/c.skel
     "au BufNewFile *.c normal gnp 
     au BufNewFile *.h 0r ~/.vim/files/h.skel
     au BufNewFile *.sh 0r ~/.vim/files/sh.skel
+    au BufNewFile Makefile 0r ~/.vim/files/makefile.skel
+    au BufNewFile Rules.make 0r ~/.vim/files/Rules.make.skel
     ":%s/_filename_/\=bufname("%")
     :"%s/_datetime_/\=strftime("%c")
     au BufNewFile *.pl 0r ~/.vim/files/pl.skel
-    "autocmd BufNewFile *.py 0r ~/.vim/template/simple.py
+    autocmd BufNewFile *.py 0r ~/.vim/files/python.skel
     ":%s/_filename_/\=bufname("%")
     :"%s/_datetime_/\=strftime("%c")
     map gse <ESC>:%s/_filename_/\=bufname("%")/<CR>:%s/_datetime_/\=strftime("%c")/<CR>
