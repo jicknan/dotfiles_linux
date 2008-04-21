@@ -1,0 +1,17 @@
+# ~/.conkyrc_log
+# display log files
+use_xft yes
+xftfont DejaVu Sans:size=10
+xftalpha 0.6
+update_interval 2.0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+double_buffer yes
+alignment bottom_left
+gap_y 5
+#tcp_portmon
+#top
+#top_mem
+TEXT
+${color lightgrey}${tail /var/log/dmesg.log 5}
