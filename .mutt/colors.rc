@@ -1,0 +1,24 @@
+#
+# sucha's color settings since Mar 2005, 
+
+#
+# Colors
+
+color normal white black
+color hdrdefault red black
+color quoted yellow black
+color signature red black
+color indicator black green
+color error brightred black
+color status yellow blue
+color tree magenta black	# the thread tree in the index menu
+color tilde magenta black
+color message brightcyan black
+color markers brightcyan black
+color attachment brightmagenta black
+color search black green	# how to hilite search patterns in the pager
+
+color header brightred black ^(From|Subject):
+color body brightblue black "(ftp|http)://[^ ]+"	# point out URLs
+color body brightblue black [-a-z_0-9.]+@[-a-z_0-9.]+	# e-mail addresses
+color underline brightgreen black

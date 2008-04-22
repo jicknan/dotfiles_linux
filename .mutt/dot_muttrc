@@ -1,0 +1,229 @@
+# -*-muttrc-*-
+
+#
+# Mutt configuration file of Thomas Roessler <roessler@guug.de>.
+#
+# Use and distribute freely.
+#
+# Note: This file doesn't contain any personal customization, i.e.,
+# using it won't make you send messages with my name in the header.
+#
+# Things to change: You probably want to change the "priv.rc" source
+# command in the end of this file.  Also, it's likely you want to have 
+# a look at the the $editor and $tmpdir variables.
+#
+#
+# sucha adpated in Sep 2004, have fun !
+
+
+#
+#
+# MIME settings
+
+ auto_view application/ms-tnef text/x-vcard
+ auto_view application/x-chess application/x-lotus-notes
+ auto_view text/html application/x-gzip application/x-gunzip
+ auto_view application/rtf application/x-rath
+ auto_view application/msword
+ auto_view image/*
+
+alternative_order text/plain text/enriched text/html application/pgp application/postscript image/*
+
+
+#
+#
+# read the config file and set scores
+
+# PGP command configuration
+# source ~/.mutt/pgp2.rc
+# source ~/.mutt/gpg.rc
+
+# source non-public stuff, (hooks, alternates, ...)
+# source ~/.mutt/priv.rc
+
+source ~/.mutt/aliases
+source ~/.mutt/bindings.rc
+source ~/.mutt/colors.rc
+
+
+# My scores about mails
+score "~N" +4
+score "~f mum"  +3
+score "~f 3to32" +2
+score "~D"  -5
+score "~O" +1
+score "~s 广告" -10
+score "~s 先生" -10
+
+
+# attributes when using a mono terminal
+#mono header underline ^(From|Subject):
+mono quoted bold
+mono  index bold ~F
+mono  body  bold '\*[^*]+\*'
+mono  body  underline '_[^_]+_'
+
+
+#
+#
+# The header weed list
+
+ignore delivered-to
+ignore content- errors-to in-reply-to mime-version
+ignore lines precedence status
+ignore nntp-posting-host path old-return-path received references
+ignore priority >received >>received
+
+ignore resent- return-path xref path
+ignore x400 importance sensitivity autoforward original-encoded-information
+ignore x- thread-
+
+ignore list- comments posted-to approved-by
+
+unignore x-spam x-url x-mailer
+
+# header settings
+hdr_order from to cc date subject reply-to mail-followup-to # mail head order
+my_hdr From: Jick Nan <jick.nan@gmail.com>
+my_hdr Reply-To: Jick Nan <jick.nan@gmail.com>
+my_hdr Organization: darkstar :-)
+
+
+#
+#
+# Various settings
+
+set   abort_nosubject=no		# Let me send messages with an empty subject
+set   abort_unmodified=no		# Let me send empty messages
+set   allow_8bit=yes			# Produce correct MIME
+unset arrow_cursor			# Use the bar cursor
+set   askcc=no				# Don't ask me about CCs
+#set   edit_headers
+set   beep=no				# I don't like the beep
+set   beep_new=no			# I use xbiff instead of beep
+unset bounce_delivered			# Don't include Delivered-to with bounces
+set   charset="utf-8"   		# My locale settings
+set   confirmcreate=yes			# Ask me about creating new files
+unset confirmappend			# Don't ask me about appending to files
+set   delete=yes			# Don't ask me whether or not I meant to
+      					# delete messages
+set   edit_hdrs=no			# I want to edit the headers.
+set   editor="vim"       		# I just like emacs.
+#set 	editor="vim -c 'set tw=72 et ft=mail'"
+set   envelope_from=yes			# set messages' envelope-from header.
+set   fast_reply=yes			# when press "r" then don't use to fill address
+unset   fcc_clear			# Store local copies of messages in the clear.
+set	folder=~/.mutt/mbox		# Where my mail folders go
+set	mbox=~/.mutt/mbox
+#set	spoolfile=~/.mutt/mbox/default
+set   followup_to			# Create Mail-Followup-To headers.
+unset   force_name			# Create save folders which don't exist.
+set   forward_decode			# Decode messages when forwarding.
+set   forward_decrypt			# Decrypt messages when forwarding.
+set   help=yes				# No help line.
+set   include=yes			# Always include a copy when replying.
+set   mark_old				# Distinguish between seen (but unread) 
+      					# and new messages
+#set  mbox=+mbox		 	# old settings
+set   mbox="+incoming/`date +%Y-%m`"	# The (unused) mbox file.
+set   mailcap_path="~/.mutt/mailcap"	# My mailcap path
+unset metoo	 			# Remove me from CC headers.
+
+set   mime_fwd=ask-no			# Ask me whether or not to create a 
+      					# MIME-encapsulated forward
+set   move=yes	  			# use mbox, that's i'd love to
+set   pager_stop			# Don't fall through to the next message 
+      					# in the pager
+set   pager_index_lines=4		# The pager index is ugly to someone.
+set   pgp_replyencrypt			# Encrypt when replying to encrypted messages.
+set   pgp_replysignencrypted		# Sign when replying to encrypted messages.
+set   pgp_show_unusable="no"		# Don't display unusable keys.
+set   pgp_sort_keys="keyid"		# Sort keys by key ID
+set   pgp_replysign			# Sign when replying to signed messages.
+set   pgp_timeout=3600			# Forget the PGP passphrase after an hour.
+set   pipe_decode			# Decode messages I pipe to commands, 
+      					# typically to patch(1).
+set   postponed=~/.mutt/postponed	# Where to put postponed messages
+unset   print=ask-no			# Don't waste paper
+set   print_cmd="enscript -Email -2 -r -G"	
+      			  	       	# Two columns, landscape, fancy header.
+set   print_split=yes			# Invoke enscript once per message
+set   quit=ask-yes			# Don't ask me whether or not I want to quit.
+set   quote_regexp="^ *[a-zA-Z]*[>|][>:|]*"	
+      		      			# Recognize quotes in the pager.
+set   read_inc=50			# Progress indicator when reading folders.
+set   recall=ask-no			# When I say "compose", ask me whether 
+      					# I want to continue
+					# composing a postponed message.
+set   record="+archive/`date +%Y-%m`"	# Put copies of most outgoing messages 
+      			     		# to ~/Mail/archive/now
+set   reply_to=ask-yes			# Ask me whether I want to honor users' 
+      					# reply-to headers.
+set   reverse_alias			# Use aliases to display real names on the index.
+set   save_name=yes 			# Save copies by name.  Together with $record 
+      					# and $save_name, this means that when a folder
+					# exists, copies of outgoing messages are written
+					# to ~/Mail/<name>, otherwise they go to
+					#  ~/Mail/archive/now
+set   send_charset="utf-8"		# while my mails going out, i wish others can 
+      					# read it
+#set   signature="mutt_signature |"	# Silly signature, use fortune 
+#set	signature=~/.mutt/signature		# sign at the end of file
+set   sig_dashes			# Add dashes above my signature
+set   smart_wrap			# Try to be smart when wrapping around lines
+      					# in the pager
+set   sort=score			# sort by score
+set   sort=threads			# then by threads
+set   sort_aux=date			# then by date
+unset strict_threads	 		# don't be strict about threads
+set   suspend=no			# I run the mutt in gnome-terminal
+set   tilde				# Indicate empty lines in the pager.
+set   to_chars=" +TCFL "		# Don't tag list mail in the index
+unset use_domain			# Don't append a domain to addresses.
+set   write_inc=50			# Progress indicator when writing folders.
+set   query_command="lbdbq %s"		# Use the Little Brother's Database with the
+      			   		# external query feature.
+set   sendmail="/usr/local/bin/esmtp -v -X /tmp/esmtp.log"
+      				     	# use esmtp, an small tools between local 
+					# and the smtp serve
+set   sendmail_wait=-1			# Put sendmail (i.e., postfix) to the background.
+set   encode_from			# "From " in the beginning of a line triggers
+      					# quoted-printable
+set   nowait_key			# Return immediately from external programs
+set   forw_format="[fwd] %s (from: %a)"	# A different subject for forwarded messages
+set   nobeep				# Shut up. ;-)
+set   reply_regexp="^((re([\\[0-9\\]+])*|aw):[ \t]*)+[ \t]*"
+      					# A regular expression to detect replies
+					# Include the message header when replying.
+set   header=no
+set   ignore_list_reply_to=no		# Ignore Reply-To headers pointing to mailing 
+      					# lists.
+set   index_format="%4C %Z %{%b %d} %-15.15L (%4c) %s"
+      					# Somewhat different index format, which works
+					# nicely with maildir folders.
+set   rfc2047_parameters	
+      					# Sometimes, I get mails which use a bogus
+					#  encoding for MIME parameters.  Setting
+					# this shouldn't harm.
+set   text_flowed			# Generate text/plain; format=flowed
+unset use_ipv6				# Don't try to use IPv6 - it doesn't work here.
+set   keep_flagged			# don't move flagged messages to mbox
+
+#set status_format="-%r-+(%v) %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]----%>-(%P)---"
+#set compose_format="--+(%v) Compose  [Approx. msg size: %l   Atts: %a]%>-"
+#set pager_format="-%Z- %C/%m: %.20n %> %s"
+#set smileys="^$"
+
+# Identify  mailing lists I subscribe to
+subscribe	slackware-request@mailman.lug.org.uk 
+subscribe	slackware@mailman.lug.org.uk 
+subscribe	opera-linux@opera.com 
+subscribe	opera-linux-request@opera.com
+
+# charset-hook
+charset-hook !utf-8 gb2312
+
+# iconv hook
+iconv-hook !utf-8 utf-8
+
+#EOF

@@ -1,0 +1,110 @@
+S: 220 localhost ESMTP OSmtpproxy
+C: EHLO workarea
+S: 250-localhost
+S: 250-PIPELINING
+250-AUTH LOGIN PLAIN NTLM
+250-AUTH=LOGIN PLAIN NTLM
+250 8BITMIME
+C: AUTH LOGIN bmFuamM=
+S: 334 UGFzc3dvcmQ6
+C: d2RsYzAx
+S: 235 Authentication successful
+C: MAIL FROM:<nanjc@163.com>
+S: 250 Ok
+C: RCPT TO:<youngsky888888@163.com>
+RCPT TO:<sunm999@126.com>
+RCPT TO:<frogwwq@163.com>
+RCPT TO:<zhongshenghui@163.com>
+RCPT TO:<kmm99@sohu.com>
+RCPT TO:<liangchen1919@126.com>
+S: 250 Ok
+S: 250 Ok
+S: 250 Ok
+S: 250 Ok
+S: 250 Ok
+S: 250 Ok
+C: DATA
+S: 354 End data with <CR><LF>.<CR><LF>
+H: Date: Mon, 12 Sep 2005 11:35:20 +0800
+H: From: Jick Nan <nanjc@163.com>
+H: To: liangchen1919@126.com, kmm99@sohu.com, zhongshenghui@163.com,
+	frogwwq@163.com, lsb <sunm999@126.com>,
+	Youngsky <youngsky888888@163.com>
+H: Subject: ff
+H: Message-ID: <20050912033520.GA8060@localdomain>
+H: Reply-To: Jick Nan <nanjc@163.com>
+H: Mime-Version: 1.0
+H: Content-Type: text/plain; charset=us-ascii
+H: Content-Disposition: inline
+H: X-URL: http://www.freelamp.net/
+H: User-Agent: Mutt/1.5.9i
+S: 250 Ok: queued as AoQexu32JEOpkJ8C.1
+C: QUIT
+S: 221 SMTP Proxy connection sucessfully closed.
+
+S: 220 Coremail SMTP(Anti Spam) System (163com[20050206])
+C: EHLO workarea
+S: 250-smtp12
+250-PIPELINING
+250-AUTH LOGIN PLAIN NTLM
+250-AUTH=LOGIN PLAIN NTLM
+250 8BITMIME
+C: AUTH LOGIN bmFuamM=
+S: 334 UGFzc3dvcmQ6
+C: d2RsYzAx
+S: 235 Authentication successful
+C: MAIL FROM:<nanjc@163.com>
+S: 250 Ok
+C: RCPT TO:<jick_nan@sdc.sercomm.com>
+S: 250 Ok
+C: DATA
+S: 354 End data with <CR><LF>.<CR><LF>
+H: Date: Tue, 20 Dec 2005 19:18:47 +0800
+H: From: Jick Nan <nanjc@163.com>
+H: To: jick_nan@sdc.sercomm.com
+H: Subject: test cmdline send mail by mutt
+H: Message-ID: <20051220111846.GA24753@localdomain>
+H: Reply-To: Jick Nan <nanjc@163.com>
+H: Mime-Version: 1.0
+H: Content-Type: multipart/mixed; boundary="pf9I7BMVVzbSWLtt"
+H: Content-Disposition: inline
+H: Content-Transfer-Encoding: 8bit
+H: X-URL: http://www.freelamp.net/
+H: User-Agent: Mutt/1.5.9i
+S: 250 Ok: queued as sFu_rg_mp0MKGWwA.1
+C: QUIT
+S: 221 Bye
+
+S: 220 Coremail SMTP(Anti Spam) System (163com[20050206])
+C: EHLO workarea
+S: 250-smtp13
+250-PIPELINING
+250-AUTH LOGIN PLAIN NTLM
+250-AUTH=LOGIN PLAIN NTLM
+250 8BITMIME
+C: AUTH LOGIN bmFuamM=
+S: 334 UGFzc3dvcmQ6
+C: d2RsYzAx
+S: 235 Authentication successful
+C: MAIL FROM:<nanjc@163.com>
+S: 250 Ok
+C: RCPT TO:<jick_nan@sdc.sercomm.com>
+S: 250 Ok
+C: DATA
+S: 354 End data with <CR><LF>.<CR><LF>
+H: Date: Tue, 20 Dec 2005 19:19:06 +0800
+H: From: Jick Nan <nanjc@163.com>
+H: To: jick_nan@sdc.sercomm.com
+H: Subject: test cmdline send mail by mutt
+H: Message-ID: <20051220111906.GA24762@localdomain>
+H: Reply-To: Jick Nan <nanjc@163.com>
+H: Mime-Version: 1.0
+H: Content-Type: multipart/mixed; boundary="fdj2RfSjLxBAspz7"
+H: Content-Disposition: inline
+H: Content-Transfer-Encoding: 8bit
+H: X-URL: http://www.freelamp.net/ 
+H: User-Agent: Mutt/1.5.9i
+S: 250 Ok: queued as LMBiXyrmp0MRio8D.1
+C: QUIT
+S: 221 Bye
+

@@ -1,0 +1,116 @@
+#
+# Actully I use the default key bindings
+
+#
+# Key bindings
+
+#
+# Just the default settings, but i don't like these
+
+
+#bind	alias	" "		tag-entry
+#bind	alias	\n		select-entry
+#bind	alias	\r		select-entry
+
+#bind	attach	i		exit
+#bind	attach	n		next-entry
+#bind	attach	p		previous-entry
+#bind	attach 	" "		select-entry
+#bind	attach	y		print-entry
+
+#bind	browser	<end>		last-entry
+#bind	browser	<home>		first-entry
+
+#bind	editor	"\e<backspace>" kill-word
+#bind	editor	"\e<delete>"	kill-word
+#bind	editor	"\e\t"		complete-query
+#bind	editor	"\Ct"		transpose-chars
+
+#bind	generic	"\CV"		next-page
+#bind	generic	"\Ca"		first-entry
+#bind	generic	"\Ce"		last-entry
+#bind	generic	"\eV"		previous-page
+#bind	generic	"\ev"		previous-page
+#bind	generic	+		tag-entry
+#bind	generic	^		first-entry
+#bind	generic	a		tag-prefix
+#bind	generic $		last-entry
+#bind	generic q		exit
+
+#bind	index	";"		limit
+#bind	index	"\Ce"   	last-entry	# override edit-type
+#bind	index	"\eV"		previous-page	# override collapse-something
+#bind	index	"\e<"		collapse-thread
+#bind	index	"\eq"		query
+#bind	index	$		last-entry
+#bind	index	*		flag-message
+#bind	index	<delete>	delete-message
+#bind	index	<end>		last-entry
+#bind	index	<home>		first-entry
+#bind	index	J		next-entry
+#bind	index	K		previous-entry
+#bind	index	Q		quit
+#bind	index	R		group-reply
+#bind	index	\em		recall-message
+#bind	index	a		tag-prefix
+#bind	index	m		mail
+#bind	index	p		previous-entry
+#bind	index	t		create-alias
+#bind	index	x		sync-mailbox
+#bind	index	y		print-message
+#bind	index 	n		next-entry
+#bind	index   "\ev"		previous-page
+
+#bind	pager	"\Cn"		next-line
+#bind	pager	"\Cp"		previous-line
+#bind	pager	+		tag-message
+#bind	pager	<delete>	delete-message
+#bind	pager	<down>		next-line
+#bind	pager	<end>		bottom
+#bind	pager	<home>		top
+#bind	pager	<up>		previous-line
+#bind	pager	G		group-reply
+#bind	pager	R		group-reply
+#bind	pager	\em		recall-message
+#bind	pager	t		display-toggle-weed # like slrn
+#bind	pager	y		print-message
+
+#bind	query	i		exit
+
+
+#============================================================================================
+# macro settings
+# make it feel like emacs	 but lalawu like manual it as vi, though emacs is more powerful 
+
+#macro	generic	"\ex"		":exec "
+#macro 	pager	"\ex"		":exec "
+#macro	generic	"\eX"		"\ex"
+#macro 	pager	"\eX"		"\ex"
+#macro	index	"~"		";~"
+
+# move messages to the pilot folder
+
+#macro	index	"\ew"		"<decode-copy>+pilot\n"	"Copy a message to the pilot folder."
+#macro	pager	"\ew"		"<decode-copy>+pilot\n" "Copy a message to the pilot folder."
+
+# for majordomo list owner and moderator jobs
+
+#macro	index	"\ea"		":set nopipe_decode wait_key\n|approve\n:set nowait_key\n"
+#macro 	pager 	"\ea"		":set nopipe_decode wait_key\n|approve\n:set nowait_key\n"
+
+# emulate the old URL-browser key bindings.
+
+#macro	pager	"\Cb"	"| urlview -\n"
+#macro	index	"\Cb"	"| urlview -\n"
+
+# permit limiting from the pager.
+
+#macro   pager	";"	"<exit><limit>"
+
+# emulate the old POP-feature bindings
+
+#macro 	index	G	"!fetchmail\n"	
+#macro 	pager	G	"!fetchmail\n"
+
+#macro   compose "\ee"   "Fpgp -eatf " 
+

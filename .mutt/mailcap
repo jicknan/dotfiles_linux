@@ -1,0 +1,14 @@
+# $Id: sample.mailcap,v 0.3 1999/02/17 11:42:43 roessler Exp $
+# adapted by sucha Sep 21, 2004
+
+
+text/html;      lynx -dump %s; copiousoutput; nametemplate=%s.html
+text/enriched;  enriched.sh  ; copiousoutput
+
+image/*;  	anytopnm %s | pnmscale -xsize 80 -ysize 50 | ppmtopgm | pgmtopbm | pbmtoascii ; copiousoutput
+
+application/x-gunzip;   gzcat; copiousoutput
+application/x-tar-gz; gunzip -c %s | tar -tf - ; copiousoutput
+application/postscript; ps2ascii %s; copiousoutput
+
+application/pgp-keys;		pgp -f < %s ; copiousoutput

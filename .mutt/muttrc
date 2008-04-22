@@ -1,0 +1,348 @@
+### ~/.mutt/muttrc -- Jick Nan  20050606@phy.nwu 	
+### <nanjc#163.com | http://www.freelamp.net>	<thx: karsten#rohrbach.de>
+###---------------------------------------------------------------------
+
+### you are looking at the file ~/.mutt/muttrc which is my main mutt configuration
+### file. thera are serveral files included from this config like the alias list 
+### in ~/.mutt/aliased or the autoview and list configurationgs i do not want you
+### to see :-) you will also need to figure out scoring for yourself.
+### have fun. -jick
+###---------------------------------------------------------------------
+
+### this configuration uses nbsmtp as MTA, and fetchmail to catch mail form server.
+### spam handling is done via procmail.
+### ispell for spell check, editor is vim, gpg for GPG sign, urlview as URL
+### launcher, wv to view .doc files, etc.
+###
+### ~/.mime.types:/etc/mime.typesi (copy a newest file as base, and modify for self)
+###
+### a prefect ~/.mutt/mailcap is needed
+
+###---------------------------------------------------------------------
+### system
+###---------------------------------------------------------------------
+
+set	alias_file=~/.mutt/aliases		# where i keep my aliases
+source	~/.mutt/aliases				# read them in
+set	date_format="%Y.%m.%d %H:%M:%S %z"	# dates ISO-8601 format
+set	folder=~/.mutt/mbox			# home of mail folders
+set	spoolfile=~/.mutt/mbox/default
+set	signature=~/.mutt/signature		# sign at the end of file
+#unset	help					# no ui spam
+set	index_format="%4C %Z %{%b %d} %-15.15L (%4l) %s"
+						# customized index format
+set	ispell="/usr/bin/ispell"
+set	mbox=~/.mutt/mbox
+set	menu_scroll=yes				# don'wqt page menus
+set	move=no					# don't use read mbox
+set	noconfirmappend				# don't get on my nerves...
+set	quit=ask-yes				# don't simply die on 'q'
+set	read_inc=128				# read progress step 128
+set	status_chars="-*XA"
+set	status_format=\
+	"[%r|%f|%b] #%M/%m=%L/%l [%nN %dD %tT] (%s.%S) %> (%P) [LAMP]"
+unset	suspend					# ^Z messes up my terminal
+set	write_inc=128				# write progress step 128
+source	~/.mutt/score				# read in scoring metrics
+# maillists
+#subscribe ktdistrib@zork.net, debian-(chinese-gb|news|anounce|devel-digest)@lists.debian.org, html-tidy@w3.org, users@subversion.tigris.org, VMware@vmware.rsc02.com, 
+#subscribe ktdistrib@zork.net debian-chinese-gb@lists.debian.org debian-news@lists.debian.org debian-anounce@lists.debian.org debian-devel-digest@lists.debian.org html-tidy@w3.org users@subversion.tigris.org VMware@vmware.rsc02.com
+
+###---------------------------------------------------------------------
+### identity
+###---------------------------------------------------------------------
+
+	# WARNING
+	# i got plenty mails from different mail accounts which get
+	# joined onto my primary box. so i match all my email adresses
+	# with a more or less sloppy regex. some people do not like that
+	# since it is neither strict nor picky, eg it catches sometimes
+	# adresses that you do not want to catch. you have to READ the
+	# headers of your outgoing mails to see that it didnt catch for
+	# example postmaster@scene.org (in my case) which is an account
+	# that gets catched but it should not. happens from time to time.
+	# if you just hit "reply" the reverse_name does the right thing
+	# and inserts (in this example) postmaster@scene.org as my From:
+	# when redhound (the postmaster@scene.org) would bounce me a mail
+	# to comment on ;-) you have been warned.
+#set	alternates="(nanjc|nanjc451|njc2005|jick.nan|nanjichao)@(163|sohu|eyou|gmail).com"
+#set	alternates="jick.nan@gmail.com"
+alternates "jick.nan@gmail.com"
+set	envelope_from				# spoof mail from address
+set	from="nanjc@163.com"			# default from address
+set	hidden_host				# cloak system name
+#set	hostname="mail.163.com"			# override system name
+set	realname="Jick Nan"			# real name for From:
+#set	reverse_name				# set sender=recipient
+# esmtp
+set	sendmail="/usr/bin/msmtp"
+
+###---------------------------------------------------------------------
+### message composition
+###---------------------------------------------------------------------
+
+set	abort_nosubject=no			# allow empty subject
+set	abort_unmodified=no			# send menu after not editing
+set	allow_8bit				# do not base64 or mangle msgs
+#set	askcc					# ask for cc
+set	attribution="%n(%a)@%d:"		# attribution in replies
+	# it is important to always edit the mails with headers.
+	# only with headers in the editor you can see what you are
+	# sending at first glance. i think the compose screen is not
+	# verbose enough, and i do not read the whole screen before
+	# hitting the 'y' key all the time ;-)
+set	edit_headers
+set 	editor="vim -c 'set tw=72 et ft=mail'"
+set	forw_format="Fwd: %s"			# traditional Fwd: subject
+set	include=ask-yes				# include original in reply
+set	mime_forward=ask-no			# forward whole mime attachmts
+set	mime_forward_decode			# decode fwd to text/plain
+set	mime_forward_rest			# forward the rest of mime msg
+set	postponed=~/.mutt/mbox/postponed	# postponed mail folder
+set	recall=ask-yes				# ask to recall postponed
+set	record=~/.mutt/mbox/sended		# archive outgoing mail
+set	write_bcc				# Bcc header in file to send
+
+###---------------------------------------------------------------------
+### pager
+###---------------------------------------------------------------------
+
+set	ascii_chars=yes				# ascii chars in threadmarks
+set	beep_new				# beep when mail arrives
+set	delete=yes				# delete flagged when exiting
+set	fast_reply				# don't ask questions
+set	mailcap_path=~/.mutt/mailcap:/etc/mailcap	# where mutt mailcap lives
+set	markers=no				# wrap without plus signs
+set	pager_context=3				# page to page line context
+# format string for pager - nice
+set	pager_format="[%2C/%2m] (%S%Z) %%=%N $i %> [%lL]"
+set	pager_index_lines=4			# mini-index on pager top
+set	pager_stop				# don't auto-go to next msg
+set	sort=threads
+set	sort_aux=score				# default sort order
+set	tilde					# pad empty lines like vi
+
+source	~/.mutt/autoview			# MIME autoviews
+alternative_order text/plain text/html text	# multipart/alt precedence
+
+###---------------------------------------------------------------------
+### pgp setup (from mutt dist examples)
+###---------------------------------------------------------------------
+
+#set	pgp_autosign				# autosign all outgoing mails
+set	pgp_replyencrypt			# autocrypt replies to crypted
+set	pgp_replysign				# autosign replies to signed
+set	pgp_replysignencrypted			# autosign replies to sig/crypt
+set	pgp_retainable_sigs			# nested mime fmt sigs
+set	pgp_sign_as=0xDEC948A6			# primary keyid
+set	pgp_timeout=2400			# passphrase timeout
+set	pgp_sort_keys=trust			# sort order
+unset	pgp_show_unusable			# don't display revoked et al.
+
+	# decode application/pgp
+set	pgp_decode_command=\
+	"gpg %?p?--passphrase-fd 0? --no-verbose --batch --output - %f"
+	# verify a pgp/mime signature
+set	pgp_verify_command=\
+	"gpg --no-verbose --batch --output - --verify %s %f"
+	# decrypt a pgp/mime attachment
+set	pgp_decrypt_command=\
+	"gpg --passphrase-fd 0 --no-verbose --batch --output - %f"
+	# create a pgp/mime signed attachment
+set	pgp_sign_command=\
+	"gpg --no-verbose --batch --output - --passphrase-fd 0 \
+	--armor --detach-sign --textmode %?a?-u %a? %f"
+	# create a application/pgp signed (old-style) message
+set	pgp_clearsign_command=\
+	"gpg --no-verbose --batch --output - --passphrase-fd 0 \
+	--armor --textmode --clearsign %?a?-u %a? %f"
+	# create a pgp/mime encrypted attachment
+set	pgp_encrypt_only_command=\
+	"pgpewrap gpg -v --batch --output - --encrypt --textmode \
+	--armor --always-trust -- -r %r -- %f"
+	# create a pgp/mime encrypted and signed attachment
+set	pgp_encrypt_sign_command=\
+	"pgpewrap gpg --passphrase-fd 0 -v --batch --output - --encrypt \
+	--sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
+	# import a key into the public key ring
+set	pgp_import_command="gpg --no-verbose --import -v %f"
+	# export a key from the public key ring
+set	pgp_export_command="gpg --no-verbose --export --armor %r"
+	# verify a key
+set	pgp_verify_key_command=\
+	"gpg --no-verbose --batch --fingerprint --check-sigs %r"
+	# read in the public key ring
+set	pgp_list_pubring_command=\
+	"gpg --no-verbose --batch --with-colons --list-keys %r" 
+	# read in the secret key ring
+set	pgp_list_secring_command=\
+	"gpg --no-verbose --batch --with-colons --list-secret-keys %r" 
+	# receive key from keyserver:
+set	pgp_getkeys_command=""
+
+###---------------------------------------------------------------------
+### headers
+###---------------------------------------------------------------------
+
+# now that's a fun part ;-)
+my_hdr From: Jick Nan <nanjc@163.com>
+my_hdr Reply-To: Jick Nan <nanjc@163.com>
+#my_hdr X-Arbitrary-Number-Of-The-Day: 42
+my_hdr X-URL: http://www.freelamp.net/ 
+#my_hdr X-Work-URL: http://www.freelamp.net/
+#my_hdr X-Work-Address: webmonster.de - Karsten W. Rohrbach\; Mainzer Str. 106\; 64293 Darmstadt\; Germany
+#my_hdr X-Work-Phone: +49 (0)171 8915569
+#my_hdr X-Disclaimer: My opinions do not necessarily represent those of my employer
+
+###---------------------------------------------------------------------
+### header config
+###---------------------------------------------------------------------
+
+		# quench unwanted headers in reader
+ignore 		*
+unignore	return-path from to cc bcc subject date
+#unignore	resent-by
+#unignore	authenticated-sender apparently-from
+unignore	x-address x-organisation reply-to
+unignore	mail-followup-to user-agent x-mailer
+unignore	x-spammer x-bogosity
+#unignore	message-id
+
+		# sort headers
+hdr_order	Return-Path: \
+		From: Reply-To: X-Organisation: \
+		X-Address: To: Cc: Bcc: \
+		Date: X-Bogosity: Subject:
+
+###---------------------------------------------------------------------
+### color config
+###---------------------------------------------------------------------
+
+	# if you have a color console this rox...
+color	hdrdefault	green		black
+color	quoted		yellow		black
+color	signature	brightred	black
+color	indicator	yellow		red
+color	attachment	magenta		black
+color	error		red		black
+mono	error		bold
+color	status		white		blue
+color	tree		magenta		black
+
+color	body		cyan black	(http|ftp|mailto)://[_a-zA-Z0-9\./~\-]+
+# gnupg coloring (source: kris kennaway <kris@obsecurity.org>)
+color	body	green black		"^gpg: Good signature from"
+color	body	brightred black		"^gpg: Bad signature from"
+color	body	brightred black		"^gpg: BAD signature from"
+color	body	brightred black		"^gpg: Note: This key has expired!"
+color	body	brightyellow black	"^gpg: WARNING: This key is not certified with a trusted signature!"
+color	body	brightyellow black	"^gpg:          There is no indication that the signature belongs to the owner."
+color	body	brightyellow black	"^gpg: can't handle these multiple signatures"
+color	body	brightyellow black	"^gpg: signature verification suppressed"
+color	body	brightyellow black	"^gpg: invalid node with packet of type"
+
+# index coloring based on score
+color	index	cyan black		'~n -0'
+color	index	green black		'~n 1-9'
+color	index	white black		'~n 10-19'
+color	index	brightyellow black	'~n 20-'
+#color	index	brightyellow black	'~p'
+
+color	header	brightyellow	black	"^from:"
+mono	header	bold			"^from:"
+color	header	brightyellow	black	"^subject:"
+mono	header	bold			"^subject:"
+color	header	cyan 		black	"X-Mailer:.Foxmail* | *Outlook"
+
+###---------------------------------------------------------------------
+### folder hooks
+###---------------------------------------------------------------------
+
+source		~/.mutt/hooks
+
+###---------------------------------------------------------------------
+### multiple mailboxes (for lists, etc.)
+###---------------------------------------------------------------------
+
+source		~/.mutt/mailboxes
+
+###---------------------------------------------------------------------
+### custom key bindings + macros
+###---------------------------------------------------------------------
+
+bind	index	<left>		previous-entry
+bind	index	<right>		next-entry
+
+bind	pager	<pageup>	previous-page   
+bind	pager	<pagedown>	next-page       
+bind	pager	<home>		top                                 
+bind	pager	<end>		bottom
+bind	pager	<up>		previous-line
+bind	pager	<down>		next-line
+bind	pager	\t		next-unread
+
+#bind	compose \n		send-message
+
+#macro	index	D		"<delete-pattern>all^m" "tag all and delete"
+#macro	index	U		"<undelete-pattern>all^m" "tag all and undelete"
+
+### magic ispell
+macro	compose	i		"<enter-command>set ispell=\"/usr/local/bin/ispell -d /usr/local/share/ispell/american.hash\"^m<ispell>" "run ispell (american)"
+macro	compose	I		"<enter-command>set ispell=\"/usr/local/bin/ispell -d /usr/local/share/ispell/deutsch.hash\"^m<ispell>" "run ispell (german)"
+
+### magic bogofilter keys
+
+# delete msg
+bind	index	d		delete-message
+bind	pager	d		delete-message
+
+# delete as ham
+macro	index	\Cd		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -nS^m<enter-command>set wait_key^m<delete-message>" "delete message as non-spam"
+macro	pager	\Cd		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -nS^m<enter-command>set wait_key^m<delete-message>" "delete message as non-spam"
+
+# undelete as ham (reverses delete as ham)
+macro	index	\Cu		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -Ns^m<enter-command>set wait_key^m<undelete-message>" "undelete message as non-spam"
+macro	pager	\Cu		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -Ns^m<enter-command>set wait_key^m<undelete-message>" "undelete message as non-spam"
+
+# delete as spam
+macro	index	\ed		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -Ns^m<enter-command>set wait_key^m<save-message>=SPAM-archive/^m" "delete message as spam"
+macro	pager	\ed		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -Ns^m<enter-command>set wait_key^m<save-message>=SPAM-archive/^m" "delete message as spam"
+
+# undelete as spam (reverses delete as spam)
+macro	index	\eu		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -nS^m<enter-command>set wait_key^m<undelete-message>" "undelete message as spam"
+macro	pager	\eu		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -nS^m<enter-command>set wait_key^m<undelete-message>" "undelete message as spam"
+
+# add to ham DB
+macro	index	N		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -n^m<enter-command>set wait_key^m" "add message to non-spam DB"
+macro	pager	N		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -n^m<enter-command>set wait_key^m" "add message to non-spam DB"
+
+# remove from ham DB
+macro	index	\eN		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -N^m<enter-command>set wait_key^m" "remove message from non-spam DB"
+macro	pager	\eN		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -N^m<enter-command>set wait_key^m" "remove message from non-spam DB"
+
+# add to spam DB
+macro	index	S		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -s^m<enter-command>set wait_key^m" "add message to spam DB"
+macro	pager	S		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -s^m<enter-command>set wait_key^m" "add message to spam DB"
+
+# remove from spam DB
+macro	index	\eS		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -S^m<enter-command>set wait_key^m" "remove message from spam DB"
+macro	pager	\eS		"<enter-command>unset wait_key^m<pipe-entry>bogofilter -S^m<enter-command>set wait_key^m" "remove message from spam DB"
+
+# urlview
+macro index \cb |urlview\n
+macro pager \cb |urlview\n
+	      
+
+###---------------------------------------------------------------------
+### Chinese Support
+###---------------------------------------------------------------------
+
+#set charset="gb2312"
+set charset="utf8"		# display charset
+#set send_charset="us-ascii:gb2312:utf-8"
+set send_charset="utf-8"	# outgoing charset
+
+###---------------------------------------------------------------------
+### eof .muttrc
+###--------------------------------------------------------------------
+
