@@ -7,7 +7,7 @@
 # enclosures.
 [*]
 id3contenttype=Podcast
-spool=/home/Desktop/podcast
+spool=/data/castget_new
 playlist=castget
 #limit_rate=100K
 
@@ -27,11 +27,8 @@ playlist=castget
 url=http://www.podlook.com/rss/channel/276691
 #limit_rate=100k
 
-[my1510]
-url=http://feeds.feedburner.com/my1510podcast
-
 [AntiWave]
-url=http://www.antiwave.net/index.xml
+url=http://feed.antiwave.net/
 
 [ESLPod]
 url=http://feeds.feedburner.com/EnglishasaSecondLanguagePodcast
@@ -45,27 +42,16 @@ url=http://www.bookast.com/mp3/bookast_rss.xml
 #limit_rate=30k
 
 [pdh]
-url=http://www.podlook.com/rss/channel/1004
-#url=http://www.lifepop.com/asp/rss.asp?domain=yyse
+url=http://www.lifepop.com/asp/rss.asp?domain=yyse
 
-[kijiji]
-url=http://podcast.kijiji.com.cn/podcast.xml
-#limit_rate=100k
+#[QiuAo]
+#url=http://ifire.cn/feed/rss.xml
 
-[QiuAo]
-url=http://ifire.cn/feed/rss.xml
+[IFWDaily]
+url=http://weblog.infoworld.com/daily/podcast.xml
 
-#[JackGu]
-#url=http://www.podlook.com/rss/channel/15534
-
-#[IFWDaily]
-#url=http://weblog.infoworld.com/daily/podcast.xml
-
-#[dw-world]
-#url=http://rss.dw-world.de/xml/podcast_radio_china
-
-#[hopesome]
-#url=http://hopesome.com/wp-ipodder.php
+[dw-world]
+url=http://rss.dw-world.de/xml/podcast_radio_china
 
 #[Podbible]
 #url=http://podbible.com/rss
