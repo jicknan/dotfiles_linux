@@ -55,6 +55,9 @@
 	<item label="Pidgin">
 	    <action name="Execute"><command>pidgin</command></action>
 	</item>
+	<item label="StarDict">
+	    <action name="Execute"><command>stardict</command></action>
+	</item>
 	<item label="Rox">
 	    <action name="Execute"><command>rox</command></action>
 	</item>
