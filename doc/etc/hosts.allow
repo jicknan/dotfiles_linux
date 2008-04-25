@@ -4,5 +4,6 @@
 
 sshd:all
 vsftpd:all
+in.tftpd:all
 
 # End of file
