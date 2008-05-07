@@ -101,7 +101,7 @@ if has("autocmd")
   autocmd FileType python set et nu sw=4 ts=4 
 
   " Tags file
-  autocmd BufEnter /work/NS65/* setlocal tags+=/work/NS65/tags
+  autocmd BufEnter /home/jick/project/NS65/* setlocal tags+=/home/jick/project/NS65/tags
   autocmd BufEnter /usr/src/linux/* setlocal tags+=/usr/src/linux/tags
 endif " has("autocmd")
 
