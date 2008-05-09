@@ -1,0 +1,2 @@
+#!/bin/sh
+LC_CTYPE="zh_CN.UTF-8" "`locate WangWang.exe`"
