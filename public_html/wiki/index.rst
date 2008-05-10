@@ -13,6 +13,12 @@ Welcome
 -------
 Hello World!
 
+P.K.M.
+-------
+- SCM: git_
+
+.. git_: git.html
+
 Resources
 ---------
 - `Making This Website`__ by Dean Hall
