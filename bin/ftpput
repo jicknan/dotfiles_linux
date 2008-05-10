@@ -5,9 +5,9 @@ if [ $# != 3 ]; then
 fi
 
 lftp $1 <<END
+
 cd '$2'
 put $3
-chmod +x $3
 quit
 END
 exit
