@@ -1,4 +1,4 @@
-RSTOPTS=--time --link-stylesheet --stylesheet=style.css
+RSTOPTS=--time --generator --source-link --link-stylesheet --stylesheet=style.css
 
 SOURCES=$(wildcard *.rst)
 HTML=$(foreach file,$(SOURCES),$(basename $(file)).html)
