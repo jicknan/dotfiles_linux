@@ -113,15 +113,16 @@ if !exists("auto_c")
     au BufNewFile *.sh 0r ~/.vim/files/sh.skel
     au BufNewFile Makefile 0r ~/.vim/files/makefile.skel
     au BufNewFile Rules.make 0r ~/.vim/files/Rules.make.skel
-    ":%s/_filename_/\=bufname("%")
-    :"%s/_datetime_/\=strftime("%c")
     au BufNewFile *.pl 0r ~/.vim/files/pl.skel
     autocmd BufNewFile *.py 0r ~/.vim/files/python.skel
+    autocmd BufNewFile *.rst 0r ~/.vim/files/rst.skel
     ":%s/_filename_/\=bufname("%")
     :"%s/_datetime_/\=strftime("%c")
     map gse <ESC>:%s/_filename_/\=bufname("%")/<CR>:%s/_datetime_/\=strftime("%c")/<CR>
+    map gse2 <ESC>:%s/_datetime_/\=strftime("%c")/<CR>
     au BufNewFile *.[ch] normal gse
     au BufNewFile *.sh normal gse
+    au BufNewFile *.rst normal gse2
 endif
 
 " Highlight space errors in C/C++ source files (Vim tip #935)
