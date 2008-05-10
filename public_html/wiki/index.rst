@@ -9,15 +9,11 @@ My wiki powered by rst2html & git
 :Revision: 01
 :Date: 2008/05/10
 
-Welcome
--------
-Hello World!
-
 P.K.M.
 -------
-- SCM: git_
+- SCM/VCS: git_
 
-.. git_: git.html
+.. _git: git.html
 
 Resources
 ---------
