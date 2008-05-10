@@ -1,0 +1,13 @@
+#!/bin/sh
+if [ $# != 3 ]; then
+    echo "Usage: $0 <host> <remote_dir> <file>"
+    exit
+fi
+
+lftp $1 <<END
+
+cd '$2'
+put $3
+quit
+END
+exit

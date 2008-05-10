@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# /etc/rc.local: Local multi-user startup script.
+#
+
+# use wine as an interpreter for all Win16/Win32 binaries
+if [ -x /usr/bin/wine ]; then
+    mount -t binfmt_misc none /proc/sys/fs/binfmt_misc
+    echo ':DOSWin:M::MZ::/usr/bin/wine:' > /proc/sys/fs/binfmt_misc/register
+fi

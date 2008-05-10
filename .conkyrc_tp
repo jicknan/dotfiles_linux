@@ -51,8 +51,8 @@ RAM:	$memperc%	${alignr}$mem/$memmax
 ${membar 8}
 Swap: ${alignc}$swapperc%${alignr}$swap/$swapmax
 ${swapbar 8}
-DISK: ${alignc}${diskio}/s${alignr}r/w:${diskio_read}/${diskio_write}
-${diskiograph}
+DISK: ${alignr}r/w:${diskio_read}/${diskio_write}
+${diskiograph /dev/sda}
 eth0Down: ${alignc}${downspeedf eth0}K/s ${alignr}${totaldown eth0}
 ${downspeedgraph eth0}
 eth0Up: ${alignc}${upspeedf eth0}K/s ${alignr}${totalup eth0}
@@ -67,7 +67,7 @@ ath0Down: ${alignc}${downspeedf ath0}K/s ${alignr}${totaldown ath0}
 ${downspeedgraph ath0}
 ath0Up: ${alignc}${upspeedf ath0}K/s ${alignr}${totalup ath0}
 ${upspeedgraph ath0}${endif}
-BAT0:${alignc}${battery_percent}%${alignr}${battery}(${battery_time})
+BAT0:${alignc}${battery_percent}%${alignr}${battery BAT0}(${battery_time})
 ${battery_bar 5}
 ${alignr}AC Adpter:${acpiacadapter}
 ${alignr}Fan:${ibm_fan}

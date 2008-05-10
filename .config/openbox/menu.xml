@@ -27,6 +27,9 @@
 	<item label="Xterm">
 	    <action name="Execute"><command>xterm</command></action>
 	</item>
+	<item label="Picasa">
+	    <action name="Execute"><command>picasa</command></action>
+	</item>
 	<item label="Rdesktop">
 	    <action name="Execute"><command>rdesktop -u jick -g 100% -K -a 16 jickwin</command></action>
 	</item>

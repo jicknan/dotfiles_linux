@@ -1,0 +1,62 @@
+REGEDIT 4
+
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Hardware Profiles\Current\Software\Fonts]
+"FIXEDFON.FON"=""
+"FONTS.FON"=""
+"LogPixels"=dword:00000060
+"OEMFONT.FON"=""
+
+[HKEY_CURRENT_USER\Software\Wine\Fonts\Replacements]
+@="SimSun"
+"Arial"="SimSun"
+"Fixedsys"="SimSun"
+"Microsoft Sans Serif"="SimSun"
+"MingLiU"="SimSun"
+"MS UI Gothic"="SimSun"
+"PMingLiU"="SimSun"
+"Simsun"="SimSun"
+"Songti"="SimSun"
+"System"="SimSun"
+"Tahoma"="SimSun"
+"Terminal"="SimSun"
+
+[HKEY_CURRENT_USER\Software\Wine\X11 Driver]
+"ClientSideAntiAliasWithRender"="N"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]
+"MS Shell Dlg"="SimSun"
+"MS Shell Dlg 2"="SimSun"
+"System"="SimSun"
+
+[HKEY_CURRENT_USER\Control Panel\Colors]
+"ActiveBorder"="239 235 230"
+"ActiveTitle"="0 153 11"
+"AppWorkspace"="128 128 128"
+"Background"="58 110 165"
+"ButtonAlternateFace"="180 180 180"
+"ButtonDkShadow"="64 64 64"
+"ButtonFace"="232 227 221"
+"ButtonHilight"="255 255 255"
+"ButtonLight"="239 235 230"
+"ButtonShadow"="128 128 128"
+"ButtonText"="0 0 0"
+"GradientActiveTitle"="166 202 240"
+"GradientInactiveTitle"="192 192 192"
+"GrayText"="128 128 128"
+"Hilight"="0 153 11"
+"HilightText"="255 255 255"
+"HotTrackingColor"="0 0 255"
+"InactiveBorder"="192 192 192"
+"InactiveTitle"="232 227 221"
+"InactiveTitleText"="0 0 0"
+"InfoText"="0 0 0"
+"InfoWindow"="255 255 225"
+"Menu"="232 227 221"
+"MenuBar"="232 227 221"
+"MenuHilight"="0 0 0"
+"MenuText"="0 0 0"
+"Scrollbar"="239 235 230"
+"TitleText"="255 255 255"
+"Window"="255 255 255"
+"WindowFrame"="0 0 0"
+"WindowText"="0 0 0"
