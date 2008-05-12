@@ -4,16 +4,23 @@ Jick Nan's Matrix
 My wiki powered by rst2html & git
 =================================
 
-:Copyright: Copyright 2008 Jick Nan. All rights reserved.
-:Author: Jick Nan 
-:Revision: 01
-:Date: 2008/05/10
+:Copyright: Copyright 2008 Jick Nan
+:Author: Jick Nan <jick.nan 在 gmail.com>
+:Create Date: 2008/05/10
 
 P.K.M.
 -------
-- SCM/VCS: git_
+- SCM/VCS: git_ ||
+- Book: `老子`_ ||
 
 .. _git: git.html
+.. _老子: laozi.html
+
+Misc
+----
+- my notes and thoughts on NAS_ ||
+
+.. _NAS: nas.html
 
 Resources
 ---------
