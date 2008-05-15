@@ -1,8 +1,16 @@
 Section "ServerLayout"
 	Identifier     "X.org Configured"
 	Screen      0  "Screen0" 0 0
-	InputDevice    "Mouse1" "CorePointer"
+	InputDevice    "Mouse0" "CorePointer"
 	InputDevice    "Keyboard0" "CoreKeyboard"
+	Option         "AIGLX" "true"
+EndSection
+
+Section "ServerFlags"
+	Option "AllowMouseOpenFail"  "true"
+        Option "PM" "off"
+        Option "DPMS" "off"
+        Option "Xinerama" "0"	
 EndSection
 
 Section "Files"
@@ -21,6 +29,7 @@ Section "Files"
 EndSection
 
 Section "Module"
+        Load  "ddc"  # ddc probing of monitor
 	Load  "glx"
 	Load  "extmod"
 	Load  "xtrap"
@@ -28,7 +37,10 @@ Section "Module"
 	Load  "GLcore"
 	Load  "dbe" # Double buffer extension
 	Load  "dri"
+        Load  "xtrap"
 	Load  "freetype"
+        Load  "radeon"
+        Load   "drm"
 EndSection
 
 Section "dri"
@@ -41,30 +53,25 @@ EndSection
 
 Section "InputDevice"
 	Identifier  "Keyboard0"
-	Driver      "kbd"
+	Driver      "keyboard"
+        Option      "CoreKeyboard"
 	Option "AutoRepeat" "500 30"
 	Option "XkbRules" "xorg"
-	Option "XkbModel" "pc104"
+	Option "XkbModel" "pc105"
 	Option "XkbLayout" "us"
+	Option "XkbVariant" 
+	Option "XkbOptions" "ctrl:nocaps"
 EndSection
 
 Section "InputDevice"
 	Identifier  "Mouse0"
 	Driver      "mouse"
-	Option	    "Protocol" "ImPS/2"
-	Option	    "Device" "/dev/mouse"
-	Option	    "Emulate3Buttons" "true"
-	Option	    "ZAxisMapping" "4 5 6 7"
-EndSection
-
-Section "InputDevice"
-	Identifier  "Mouse1"
-	Driver      "mouse"
-	Option	"CorePointer"
+	Option	    "CorePointer"
 	Option	    "Protocol" "ImPS/2"
 	Option	    "Device" "/dev/input/mice"
 	Option	    "Emulate3Buttons" "true"
-	Option	"Emulate3TimeOut" "50"
+	Option	    "Emulate3TimeOut" "50"
+	Option	    "SendCoreEvents"  "true"
 	#Option	"EmulateWheel" "on"
 	#Option	"EmulateWheelTimeOut" "200"
 	#Option	"EmulateWheelButton" "2"
@@ -75,38 +82,46 @@ EndSection
 
 Section "Monitor"
 	Identifier   "Monitor0"
-	VendorName   "Monitor Vendor"
-	ModelName    "Monitor Model"
-	Option		"DPMS"
+        VendorName   "IBM"
+        ModelName    "X31 TFT Screen"
+        HorizSync    31.5 - 48.5
+        VertRefresh  40.0 - 70.0
+#        Option       "DPMS"
+        DisplaySize  243.84 182.88
 EndSection
 
 Section "Device"
+	Identifier  "Card0"
+	Driver      "radeon"
+	VendorName  "ATI Technologies Inc"
+	BoardName   "Radeon Mobility M6 LY"
+	BusID       "PCI:1:0:0"
         ### Available Driver options are:-
         ### Values: <i>: integer, <f>: float, <bool>: "True"/"False",
         ### <string>: "String", <freq>: "<f> Hz/kHz/MHz"
         ### [arg]: arg optional
         #Option     "NoAccel"            	# [<bool>]
-        #Option     "SWcursor"           	# [<bool>]
+        #Option     "SWcursor" "true"          	# [<bool>], MUST BE TRUE
         #Option     "Dac6Bit"            	# [<bool>]
         #Option     "Dac8Bit"            	# [<bool>]
         #Option     "BusType"            	# [<str>]
         #Option     "CPPIOMode"          	# [<bool>]
         #Option     "CPusecTimeout"      	# <i>
-        #Option     "AGPMode"            	# <i>
-        #Option     "AGPFastWrite"       	# [<bool>]
-        #Option     "AGPSize"            	# <i>
+        Option     "AGPMode" "4"           	# <i>
+        #Option     "AGPFastWrite" "false"     	# [<bool>], MUST BE FALSE
+        Option     "AGPSize" "16"           	# <i>, default: 8
         #Option     "GARTSize"           	# <i>
-        #Option     "RingSize"           	# <i>
-        #Option     "BufferSize"         	# <i>
-        #Option     "EnableDepthMoves"   	# [<bool>]
-        #Option     "EnablePageFlip"     	# [<bool>]
+        Option     "RingSize" "4"          	# <i>
+        Option     "BufferSize" "2"        	# <i>
+        #Option     "EnableDepthMoves" "false" 	# [<bool>]
+        Option     "EnablePageFlip" "true"    	# [<bool>]
         #Option     "NoBackBuffer"       	# [<bool>]
         #Option     "DMAForXv"           	# [<bool>]
         #Option     "FBTexPercent"       	# <i>
         #Option     "DepthBits"          	# <i>
         #Option     "AccelDFS"           	# [<bool>]
         #Option     "PanelOff"           	# [<bool>]
-        #Option     "DDCMode"            	# [<bool>]
+        Option     "DDCMode"            	# [<bool>]
         #Option     "MonitorLayout"      	# [<str>]
         #Option     "IgnoreEDID"         	# [<bool>]
         #Option     "UseFBDev"           	# [<bool>]
@@ -123,7 +138,7 @@ Section "Device"
         #Option     "DisplayPriority"    	# [<str>]
         #Option     "PanelSize"          	# [<str>]
         #Option     "ForceMinDotClock"   	# <freq>
-        #Option     "ColorTiling"        	# [<bool>]
+        Option     "ColorTiling" "true"       	# [<bool>]
         #Option     "VideoKey"           	# <i>
         #Option     "RageTheatreCrystal" 	# <i>
         #Option     "RageTheatreTunerPort" 	# <i>
@@ -132,21 +147,17 @@ Section "Device"
         #Option     "TunerType"          	# <i>
         #Option     "RageTheatreMicrocPath" 	# <str>
         #Option     "RageTheatreMicrocType" 	# <str>
-        #Option     "RenderAccel"        	# [<bool>]
-        #Option     "SubPixelOrder"      	# [<str>]
+        Option     "RenderAccel" "true"       	# [<bool>]
+        Option     "SubPixelOrder" "NONE"     	# [<str>]
         #Option     "ShowCache"          	# [<bool>]
-        #Option     "DynamicClocks"      	# [<bool>]
-        #Option     "BIOSHotkeys"        	# [<bool>]
+        Option     "DynamicClocks" "true"     	# [<bool>]
+        Option     "BIOSHotkeys" "true"       	# [<bool>]
         #Option     "VGAAccess"          	# [<bool>]
         #Option     "ReverseDDC"         	# [<bool>]
         #Option     "LVDSProbePLL"       	# [<bool>]
-        #Option     "AccelMethod"        	# <str>
+        Option     "AccelMethod" "XAA"       	# <str> XAA, or EXA
+        #Option     "XAANoOffscreenPixmaps" "true"
         #Option     "ConstantDPI"        	# [<bool>]
-	Identifier  "Card0"
-	Driver      "ati"
-	VendorName  "ATI Technologies Inc"
-	BoardName   "Radeon Mobility M6 LY"
-	BusID       "PCI:1:0:0"
 EndSection
 
 Section "Screen"
@@ -160,4 +171,3 @@ Section "Screen"
 		Depth     24
 	EndSubSection
 EndSection
-
