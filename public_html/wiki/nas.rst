@@ -32,3 +32,7 @@ Thoughts
   - 提供邮件订阅。
 
 这些都需要注意 1) 方便阅读； 2）不能打扰订阅者，也就是如何应对大量更新。
+
+TODO
+----
+- castget@NS65: download podcast auto.
