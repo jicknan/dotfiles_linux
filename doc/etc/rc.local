@@ -3,6 +3,19 @@
 # /etc/rc.local: Local multi-user startup script.
 #
 
+# The uhci_hcd module drains a lot of power and is only needed for USB1
+# devices. 
+rmmod uhci_hcd
+
+# Powersaving
+echo 5 > /proc/sys/vm/laptop_mode
+echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
+#hdparm -B 1 -S 12 /dev/sda
+echo 0 > /proc/sys/kernel/nmi_watchdog
+
+# Undervolting
+#echo 34 26 18 12 8 5 > /sys/devices/system/cpu/cpu0/cpufreq/phc_vids
+
 # use wine as an interpreter for all Win16/Win32 binaries
 if [ -x /usr/bin/wine ]; then
     mount -t binfmt_misc none /proc/sys/fs/binfmt_misc
