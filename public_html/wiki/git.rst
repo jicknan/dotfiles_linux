@@ -143,7 +143,8 @@ Git repository
 
 - git@or.cz::
 
- $ git remote add orcz git+ssh://repo.or.cz/srv/git/jicknan.git
+  $ git remote add orcz git+ssh://repo.or.cz/srv/git/jicknan.git
+
 
 Resouces
 --------

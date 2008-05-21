@@ -11,6 +11,7 @@ My wiki powered by rst2html & git
 P.K.M.
 -------
 - SCM/VCS: git_ ||
+
 - Book: `老子`_ ||
 
 .. _git: git.html
@@ -20,7 +21,10 @@ Misc
 ----
 - my notes and thoughts on NAS_ ||
 
+- shlug_
+
 .. _NAS: nas.html
+.. _shlug: shlug.html
 
 Resources
 ---------
