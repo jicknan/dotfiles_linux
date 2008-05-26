@@ -8,6 +8,13 @@ my notes & thoughts
 :Author: Jick Nan <jick.nan 在 gmail.com>
 :Create Date: Mon 12 May 2008 10:05:34 PM CST
 
+.. contents::
+
+Marvell Orion SoC
+-----------------
+
+- 5281 = 5182 + H/W FPU(floating Point Unit)
+
 Thoughts
 --------
 

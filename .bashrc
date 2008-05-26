@@ -56,7 +56,7 @@ PATH=$PATH:$NS65/arm-linux-gnueabi/bin
 PATH=$PATH:$NS65/arm-none-linux-gnueabi/bin
 # foonas-em env
 FOONAS="$HOME/project/foonas-em"
-PATH=$FOONAS/bitbake/bin:$PATH
+#PATH=$FOONAS/bitbake/bin:$PATH
 BBPATH=$FOONAS/build:$FOONAS/openembedded
 # CVS repository for NAS
 CVSROOT=:pserver:jick_nan:82f973@scs:12121/home/nas-cvsroot
