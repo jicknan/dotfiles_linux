@@ -22,7 +22,8 @@ Git 快速上手
 
 - clone::
 
-  $ git clone git://git.kernel.org/scm/git/git.git
+  $ git clone git://git.kernel.org/scm/git/git.git # using git protocol
+  $ git clone ssh://[user@]host:~/project/jicknan jicknan.git # ssh way
 
 - 建立 branch::
 
@@ -131,6 +132,8 @@ Git 相关工具
   * Gitweb
 
   * Cogito ­ cvs command like syntax (depricated)
+
+  * Trac - git plugin available
 
 Git repository
 --------------
