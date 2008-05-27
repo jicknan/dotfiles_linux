@@ -1,0 +1,20 @@
+<driconf>
+    <device screen="0" driver="radeon">
+        <application name="Default">
+            <option name="force_s3tc_enable" value="true" />
+            <option name="no_rast" value="false" />
+            <option name="fthrottle_mode" value="2" />
+            <option name="tcl_mode" value="3" />
+            <option name="texture_depth" value="0" />
+            <option name="def_max_anisotropy" value="1.0" />
+            <option name="no_neg_lod_bias" value="false" />
+            <option name="texture_units" value="2" />
+            <option name="dither_mode" value="0" />
+            <option name="hyperz" value="true" />
+            <option name="round_mode" value="1" />
+            <option name="color_reduction" value="0" />
+            <option name="vblank_mode" value="0" />
+            <option name="allow_large_textures" value="2" />
+        </application>
+    </device>
+</driconf>

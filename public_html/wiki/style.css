@@ -27,7 +27,7 @@ p, li, table {
     padding-left: 16px
 }
 
-.docinfo, .section, .footer {
+.docinfo, .section, .footer, #contents {
     color: #000000;
     background-color: #ffffff;
     padding-bottom: 5px;
