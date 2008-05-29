@@ -451,10 +451,6 @@ function cm_getJSON() {
 		    <label for="entry_0" class="ss-q-help">What&#39;s your name?</label>
 		    <input type="text" class="ss-q-short" name="single:0" id="entry_0" /></div>
 		<div class="ss-form-entry">
-		    <label for="locbox" class="ss-q-title">Location</label>
-		    <label for="locbox" class="ss-q-help">Where are you living?</label>
-		    <input type="text" class="ss-q-short" name="single:5" id="locbox" /></div>
-		<div class="ss-form-entry">
 		    <label for="latbox" class="ss-q-title">Latitude</label>
 		    <label for="latbox" class="ss-q-help">This will  auto-filled when you click &#39;Location&#39;.</label>
 		    <input type="text" class="ss-q-short" name="single:1" id="latbox" /></div>
@@ -463,17 +459,21 @@ function cm_getJSON() {
 		    <label for="lngbox" class="ss-q-help">The same to Latitude.</label>
 		    <input type="text" class="ss-q-short" name="single:2" id="lngbox" /></div>
 		<div class="ss-form-entry">
+		    <label for="locbox" class="ss-q-title">Location</label>
+		    <label for="locbox" class="ss-q-help">Where are you living?</label>
+		    <input type="text" class="ss-q-short" name="single:5" id="locbox" size=55 /></div>
+		<div class="ss-form-entry">
 		    <label for="entry_3" class="ss-q-title">Photo</label>
 		    <label for="entry_3" class="ss-q-help">Your photo URL please.</label>
-		    <input type="text" class="ss-q-short" name="single:3" id="entry_3" value="http://www.shlug.org/images/stories/logo.png" /></div>
+		    <input type="text" class="ss-q-short" name="single:3" id="entry_3" size=55 value="http://www.shlug.org/images/stories/logo.png" /></div>
 		<div class="ss-form-entry">
 		    <label for="entry_6" class="ss-q-title">Homepage</label>
 		    <label for="entry_6" class="ss-q-help">Do you have a website, blog, or wiki? </label>
-		    <input type="text" class="ss-q-short" name="single:6" id="entry_6" value="http://" /></div>
+		    <input type="text" class="ss-q-short" name="single:6" id="entry_6" value="http://" size=55 /></div>
 		<div class="ss-form-entry">
 		    <label for="entry_7" class="ss-q-title">Contact</label>
 		    <label for="entry_7" class="ss-q-help">Phone/Email/Gtalk/QQ/MSN/...</label>
-		    <input type="text" class="ss-q-short" name="single:7" id="entry_7" /></div>
+		    <input type="text" class="ss-q-short" name="single:7" id="entry_7" size=55 /></div>
 		<div class="ss-form-entry">
 		    <label for="entry_8" class="ss-q-title">Interests</label>
 		    <label for="entry_8" class="ss-q-help">What do you like?</label>
@@ -481,7 +481,7 @@ function cm_getJSON() {
 		<div class="ss-form-entry">
 		    <label for="entry_4" class="ss-q-title">About</label>
 		    <label for="entry_4" class="ss-q-help">It&#39;s all about you!</label>
-		    <textarea class="ss-q-long" name="single:4" id="entry_4" rows="8" cols="75"></textarea></div>
+		    <textarea class="ss-q-long" name="single:4" id="entry_4" rows="8" cols="65"></textarea></div>
 		<p></p>
 		<input type="submit" value="Join Now!" />
 	    </form>
@@ -497,7 +497,17 @@ function cm_getJSON() {
 	    </ol>
 
 	    <p>反馈: <a href="https://groups.google.com/group/shlug">https://groups.google.com/group/shlug</a></p>
-	</div>
 
+	<p style="text-align: center;">A site of <a href="/">Jick Nan</a> &lt;jick.nan 在 gmail.com&gt;. </p>
+	<p style="text-align: center;">&nbsp;Powered by <a href="http://bplaced.net">bplaced</a> :-) </p>
+	<!--Start of Google Analytics -->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	    _uacct = "UA-62255-1";
+	    urchinTracker();
+	</script>
+	<!-- End of Google Analytics -->
+
+    </div>
     </body>
 </html>
