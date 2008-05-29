@@ -3,22 +3,126 @@
     <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<title>Member List of Shanghai Linux User Group</title>
+	<link type="text/css" rel="stylesheet" href="//spreadsheets.google.com/client/css/2636241761-v2-gooey.css" />
+	<style media="screen" type="text/css">
+	    body {
+		padding: 0.5em 1em;
+		font-size: 0.8em;
+		background-color: #E8EEF7;
+	    }
 
-	<style type="text/css">
-	    #info {
+	    h1 {
+		font-size: 1.8em;
+		padding: 0;
+	    }
+
+	    label {
+		display: block;
+	    }
+
+	    ul label {
+		display: inline;
+	    }
+
+	    hr {
+		border: 0;
+		height: 1px;
+		background-color: #DDD;
+	    }
+
+	    table {
+		border-collapse: collapse;
+	    }
+
+	    td {
+		background-color: #FFF;
+		border: 1px solid #CCC;
+		padding: 0.1em 0.5em;
+	    }
+
+	    th {
+		background-color: #969696;
+		color: #FFF;
+		padding: 0.2em 0.5em;
+	    }
+
+	    .ss-form-container {
 		float: left;
-		width: 650px;
+		width: 45em;
+		background-color: #FFF;
+		border: 1px solid #CCC;
+		padding: 1em;
+	    }
+
+	    .g { color: #666; }
+	    .i { display: inline; }
+
+	    .ss-q-title {
+		font-weight: bold;
+	    }
+
+	    .ss-form-desc {
+		font: inherit;
+		color: #666;
+		/*
+		white-space: pre-wrap;
+		white-space: -moz-pre-wrap;
+		word-wrap: break-word;
+		*/
+		width: 99%;
+		margin: 0;
+	    }
+
+	    .ss-q-help {
+		color: #666;
+	    }
+
+	    .ss-form-entry {
+		margin-bottom: 1.5em;
+	    }
+
+	    .ss-choices {
+		list-style: none;
+		margin: 0.5em 0 0 0;
+		padding: 0;
+	    }
+
+	    .ss-powered-by {
+		color: #666;
+		margin: 0.2em;
+	    }
+
+	    .ss-powered-by a:link,
+	    .ss-powered-by a:visited {
+		color: #666;
+	    }
+
+	    #header {
+		margin: 0;
+	    }
+
+	    #info {
+		width: 950px;
 		border: 1px solid black;
 	    }
 
 	    #cm_map {
-		width: 525px;
-		height: 525px;
+		width: 800px;
+		height: 500px;
 	    }
 
-	    #info_input {
+	    #cm_maker {
+		width: 250px;
+	    }
+
+	    #ss {
+		margin: 1em 0 0.2em 0;
+		width: 950px;
+		height: 500px;
+	    }
+
+	    #todo {
 		float: right;
-		width: 330px;
 	    }
 	</style>
 	<script src="http://ditu.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAjU0EJWnWPMv7oQ-jjS7dYxSPW5CJgpdgO_s4yyMovOaVh_KvvhSfpvagV18eOyDWu7VytS6Bi1CWxw"
@@ -45,10 +149,16 @@
 	var param_wsId = "od6";
 	var param_ssKey = "p7twF3h0HJZzBVEe_-d58KQ";
 	var param_useSidebar = true;
-	var param_titleColumn = "name";
-	var param_descriptionColumn = "timestamp";
+	var param_nameColumn = "name";
+	var param_timestampColumn = "timestamp";
+	var param_locationColumn = "location";
 	var param_latColumn = "latitude";
 	var param_lngColumn = "longitude";
+	var param_photoColumn = "photo";
+	var param_homepageColumn = "homepage";
+	var param_contactColumn = "contact";
+	var param_interestsColumn = "interests";
+	var param_aboutColumn = "about";
 	var param_rankColumn = "";
 	var param_iconType = "green";
 	var param_iconOverType = "orange";
@@ -84,11 +194,13 @@
             GEvent.addListener(marker, "dragend", function() {
               var latlng = marker.getLatLng();
               document.getElementById("latbox").value = latlng.lat();
-              document.getElementById("lonbox").value = latlng.lng();
+              document.getElementById("lngbox").value = latlng.lng();
+              document.getElementById("locbox").value = document.getElementById("addbox").value;
             });
             var latlng = marker.getLatLng();
             document.getElementById("latbox").value = latlng.lat();
-            document.getElementById("lonbox").value = latlng.lng();
+	    document.getElementById("lngbox").value = latlng.lng();
+	    document.getElementById("locbox").value = document.getElementById("addbox").value;
             cm_map.addOverlay(marker);
           }
         }
@@ -148,24 +260,48 @@ function cm_loadMapJSON(json) {
 	json.feed.entry.sort(cm_sortRows);
     }
 
-
     for (var i = 0; i < Math.min(json.feed.entry.length, 200); i++) {
 	var entry = json.feed.entry[i];
 	if(entry["gsx$" + param_latColumn] && entry["gsx$" + param_latColumn].$t != "") {
 	    var lat = parseFloat(entry["gsx$" + param_latColumn].$t);
 	    var lng = parseFloat(entry["gsx$" + param_lngColumn].$t);
 	    var point = new GLatLng(lat,lng);
-	    var html = "<div style='font-size:12px'>";
-	    html += "<strong>" + entry["gsx$"+param_titleColumn].$t 
+	    var html = "<div id='cm_maker'>";
+	    html += "<strong>" + entry["gsx$"+param_nameColumn].$t 
 		+ "</strong>";
-	    var label = entry["gsx$"+param_titleColumn].$t;
+	    var label = entry["gsx$"+param_nameColumn].$t;
 	    var rank = 0;
 	    if(usingRank && entry["gsx$" + param_rankColumn]) {
 		rank = parseInt(entry["gsx$"+param_rankColumn].$t);
 	    }
-	    html += "<br/>(" + lat + ", " + lng + ")";
-	    if(entry["gsx$" + param_descriptionColumn]) {
-		html += "<br/>" + entry["gsx$"+param_descriptionColumn].$t;
+	    if(entry["gsx$" + param_timestampColumn]) {
+		html += " (" + entry["gsx$"+param_timestampColumn].$t + ")";
+	    }
+	    if(entry["gsx$" + param_photoColumn]) {
+		html += "<img align='left' alt='" + entry["gsx$"+param_nameColumn].$t
+		    + "' title='" + entry["gsx$"+param_nameColumn].$t + "' src='"
+		    + entry["gsx$"+param_photoColumn].$t + "' />";
+	    }
+	    if(entry["gsx$" + param_locationColumn]) {
+		html += "<br /><strong>Location:</strong> "
+		    + entry["gsx$" + param_locationColumn].$t;
+	    }
+	    if(entry["gsx$" + param_homepageColumn]) {
+		html += "<br /><strong>Homepage:</strong> <a href='"
+		    + entry["gsx$" + param_homepageColumn].$t
+		    + "'>" + entry["gsx$" + param_homepageColumn].$t + "</a>";
+	    }
+	    if(entry["gsx$" + param_contactColumn]) {
+		html += "<br /><strong>Contact:</strong> "
+		    + entry["gsx$" + param_contactColumn].$t;
+	    }
+	    if(entry["gsx$" + param_interestsColumn]) {
+		html += "<br /><strong>Interests:</strong> "
+		    + entry["gsx$" + param_interestsColumn].$t;
+	    }
+	    if(entry["gsx$" + param_aboutColumn]) {
+		html += "<br /><strong>About:</strong> "
+		    + entry["gsx$" + param_aboutColumn].$t;
 	    }
 	    html += "</div>";
 
@@ -273,6 +409,9 @@ function cm_getJSON() {
     </head>
     <body onload="cm_load()" onunload="GUnload()">
 
+	<h1 align="center" id="header">Member List of Shanghai Linux User Group (<a
+		href="http://www.shlug.org">shlug</a>)</h1>
+
 	<div id="info">
 	    <table id="cm_mapTABLE">
 		<tbody>
@@ -281,47 +420,76 @@ function cm_getJSON() {
 		    </tr>
 		</tbody>
 	    </table>
+
+	    <div align="center">
+		<form action="#" onsubmit="showAddress(this.address.value); return false">
+		    <p>
+		    <input type="text" size="75" name="address" id="addbox" value="Shanghai, China" />
+		    <input type="submit" value="Locate" />
+		    <br />
+		    <span class="ss-form-desc">
+			1. Enter an address and click "locate".
+			2. Drag the marker to correct location.
+			3. <a href="#joinus">Fill your info</a> and press the submit button.
+		    </span>
+		    </p>
+		</form>
+	    </div>
+
 	</div>
 
-	<div id="info_input">
-	    <h2>Member list of shlug</h2>
-	    <ol>
-		<li>Enter an address and click "locate".</li>
-		<li>Drag the marker to correct location.</li>
-		<li>Type your name and press the submit button.</li>
-	    </ol>
+	<iframe id="ss" src="http://spreadsheets.google.com/pub?key=p7twF3h0HJZzBVEe_-d58KQ"></iframe>
 
-	    <form action="#" onsubmit="showAddress(this.address.value); return false">
-		<p>
-		<input type="text" size="25" name="address" value="Suzhou, China" />
-		<input type="submit" value="Locate" />
-		</p>
-	    </form>
+	<div class="ss-form-container">
+	    <h1>Join us<a name="joinus">!</a></h1>
 
 	    <form action="http://spreadsheets.google.com/formResponse?key=p7twF3h0HJZzBVEe_-d58KQ" method="POST">
-		Latitude:   
-		<input size="19" type="text" id="latbox" class="ss-q-short" name="single:1" value="" >
-		<br />
-		Longitude:
-		<input size="19" type="text" id="lonbox" class="ss-q-short" name="single:2" value="" >
-		<br />
-		<span class="ss-q-title">Name:</span>
-		<input type="text" class="ss-q-short" name="single:0" /><br />
-		Photo URL:<br />
-		<input type="text" size=30 name="single:3" /><br />
-		<span class="ss-q-title">Description:</span><br />
-		<textarea cols=35 rows=4 class="text-custom" name="single:4">your desc. here.</textarea><br />
-		<input type="submit" value="Submit" name="submit" />
+		<div class="ss-form-entry">
+		    <label for="entry_0" class="ss-q-title">Name</label>
+		    <label for="entry_0" class="ss-q-help">What&#39;s your name?</label>
+		    <input type="text" class="ss-q-short" name="single:0" id="entry_0" /></div>
+		<div class="ss-form-entry">
+		    <label for="locbox" class="ss-q-title">Location</label>
+		    <label for="locbox" class="ss-q-help">Where are you living?</label>
+		    <input type="text" class="ss-q-short" name="single:5" id="locbox" /></div>
+		<div class="ss-form-entry">
+		    <label for="latbox" class="ss-q-title">Latitude</label>
+		    <label for="latbox" class="ss-q-help">This will  auto-filled when you click &#39;Location&#39;.</label>
+		    <input type="text" class="ss-q-short" name="single:1" id="latbox" /></div>
+		<div class="ss-form-entry">
+		    <label for="lngbox" class="ss-q-title">Longitude</label>
+		    <label for="lngbox" class="ss-q-help">The same to Latitude.</label>
+		    <input type="text" class="ss-q-short" name="single:2" id="lngbox" /></div>
+		<div class="ss-form-entry">
+		    <label for="entry_3" class="ss-q-title">Photo</label>
+		    <label for="entry_3" class="ss-q-help">Your photo URL please.</label>
+		    <input type="text" class="ss-q-short" name="single:3" id="entry_3" value="http://www.shlug.org/images/stories/logo.png" /></div>
+		<div class="ss-form-entry">
+		    <label for="entry_6" class="ss-q-title">Homepage</label>
+		    <label for="entry_6" class="ss-q-help">Do you have a website, blog, or wiki? </label>
+		    <input type="text" class="ss-q-short" name="single:6" id="entry_6" value="http://" /></div>
+		<div class="ss-form-entry">
+		    <label for="entry_7" class="ss-q-title">Contact</label>
+		    <label for="entry_7" class="ss-q-help">Phone/Email/Gtalk/QQ/MSN/...</label>
+		    <input type="text" class="ss-q-short" name="single:7" id="entry_7" /></div>
+		<div class="ss-form-entry">
+		    <label for="entry_8" class="ss-q-title">Interests</label>
+		    <label for="entry_8" class="ss-q-help">What do you like?</label>
+		    <textarea class="ss-q-long" name="single:8" id="entry_8" rows="4" cols="55"></textarea></div>
+		<div class="ss-form-entry">
+		    <label for="entry_4" class="ss-q-title">About</label>
+		    <label for="entry_4" class="ss-q-help">It&#39;s all about you!</label>
+		    <textarea class="ss-q-long" name="single:4" id="entry_4" rows="8" cols="75"></textarea></div>
+		<p></p>
+		<input type="submit" value="Join Now!" />
 	    </form>
+
 	</div>
 
-	<div>
+	<div id="todo">
 	    <h2>Todo</h2>
 	    <ol>
-		<li>加入地址信息。</li>
 		<li>如何在新页面提交?</li>
-		<li>如何加入/显示图片?</li>
-		<li>如何更好组织信息？</li>
 		<li>如何编辑？</li>
 		<li>参考<a href="http://www.verveearth.com/">http://www.verveearth.com/</a></li>
 	    </ol>
@@ -329,5 +497,3 @@ function cm_getJSON() {
 
     </body>
 </html>
-
-
