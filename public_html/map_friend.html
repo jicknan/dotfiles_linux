@@ -276,32 +276,32 @@ function cm_loadMapJSON(json) {
 	    if(usingRank && entry["gsx$" + param_rankColumn]) {
 		rank = parseInt(entry["gsx$"+param_rankColumn].$t);
 	    }
-	    if(entry["gsx$" + param_timestampColumn]) {
+	    if(entry["gsx$" + param_timestampColumn].$t) {
 		html += " (" + entry["gsx$"+param_timestampColumn].$t + ")";
 	    }
-	    if(entry["gsx$" + param_photoColumn]) {
+	    if(entry["gsx$" + param_photoColumn].$t) {
 		html += "<img align='left' alt='" + entry["gsx$"+param_nameColumn].$t
 		    + "' title='" + entry["gsx$"+param_nameColumn].$t + "' src='"
 		    + entry["gsx$"+param_photoColumn].$t + "' />";
 	    }
-	    if(entry["gsx$" + param_locationColumn]) {
+	    if(entry["gsx$" + param_locationColumn].$t) {
 		html += "<br /><strong>Location:</strong> "
 		    + entry["gsx$" + param_locationColumn].$t;
 	    }
-	    if(entry["gsx$" + param_homepageColumn]) {
+	    if(entry["gsx$" + param_homepageColumn].$t) {
 		html += "<br /><strong>Homepage:</strong> <a href='"
 		    + entry["gsx$" + param_homepageColumn].$t
 		    + "'>" + entry["gsx$" + param_homepageColumn].$t + "</a>";
 	    }
-	    if(entry["gsx$" + param_contactColumn]) {
+	    if(entry["gsx$" + param_contactColumn].$t) {
 		html += "<br /><strong>Contact:</strong> "
 		    + entry["gsx$" + param_contactColumn].$t;
 	    }
-	    if(entry["gsx$" + param_interestsColumn]) {
+	    if(entry["gsx$" + param_interestsColumn].$t) {
 		html += "<br /><strong>Interests:</strong> "
 		    + entry["gsx$" + param_interestsColumn].$t;
 	    }
-	    if(entry["gsx$" + param_aboutColumn]) {
+	    if(entry["gsx$" + param_aboutColumn].$t) {
 		html += "<br /><strong>About:</strong> "
 		    + entry["gsx$" + param_aboutColumn].$t;
 	    }
@@ -425,12 +425,12 @@ function cm_getJSON() {
 	    <div align="center">
 		<form action="#" onsubmit="showAddress(this.address.value); return false">
 		    <p>
-		    <input type="text" size="75" name="address" id="addbox" value="Shanghai, China" />
+		    <input type="text" size="75" name="address" id="addbox" value="苏州" />
 		    <input type="submit" value="定位" />
 		    <br />
 		    <span class="ss-form-desc">
 			1. 输入你的地址，点“定位”。
-			2. 拖动标示到准确的位置。
+			2. 拖动红色的小气球到准确的位置。
 			3. <a href="#joinus">填写信息</a>并提交。
 		    </span>
 		    </p>
@@ -439,49 +439,47 @@ function cm_getJSON() {
 
 	</div>
 
-	<!--
 	<iframe id="ss" src="http://spreadsheets.google.com/pub?key=p7twF3h0HJZxByeF4Ic49fw"></iframe>
-	-->
 
 	<div class="ss-form-container">
 	    <h1>Join us<a name="joinus">!</a></h1>
 
 	    <form action="http://spreadsheets.google.com/formResponse?key=p7twF3h0HJZxByeF4Ic49fw" method="POST">
 		<div class="ss-form-entry">
-		    <label for="entry_0" class="ss-q-title">Name</label>
-		    <label for="entry_0" class="ss-q-help">What&#39;s your name?</label>
+		    <label for="entry_0" class="ss-q-title">名称||Name</label>
+		    <label for="entry_0" class="ss-q-help">你叫什么？</label>
 		    <input type="text" class="ss-q-short" name="single:0" id="entry_0" /></div>
 		<div class="ss-form-entry">
-		    <label for="latbox" class="ss-q-title">Latitude</label>
-		    <label for="latbox" class="ss-q-help">This will  auto-filled when you click &#39;Location&#39;.</label>
+		    <label for="latbox" class="ss-q-title">纬度||Latitude</label>
+		    <label for="latbox" class="ss-q-help">在上面定位时会自动填写，不须你费心了 :P</label>
 		    <input type="text" class="ss-q-short" name="single:1" id="latbox" /></div>
 		<div class="ss-form-entry">
-		    <label for="lngbox" class="ss-q-title">Longitude</label>
-		    <label for="lngbox" class="ss-q-help">The same to Latitude.</label>
+		    <label for="lngbox" class="ss-q-title">经度||Longitude</label>
+		    <label for="lngbox" class="ss-q-help">同纬度。</label>
 		    <input type="text" class="ss-q-short" name="single:2" id="lngbox" /></div>
 		<div class="ss-form-entry">
-		    <label for="locbox" class="ss-q-title">Location</label>
-		    <label for="locbox" class="ss-q-help">Where are you living?</label>
+		    <label for="locbox" class="ss-q-title">地址||Location</label>
+		    <label for="locbox" class="ss-q-help">你住在哪里？可以写的详细点，但也不要过于详细，嘿嘿。</label>
 		    <input type="text" class="ss-q-short" name="single:5" id="locbox" size=55 /></div>
 		<div class="ss-form-entry">
-		    <label for="entry_3" class="ss-q-title">Photo</label>
-		    <label for="entry_3" class="ss-q-help">Your photo URL please.</label>
-		    <input type="text" class="ss-q-short" name="single:3" id="entry_3" size=55 value="http://www.shlug.org/images/stories/logo.png" /></div>
+		    <label for="entry_3" class="ss-q-title">玉照||Photo</label>
+		    <label for="entry_3" class="ss-q-help">请填你玉照的 URL。</label>
+		    <input type="text" class="ss-q-short" name="single:3" id="entry_3" size=55 value="http://friendfeed.com/alpen/picture?size=medium&v=0" /></div>
 		<div class="ss-form-entry">
-		    <label for="entry_6" class="ss-q-title">Homepage</label>
-		    <label for="entry_6" class="ss-q-help">Do you have a website, blog, or wiki? </label>
-		    <input type="text" class="ss-q-short" name="single:6" id="entry_6" value="http://" size=55 /></div>
+		    <label for="entry_6" class="ss-q-title">主页||Homepage</label>
+		    <label for="entry_6" class="ss-q-help">你有网站, blog, 或者 wiki 吗？</label>
+		    <input type="text" class="ss-q-short" name="single:6" id="entry_6" value="http://jicknan.bplaced.net/map_friend.html" size=55 /></div>
 		<div class="ss-form-entry">
-		    <label for="entry_7" class="ss-q-title">Contact</label>
+		    <label for="entry_7" class="ss-q-title">联系方式||Contact</label>
 		    <label for="entry_7" class="ss-q-help">Phone/Email/Gtalk/QQ/MSN/...</label>
 		    <input type="text" class="ss-q-short" name="single:7" id="entry_7" size=55 /></div>
 		<div class="ss-form-entry">
-		    <label for="entry_8" class="ss-q-title">Interests</label>
-		    <label for="entry_8" class="ss-q-help">What do you like?</label>
+		    <label for="entry_8" class="ss-q-title">兴趣||Interests</label>
+		    <label for="entry_8" class="ss-q-help">你喜欢什么？</label>
 		    <textarea class="ss-q-long" name="single:8" id="entry_8" rows="4" cols="55"></textarea></div>
 		<div class="ss-form-entry">
-		    <label for="entry_4" class="ss-q-title">About</label>
-		    <label for="entry_4" class="ss-q-help">It&#39;s all about you!</label>
+		    <label for="entry_4" class="ss-q-title">介绍||About</label>
+		    <label for="entry_4" class="ss-q-help">简单介绍一下你吧！</label>
 		    <textarea class="ss-q-long" name="single:4" id="entry_4" rows="8" cols="65"></textarea></div>
 		<p></p>
 		<input type="submit" value="Join Now!" />
