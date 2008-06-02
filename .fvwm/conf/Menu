@@ -3,62 +3,52 @@
 #################
 DestroyMenu MenuFvwmRoot
 AddToMenu MenuFvwmRoot
-Test (x urxvtc) + %rxvt.png%"URxvt" Exec exec urxvtc -name 'terminal'
+Test (x urxvtc) + %rxvt.png%"URxvtc" Exec exec urxvtc -name 'terminal'
 #Test (x opera) + %opera.png%"&Opera" Exec exec opera
-Test (x firefox) + %firefox.png%"&Firefox" Exec exec firefox
+Test (x firefox3-bin) + %firefox.png%"&Firefox" Exec exec firefox3-bin
+Test (x pidgin) + %pidgin.png%"&Pidgin" Exec exec pidgin
+Test (x stardict) + %stardict.png%"Star&Dict" Exec exec stardict
+Test (x skype) + %skype.png%"&Skype" Exec exec skype
 + "" Nop
-+ %office.png%"Office" Popup MenuOffice
-+ %devel.png%"Development" Popup MenuDevel
-+ %internet.png%"Internet" Popup MenuInternet
-+ %multimedia.png%"Multimedia" Popup MenuMultimedia
-+ %games.png%"Games" Popup MenuGames
-+ %utils.png%"Utilities" Popup MenuUtilities
++ %devel.png%"Application" Popup MenuApp
 + "" Nop
 + %desktop.png%"Show Desktop" All (AcceptsFocus CurrentPage !Iconic !Shaded) Thumbnail
 Test (x xlock) + %lock.png%"Lock &Screen"     Exec exec xlock
 + %FvwmConfig.png%"More..." Popup MenuFvwmConfig
 + "" Nop
 + %exit.png%"&Exit Fvwm" Popup MenuQuit-Verify
++ %exit.png%"&Exit Host" Popup MenuQuit-Host
 
-DestroyMenu MenuOffice
-AddToMenu MenuOffice
-Test (x dia) + %dia.png%"Dia Diagram Editor" Exec exec dia
-Test (x xpdf) + %xpdf.png%"x&pdf"            Exec exec xpdf
-Test (x stardict) + %stardict.png%"Star&Dict" Exec exec stardict
-Test (x gvim) + %gvim.png%"G&vim" Exec exec gvim -geom 139x56
-Test (x openoffice.org2.2) + %ooo.png%"OpenOffice" Exec exec openoffice.org2.4
-Test (x homebank) + %homebank.png%"HomeBank" Exec Exec homebank
-
-DestroyMenu MenuInternet
-AddToMenu MenuInternet
+DestroyMenu MenuApp
+AddToMenu MenuApp
+# Internet
++ "" Nop
 Test (x opera) + %opera.png%"&Opera" Exec exec opera
 Test (x firefox) + %firefox.png%"&Firefox" Exec exec firefox
 Test (x xchat) + %xchat.png%"X&Chat" Exec exec xchat
-Test (x pidgin) + %pidgin.png%"&Pidgin" Exec exec pidgin
 Test (x rdesktop) + %rdesktop.png%"R&desktop" Exec exec rdesktop -u jick -g 100% -K -a 16 172.21.6.65
-
-DestroyMenu MenuMultimedia
-AddToMenu MenuMultimedia
+# Multimedia
++ "" Nop
 + MissingSubmenuFunction FuncFvwmMenuDirectory
 Test (x audacious) + %audacious.png%"&Audacious" Exec exec audacious
 Test (x picasa) + %picasa.png%"&Picasa" Exec exec picasa
 Test (x gqview) + %gqview.png%"GQ&view"           Exec exec gqview
 Test (x gimp) + %gimp.png%"gimp" Exec exec gimp
-Test (x googleearth) + %googleearth.png%"Google &Earth" Exec exec googleearth
-
-DestroyMenu MenuUtilities
-AddToMenu MenuUtilities
+Test (x googleearth) + %googleearth.png%"g&Earth" Exec exec googleearth
+# Office
++ "" Nop
+Test (x dia) + %dia.png%"Dia Diagram Editor" Exec exec dia
+Test (x xpdf) + %xpdf.png%"x&pdf"            Exec exec xpdf
+Test (x stardict) + %stardict.png%"Star&Dict" Exec exec stardict
+Test (x gvim) + %gvim.png%"G&vim" Exec exec gvim -geom 139x56
+Test (x openoffice.org2.2) + %ooo.png%"OpenOffice" Exec exec openoffice.org2.4
+# Utilities
++ "" Nop
 Test (x urxvt) + %rxvt.png%"URxvt" Exec exec urxvt -name 'terminal'
 Test (x pcmanfm) + %rox.png%"PCManFM" Exec exec pcmanfm
+Test (x rox) + %rox.png%"Rox" Exec exec rox
 Test (x xterm) + %xterm.png%"X&Term" Exec exec xterm
-
-DestroyMenu MenuDevel
-AddToMenu MenuDevel
 Test (x wireshark) + %wireshark.png%"&WireShark" Exec exec sudo wireshark
-
-DestroyMenu MenuGames
-AddToMenu MenuGames
-Test (x gxmame) + "MAME Arcade Emulator" Exec exec gxmame
 
 DestroyMenu MenuFvwmConfig
 AddToMenu MenuFvwmConfig
@@ -72,6 +62,7 @@ AddToMenu MenuQuit-Verify
 + %quit.png%"&Quit Fvwm Now" Quit
 + %restart.png%"&Restart Fvwm2" Restart
 + "" Nop
+Test (x openbox) + %wm.png%"Start &Openbox" Restart openbox
 Test (x blackbox) + %wm.png%"Start &blackbox" Restart blackbox
 Test (x fluxbox) + %wm.png%"Start &fluxbox" Restart fluxbox
 Test (x fvwm95) + %wm.png%"Start fvwm&95" Restart fvwm95
@@ -80,6 +71,11 @@ Test (x twm) + %wm.png%"Start &twm" Restart twm
 Test (x wmaker) + %wm.png%"Start &wmaker" Restart wmaker
 Test (x xfce4-session) + %wm.png%"Start &xfce4" Restart xfce4-session
 Test (x xterm) + %xterm.png%"Start XTerm" Restart xterm
+
+DestroyMenu MenuQuit-Host
+AddToMenu MenuQuit-Host
++ %quit.png%"&Shutdown" Exec exec sudo shutdown -h now
++ %restart.png%"&Restart" Exec exec sudo reboot
 
 DestroyMenu	MenuWallpaper
 AddToMenu	MenuWallpaper

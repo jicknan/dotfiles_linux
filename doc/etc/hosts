@@ -18,8 +18,8 @@
 
 # local host
 172.21.1.234		scs
-172.21.6.19		lap	jicknan
-172.21.6.23		dell
+172.21.6.14		lap	jicknan
+172.21.6.20		dell
 192.168.0.109		mynas
 192.168.0.107		inas
 172.21.1.237		sdcftp

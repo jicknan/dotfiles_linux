@@ -1,3 +1,0 @@
-#!/bin/bash
-#LC_CTYPE="zh_CN.UTF-8" ~/.wine/drive_c/Program\ Files/citics_tzt/JYClient.exe
-LC_CTYPE="zh_CN.UTF-8" "`locate JYClient.exe`"
