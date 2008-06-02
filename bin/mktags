@@ -1,0 +1,11 @@
+#! /bin/sh
+
+#now do ctags
+find . -name "*.[ch]" -o -name "*.cpp" | xargs ctags -a  2>/dev/null
+ret=$?
+if [ "$ret" != "0" ]; then
+	echo "here not exists soure files"
+	exit 2
+fi
+echo "make ctags success :-)"
+exit 0
