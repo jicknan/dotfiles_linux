@@ -52,7 +52,7 @@ CursorStyle stroke	cross
 CursorStyle select	draped_box
 
 OpaqueMoveSize -1
-SnapAttraction 3 SameType
+Style * SnapAttraction 3 SameType
 ColormapFocus FollowsFocus
 BugOpts FlickeringMoveWorkaround True
 #BugOpts ExplainWindowPlacement True
