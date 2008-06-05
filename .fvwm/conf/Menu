@@ -38,6 +38,7 @@ Test (x googleearth) + %googleearth.png%"g&Earth" Exec exec googleearth
 # Office
 + "" Nop
 Test (x dia) + %dia.png%"Dia Diagram Editor" Exec exec dia
+Test (x evince) + %evince.png%"evince"       Exec exec evince
 Test (x xpdf) + %xpdf.png%"x&pdf"            Exec exec xpdf
 Test (x stardict) + %stardict.png%"Star&Dict" Exec exec stardict
 Test (x gvim) + %gvim.png%"G&vim" Exec exec gvim -geom 139x56
