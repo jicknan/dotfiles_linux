@@ -17,4 +17,5 @@ Style StarDict	  EWMHMiniIconOverride, MiniIcon stardict.png, StartsOnPage 2 0, 
 Style xchat      !FPFocusByProgram, NoFuncHint, NoDecorHint, StartsOnPage 2 1
 Style xmms        MiniIcon xmms.png, StartsOnpage 2 0, SkipMapping, NoTitle
 Style Xpdf	  EWMHMiniIconOverride, MiniIcon xpdf.png, StartsOnPage 1 1
+Style Evince	  EWMHMiniIconOverride, MiniIcon evince.png, StartsOnPage 1 1
 Style XTerm       MiniIcon term.png, ResizeHintOverride, WindowShadeShrinks

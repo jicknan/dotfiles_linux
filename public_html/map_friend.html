@@ -63,7 +63,7 @@
 
 	    .ss-form-desc {
 		font: inherit;
-		color: #666;
+		color: red;
 		/*
 		white-space: pre-wrap;
 		white-space: -moz-pre-wrap;
@@ -429,7 +429,7 @@ function cm_getJSON() {
 		    <input type="submit" value="定位" />
 		    <br />
 		    <span class="ss-form-desc">
-			1. 输入你的地址，点“定位”。
+			1. 输入你的大概地址(如市级)，点“定位”。
 			2. 拖动红色的小气球到准确的位置。
 			3. <a href="#joinus">填写信息</a>并提交。
 		    </span>
@@ -443,6 +443,12 @@ function cm_getJSON() {
 
 	<div class="ss-form-container">
 	    <h1>Join us<a name="joinus">!</a></h1>
+
+	    <div class="ss-form-desc">
+		<p>本页旨在收集诸位大体的地理位置。同时请注意：限于目前开放的 API
+		技术，只能做成一个可公开访问的页面，意即：每个可以访问互联网的人
+		都可能看到本页，因此，特提请注意保护隐私。</p>
+	    </div>
 
 	    <form action="http://spreadsheets.google.com/formResponse?key=p7twF3h0HJZxByeF4Ic49fw" method="POST">
 		<div class="ss-form-entry">
@@ -471,7 +477,7 @@ function cm_getJSON() {
 		    <input type="text" class="ss-q-short" name="single:6" id="entry_6" value="http://jicknan.bplaced.net/map_friend.html" size=55 /></div>
 		<div class="ss-form-entry">
 		    <label for="entry_7" class="ss-q-title">联系方式||Contact</label>
-		    <label for="entry_7" class="ss-q-help">Phone/Email/Gtalk/QQ/MSN/...</label>
+		    <label for="entry_7" class="ss-q-help">Email/Gtalk/QQ/MSN/...</label>
 		    <input type="text" class="ss-q-short" name="single:7" id="entry_7" size=55 /></div>
 		<div class="ss-form-entry">
 		    <label for="entry_8" class="ss-q-title">兴趣||Interests</label>
