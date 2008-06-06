@@ -102,6 +102,7 @@ if has("autocmd")
 
   " Tags file
   autocmd BufEnter /home/jick/project/NS65/* setlocal tags+=/home/jick/project/NS65/tags
+  autocmd BufEnter /home/jick/project/pidgin-mtn/* setlocal tags+=/home/jick/project/pidgin-mtn/tags
   autocmd BufEnter /usr/src/linux/* setlocal tags+=/usr/src/linux/tags
 endif " has("autocmd")
 
