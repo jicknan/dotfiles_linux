@@ -6,5 +6,6 @@ sshd:all
 vsftpd:all
 in.tftpd:all
 rsync:all
+smbd:all
 
 # End of file
