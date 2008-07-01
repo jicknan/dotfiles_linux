@@ -142,7 +142,7 @@ AddToFunc StartFunction
 + I Test (Restart) All (Iconic) Test (f $[fvwm_temp]/icon.tmp.$[w.id].png) WindowStyle IconOverride, Icon $[fvwm_temp]/icon.tmp.$[w.id].png
 #+ I Test (Init) Test (x xautolock) Exec exec xautolock -time 10 -locker xlock
 #+ I Test (Init) Test (x conky) Exec exec conky 2>/dev/null 1>/dev/null
-+ I Test (Init) Test (x stardict) Exec exec stardict > /dev/null
+#+ I Test (Init) Test (x stardict) Exec exec stardict > /dev/null
 #+ I Test (Init) test (x trayer) Exec exec trayer --widthtype request --edge top --align right --transparent true
 #+ I test (!Restart) exec exec 3ddeskd
 
