@@ -52,8 +52,8 @@ RAM:	$memperc%	${alignr}$mem/$memmax
 ${membar 8}
 Swap: ${alignc}$swapperc%${alignr}$swap/$swapmax
 ${swapbar 8}
-DISK ${alignr}${diskio}/s
-${diskiograph}
+DISK ${alignr}r/w:${diskio_read}/${diskio_write}
+${diskiograph /dev/sda}
 Down: ${alignc}${downspeedf eth0}k/s ${alignr}${totaldown eth0}
 ${downspeedgraph eth0}
 Up: ${alignc}${upspeedf eth0}k/s ${alignr}${totalup eth0}

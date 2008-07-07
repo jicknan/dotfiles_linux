@@ -12,13 +12,11 @@
 #
 
 # For loopbacking.
-127.0.0.1		localhost
-127.0.0.1		9JickNan1 jick
-127.0.0.1		www.nan.org nan
+127.0.0.1		localhost nasbox
 
 # local host
 172.21.1.234		scs
-172.21.6.19		lap	jicknan
+172.21.6.2		lap	jicknan
 172.21.6.23		dell
 192.168.0.109		mynas
 192.168.0.107		inas
