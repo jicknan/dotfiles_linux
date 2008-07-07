@@ -66,4 +66,4 @@ export PATH MANPATH TERM PS1 PS2 CVSROOT CVS_RSH EDITOR BBPATH
 
 # have fun!
 # fortune - print a random, hopefully interesting, adage
-#[ -x /usr/bin/fortune ] && fortune -c
+[ -x /usr/bin/fortune ] && fortune -c
