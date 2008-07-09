@@ -26,7 +26,7 @@ AddToMenu MenuApp
 Test (x opera) + %opera.png%"&Opera" Exec exec opera
 Test (x firefox) + %firefox.png%"&Firefox" Exec exec firefox
 Test (x xchat) + %xchat.png%"X&Chat" Exec exec xchat
-Test (x rdesktop) + %rdesktop.png%"R&desktop" Exec exec rdesktop -u jick -g 100% -K -a 16 172.21.6.65
+Test (x rdesktop) + %rdesktop.png%"R&desktop" Exec exec rdesktop -u jick -g 100% -K -a 16 jickwin
 # Multimedia
 + "" Nop
 + MissingSubmenuFunction FuncFvwmMenuDirectory

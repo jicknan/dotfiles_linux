@@ -23,6 +23,7 @@ Git 快速上手
 - clone::
 
   $ git clone git://git.kernel.org/scm/git/git.git
+  $ git clone ssh://lap/home/jick/jicknan
 
 - 建立 branch::
 
@@ -163,7 +164,7 @@ Git repository
   $ git remote add orcz git+ssh://repo.or.cz/srv/git/jicknan.git
 
 
-Resouces
+Resources
 --------
 - `Everyday GIT With 20 Commands Or So`__
 - `Git 中文教程`__

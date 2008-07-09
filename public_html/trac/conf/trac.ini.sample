@@ -22,10 +22,10 @@ max_diff_files = 0
 wiki_format_messages = true
 
 [header_logo]
-alt = 
+alt = (please configure the [header_logo] section in trac.ini)
 height = -1
-link = http://example.org/
-src = common/trac_banner.png
+link = 
+src = site/your_project_logo.png
 width = -1
 
 [inherit]
@@ -34,7 +34,7 @@ templates_dir =
 
 [logging]
 log_file = trac.log
-# log_format = <set in global trac.ini>
+# log_format = <inherited>
 log_level = DEBUG
 log_type = none
 
@@ -47,6 +47,8 @@ enscript_path = enscript
 max_preview_size = 262144
 mime_map = text/x-dylan:dylan,text/x-idl:ice,text/x-ada:ads:adb
 php_path = php
+pygments_default_style = trac
+pygments_modes = 
 tab_width = 8
 
 [notification]
@@ -84,6 +86,11 @@ url =
 [query]
 default_anonymous_query = status!=closed&cc~=$USER
 default_query = status!=closed&owner=$USER
+items_per_page = 100
+
+[report]
+items_per_page = 100
+items_per_page_rss = 0
 
 [revisionlog]
 default_log_limit = 100
@@ -102,18 +109,22 @@ tags = tags/*
 default_component = 
 default_milestone = 
 default_priority = major
+default_resolution = fixed
+default_severity = 
 default_type = defect
 default_version = 
 max_description_size = 262144
+preserve_newlines = default
 restrict_owner = false
 workflow = ConfigurableTicketWorkflow
 
 [timeline]
 abbreviated_messages = true
-changeset_collapse_events = true
+changeset_collapse_events = false
 changeset_long_messages = false
 changeset_show_files = 0
 default_daysback = 30
+max_daysback = 90
 newticket_formatter = oneliner
 ticket_show_details = false
 
@@ -135,6 +146,7 @@ repository_dir =
 repository_type = svn
 show_email_addresses = false
 timeout = 20
+use_base_url_for_redirect = False
 
 [wiki]
 ignore_missing_pages = false

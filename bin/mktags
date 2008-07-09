@@ -1,5 +1,7 @@
 #! /bin/sh
 
+[ -f tags ] && (echo "Removing old one"; rm -f tags)
+
 #now do ctags
 find . -name "*.[ch]" -o -name "*.cpp" | xargs ctags -a  2>/dev/null
 ret=$?
