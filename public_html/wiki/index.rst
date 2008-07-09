@@ -10,11 +10,12 @@ My wiki powered by rst2html & git
 
 P.K.M.
 -------
-- SCM/VCS: git_ ||
+- SCM/VCS: git_ || mtn_
 
 - Book: `老子`_ ||
 
 .. _git: git.html
+.. _mtn: mtn.html
 .. _老子: laozi.html
 
 Misc

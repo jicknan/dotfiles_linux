@@ -68,7 +68,8 @@ fi
 
 # trayer - Swallows GTK 1.2/2.x application docklets, and KDE docklets.
 if [ -x /usr/bin/trayer ]; then
-	trayer --expand true --widthtype request --transparent true --alpha 255 --edge top --align left --SetDockType false &
+	trayer --expand true --widthtype request --transparent true --alpha \
+	255 --edge top --align right --SetDockType false &
 fi
 
 # screensaver as wallpaper
@@ -78,5 +79,5 @@ fi
 
 # Start a wm:
 #twm &
-#fvwm2
-exec openbox-session
+fvwm2
+#exec openbox-session

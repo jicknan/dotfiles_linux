@@ -1,685 +1,1445 @@
-2007-08-12 12:19:47,419 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:10,944 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:11,399 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:15,210 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:20,322 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:23,147 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:25,985 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:30,821 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:35,079 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:37,225 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:39,384 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:40,990 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:42,767 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:44,652 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:20:49,196 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:23:40,574 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:31:37,556 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:45:37,747 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 12:45:41,091 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 22:05:26,737 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 22:13:55,041 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 22:16:14,286 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 22:23:56,859 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 22:24:03,469 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 22:24:55,014 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 22:26:08,497 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 22:26:08,617 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
-2007-08-12 22:26:08,701 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 22:49:33,360 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 23:03:40,794 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 23:03:44,041 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-12 23:41:43,146 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-13 09:32:01,034 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-13 09:32:07,044 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-13 10:27:33,372 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-13 10:27:40,201 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-13 10:29:07,834 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-13 10:29:07,947 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-13 14:00:11,447 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-13 14:00:11,972 Trac[session] INFO: Refreshing session jick
-2007-08-13 14:00:15,483 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-13 15:58:01,249 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-15 18:53:13,214 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-15 18:53:16,704 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-16 17:54:59,296 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-16 18:34:49,581 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-16 18:34:49,706 Trac[session] INFO: Refreshing session jick
-2007-08-16 18:35:10,809 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-20 14:17:45,451 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-20 14:17:45,622 Trac[session] INFO: Refreshing session jick
-2007-08-20 14:17:46,065 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-20 14:23:25,367 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-20 14:23:25,723 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-20 16:03:53,184 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-20 16:04:00,100 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-23 14:29:37,185 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-23 14:29:43,099 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-23 16:46:57,349 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-23 16:47:02,365 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 10:14:23,828 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 10:15:31,589 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 10:15:35,509 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 10:34:26,943 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 10:34:34,857 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 10:34:40,329 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 10:38:53,672 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 10:56:10,501 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 10:56:19,189 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 10:56:19,320 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 11:14:14,399 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 11:22:34,038 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 11:23:16,366 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 11:23:34,979 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 11:23:35,082 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 11:24:00,095 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 11:24:00,180 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 11:35:48,281 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:03:41,552 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:04:22,418 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:20:13,764 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:30:50,173 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:30:50,362 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:30:54,786 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:31:55,172 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:31:58,089 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:32:04,998 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:34:23,392 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:34:37,494 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:35:45,160 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:35:49,015 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:40:46,111 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:41:52,594 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:41:52,736 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:41:56,921 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:42:04,186 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:42:10,165 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:42:10,326 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 13:44:01,096 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 14:47:30,570 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 14:47:35,747 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 17:45:20,439 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 18:18:08,869 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 18:18:09,017 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 18:45:06,155 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 18:55:26,064 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 23:25:07,013 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 23:26:11,206 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 23:26:15,160 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 23:26:38,675 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 23:26:43,126 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 23:26:46,340 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-29 23:50:39,943 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-30 11:09:46,134 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-30 11:09:51,424 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-30 15:13:13,395 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-30 16:50:55,535 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-30 17:05:56,479 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-30 17:05:57,260 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
-2007-08-30 17:05:57,363 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-30 20:52:34,322 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-30 20:53:21,488 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-30 20:53:56,994 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-30 20:53:57,201 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-30 20:54:00,882 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-31 19:13:55,085 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-31 19:13:55,260 Trac[session] INFO: Refreshing session jick
-2007-08-31 19:13:55,382 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-31 19:13:58,456 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-31 19:14:03,287 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-08-31 19:14:13,070 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-03 09:19:56,351 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-03 09:20:05,805 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-03 09:20:12,027 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-03 17:46:59,373 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-03 17:46:59,531 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-03 17:47:02,673 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-03 17:47:18,223 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-03 17:57:10,093 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-07 10:22:38,417 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-07 10:23:43,832 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-07 10:23:44,186 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-07 10:23:49,871 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-07 10:24:14,733 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-07 10:24:16,595 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-10 16:12:05,457 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-10 16:12:10,439 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-10 16:12:13,397 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-10 16:13:47,628 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-10 16:13:47,873 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-11 09:38:10,314 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-11 09:39:09,723 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-11 09:39:29,940 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-11 09:39:53,828 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-11 09:43:37,395 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-11 09:47:50,325 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-11 10:40:01,520 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-11 13:03:02,388 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-11 16:04:02,153 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-11 16:04:05,666 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-11 16:49:25,836 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-11 16:49:25,968 Trac[session] INFO: Refreshing session jick
-2007-09-11 19:21:57,363 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-12 00:01:56,739 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-12 00:02:01,903 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-12 00:02:06,247 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:00:36,988 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:01:11,451 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:25:35,928 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:30:26,014 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:30:26,096 Trac[session] INFO: Refreshing session jick
-2007-09-13 10:30:27,259 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:30:30,801 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:31:38,593 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:31:38,679 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:31:44,675 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:32:33,639 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:33:35,886 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:34:03,278 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:34:23,858 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:34:24,354 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:34:41,118 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:35:20,422 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:35:22,553 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:35:29,211 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:35:29,386 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:44:25,696 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:45:16,657 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 10:45:16,778 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
-2007-09-13 10:45:16,835 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-13 11:03:24,244 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-14 09:55:19,190 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-14 10:37:26,019 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-14 10:37:26,740 Trac[session] INFO: Refreshing session jick
-2007-09-14 10:37:32,860 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-14 10:39:11,546 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-14 10:39:11,742 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-15 16:54:27,480 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-15 16:54:33,575 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-15 16:54:37,178 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-15 16:54:41,641 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-15 16:54:41,724 Trac[session] INFO: Refreshing session jick
-2007-09-15 16:54:41,754 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-15 16:54:55,590 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-15 16:59:49,217 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-15 16:59:49,523 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-17 09:41:10,948 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-17 09:51:56,432 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 14:27:49,993 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 18:37:59,290 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 18:38:05,724 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 18:38:22,154 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 18:38:31,457 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 18:41:10,378 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 18:41:21,503 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 18:41:21,635 Trac[session] INFO: Refreshing session jick
-2007-09-18 18:41:23,226 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 18:41:26,921 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 18:42:19,062 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 18:42:19,194 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 18:48:37,895 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 18:56:28,562 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-18 18:56:28,681 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 11:42:04,680 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 12:14:11,096 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 12:14:20,761 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 12:14:25,138 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 12:54:21,301 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 12:54:23,226 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 15:02:37,711 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:19:32,027 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:19:32,355 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:27:54,665 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:27:59,489 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:28:03,200 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:28:28,540 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:29:14,273 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:29:14,396 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:29:22,842 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:29:27,299 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:29:42,621 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:29:42,967 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:30:16,506 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:30:18,964 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:30:27,806 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:30:28,018 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:32:54,069 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:32:57,251 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:33:08,085 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:33:08,273 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-19 17:37:58,917 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-20 10:38:41,573 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-20 10:38:41,953 Trac[session] INFO: Refreshing session jick
-2007-09-20 10:45:56,364 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-20 10:45:56,564 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-20 12:08:16,074 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-21 09:57:15,000 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-09-21 09:57:49,567 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-08 16:10:13,264 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-08 16:10:38,920 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-08 16:11:31,295 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-08 16:12:42,140 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-10 14:29:36,289 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-10 14:30:03,716 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-16 22:26:48,006 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-16 22:37:07,883 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-16 22:37:08,028 Trac[session] INFO: Refreshing session jick
-2007-10-16 22:37:08,150 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-16 23:13:37,438 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-16 23:13:44,232 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-17 00:12:54,189 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-17 00:13:04,154 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-17 00:13:25,471 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-17 00:13:26,629 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-17 00:13:30,814 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-17 00:13:44,216 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-17 01:20:30,973 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-17 01:20:31,126 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-23 11:14:40,004 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-23 11:14:56,542 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-23 11:14:56,665 Trac[session] INFO: Refreshing session jick
-2007-10-23 11:14:57,838 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-23 11:15:17,473 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-23 11:15:20,914 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-23 11:15:52,214 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-23 11:16:28,466 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-23 11:16:28,646 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-23 11:16:33,001 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-23 11:16:35,540 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-23 11:18:00,865 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-23 11:18:06,735 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-23 11:18:06,929 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-27 13:17:25,962 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-27 13:17:54,247 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-27 13:17:54,312 Trac[session] INFO: Refreshing session jick
-2007-10-27 13:17:54,397 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-27 13:18:00,960 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-27 13:18:31,843 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-27 13:18:32,136 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-27 13:18:54,203 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-27 13:18:59,121 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-27 14:06:04,047 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-10-27 14:06:04,203 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-05 10:10:04,856 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-05 10:12:14,313 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-05 10:12:14,456 Trac[session] INFO: Refreshing session jick
-2007-11-05 10:12:14,617 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-05 10:12:24,684 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-13 09:29:56,747 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-13 09:30:06,708 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-13 09:30:06,850 Trac[session] INFO: Refreshing session jick
-2007-11-13 09:30:07,401 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-13 09:30:15,039 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-13 09:30:18,668 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-13 09:32:27,982 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-13 09:32:28,213 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-13 10:29:36,210 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-13 10:29:48,686 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-13 11:12:31,380 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-13 11:13:22,424 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-13 11:13:22,633 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-20 12:27:11,516 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-20 12:28:00,370 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-20 12:28:00,590 Trac[session] INFO: Refreshing session jick
-2007-11-20 12:28:01,678 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-20 12:28:07,435 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-20 12:28:42,520 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-20 12:55:33,596 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-20 12:55:46,350 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-20 12:55:47,499 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-21 11:38:38,093 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-11-21 11:38:49,285 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-12-10 10:52:43,697 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-12-10 10:53:37,554 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2007-12-10 10:54:16,426 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-08 13:47:50,035 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-08 13:48:03,443 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-10 11:18:01,107 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-10 15:51:12,448 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-10 15:51:12,612 Trac[session] INFO: Refreshing session jick
-2008-01-10 15:51:19,826 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-10 15:51:26,549 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-10 15:54:39,045 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-10 15:55:45,040 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-10 15:55:45,304 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-10 16:41:17,629 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-10 16:55:18,412 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-10 16:55:19,855 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 11:06:41,305 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 11:47:36,589 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 11:47:54,440 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 11:47:59,348 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 11:48:04,425 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 11:48:09,561 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 11:48:34,240 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 11:48:40,737 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 11:48:48,567 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 13:12:12,178 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 13:43:15,216 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 13:43:15,475 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 14:32:04,570 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 17:02:52,827 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 17:02:53,085 Trac[session] INFO: Refreshing session jick
-2008-01-11 17:03:26,487 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 17:03:26,649 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 18:00:18,682 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-11 18:00:45,650 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-14 10:46:48,440 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-14 11:00:29,908 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-14 11:11:41,867 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-14 11:11:42,038 Trac[session] INFO: Refreshing session jick
-2008-01-14 11:11:44,523 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-14 11:11:57,962 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-14 11:13:15,136 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-14 11:13:17,601 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-14 19:35:03,403 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 10:36:37,632 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 11:06:04,470 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 16:43:29,041 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 16:43:30,203 Trac[session] INFO: Refreshing session jick
-2008-01-15 16:43:43,914 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 16:43:45,404 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 16:43:47,526 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:16:48,419 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:17:01,471 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:17:02,674 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:17:07,598 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:17:11,808 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:17:49,160 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:17:50,867 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:17:51,615 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:18:00,550 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:20:35,757 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:20:40,867 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:21:15,149 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:21:15,310 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:21:20,471 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:21:20,726 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:21:47,073 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:21:49,404 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:23:43,647 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:23:43,705 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:23:48,484 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:24:10,143 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:24:10,280 Trac[attachment] INFO: New attachment: wiki:NS65_Test: test_pc.png by jick
-2008-01-15 17:24:10,311 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:24:16,004 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:24:16,502 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:24:44,996 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:24:50,776 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:24:50,825 Trac[attachment] INFO: New attachment: wiki:NS65_Test: usb2.0_PC.jpg by jick
-2008-01-15 17:24:50,878 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:24:55,180 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:24:55,802 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:33:39,011 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:33:44,742 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:33:53,270 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:34:31,296 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:34:41,541 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:34:41,646 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:34:46,029 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:58:08,035 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:58:19,124 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:58:19,303 Trac[attachment] INFO: New attachment: wiki:NS65_Test: usb2.0_NS65_gE.png by jick
-2008-01-15 17:58:19,358 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:58:22,444 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 17:58:23,089 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 18:55:53,894 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 18:55:59,696 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 18:55:59,785 Trac[attachment] INFO: New attachment: wiki:NS65_Test: SATA_NS65_gE.png by jick
-2008-01-15 18:55:59,804 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 19:54:16,251 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 19:56:43,304 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 19:56:43,441 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 19:56:51,247 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 19:56:55,511 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 19:56:55,620 Trac[model] INFO: Deleted page OpenMoko
-2008-01-15 19:56:55,654 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 19:57:06,714 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 19:57:13,858 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 20:06:10,241 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 20:06:45,084 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 20:07:07,796 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 20:08:25,139 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 20:08:25,267 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 20:08:28,700 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 20:08:30,615 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-15 20:08:30,699 Trac[model] INFO: Deleted page OpenEmbedded
-2008-01-15 20:08:30,833 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-16 09:45:16,568 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-16 09:45:25,037 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-16 15:16:17,124 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-16 16:16:55,860 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-16 16:18:22,771 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-16 16:19:15,813 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-16 16:42:06,905 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-17 10:27:07,964 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-17 10:27:31,842 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-21 12:49:08,759 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-21 12:50:23,543 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-21 12:50:39,153 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-21 12:50:42,137 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-29 13:47:14,738 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-29 13:51:32,690 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-29 13:52:22,274 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-29 15:13:22,481 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-29 15:13:43,906 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-30 16:21:20,533 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-30 16:21:28,690 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-30 16:21:33,365 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-30 16:36:34,042 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-30 16:36:43,652 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-30 16:36:43,865 Trac[session] INFO: Refreshing session jick
-2008-01-30 16:36:43,968 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-30 16:36:47,759 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-30 16:37:05,905 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-30 16:37:06,035 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:42:26,635 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:42:43,229 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:43:47,928 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:43:50,167 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:45:09,333 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:45:12,117 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:45:23,378 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:56:39,650 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:56:40,079 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:56:43,769 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:56:47,344 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:56:47,612 Trac[model] INFO: Deleted page SVK
-2008-01-31 11:56:47,670 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:57:28,282 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:57:34,110 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 11:58:07,636 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:15:26,889 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:15:33,888 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:15:43,261 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:15:43,332 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:18:18,407 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:18:18,583 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:18:21,621 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:18:25,249 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:18:25,362 Trac[model] INFO: Deleted page Subversion
-2008-01-31 12:18:25,430 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:18:40,107 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:20:36,366 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:20:36,488 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:20:38,744 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:20:40,845 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 12:20:40,950 Trac[model] INFO: Deleted page Monotone
-2008-01-31 12:20:40,983 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 13:30:36,289 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 13:31:53,732 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 13:32:08,027 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:00:28,370 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:00:38,351 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:00:52,850 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:00:53,710 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:03:31,570 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:03:31,890 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:03:36,483 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:09:55,926 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:09:55,990 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:10:06,462 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:10:08,098 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:10:08,159 Trac[model] INFO: Deleted page XChat
-2008-01-31 14:10:08,184 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:10:22,663 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:10:25,786 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:10:37,388 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:10:37,462 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:47:15,753 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:47:31,544 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-01-31 14:47:31,671 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 11:15:26,133 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 11:15:35,606 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 11:16:38,734 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 11:16:38,794 Trac[session] INFO: Refreshing session jick
-2008-02-01 11:16:38,997 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 11:16:43,605 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 11:17:03,559 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 11:17:03,700 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 11:17:05,599 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 11:17:06,982 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 11:24:11,078 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 11:24:25,454 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 11:24:29,981 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 11:24:30,090 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:26:44,931 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:26:50,760 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:26:52,932 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:26:55,849 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:27:55,193 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:27:55,273 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:34:57,351 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:35:09,733 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:35:09,826 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:46:41,258 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:46:52,117 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:46:52,219 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:47:03,038 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:47:20,789 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 12:47:20,880 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 17:54:22,700 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 17:54:28,542 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-01 17:54:31,411 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-14 14:04:05,408 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-14 14:05:52,484 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-14 14:05:57,953 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-14 14:06:49,681 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-15 15:40:31,018 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-15 15:40:37,347 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-15 15:40:42,023 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-16 15:11:19,708 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-16 15:11:39,052 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-16 15:11:47,692 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-16 15:11:52,000 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-16 15:22:56,748 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 18:35:17,252 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 18:35:25,964 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 18:35:33,890 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 18:35:38,055 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 18:35:39,875 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 18:55:49,094 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 18:55:59,779 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:24:05,928 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:28:09,767 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:34:13,965 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:34:20,214 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:35:37,432 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:36:05,231 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:36:05,310 Trac[session] INFO: Refreshing session jick
-2008-02-18 19:36:05,354 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:36:12,572 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:38:42,535 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:38:42,668 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:38:48,715 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:38:51,306 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:38:51,350 Trac[model] INFO: Deleted page CmdCU
-2008-02-18 19:38:51,387 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:39:26,230 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:39:30,533 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:40:48,267 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:42:18,658 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:42:18,738 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:42:23,923 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:53:57,935 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:53:59,953 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:54:00,013 Trac[model] INFO: Deleted page Vim
-2008-02-18 19:54:00,048 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:55:00,603 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:59:37,402 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 19:59:42,580 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:00:34,965 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:04:44,799 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:10:28,068 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:10:31,583 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:12:48,973 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:12:54,260 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:12:54,337 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:12:56,932 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:23:49,416 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:23:51,349 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:23:51,408 Trac[model] INFO: Deleted page MPlayer
-2008-02-18 20:23:51,458 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:23:54,244 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:24:00,338 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:25:18,665 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:25:20,582 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:25:20,640 Trac[model] INFO: Deleted page CmdMan
-2008-02-18 20:25:20,684 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:25:31,060 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:25:34,068 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:27:25,605 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:27:37,185 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:27:39,225 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:27:39,285 Trac[model] INFO: Deleted page hdparm
-2008-02-18 20:27:39,431 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-18 20:27:58,036 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-20 13:33:04,043 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-20 13:33:29,986 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-20 13:43:47,302 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-20 16:05:38,809 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-21 15:53:22,877 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-21 15:53:33,137 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-22 13:45:32,951 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-22 13:45:38,984 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-22 14:30:41,924 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-25 12:12:25,142 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-25 12:13:40,126 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-29 15:27:53,907 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-29 15:28:29,155 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-02-29 15:28:46,895 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-05 11:36:21,384 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-05 11:36:40,304 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-06 10:54:58,893 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-06 10:55:39,538 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-06 10:55:54,235 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-06 10:56:02,552 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-11 12:53:29,396 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-11 12:54:09,360 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-11 12:54:13,122 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 09:14:29,453 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 09:20:17,582 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 11:13:35,264 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 11:13:35,312 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 11:15:57,263 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 11:15:57,528 Trac[session] INFO: Refreshing session jick
-2008-03-12 11:16:00,127 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 11:16:05,505 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 11:16:18,268 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 11:16:20,640 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 11:27:44,275 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 11:31:37,748 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 11:31:47,118 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 11:32:31,588 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 11:32:33,445 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 13:14:47,180 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 13:14:52,823 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 13:15:15,432 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 13:45:39,878 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-12 13:45:40,140 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-18 15:43:18,540 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-18 15:43:32,815 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-21 10:33:31,810 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-21 10:33:51,161 Trac[cache] INFO: repos rev [0] != cached rev [None]
-2008-03-21 10:37:17,653 Trac[cache] INFO: repos rev [0] != cached rev [None]
+2008-07-04 16:30:52,924 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:32:18,875 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:32:20,293 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:34:39,388 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:35:18,136 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:35:39,719 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:36:08,069 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:39:03,235 Trac[web_ui] INFO: Disabling component trac.db.mysql_backend.MySQLConnector
+2008-07-04 16:39:03,235 Trac[web_ui] INFO: Disabling component trac.db.postgres_backend.PostgreSQLConnector
+2008-07-04 16:39:03,263 Trac[main] ERROR: [Errno 13] Permission denied: '/home/jick/project/jicknan/public_html/trac/conf/trac.ini'
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 206, in dispatch
+    resp = chosen_handler.process_request(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/admin/web_ui.py", line 113, in process_request
+    path_info)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/admin/web_ui.py", line 394, in render_admin_panel
+    self._do_update(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/admin/web_ui.py", line 478, in _do_update
+    self.config.save()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/config.py", line 189, in save
+    fileobj = open(self.filename, 'w')
+IOError: [Errno 13] Permission denied: '/home/jick/project/jicknan/public_html/trac/conf/trac.ini'
+2008-07-04 16:39:37,654 Trac[web_ui] INFO: Disabling component trac.db.mysql_backend.MySQLConnector
+2008-07-04 16:39:37,655 Trac[web_ui] INFO: Disabling component trac.db.postgres_backend.PostgreSQLConnector
+2008-07-04 16:39:37,703 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:39:37,965 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:40:02,526 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:40:02,652 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:40:08,693 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:40:08,818 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:40:20,376 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:40:20,508 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:40:31,727 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:40:31,851 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:40:49,393 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:40:49,517 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:42:59,593 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:42:59,708 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:42:59,773 Trac[web_ui] INFO: Disabling component trac.timeline.web_ui.TimelineModule
+2008-07-04 16:42:59,823 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:43:00,058 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:43:06,350 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:43:06,478 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:43:12,441 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:43:12,569 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:43:13,948 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:43:14,052 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:43:25,153 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:43:25,276 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:44:07,277 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:44:07,442 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:44:14,099 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:44:14,222 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:44:40,888 Trac[web_ui] INFO: Disabling component trac.ticket.roadmap.MilestoneModule
+2008-07-04 16:44:40,892 Trac[web_ui] INFO: Disabling component trac.ticket.roadmap.RoadmapModule
+2008-07-04 16:44:40,937 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:44:41,143 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:44:47,447 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:44:47,575 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 16:47:24,318 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 16:47:24,443 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:04:29,041 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:04:29,223 Trac[env] ERROR: The user jick requires read _and_ write permission to the database file /home/jick/project/jicknan/public_html/trac/db/trac.db and the directory it is located in.
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 574, in open_environment
+    needs_upgrade = env.needs_upgrade()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 412, in needs_upgrade
+    db = self.get_db_cnx()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 257, in get_db_cnx
+    return DatabaseManager(self).get_connection()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 77, in get_connection
+    return self._cnx_pool.get_cnx(self.timeout or None)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/pool.py", line 167, in get_cnx
+    return _backend.get_cnx(self._connector, self._kwargs, timeout)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/pool.py", line 100, in get_cnx
+    cnx = connector.get_connection(**kwargs)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/sqlite_backend.py", line 127, in get_connection
+    return SQLiteConnection(path, params)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/sqlite_backend.py", line 170, in __init__
+    user=getuser(), path=path))
+TracError: The user jick requires read _and_ write permission to the database file /home/jick/project/jicknan/public_html/trac/db/trac.db and the directory it is located in.
+2008-07-04 17:04:29,302 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:04:29,319 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-04 17:05:08,040 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:05:08,140 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:05:09,616 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:05:09,748 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:05:10,161 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:05:10,356 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:17:36,259 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:17:36,383 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:18:00,570 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:20:24,407 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:22:50,576 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:22:50,699 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:22:50,761 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:23:58,491 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:23:58,618 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:23:58,856 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:23:59,091 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:24:20,861 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:24:20,975 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:24:32,933 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:24:33,054 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:25:25,691 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:25:25,817 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:25:25,878 Trac[model] INFO: Updating component "TracServer"
+2008-07-04 17:26:46,495 Trac[web_ui] INFO: Enabling component trac.timeline.web_ui.TimelineModule
+2008-07-04 17:26:46,544 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:26:46,729 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:26:52,127 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:26:52,251 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:26:57,089 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:26:57,190 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:27:22,036 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:27:22,160 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:27:31,984 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:27:32,107 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:27:32,134 Trac[main] WARNING: 404 Not Found (No handler matched request to /milestone/)
+2008-07-04 17:28:18,952 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:28:19,196 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:28:34,456 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:28:34,579 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:34:52,887 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:34:52,986 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:34:54,103 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:34:54,112 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:34:54,279 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:34:54,293 Trac[env] WARNING: base_url option not set in configuration, generated links may be incorrect
+2008-07-04 17:38:19,847 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:38:21,135 Trac[session] INFO: Refreshing session a104ee4053ee4f09adf7f1c1
+2008-07-04 17:38:22,632 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:38:22,686 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:39:13,370 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:39:24,285 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:42:33,670 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:42:34,035 Trac[main] WARNING: 404 Not Found (No handler matched request to /phpMyAdmin/)
+2008-07-04 17:49:21,068 Trac[model] INFO: Updating component "P.K.M."
+2008-07-04 17:50:05,124 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:51:01,141 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:51:01,466 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:52:43,983 Trac[model] INFO: Updating milestone "NR65S"
+2008-07-04 17:52:43,997 Trac[model] INFO: Updating milestone field of all tickets associated with milestone "NR65S"
+2008-07-04 17:53:39,970 Trac[model] INFO: Updating milestone "P.K.M."
+2008-07-04 17:53:39,974 Trac[model] INFO: Updating milestone field of all tickets associated with milestone "P.K.M."
+2008-07-04 17:54:11,891 Trac[model] INFO: Updating milestone "TracServer"
+2008-07-04 17:54:11,900 Trac[model] INFO: Updating milestone field of all tickets associated with milestone "TracServer"
+2008-07-04 17:54:11,936 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-04 17:55:05,379 Trac[model] INFO: Updating milestone "SerComm"
+2008-07-04 17:55:05,383 Trac[model] INFO: Updating milestone field of all tickets associated with milestone "SerComm"
+2008-07-09 09:29:56,132 Trac[env] ERROR: Unsupported database type "mysql"
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 574, in open_environment
+    needs_upgrade = env.needs_upgrade()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 412, in needs_upgrade
+    db = self.get_db_cnx()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 257, in get_db_cnx
+    return DatabaseManager(self).get_connection()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 75, in get_connection
+    connector, args = self._get_connector()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 99, in _get_connector
+    scheme=scheme))
+TracError: Unsupported database type "mysql"
+2008-07-09 09:29:56,312 Trac[main] WARNING: 500 Trac Error (Unsupported database type "mysql")
+2008-07-09 09:30:20,049 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:31:15,511 Trac[session] INFO: Refreshing session jick
+2008-07-09 09:31:39,534 Trac[web_ui] INFO: Enabling component trac.db.mysql_backend.MySQLConnector
+2008-07-09 09:31:39,594 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:32:52,016 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:32:52,117 Trac[env] ERROR: Unsupported database type "mysql"
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 574, in open_environment
+    needs_upgrade = env.needs_upgrade()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 412, in needs_upgrade
+    db = self.get_db_cnx()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 257, in get_db_cnx
+    return DatabaseManager(self).get_connection()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 75, in get_connection
+    connector, args = self._get_connector()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 99, in _get_connector
+    scheme=scheme))
+TracError: Unsupported database type "mysql"
+2008-07-09 09:32:52,130 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:36:27,957 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:36:29,127 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:36:30,554 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:36:30,611 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:36:59,527 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:37:26,195 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:41:23,604 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:41:23,697 Trac[env] ERROR: Unsupported database type "mysql"
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 574, in open_environment
+    needs_upgrade = env.needs_upgrade()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 412, in needs_upgrade
+    db = self.get_db_cnx()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 257, in get_db_cnx
+    return DatabaseManager(self).get_connection()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 75, in get_connection
+    connector, args = self._get_connector()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 99, in _get_connector
+    scheme=scheme))
+TracError: Unsupported database type "mysql"
+2008-07-09 09:41:23,708 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:41:34,882 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:41:34,930 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:41:34,989 Trac[env] ERROR: Unsupported database type "mysql"
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 574, in open_environment
+    needs_upgrade = env.needs_upgrade()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 412, in needs_upgrade
+    db = self.get_db_cnx()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 257, in get_db_cnx
+    return DatabaseManager(self).get_connection()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 75, in get_connection
+    connector, args = self._get_connector()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 99, in _get_connector
+    scheme=scheme))
+TracError: Unsupported database type "mysql"
+2008-07-09 09:41:35,064 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:41:35,072 Trac[env] ERROR: Unsupported database type "mysql"
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 574, in open_environment
+    needs_upgrade = env.needs_upgrade()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 412, in needs_upgrade
+    db = self.get_db_cnx()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 257, in get_db_cnx
+    return DatabaseManager(self).get_connection()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 75, in get_connection
+    connector, args = self._get_connector()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 99, in _get_connector
+    scheme=scheme))
+TracError: Unsupported database type "mysql"
+2008-07-09 09:41:35,081 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:41:35,861 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:41:35,899 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:41:35,937 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:41:35,980 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:41:36,034 Trac[env] INFO: Reloading environment due to configuration change
+2008-07-09 09:41:36,058 Trac[env] ERROR: Unsupported database type "mysql"
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 574, in open_environment
+    needs_upgrade = env.needs_upgrade()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 412, in needs_upgrade
+    db = self.get_db_cnx()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 257, in get_db_cnx
+    return DatabaseManager(self).get_connection()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 75, in get_connection
+    connector, args = self._get_connector()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 99, in _get_connector
+    scheme=scheme))
+TracError: Unsupported database type "mysql"
+2008-07-09 09:41:36,109 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:41:36,115 Trac[env] ERROR: Unsupported database type "mysql"
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 574, in open_environment
+    needs_upgrade = env.needs_upgrade()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 412, in needs_upgrade
+    db = self.get_db_cnx()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 257, in get_db_cnx
+    return DatabaseManager(self).get_connection()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 75, in get_connection
+    connector, args = self._get_connector()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 99, in _get_connector
+    scheme=scheme))
+TracError: Unsupported database type "mysql"
+2008-07-09 09:41:36,125 Trac[env] ERROR: Unsupported database type "mysql"
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 574, in open_environment
+    needs_upgrade = env.needs_upgrade()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 412, in needs_upgrade
+    db = self.get_db_cnx()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 257, in get_db_cnx
+    return DatabaseManager(self).get_connection()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 75, in get_connection
+    connector, args = self._get_connector()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 99, in _get_connector
+    scheme=scheme))
+TracError: Unsupported database type "mysql"
+2008-07-09 09:41:36,138 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:41:36,143 Trac[env] ERROR: Unsupported database type "mysql"
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 574, in open_environment
+    needs_upgrade = env.needs_upgrade()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 412, in needs_upgrade
+    db = self.get_db_cnx()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 257, in get_db_cnx
+    return DatabaseManager(self).get_connection()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 75, in get_connection
+    connector, args = self._get_connector()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 99, in _get_connector
+    scheme=scheme))
+TracError: Unsupported database type "mysql"
+2008-07-09 09:41:36,184 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:41:36,197 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:41:36,201 Trac[env] ERROR: Unsupported database type "mysql"
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 574, in open_environment
+    needs_upgrade = env.needs_upgrade()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 412, in needs_upgrade
+    db = self.get_db_cnx()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/env.py", line 257, in get_db_cnx
+    return DatabaseManager(self).get_connection()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 75, in get_connection
+    connector, args = self._get_connector()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/db/api.py", line 99, in _get_connector
+    scheme=scheme))
+TracError: Unsupported database type "mysql"
+2008-07-09 09:41:36,243 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:57:26,442 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:57:29,888 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:57:35,338 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:57:58,805 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:57:58,859 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:57:58,939 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:57:59,028 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:57:59,252 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:57:59,335 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:57:59,372 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:57:59,435 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:58:04,617 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:58:04,652 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:58:14,499 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 09:58:15,986 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:41,035 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:42,541 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:43,193 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:43,744 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:44,397 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:44,678 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:45,311 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:46,461 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:47,163 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:47,842 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:48,266 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:48,512 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:48,766 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:48,985 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:49,315 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:49,783 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:49,898 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:49,981 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:50,035 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:50,385 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:50,421 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:50,458 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:15:50,526 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:00,981 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:02,714 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:03,352 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:03,965 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:04,230 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:04,792 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:05,154 Trac[session] INFO: Refreshing session jick
+2008-07-09 10:16:07,449 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:09,241 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:09,543 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:09,961 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:09,995 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:10,039 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:10,122 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:21,007 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:28,635 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:29,962 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:30,607 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:31,093 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:31,395 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:31,638 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:32,122 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:32,262 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:32,448 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:33,008 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:33,595 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:33,996 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:34,235 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:34,851 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:35,539 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:36,414 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:36,465 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:36,558 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:36,609 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:36,867 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:36,915 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:36,989 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:44,711 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:44,809 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:44,883 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:44,948 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:44,996 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:45,042 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:45,111 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:16:51,329 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:02,399 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:04,257 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:05,015 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:05,662 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:06,292 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:06,826 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:07,343 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:08,265 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:09,251 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:09,809 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:10,332 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:10,926 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:11,492 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:12,154 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:13,333 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:14,129 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:17:14,173 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:16,444 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:18,741 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:19,506 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:20,073 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:20,331 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:20,974 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:21,548 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:23,953 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:24,041 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:24,144 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:24,472 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:24,508 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:24,551 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:24,688 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:38,481 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:38,701 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:38,831 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations
+2008-07-09 10:18:38,860 Trac[main] ERROR: translations
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 447, in _dispatch_request
+    dispatcher.dispatch(req)
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/web/main.py", line 257, in dispatch
+    translation.deactivate()
+  File "/usr/lib/python2.5/site-packages/Trac-0.12dev-py2.5.egg/trac/util/translation.py", line 114, in deactivate
+    del _current.translations
+AttributeError: translations

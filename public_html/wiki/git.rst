@@ -37,6 +37,23 @@ Git 快速上手
 - 显示 branch 列表::
 
   $ git branch
+  $ git branch -a # 显示所有的 branch
+
+- 显示各个 branch 的发展状态::
+
+  $ git-show-branch
+
+- 产看各 branch 的最新 commit::
+
+  $ git-show-ref
+
+- 查看 branch 的版本差异::
+
+  $ git diff master work
+
+- 查看当前 branch 的变化状况::
+
+  $ git-whatchanged
 
 - 采用 /Jump 到某个 commit::
 
@@ -78,9 +95,9 @@ Git 快速上手
 
 - Reset the conflicted merge: use git-reset::
 
-  $ git reset ­mixed <commit-id> # Reset the index database to the moment before merging
-  $ git reset ­hard <commit-id> # Reset the index database and the working data
-  $ git reset ­soft <commit-id> # 在不触及工作区资料与 index 资料库的前提下，进行错误修正。
+  $ git reset ­-mixed <commit-id> # Reset the index database to the moment before merging
+  $ git reset ­-hard <commit-id> # Reset the index database and the working data
+  $ git reset ­-soft <commit-id> # 在不触及工作区资料与 index 资料库的前提下，进行错误修正。
 
 git-svn
 -------
@@ -149,7 +166,7 @@ Git repository
   $ git remote add orcz git+ssh://repo.or.cz/srv/git/jicknan.git
 
 
-Resouces
+Resources
 --------
 - `Everyday GIT With 20 Commands Or So`__
 - `Git 中文教程`__

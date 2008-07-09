@@ -67,8 +67,8 @@ ath0Down: ${alignc}${downspeedf ath0}K/s ${alignr}${totaldown ath0}
 ${downspeedgraph ath0}
 ath0Up: ${alignc}${upspeedf ath0}K/s ${alignr}${totalup ath0}
 ${upspeedgraph ath0}${endif}
-BAT0:${alignc}${battery_percent}%${alignr}${battery BAT0}(${battery_time})
-${battery_bar 5}
+BAT0:${alignc}${battery_percent BAT0}%${alignr}${battery BAT0}(${battery_time BAT0})
+${battery_bar BAT0}
 ${alignr}AC Adpter:${acpiacadapter}
 ${alignr}Fan:${ibm_fan}
 ${alignr}Temp:CPU-${ibm_temps 0}C GPU-${ibm_temps 3}C

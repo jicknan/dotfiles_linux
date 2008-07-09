@@ -23,9 +23,9 @@ Section "Files"
 	FontPath     "/usr/share/fonts/75dpi/:unscaled"
 	FontPath     "/usr/share/fonts/100dpi/:unscaled"
 	#FontPath     "/usr/share/fonts/Speedo"
-	FontPath     "/usr/share/fonts/cyrillic"
-	FontPath     "/usr/share/fonts/encodings"
-	FontPath     "/usr/share/fonts/util"
+	#FontPath     "/usr/share/fonts/cyrillic"
+	#FontPath     "/usr/share/fonts/encodings"
+	#FontPath     "/usr/share/fonts/util"
 EndSection
 
 Section "Module"
@@ -59,7 +59,7 @@ Section "InputDevice"
 	Option "XkbRules" "xorg"
 	Option "XkbModel" "pc105"
 	Option "XkbLayout" "us"
-	Option "XkbVariant" 
+	#Option "XkbVariant" 
 	Option "XkbOptions" "ctrl:nocaps"
 EndSection
 
@@ -151,7 +151,7 @@ Section "Device"
         Option     "SubPixelOrder" "NONE"     	# [<str>]
         #Option     "ShowCache"          	# [<bool>]
         Option     "DynamicClocks" "true"     	# [<bool>]
-        Option     "BIOSHotkeys" "true"       	# [<bool>]
+        #Option     "BIOSHotkeys" "true"       	# [<bool>]
         #Option     "VGAAccess"          	# [<bool>]
         #Option     "ReverseDDC"         	# [<bool>]
         #Option     "LVDSProbePLL"       	# [<bool>]

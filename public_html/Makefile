@@ -14,6 +14,9 @@ all: $(OBJ)
 bookmarklet: bookmarklet_main.html
 	@./tools/generator.sh $@ "Bookmarklets used by Jick Nan" sidebartop
 
+firefox: firefox_main.html
+	@./tools/generator.sh $@ "Firefox extension for Jick Nan" sidebartop
+
 index: index_main.html
 	@./tools/generator.sh $@ "Jick Nan" sidebartop
 

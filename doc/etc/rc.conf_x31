@@ -17,7 +17,7 @@
 #
 LOCALE="en_US.utf8"
 HARDWARECLOCK="localtime"
-USEDIRECTISA="yes"
+USEDIRECTISA="no"
 TIMEZONE="Asia/Shanghai"
 KEYMAP="us"
 CONSOLEFONT=
@@ -36,7 +36,11 @@ USECOLOR="yes"
 #
 MOD_AUTOLOAD="yes"
 #MOD_BLACKLIST=() #deprecated
-MODULES=(e100 eepro100 mii slhc ac97_bus snd-mixer-oss snd-pcm-oss snd-page-alloc snd-pcm snd-timer snd snd-ac97-codec snd-intel8x0 snd-intel8x0m soundcore thinkpad_acpi acpi-cpufreq ath_pci)
+# slhc,ppp_generic - modem
+# irda,crc_ccitt,nsc_ircc,sir_dev,irtty_sir - infrared
+# ieee1394,ohci1394
+# firewire_core,crc_itu_t,firewire_ohci
+MODULES=(!ieee1394 !firewire_core !irda e100 eepro100 mii !slhc ac97_bus snd-mixer-oss snd-pcm-oss snd-page-alloc snd-pcm snd-timer snd snd-ac97-codec snd-intel8x0 snd-intel8x0m soundcore thinkpad_acpi acpi-cpufreq ath_pci fuse)
 
 # Scan for LVM volume groups at startup, required if you use LVM
 USELVM="no"
@@ -88,4 +92,4 @@ ROUTES=(!gateway)
 #   - prefix a daemon with a ! to disable it
 #   - prefix a daemon with a @ to start it up in the background
 #
-DAEMONS=(syslog-ng cpufreqd network @netfs crond !sshd @alsa !slim)
+DAEMONS=(syslog-ng cpufreqd network @netfs crond sshd @alsa !slim xinetd @tor @httpd)
