@@ -1,0 +1,4 @@
+#!/bin/bash
+modprobe -r ehci_hcd 
+/usr/sbin/s2ram -rf
+modprobe ehci_hcd
