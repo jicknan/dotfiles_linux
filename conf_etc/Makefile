@@ -50,7 +50,7 @@ all: env
 	    [ -e ${DESTDIR}/$$(dirname $${_FILE}) ] || \
 		mkdir -p ${DESTDIR}/$$(dirname $${_FILE}); \
 		ls -l ${DESTDIR}/$${_FILE}; \
-	    if [ "${JICK_HOST}x" != "x" -a -e $${_FILE}_${JICK_HOST} ]; then \
+	    if [ "${JICK_HOST}x" != "x" -a -f $${_FILE}_${JICK_HOST} ]; then \
 	            ${LN} ${PWDDIR}/$${_FILE}_${JICK_HOST} ${DESTDIR}/$${_FILE} || exit 1; \
 	    else \
 	        ${LN} ${PWDDIR}/$${_FILE} ${DESTDIR}/$${_FILE} || exit 1; \
@@ -91,7 +91,7 @@ $(DIRS): env
 
 $(FILES): env
 	echo ${FILE}
-	if [ "${JICK_HOST}x" != "x" -a -e $@_${JICK_HOST} ]; then \
+	if [ "${JICK_HOST}x" != "x" -a -f $@_${JICK_HOST} ]; then \
 	    ${LN} ${PWDDIR}/${@}_${JICK_HOST} ${DESTDIR}/${@} || exit 1; \
 	else \
 	    ${LN} ${PWDDIR}/${@} ${DESTDIR}/${@} || exit 1; \
