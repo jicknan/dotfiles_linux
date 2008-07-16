@@ -33,6 +33,7 @@ FILES += logrotate.conf
 FILES += makepkg.conf
 FILES += modprobe.conf
 FILES += pacman.conf
+FILES += php/php.ini
 #FILES += profile
 #FILES +=  qemu-ifup
 FILES += rc.local
