@@ -52,7 +52,7 @@ fi
 
 # feh is a fast, lightweight image viewer which uses imlib2
 if [ -x /usr/bin/feh ]; then
-	feh --bg-scale $HOME/.config/openbox/.current &
+	feh --bg-scale $HOME/Desktop/tweet-1024x768.gif &
 fi
 
 #(sleep 2 && fbpanel) &

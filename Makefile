@@ -28,6 +28,7 @@ FILES += .screenrc
 FILES += .scim
 FILES += .vim
 FILES += .vimrc
+FILES += .vimperatorrc
 FILES += .wine/jicknan.reg
 FILES += .wine/jicknan.sh
 FILES += .xinitrc
