@@ -1,6 +1,6 @@
 u-boot for NS65:
 ================
-set ethaddr 00:c0:02:00:c0:66; set bootargs console=ttyS0,115200 root=/dev/ram; set serverip 172.21.6.2; set ipaddr 172.21.6.77; tftpboot 0x400000 uImage; tftpboot 0x1100000 romdisk; bootm 0x400000
+set ethaddr 00:c0:02:00:c0:66; set bootargs console=ttyS0,115200 root=/dev/ram; set serverip 172.21.6.12; set ipaddr 172.21.6.77; tftpboot 0x400000 uImage; tftpboot 0x1100000 romdisk; bootm 0x400000
 
 set bootargs console=ttyS0,115200 root=/dev/ram; set ethaddr 00:c0:02:00:c0:66; set serverip 172.21.6.70; set ipaddr 172.21.6.77; tftpboot 0x400000 uImage; tftpboot 0x1100000 romdisk; bootm 0x400000
 
