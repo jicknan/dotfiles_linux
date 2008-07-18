@@ -3,7 +3,7 @@
 #################
 DestroyMenu MenuFvwmRoot
 AddToMenu MenuFvwmRoot
-Test (x urxvtc) + %rxvt.png%"URxvtc" Exec exec urxvtc -name 'terminal'
+Test (x urxvtc) + %rxvt.png%"URxvtc" Exec exec urxvtc -tr -name 'terminal'
 #Test (x opera) + %opera.png%"&Opera" Exec exec opera
 Test (x firefox3-bin) + %firefox.png%"&Firefox" Exec exec firefox3-bin
 Test (x pidgin) + %pidgin.png%"&Pidgin" Exec exec pidgin
@@ -45,7 +45,7 @@ Test (x gvim) + %gvim.png%"G&vim" Exec exec gvim -geom 139x56
 Test (x openoffice.org2.2) + %ooo.png%"OpenOffice" Exec exec openoffice.org2.4
 # Utilities
 + "" Nop
-Test (x urxvt) + %rxvt.png%"URxvt" Exec exec urxvt -name 'terminal'
+Test (x urxvt) + %rxvt.png%"URxvt" Exec exec urxvt -tr -name 'terminal'
 Test (x pcmanfm) + %rox.png%"PCManFM" Exec exec pcmanfm
 Test (x rox) + %rox.png%"Rox" Exec exec rox
 Test (x xterm) + %xterm.png%"X&Term" Exec exec xterm
