@@ -13,6 +13,7 @@ yellow="\033[33m"
 end="\033[0m"
 
 test_page="zh.wikipedian.org"
+#test_page="http://scratchpad.wikia.com/wiki/Qnap_Turbostation:TSSerial"
 timeout=20
 
 if [ "$#" = 0 ]
@@ -53,9 +54,10 @@ sleep $timeout
 sleep 2
 
 for proxy in $PROXYS;do
-    grep -q "status" /tmp/proxytimer_$proxy.txt || cat /tmp/proxytimer_$proxy.txt | sed -e "s/$/, $proxy/" >> /tmp/proxytimer_total
+    tail -1 /tmp/proxytimer_$proxy.txt | sed -e "s/$/, $proxy/" >> /tmp/proxytimer_total
+    #grep -q "status" /tmp/proxytimer_$proxy.txt || cat /tmp/proxytimer_$proxy.txt | sed -e "s/$/, $proxy/" >> /tmp/proxytimer_total
 done
 
 echo -e ${yellow}"Top 10 proxies in this run:"${end}
 cat /tmp/proxytimer_total |grep -e "^[0-9]" |sort -n -t',' -k1| head -n10
-rm -f /tmp/proxytimer_*
+#rm -f /tmp/proxytimer_*
