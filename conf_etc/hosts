@@ -17,7 +17,7 @@
 
 # local host
 172.21.1.234		scs
-172.21.6.2		lap	jicknan
+172.21.6.12		lap	jicknan
 172.21.6.23		dell
 
 192.168.0.109		mynas
