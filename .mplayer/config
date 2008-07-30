@@ -1,4 +1,6 @@
 # Write your default config options here!
 
 ao=alsa
+subcp=cp936
+font='WenQuanYi Bitmap Song'
 

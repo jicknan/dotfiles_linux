@@ -149,3 +149,7 @@ set statusline+=%= " right align
 "set statusline+=%2*0x%-8B\ " current char
 set statusline+=0x%-8B\ " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
+
+" taglist settings:
+let Tlist_Exit_OnlyWindow=1
+let Tlist_Use_Right_Window=1

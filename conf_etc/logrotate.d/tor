@@ -1,0 +1,8 @@
+/var/log/tor/*.log {
+    compress
+    rotate 1
+    notifempty
+    missingok
+    copytruncate
+    noolddir
+}

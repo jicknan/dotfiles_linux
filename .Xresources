@@ -77,7 +77,7 @@ URxvt*internalBorder: 	0
 !URxvt*scrollTtyOutputInhibit:	True
 URxvt*fading:   	15
 URxvt*tintColor: 	#ffffff
-URxvt*shading:		60
+URxvt*shading:		40
 Urxvt*transparent: 	true
 URxvt*scrollBar:	false
 URxvt*scrollTtyKeypress:    true
