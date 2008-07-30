@@ -3,7 +3,7 @@
 [ -f tags ] && (echo "Removing old one"; rm -f tags)
 
 #now do ctags
-find . -name "*.[ch]" -o -name "*.cpp" | xargs ctags -a  2>/dev/null
+find . -name "*.[ch]" -o -name "*.cpp" | xargs ctags -a  #2>/dev/null
 ret=$?
 if [ "$ret" != "0" ]; then
 	echo "here not exists soure files"
