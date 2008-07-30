@@ -7,6 +7,6 @@
 
 sudo kill -9 `sudo cat /var/run/dhcpcd-eth0.pid`
 sudo ifconfig eth0 down
-sudo dhcpcd -d -t 30 ath0
+sudo dhcpcd -d -t 30 wlan0
 
 echo '::: DONE, enjoy it! :::'

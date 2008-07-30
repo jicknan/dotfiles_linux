@@ -100,6 +100,15 @@ Removing Logical Volumes
 - umount (umount volume)
 - lvremove (remove Logical Volume) 
 
+Usage
+-----
+
+- Delete a vg::
+
+  vgchange -a n vg0
+  lvremove /dev/vg0/lv0
+  vgremove vg0
+
 Resources
 --------
 - http://fedoranews.org/mediawiki/index.php/Expanding_Linux_Partitions_with_LVM

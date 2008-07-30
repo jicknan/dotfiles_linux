@@ -1,0 +1,128 @@
+mdadm is a tool for Linux Software RAID Management
+
+
+== usage in everyday ==
+
+=== Creating an array ===
+
+* Creating an array:
+{{{
+# mdadm -Cv /dev/md0 -l0 -n2 -c128 /dev/sdb1 /dev/sdc1
+# mdadm -Cv /dev/md0 -l5 -n5 -c128 /dev/sd{a,b,c,d,e}1
+}}}
+   * -C: --create
+   * -v: --verbose
+   * -l: --level
+   * -n: --raid-devices
+   * -c: --chunk
+
+ * Use the --stop or -S command to stop running array:
+{{{
+# mdadm -S /dev/md0
+}}}
+
+ * To start:
+{{{
+# mdadm --run /dev/md0
+}}}
+
+ * Show RAID info:
+{{{
+# mdadm --detail /dev/mdX
+# mdadm --detail --scan
+ARRAY /dev/md0 level=raid0 num-devices=2 UUID=410a299e:4cdd535e:169d3df4:48b7144a
+# mdadm --detail --scan > /tmp/mdadm.conf
+}}}
+
+ * find the partitions in the array
+{{{
+mdadm --query /dev/sda1
+mdadm --examine /dev/sda1 #for more details
+}}}
+
+=== Starting an Array ===
+{{{
+# mdadm -As /dev/md0 -c /tmp/mdadm.conf
+mdadm: /dev/md0 has been started with 2 drives.
+# mdadm -A /dev/md0 /dev/sdb1 /dev/sdc1
+}}}
+   * -A: --assemble
+   * -s: --scan
+   * -c: --config
+   * -E: --examine
+{{{
+# mdadm -E /dev/sdc1
+/dev/sdc1:
+Magic : a92b4efc
+Version : 00.90.00
+UUID : 84788b68:1bb79088:9a73ebcc:2ab430da
+Creation Time : Mon Sep 23 16:02:33 2002
+Raid Level : raid0
+Device Size : 17920384 (17.09 GiB 18.40 GB)
+Raid Devices : 4
+Total Devices : 4
+Preferred Minor : 0
+
+Update Time : Mon Sep 23 16:14:52 2002
+State : clean, no-errors
+Active Devices : 4
+Working Devices : 4
+Failed Devices : 0
+Spare Devices : 0
+Checksum : 8ab5e437 - correct
+Events : 0.10
+
+Chunk Size : 128K
+
+Number   Major   Minor   RaidDevice State
+this     1       8       33        1      active sync   /dev/sdc1
+0     0       8       17        0      active sync   /dev/sdb1
+1     1       8       33        1      active sync   /dev/sdc1
+2     2       8       49        2      active sync   /dev/sdd1
+3     3       8       65        3      active sync   /dev/sde1
+}}}
+
+=== Managing Arrays ===
+
+ * add a disk to an active array:
+{{{
+# mdadm /dev/md0 --add /dev/sdc1
+}}}}
+
+ * remove /dev/sdc1 from /dev/md0 try:
+{{{
+# mdadm /dev/md0 --fail /dev/sdc1 --remove /dev/sdc1
+}}}
+
+ * To manually force a good drive to rebuild:
+{{{
+mdadm /dev/md0 -f /dev/hda1 -r /dev/hda1 -a /dev/hda1
+}}}
+
+ * To remove the failed partition and add the new parition:
+{{{
+# mdadm /dev/mdX -r /dev/sdYZ -a /dev/sdYZ
+}}}
+
+ * To overwrite a valid md superblock with zeros:
+{{{
+# mdadm --zero-superblock /dev/sda1
+}}}
+   * --force: the block where the superblock would be is overwritten even if it  doesn't appear to be valid.
+
+ * Watch the automatic reconstruction run with:
+{{{
+# watch -n1 cat /proc/mdstat
+}}}
+
+
+=== Monitoring Arrays ===
+{{{
+# mdadm --monitor --mail=sysadmin --delay=300 /dev/md0
+# nohup mdadm --monitor --mail=sysadmin --delay=300 /dev/md0 &
+
+== Documents ==
+ * http://en.wikipedia.org/wiki/Redundant_array_of_independent_disks
+ * [http://www.linuxdevcenter.com/pub/a/linux/2002/12/05/RAID.html mdadm: A New Tool For Linux Software RAID Management]
+ * [http://really.slacking.net/~modat7/howto/RAID-mdadm-Setup.txt HOWTO_Gentoo_Install_on_Software_RAID]
+
