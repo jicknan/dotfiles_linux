@@ -15,7 +15,7 @@ set history=100		" keep 100 lines of command line history
 set incsearch		" do incremental searching
 set ruler		" always show the cursor position along the bottom
 set showcmd		" display incomplete commands
-set shiftwidth=4	" set autoindent step
+set shiftwidth=8	" set autoindent step
 set background=dark	" background you're used: dark | light
 "colorscheme InkPot	" colorscheme
 set number		" show line numbers

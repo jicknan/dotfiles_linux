@@ -21,6 +21,10 @@ Server = http://mirrors.easynews.com/linux/archlinux/$repo/os/i686
 Server = ftp://ftp.ibiblio.org/pub/linux/distributions/archlinux/$repo/os/i686
 Server = http://holmes.umflint.edu/archlinux/$repo/os/i686
 Server = http://mirror.neotuli.net/arch/$repo/os/i686
+Server = http://mirror.rit.edu/archlinux/$repo/os/i686
+Server = http://mirror.umoss.org/archlinux/$repo/os/i686
+# - Canada
+Server = ftp://mirror.csclub.uwaterloo.ca/archlinux/$repo/os/@carch 
 
 # South America
 # - Brazil
@@ -65,6 +69,8 @@ Server = ftp://mi.mirror.garr.it/mirrors/archlinux/$repo/os/i686
 # - Netherlands
 Server = ftp://ftp.nluug.nl/pub/metalab/distributions/archlinux/$repo/os/i686
 Server = ftp://ftp.surfnet.nl/pub/os/Linux/distr/archlinux/$repo/os/i686
+# - Norway
+Server = http://arch.likbilen.com/$repo/os/@carch
 # - Poland
 Server = ftp://mirror.icis.pcz.pl/archlinux/$repo/os/i686
 Server = http://piotrkosoft.net/pub/mirrors/ftp.archlinux.org/$repo/os/i686
@@ -80,7 +86,7 @@ Server = http://archlinux.freeside.ru/$repo/os/i686
 Server = ftp://ftp.ds.hj.se/pub/os/linux/archlinux/$repo/os/i686
 Server = ftp://ftp.gigabit.nu/$repo/os/i686
 # - Switzerland
-Server = ftp://archlinux.puzzle.ch/$repo/os/i686
+Server = http://archlinux.puzzle.ch/$repo/os/i686
 # - Turkey
 Server = http://server.elsistech.com/archlinux/$repo/os/i686
 # - Ukraine
