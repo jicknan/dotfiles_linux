@@ -1,2 +1,5 @@
 .scim/zhengju-conv-error.log
 .mozilla/firefox/adblockplus/patterns-backup*.ini
+.scim/scim-python/log
+bin/mkimage
+*.pacnew
