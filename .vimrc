@@ -102,6 +102,7 @@ if has("autocmd")
 
   " Tags file
   autocmd BufEnter /home/jick/project/NS65/* setlocal tags+=/home/jick/project/NS65/tags
+  autocmd BufEnter /home/jick/project/NS65_NAS7200/* setlocal tags+=/home/jick/project/NS65_NAS7200/tags
   autocmd BufEnter /home/jick/project/Linksys_SMB/* setlocal tags+=/home/jick/project/Linksys_SMB/tags
   autocmd BufEnter /home/jick/project/ns65.jick/* setlocal tags+=/home/jick/project/ns65.jick/tags
   autocmd BufEnter /home/jick/project/ns65.jick/linux-orion-git/* setlocal tags=/home/jick/project/ns65.jick/linux-orion-git/tags
