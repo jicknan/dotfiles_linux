@@ -12,16 +12,38 @@
 #
 
 # For loopbacking.
-127.0.0.1		localhost
+127.0.0.1		localhost nasbox
+127.0.0.1		thinkbox jick
 
 # local host
 172.21.1.234		scs
-172.21.6.12		jick
-172.21.6.133		git.nasbox.org nasbox.org nasbox
+172.21.6.12		lap	jicknan
+172.21.6.23		dell
 
 192.168.0.109		mynas
 192.168.0.107		inas
 172.21.1.237		sdcftp
-172.21.6.45		jickwin
+172.21.6.37		jickwin
+
+# Telnet bbs
+#61.182.213.238	www.newsmth.net	newsmth.net
+#218.30.103.84	www.lqqm.com	lqqm.com
+
+# Wikipedia IPs
+#145.97.39.132	en.wikipedia.org
+#145.97.39.132	zh.wikipedia.org
+#145.97.39.132	jp.wikipedia.org
+#145.97.39.132	upload.wikimedia.org
+
+# Google Ips
+#64.233.171.99	www.google.com		google.com
+#216.239.53.99	google.com
+
+# Other hosts
+#207.7.108.235	www.wordpress.com	wordpress.com
+#192.43.244.18	time.nist.gov
+#64.233.187.99	www.google.com/ig?hl=en
+#59.151.41.69	www.douban.com	douban.com
+#61.135.170.233	my.donews.com
 # End of hosts.
 

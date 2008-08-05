@@ -2,7 +2,7 @@
 [ -f /etc/profile ] && . /etc/profile
 
 # Set the values for some environment variables:
-PATH=$PATH:$HOME/bin
+PATH=$PATH:/usr/local/bin:/usr/local/sbin:$HOME/bin
 MANPATH=/usr/man:/usr/share/man
 
 # don't put duplicate lines in the history. See bash(1) for more options
@@ -53,8 +53,8 @@ PATH=$PATH:~/arm-tools/arm-linux-gnueabi/bin
 PATH=$PATH:~/arm-tools/arm-none-linux-gnueabi/bin
 # foonas-em env
 FOONAS="$HOME/project/foonas-em"
-PATH=$FOONAS/bitbake/bin:$PATH
-BBPATH=$FOONAS/build:$FOONAS/openembedded.git
+#PATH=$FOONAS/bitbake/bin:$PATH
+BBPATH=$FOONAS/build:$FOONAS/openembedded
 # CVS repository for NAS
 CVSROOT=:pserver:jick_nan:82f973@scs:12121/home/nas-cvsroot
 CVS_RSH=ssh

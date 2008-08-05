@@ -40,6 +40,7 @@ FILES += rc.local
 #FILES += termcap
 FILES += vsftpd.conf
 FILES += xinetd.conf
+FILES += gitweb.conf
 
 # Out of control:
 # inittab

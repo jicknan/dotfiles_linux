@@ -7,5 +7,5 @@ service rsync
         server_args             = --daemon
         log_on_success  += HOST DURATION
         log_on_failure  += HOST
-        disable                 = no
+        disable                 = yes
 }

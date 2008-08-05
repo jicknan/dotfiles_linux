@@ -12,3 +12,4 @@ st = status
 rb = svn rebase
 ci = commit -a
 co = checkout
+	br = branch
