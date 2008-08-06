@@ -12,7 +12,7 @@
 #
 
 # For loopbacking.
-127.0.0.1		localhost
+127.0.0.1		localhost thinkbox
 
 # local host
 172.21.1.234		scs
