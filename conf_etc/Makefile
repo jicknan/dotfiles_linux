@@ -41,6 +41,7 @@ FILES += rc.local
 FILES += vsftpd.conf
 FILES += xinetd.conf
 FILES += gitweb.conf
+FILES += mkinitcpio.d
 
 # Out of control:
 # inittab

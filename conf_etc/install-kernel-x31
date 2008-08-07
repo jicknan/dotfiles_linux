@@ -1,0 +1,7 @@
+#!/bin/sh
+VER=2.6.27-rc2-MJ-00020-g685d87f
+
+cp arch/x86/boot/bzImage /boot/vmlinuz-mj
+make modules_install
+depmod -v ${VER}
+mkinitcpio -p linux26-mj
