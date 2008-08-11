@@ -15,7 +15,7 @@ set history=100		" keep 100 lines of command line history
 set incsearch		" do incremental searching
 set ruler		" always show the cursor position along the bottom
 set showcmd		" display incomplete commands
-set shiftwidth=4	" set autoindent step
+set shiftwidth=8	" set autoindent step
 set background=dark	" background you're used: dark | light
 "colorscheme InkPot	" colorscheme
 set number		" show line numbers
@@ -102,6 +102,8 @@ if has("autocmd")
 
   " Tags file
   autocmd BufEnter /home/jick/project/NS65/* setlocal tags+=/home/jick/project/NS65/tags
+  autocmd BufEnter /home/jick/project/NS65_NAS7200/* setlocal tags+=/home/jick/project/NS65_NAS7200/tags
+  autocmd BufEnter /home/jick/project/Linksys_SMB/* setlocal tags+=/home/jick/project/Linksys_SMB/tags
   autocmd BufEnter /home/jick/project/ns65.jick/* setlocal tags+=/home/jick/project/ns65.jick/tags
   autocmd BufEnter /home/jick/project/ns65.jick/linux-orion-git/* setlocal tags=/home/jick/project/ns65.jick/linux-orion-git/tags
   autocmd BufEnter /home/jick/project/pidgin-mtn/* setlocal tags+=/home/jick/project/pidgin-mtn/tags
