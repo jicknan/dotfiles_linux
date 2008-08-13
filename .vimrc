@@ -104,7 +104,7 @@ if has("autocmd")
   autocmd BufEnter /home/jick/project/NS65/* setlocal tags+=/home/jick/project/NS65/tags
   autocmd BufEnter /home/jick/project/ns65.jick/* setlocal tags+=/home/jick/project/ns65.jick/tags
   autocmd BufEnter /home/jick/project/ns65.jick/linux-orion-git/* setlocal tags=/home/jick/project/ns65.jick/linux-orion-git/tags
-  autocmd BufEnter /home/jick/project/pidgin-mtn/* setlocal tags+=/home/jick/project/pidgin-mtn/tags
+  autocmd BufEnter /home/jick/project/pidgin/* setlocal tags+=/home/jick/project/pidgin/tags
   autocmd BufEnter /usr/src/linux/* setlocal tags+=/usr/src/linux/tags
 endif " has("autocmd")
 

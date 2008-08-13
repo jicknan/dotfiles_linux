@@ -70,7 +70,7 @@ MenuStyle * AutomaticHotKeys
 ######
 # Default window Styles.
 #################
-Style * Font "xft:DejaVu Sans:style=Roman:size=12,xft:WenQuanYi Bitmap Song:style=Regular:size=12"
+Style * Font "serif"
 Style * BorderWidth 1, HandleWidth 1
 Style * Colorset 10, HilightColorset 11, MWMFunctions, MWMDecor, HintOverride
 Style * DecorateTransient, NoPPosition, IconBox 70 40 150 -65, IconGrid 3 3, IconFill left top
