@@ -2,7 +2,8 @@
 [ -f /etc/profile ] && . /etc/profile
 
 # Set the values for some environment variables:
-PATH=$PATH:/usr/local/bin:/usr/local/sbin:$HOME/bin
+#PATH=$PATH:/usr/local/bin:/usr/local/sbin:
+PATH=$PATH:$HOME/bin
 MANPATH=/usr/man:/usr/share/man
 
 # don't put duplicate lines in the history. See bash(1) for more options
