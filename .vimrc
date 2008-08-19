@@ -121,7 +121,7 @@ if !exists("auto_c")
     au BufNewFile *.pl 0r ~/.vim/files/pl.skel
     autocmd BufNewFile *.py 0r ~/.vim/files/python.skel
     autocmd BufNewFile *.rst 0r ~/.vim/files/rst.skel
-    autocmd BufNewFile *.mdwn 0r ~/.vim/files/mdwn.skel
+    au BufNewFile,BufRead *.mdwn set ft=ikiwiki
     ":%s/_filename_/\=bufname("%")
     :"%s/_datetime_/\=strftime("%c")
     map gse <ESC>:%s/_filename_/\=bufname("%")/<CR>:%s/_datetime_/\=strftime("%c")/<CR>
