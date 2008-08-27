@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /Makefile
-Disallow: /*_main.html
-Disallow: /*.p
