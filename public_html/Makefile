@@ -40,7 +40,7 @@ dirs:
 	make -C $$i || exit 1 ;                                                   \
 	done
 
-.PHONY:clean install
+.PHONY: clean install
 clean:
 	#for i in ${SUBDIRS} ; do make -C $$i clean || exit 1 ; done
 	#for i in ${LIBDIRS} ; do make -C $$i clean || exit 1 ; done

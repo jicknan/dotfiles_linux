@@ -15,3 +15,7 @@ fi
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
+
+if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/vc/1 ]]; then
+	startx
+fi

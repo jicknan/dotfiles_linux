@@ -79,5 +79,5 @@ fi
 
 # Start a wm:
 #twm &
-fvwm2
-#exec openbox-session
+#fvwm2
+exec openbox-session
