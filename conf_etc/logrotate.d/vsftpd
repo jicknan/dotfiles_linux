@@ -1,9 +1,5 @@
-/var/log/vsftpd.log {
-    compress
-    rotate 1
-    size=+1024k
-    notifempty
-    missingok
-    copytruncate
-    noolddir
+/var/log/vsftpd.conf {
+   sharedscripts
+   copytruncate
+   missingok
 }
