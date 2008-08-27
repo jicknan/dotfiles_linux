@@ -57,16 +57,16 @@ eth0Down: ${alignc}${downspeedf eth0}K/s ${alignr}${totaldown eth0}
 ${downspeedgraph eth0}
 eth0Up: ${alignc}${upspeedf eth0}K/s ${alignr}${totalup eth0}
 ${upspeedgraph eth0}
-eth0:${addr eth0}${if_existing /tmp/ath0}${alignr}ath0:${addr ath0}
-WiFi: ${alignc}${wireless_bitrate ath0} ${alignr}${wireless_link_qual ath0}/${wireless_link_qual_max ath0}(${wireless_link_qual_perc ath0})
-${wireless_link_bar ath0}
-${alignr}essid:${wireless_essid ath0}
-${alignr}${wireless_ap ath0}
-${alignr}mode:${wireless_mode ath0}
-ath0Down: ${alignc}${downspeedf ath0}K/s ${alignr}${totaldown ath0}
-${downspeedgraph ath0}
-ath0Up: ${alignc}${upspeedf ath0}K/s ${alignr}${totalup ath0}
-${upspeedgraph ath0}${endif}
+eth0:${addr eth0}${if_existing /tmp/wifi0}${alignr}wifi0:${addr wifi0}
+WiFi: ${alignc}${wireless_bitrate wifi0} ${alignr}${wireless_link_qual wifi0}/${wireless_link_qual_max wifi0}(${wireless_link_qual_perc wifi0})
+${wireless_link_bar wifi0}
+${alignr}essid:${wireless_essid wifi0}
+${alignr}${wireless_ap wifi0}
+${alignr}mode:${wireless_mode wifi0}
+wifi0Down: ${alignc}${downspeedf wifi0}K/s ${alignr}${totaldown wifi0}
+${downspeedgraph wifi0}
+wifi0Up: ${alignc}${upspeedf wifi0}K/s ${alignr}${totalup wifi0}
+${upspeedgraph wifi0}${endif}
 BAT0:${alignc}${battery_percent BAT0}%${alignr}${battery BAT0}(${battery_time BAT0})
 ${battery_bar BAT0}
 ${alignr}AC Adpter:${acpiacadapter}

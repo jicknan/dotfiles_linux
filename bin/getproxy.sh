@@ -13,7 +13,7 @@ yellow="\033[33m"
 end="\033[0m"
 
 test_page="zh.wikipedian.org"
-#test_page="http://scratchpad.wikia.com/wiki/Qnap_Turbostation:TSSerial"
+test_page="tcpconn.tencent.com"
 timeout=20
 
 if [ "$#" = 0 ]
