@@ -35,7 +35,7 @@ FILES += .xinitrc
 FILES += bin
 FILES += code
 FILES += doc
-FILES += public_html
+#FILES += public_html
 
 ifeq (${JICK_HOST}, X31)
     FILES += .Xmodmap

@@ -630,7 +630,7 @@
 		<application class="Firefox*">
 			<desktop>4</desktop>
 		</application>
-		<application class="Pidgin">
+		<application class="Pidgin*">
 			<desktop>3</desktop>
 		</application>
 		<application class="URxvt">

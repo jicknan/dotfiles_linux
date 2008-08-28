@@ -1,6 +1,8 @@
 #
 # Arch Linux repository mirrorlist
 #
+# local repo
+Server = ftp://172.21.6.133/archlinux/files/$repo/os/i686
 # 10.1Kps
 Server = ftp://ftp.archlinux.org/$repo/os/i686
 # 9.6Kps
