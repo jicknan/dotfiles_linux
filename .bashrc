@@ -52,6 +52,7 @@ NS65="$HOME/project/NS65"
 PATH=$PATH:$NS65
 PATH=$PATH:~/arm-tools/arm-linux-gnueabi/bin
 PATH=$PATH:~/arm-tools/arm-none-linux-gnueabi/bin
+PATH=$PATH:~/arm-tools/arm-angstrom-linux-uclibcgnueabi/bin
 # foonas-em env
 FOONAS="$HOME/project/foonas-em"
 #PATH=$FOONAS/bitbake/bin:$PATH

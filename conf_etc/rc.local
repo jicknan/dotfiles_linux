@@ -3,10 +3,6 @@
 # /etc/rc.local: Local multi-user startup script.
 #
 
-# The uhci_hcd module drains a lot of power and is only needed for USB1
-# devices. 
-rmmod uhci_hcd
-
 # Powersaving
 echo 5 > /proc/sys/vm/laptop_mode
 echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
