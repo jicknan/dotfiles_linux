@@ -5,7 +5,7 @@ DestroyMenu MenuFvwmRoot
 AddToMenu MenuFvwmRoot
 Test (x urxvtc) + %rxvt.png%"URxvtc" Exec exec urxvtc -tr -name 'terminal'
 #Test (x opera) + %opera.png%"&Opera" Exec exec opera
-Test (x firefox3-bin) + %firefox.png%"&Firefox" Exec exec firefox3-bin
+Test (x firefox) + %firefox.png%"&Firefox" Exec exec firefox
 Test (x pidgin) + %pidgin.png%"&Pidgin" Exec exec pidgin
 Test (x stardict) + %stardict.png%"Star&Dict" Exec exec stardict
 Test (x skype) + %skype.png%"&Skype" Exec exec skype

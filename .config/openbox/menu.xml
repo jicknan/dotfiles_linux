@@ -50,7 +50,7 @@
 	    <action name="Execute"><command>urxvtc -tr</command></action>
 	</item>
 	<item label="Firefox">
-	    <action name="Execute"><command>firefox3-bin</command></action>
+	    <action name="Execute"><command>firefox</command></action>
 	</item>
 	<item label="Pidgin">
 	    <action name="Execute"><command>pidgin</command></action>

@@ -12,12 +12,13 @@
 #
 
 # For loopbacking.
-127.0.0.1		localhost thinkbox
+127.0.0.1		localhost
 
 # local host
 172.21.1.234		scs
 172.21.1.237		sdcftp
 
+172.21.6.26		seekbox
 172.21.6.11		jick
 172.21.6.133		nasbox.org git.nasbox.org nasbox
 172.21.6.30		jickwin
