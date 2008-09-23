@@ -30,25 +30,35 @@ export GDK_USE_XFT=1
 # start some nice programs
 
 # Set a background color:
-#BG=xsetroot
-#test -z $BG || $BG -solid SteelBlue
+BG=xsetroot
+test -z $BG || $BG -solid SteelBlue
 #test -z $BG || $BG -solid "#303030"
 
 # scim - A Input Method development platform
-if [ -x /usr/bin/scim ]; then 
+#if [ -x /usr/bin/scim ]; then 
+#	#export LANG=zh_CN.utf8
+#	echo "Setting and starting SCIM: scim -d"
+#	export XMODIFIERS="@im=SCIM"
+#	export GTK_IM_MODULE="scim"
+#	export QT_IM_MODULE="scim"
+#	scim -d
+#fi
+
+# scim - A Input Method development platform
+if [ -x /usr/bin/ibus ]; then 
 	#export LANG=zh_CN.utf8
-	echo "Setting and starting SCIM: scim -d"
-	export XMODIFIERS="@im=SCIM"
-	export GTK_IM_MODULE="scim"
-	export QT_IM_MODULE="scim"
-	scim -d
+	echo "Setting and starting ibus:"
+	export XMODIFIERS="@im=ibus"
+	export GTK_IM_MODULE="ibus"
+	export QT_IM_MODULE="ibus"
+	/usr/bin/ibus &
 fi
 
-## rxvtunicode - an unicode enabled rxvt-clone terminal emulator (urxvt)
-#if [ -x /usr/bin/urxvtd ]; then
-#	echo "Starting urxvtd: urxvtd -q -o -f"
-#	urxvtd -q -o -f &
-#fi
+# rxvtunicode - an unicode enabled rxvt-clone terminal emulator (urxvt)
+if [ -x /usr/bin/urxvtd ]; then
+	echo "Starting urxvtd: urxvtd -q -o -f"
+	urxvtd -q -o -f &
+fi
 
 # feh is a fast, lightweight image viewer which uses imlib2
 #if [ -x /usr/bin/feh ]; then
