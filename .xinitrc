@@ -30,8 +30,8 @@ export GDK_USE_XFT=1
 # start some nice programs
 
 # Set a background color:
-BG=xsetroot
-test -z $BG || $BG -solid SteelBlue
+#BG=xsetroot
+#test -z $BG || $BG -solid SteelBlue
 #test -z $BG || $BG -solid "#303030"
 
 # scim - A Input Method development platform
@@ -51,15 +51,15 @@ if [ -x /usr/bin/urxvtd ]; then
 fi
 
 # feh is a fast, lightweight image viewer which uses imlib2
-if [ -x /usr/bin/feh ]; then
-	feh --bg-scale $HOME/.current &
-fi
+#if [ -x /usr/bin/feh ]; then
+#	feh --bg-scale $HOME/.current &
+#fi
 
 #(sleep 2 && fbpanel) &
 # Conky is an advanced, highly configurable system monitor for X based on torsmo
-if [ -x /usr/bin/conky ]; then
-	conky &
-fi
+#if [ -x /usr/bin/conky ]; then
+#	conky &
+#fi
 
 # tpb - Access the special buttons on a ThinkPad-Laptop using xosd
 if [ -x /usr/bin/tpb ]; then
@@ -67,9 +67,12 @@ if [ -x /usr/bin/tpb ]; then
 fi
 
 # trayer - Swallows GTK 1.2/2.x application docklets, and KDE docklets.
-if [ -x /usr/bin/trayer ]; then
-	trayer --expand true --widthtype request --transparent true --alpha \
-	255 --edge top --align right --SetDockType false &
+#if [ -x /usr/bin/trayer ]; then
+#	trayer --expand true --widthtype request --transparent true --alpha \
+#	255 --edge top --align right --SetDockType false &
+#fi
+if [ -x /usr/bin/trayion ]; then
+	trayion &
 fi
 
 # screensaver as wallpaper
@@ -80,4 +83,5 @@ fi
 # Start a wm:
 #twm &
 #fvwm2
-exec openbox-session
+#exec openbox-session
+exec ion3
