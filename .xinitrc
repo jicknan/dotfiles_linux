@@ -44,11 +44,11 @@ if [ -x /usr/bin/scim ]; then
 	scim -d
 fi
 
-# rxvtunicode - an unicode enabled rxvt-clone terminal emulator (urxvt)
-if [ -x /usr/bin/urxvtd ]; then
-	echo "Starting urxvtd: urxvtd -q -o -f"
-	urxvtd -q -o -f &
-fi
+## rxvtunicode - an unicode enabled rxvt-clone terminal emulator (urxvt)
+#if [ -x /usr/bin/urxvtd ]; then
+#	echo "Starting urxvtd: urxvtd -q -o -f"
+#	urxvtd -q -o -f &
+#fi
 
 # feh is a fast, lightweight image viewer which uses imlib2
 #if [ -x /usr/bin/feh ]; then

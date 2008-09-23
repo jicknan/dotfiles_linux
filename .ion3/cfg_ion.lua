@@ -20,7 +20,7 @@
 --ALTMETA=""
 
 -- Terminal emulator
-XTERM="urxvtc"
+XTERM="urxvt"
 
 -- Some basic settings
 ioncore.set{

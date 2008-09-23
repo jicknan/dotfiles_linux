@@ -22,16 +22,18 @@
 defbindings("WScreen", {
     bdoc("Switch to n:th object (workspace, full screen client window) "..
          "within current screen."),
-    kpress(META.."1", "WScreen.switch_nth(_, 0)"),
-    kpress(META.."2", "WScreen.switch_nth(_, 1)"),
-    kpress(META.."3", "WScreen.switch_nth(_, 2)"),
-    kpress(META.."4", "WScreen.switch_nth(_, 3)"),
-    kpress(META.."5", "WScreen.switch_nth(_, 4)"),
-    kpress(META.."6", "WScreen.switch_nth(_, 5)"),
-    kpress(META.."7", "WScreen.switch_nth(_, 6)"),
-    kpress(META.."8", "WScreen.switch_nth(_, 7)"),
-    kpress(META.."9", "WScreen.switch_nth(_, 8)"),
-    kpress(META.."0", "WScreen.switch_nth(_, 9)"),
+    kpress(META.."F1", "WScreen.switch_nth(_, 0)"),
+    kpress(META.."F2", "WScreen.switch_nth(_, 1)"),
+    kpress(META.."F3", "WScreen.switch_nth(_, 2)"),
+    kpress(META.."F4", "WScreen.switch_nth(_, 3)"),
+    kpress(META.."F5", "WScreen.switch_nth(_, 4)"),
+    kpress(META.."F6", "WScreen.switch_nth(_, 5)"),
+    kpress(META.."F7", "WScreen.switch_nth(_, 6)"),
+    kpress(META.."F8", "WScreen.switch_nth(_, 7)"),
+    kpress(META.."F9", "WScreen.switch_nth(_, 8)"),
+    kpress(META.."F10", "WScreen.switch_nth(_, 9)"),
+    kpress(META.."F11", "WScreen.switch_nth(_, 10)"),
+    kpress(META.."F12", "WScreen.switch_nth(_, 11)"),
     
     bdoc("Switch to next/previous object within current screen."),
     kpress(META.."comma", "WScreen.switch_prev(_)"),
@@ -53,16 +55,8 @@ defbindings("WScreen", {
         kpress("T", "ioncore.tagged_clear()"),
     }),
 
-    bdoc("Go to n:th screen on multihead setup."),
-    kpress(META.."Shift+1", "ioncore.goto_nth_screen(0)"),
-    kpress(META.."Shift+2", "ioncore.goto_nth_screen(1)"),
-    
-    bdoc("Go to next/previous screen on multihead setup."),
-    kpress(META.."Shift+comma", "ioncore.goto_prev_screen()"),
-    kpress(META.."Shift+period", "ioncore.goto_next_screen()"),
-    
     bdoc("Create a new workspace of chosen default type."),
-    kpress(META.."F9", "ioncore.create_ws(_)"),
+    kpress("Shift+F9", "ioncore.create_ws(_)"),
     
     bdoc("Display the main menu."),
     kpress(ALTMETA.."F12", "mod_query.query_menu(_, _sub, 'mainmenu', 'Main menu:')"),
@@ -139,8 +133,8 @@ defbindings("WMPlex.toplevel", {
     bdoc("Query for manual page to be displayed."),
     kpress(ALTMETA.."F1", "mod_query.query_man(_, ':man')"),
 
-    bdoc("Show the Ion manual page."),
-    kpress(META.."F1", "ioncore.exec_on(_, ':man ion3')"),
+    --bdoc("Show the Ion manual page."),
+    --kpress(META.."F1", "ioncore.exec_on(_, ':man ion3')"),
 
     bdoc("Run a terminal emulator."),
     kpress(ALTMETA.."F2", "ioncore.exec_on(_, XTERM or 'xterm')"),
@@ -148,8 +142,8 @@ defbindings("WMPlex.toplevel", {
     bdoc("Query for command line to execute."),
     kpress(ALTMETA.."F3", "mod_query.query_exec(_)"),
 
-    bdoc("Query for Lua code to execute."),
-    kpress(META.."F3", "mod_query.query_lua(_)"),
+    --bdoc("Query for Lua code to execute."),
+    kpress("Shift+F3", "mod_query.query_lua(_)"),
 
     bdoc("Query for host to connect to with SSH."),
     kpress(ALTMETA.."F4", "mod_query.query_ssh(_, ':ssh')"),
