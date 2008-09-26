@@ -96,6 +96,7 @@ defbindings("WInput", {
     kpress("Escape", "WInput.cancel(_)"),
     kpress("Control+G", "WInput.cancel(_)"),
     kpress("Control+C", "WInput.cancel(_)"),
+    kpress("Control+bracketleft", "WInput.cancel(_)"),
     
     bdoc("Scroll the message or completions up/down."),
     kpress("Control+U", "WInput.scrollup(_)"),

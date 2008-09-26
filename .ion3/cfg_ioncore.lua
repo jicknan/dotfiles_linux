@@ -59,8 +59,8 @@ defbindings("WScreen", {
     kpress("Shift+F9", "ioncore.create_ws(_)"),
     
     bdoc("Display the main menu."),
-    kpress(ALTMETA.."F12", "mod_query.query_menu(_, _sub, 'mainmenu', 'Main menu:')"),
-    --kpress(ALTMETA.."F12", "mod_menu.menu(_, _sub, 'mainmenu', {big=true})"),
+    kpress(META.."M", "mod_query.query_menu(_, _sub, 'mainmenu', 'Main menu:')"),
+    --kpress(META.."M", "mod_menu.menu(_, _sub, 'mainmenu', {big=true})"),
     mpress("Button3", "mod_menu.pmenu(_, _sub, 'mainmenu')"),
     
     bdoc("Display the window list menu."),
@@ -142,19 +142,19 @@ defbindings("WMPlex.toplevel", {
     bdoc("Query for command line to execute."),
     kpress(ALTMETA.."F3", "mod_query.query_exec(_)"),
 
-    --bdoc("Query for Lua code to execute."),
+    bdoc("Query for Lua code to execute."),
     kpress("Shift+F3", "mod_query.query_lua(_)"),
 
     bdoc("Query for host to connect to with SSH."),
     kpress(ALTMETA.."F4", "mod_query.query_ssh(_, ':ssh')"),
 
-    bdoc("Query for file to edit."),
-    kpress(ALTMETA.."F5", 
-           "mod_query.query_editfile(_, 'run-mailcap --action=edit')"),
+    --bdoc("Query for file to edit."),
+    --kpress(ALTMETA.."F5", 
+    --       "mod_query.query_editfile(_, 'run-mailcap --action=edit')"),
 
-    bdoc("Query for file to view."),
-    kpress(ALTMETA.."F6", 
-           "mod_query.query_runfile(_, 'run-mailcap --action=view')"),
+    --bdoc("Query for file to view."),
+    --kpress(ALTMETA.."F6", 
+    --       "mod_query.query_runfile(_, 'run-mailcap --action=view')"),
 
     bdoc("Query for workspace to go to or create a new one."),
     kpress(ALTMETA.."F9", "mod_query.query_workspace(_)"),
@@ -163,8 +163,8 @@ defbindings("WMPlex.toplevel", {
     kpress(META.."G", "mod_query.query_gotoclient(_)"),
     
     bdoc("Display context menu."),
-    --kpress(META.."M", "mod_menu.menu(_, _sub, 'ctxmenu')"),
-    kpress(META.."M", "mod_query.query_menu(_, _sub, 'ctxmenu', 'Context menu:')"),
+    kpress(META.."space", "mod_query.query_menu(_, _sub, 'ctxmenu', 'Context menu:')"),
+    --kpress(META.."space", "mod_menu.menu(_, _sub, 'ctxmenu')"),
     
     submap(META.."K", {
         bdoc("Detach (float) or reattach an object to its previous location."),
@@ -322,10 +322,10 @@ defbindings("WMoveresMode", {
 
 -- Main menu
 defmenu("mainmenu", {
-    menuentry("Run...",         "mod_query.query_exec(_)"),
-    menuentry("Terminal",       "ioncore.exec_on(_, XTERM or 'xterm')"),
+    --menuentry("Run...",         "mod_query.query_exec(_)"),
+    --menuentry("Terminal",       "ioncore.exec_on(_, XTERM or 'xterm')"),
     menuentry("Lock screen",    "ioncore.exec_on(_, 'xlock')"),
-    menuentry("Help",           "mod_query.query_man(_)"),
+    --menuentry("Help",           "mod_query.query_man(_)"),
     menuentry("About Ion",      "mod_query.show_about_ion(_)"),
     submenu("Styles",           "stylemenu"),
     submenu("Session",          "sessionmenu"),
@@ -338,10 +338,8 @@ defmenu("sessionmenu", {
     menuentry("Restart",        "ioncore.restart()"),
     menuentry("Restart TWM",    "ioncore.restart_other('twm')"),
     menuentry("Restart Fvwm",   "ioncore.restart_other('fvwm2')"),
-    menuentry("Restart OpenBox","ioncore.restart_other('openbox-session')"),
+    --menuentry("Restart OpenBox","ioncore.restart_other('openbox-session')"),
     menuentry("Exit",           "ioncore.shutdown()"),
-    menuentry("Reboot",		"ioncore.exec_on(_, 'sudo reboot')"),
-    menuentry("Shutdown",	"ioncore.exec_on(_, 'sudo shutdown -h now')"),
 })
 
 

@@ -13,6 +13,7 @@ defbindings("WMenu", {
     kpress("Control+G", "WMenu.cancel(_)"),
     kpress("Control+C", "WMenu.cancel(_)"),
     kpress("Left", "WMenu.cancel(_)"),
+    kpress("Control+bracketleft", "WMenu.cancel()"),
     
     bdoc("Activate current menu entry."),
     kpress("Return",  "WMenu.finish(_)"),
@@ -25,6 +26,8 @@ defbindings("WMenu", {
     kpress("Control+P", "WMenu.select_prev(_)"),
     kpress("Up", "WMenu.select_prev(_)"),
     kpress("Down", "WMenu.select_next(_)"),
+    kpress("J", "WMenu.select_next(_)"),
+    kpress("K", "WMenu.select_prev(_)"),
     
     bdoc("Clear the menu's typeahead find buffer."),
     kpress("BackSpace", "WMenu.typeahead_clear(_)"),

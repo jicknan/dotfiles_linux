@@ -81,20 +81,7 @@ dopath("cfg_defaults")
 --dopath("mod_statusbar")
 --dopath("mod_dock")
 --dopath("mod_sp")
-
-
---
--- Common customisations
---
-
--- Uncommenting the following lines should get you plain-old-menus instead
--- of query-menus.
-
---defbindings("WScreen", {
---    kpress(ALTMETA.."F12", "mod_menu.menu(_, _sub, 'mainmenu', {big=true})"),
---})
---
---defbindings("WMPlex.toplevel", {
---    kpress(META.."M", "mod_menu.menu(_, _sub, 'ctxmenu')"),
---})
-
+dopath("bindsearch")
+--dopath("enumerate")
+dopath("exec_show")
+dopath("query_url")

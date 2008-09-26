@@ -1,3 +1,0 @@
-#!/bin/sh
-
-source ~/doc/av && mplayer $ptv

@@ -16,13 +16,17 @@ defwinprop{
     ignore_cfgrq = true,
 }
 
---[[
 defwinprop{
     class = "Gran Paradiso",
     instance = "Toplevel",
-    ignore_cfgrq = true,
+    --transient_mode = "true",
 }
---]]
+
+defwinprop{
+	class = "display",
+	instance = "display",
+	float = "true",
+}
 
 -- Put all dockapps in the statusbar's systray, also adding the missing
 -- size hints necessary for this to work.
