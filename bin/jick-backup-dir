@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ $# != 2 ]; then
+	echo "Usage: arc <backup-thing>"
+	exit
+fi
+
+tar czvf $1.$(date +%Y%m%d-%H%M%S).tgz $1
+exit $?
