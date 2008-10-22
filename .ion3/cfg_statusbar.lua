@@ -36,16 +36,16 @@ mod_statusbar.create{
     -- right, respectively, and %systray is a placeholder for system tray
     -- windows and icons.
     --
-    --template="[ %date || load: %load || JUST FOR FUN ] %filler%systray",
-    template="[ %date" ..
-	" up: %uptime" ..
-	" | cpu: %jicknan_cpufreq MHz" ..
-	" load: %load" ..
-	" | %sysmon" ..
-	" | net: %jicknan_netin/%jicknan_netout" ..
-	--" | %ticker" ..
-	--" | %weather_location: %weather_sky/%weather_tempC C" ..
-	"] %filler%systray",
+    template="[ %date || load: %load ] %filler%systray",
+--    template="[ %date" ..
+--	" up: %uptime" ..
+--	" | cpu: %jicknan_cpufreq MHz" ..
+--	" load: %load" ..
+--	" | %sysmon" ..
+--	" | net: %jicknan_netin/%jicknan_netout" ..
+--	--" | %ticker" ..
+--	--" | %weather_location: %weather_sky/%weather_tempC C" ..
+--	"] %filler%systray",
     --template="[ %date || load:% %>load || mail:% %>mail_new/%>mail_total ] %filler%systray",
     --template="[ %date || load: %05load_1min || mail: %02mail_new/%02mail_total ] %filler%systray",
 }
@@ -88,29 +88,29 @@ mod_statusbar.launch_statusd{
     -- files = { work = "/path/to/work_email", junk = "/path/to/junk" }
     --
     -- Don't use the keyword 'spool' as it's reserved for mbox.
-    mail={
+    --mail={
         --update_interval=60*1000,
         --mbox=os.getenv("MAIL"),
         --files={},
-    },
+    --},
 
     -- Weather
-    wheather = {
-    },
+    --wheather = {
+    --},
 
     -- Uptime
-    uptime = {
-    },
+    --uptime = {
+    --},
 
     -- Ticker
     --ticker = {
     --},
 
     -- System monitor
-    sysmon = {
-    },
+    --sysmon = {
+    --},
 
-    jicknan = {
-    },
+    --jicknan = {
+    --},
 }
 

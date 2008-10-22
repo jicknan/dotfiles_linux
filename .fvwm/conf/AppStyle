@@ -8,6 +8,7 @@
 #################
 Style Wireshark	  EWMHMiniIconOverride, MiniIcon wireshark.png, StartsOnPage 1 2
 Style Firefox     EWMHMiniIconOVerride, MiniIcon firefox.png, StartsOnPage 1 0, SkipMapping
+Style *Vimperator EWMHMiniIconOVerride, MiniIcon firefox.png, StartsOnPage 1 0, SkipMapping
 Style Notes	  EWMHMiniIconOverride, MiniIcon notes.png, StartsOnPage 1 2
 Style Opera       EWMHMiniIconOverride, MiniIcon opera.png, StartsOnPage 1 0, SkipMapping
 Style rdesktop	  !Title, !Borders, HandleWidth 0, BorderWidth 0, ResizeHintOverride, WindowShadeShrinks, EWMHMiniIconOverride, MiniIcon rdesktop.png, StartsOnPage 1 2

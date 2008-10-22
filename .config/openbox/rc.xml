@@ -627,25 +627,40 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
+		<application class="*">
+			<decor>no</decor>
+		</application>
 		<application class="Firefox*">
+			<desktop>4</desktop>
+		</application>
+		<application class="Opera">
 			<desktop>4</desktop>
 		</application>
 		<application class="Pidgin*">
 			<desktop>3</desktop>
 		</application>
-		<application class="URxvt">
-			<decor>no</decor>
+		<application class="Skype">
+			<desktop>3</desktop>
 		</application>
 		<application class="rdesktop">
 			<desktop>2</desktop>
-			<decor>no</decor>
 		</application>
 		<application class="Evince">
 			<desktop>2</desktop>
 		</application>
 		<application class="Xpdf">
 			<desktop>2</desktop>
+    			<focus>yes</focus>
 		</application>
+		<application class="Stardict">
+			<desktop>2</desktop>
+    			<iconic>yes</iconic>
+		</application>
+		<application class="Nautilus">
+			<desktop>2</desktop>
+    			<iconic>yes</iconic>
+		</application>
+
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.

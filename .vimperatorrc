@@ -1,3 +1,5 @@
 set laststatus=2 ; last status line always
 set popups=2 ; Open in a new window if it has a specific requested size
 set showtabline=2 ; Always show tab bar
+
+autocmd LocationChange .* :js modes.passAllKeys = /mail\.google\.com/.test(buffer.URL) || /google\.com\/reader\//.test(buffer.URL)

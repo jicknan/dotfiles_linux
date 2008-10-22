@@ -27,11 +27,14 @@ fi
 # xft support for Gtk 2.2 and below:
 export GDK_USE_XFT=1
 
+# http://wiki.archlinux.org/index.php/Openoffice
+export OOO_FORCE_DESKTOP=gnome
+
 # start some nice programs
 
 # Set a background color:
-#BG=xsetroot
-#test -z $BG || $BG -solid SteelBlue
+BG=xsetroot
+test -z $BG || $BG -solid SteelBlue
 #test -z $BG || $BG -solid "#303030"
 
 # scim - A Input Method development platform
@@ -45,25 +48,30 @@ if [ -x /usr/bin/scim ]; then
 fi
 
 ## rxvtunicode - an unicode enabled rxvt-clone terminal emulator (urxvt)
-#if [ -x /usr/bin/urxvtd ]; then
-#	echo "Starting urxvtd: urxvtd -q -o -f"
-#	urxvtd -q -o -f &
-#fi
+if [ -x /usr/bin/urxvtd ]; then
+	echo "Starting urxvtd: urxvtd -q -o -f"
+	urxvtd -q -o -f &
+fi
 
 # feh is a fast, lightweight image viewer which uses imlib2
-#if [ -x /usr/bin/feh ]; then
-#	feh --bg-scale $HOME/.current &
-#fi
+if [ -x /usr/bin/feh ]; then
+	feh --bg-scale $HOME/.current &
+fi
 
 #(sleep 2 && fbpanel) &
 # Conky is an advanced, highly configurable system monitor for X based on torsmo
-#if [ -x /usr/bin/conky ]; then
-#	conky &
-#fi
+if [ -x /usr/bin/conky ]; then
+	conky &
+fi
 
 # tpb - Access the special buttons on a ThinkPad-Laptop using xosd
 if [ -x /usr/bin/tpb ]; then
 	tpb &
+fi
+
+# pypanel - show appliations list, tray icon
+if [ -x /usr/bin/pypanel ]; then
+	pypanel &
 fi
 
 # trayer - Swallows GTK 1.2/2.x application docklets, and KDE docklets.
@@ -71,9 +79,9 @@ fi
 #	trayer --expand true --widthtype request --transparent true --alpha \
 #	255 --edge top --align right --SetDockType false &
 #fi
-if [ -x /usr/bin/trayion ]; then
-	trayion &
-fi
+#if [ -x /usr/bin/trayion ]; then
+#	trayion &
+#fi
 
 # screensaver as wallpaper
 #if [ -x /usr/lib/xscreensaver/glmatrix ]; then
@@ -83,5 +91,5 @@ fi
 # Start a wm:
 #twm &
 #fvwm2
-#exec openbox-session
-exec ion3
+exec openbox-session
+#exec ion3

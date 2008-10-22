@@ -21,13 +21,15 @@
 172.21.6.26		seekbox
 172.21.6.44		jick	thinkbox
 172.21.6.133		nasbox.org git.nasbox.org nasbox
-172.21.6.30		jickwin
+172.21.6.25		jickwin
 172.21.7.18		build
-172.21.7.22		kylin
+172.21.7.13		kylin
 
 192.168.0.109		mynas
 192.168.0.107		inas
 
 66.111.62.170		silenceisdefeat.org sd
+147.65.1.201		luaforge.net
+64.233.187.99		google.com
 # End of hosts.
 

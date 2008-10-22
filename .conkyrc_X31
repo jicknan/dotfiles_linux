@@ -42,6 +42,7 @@ gap_y 5
 # ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
 # ${if_running cpufreqd}/${voltage_mv}mV${endif}
 # stuff after 'TEXT' will be formatted on screen
+#${color lightgrey}${alignr}${time %G-%m-%e %H:%M:%S %a}
 TEXT
 ${alignc}${color lightgrey} $nodename - $sysname $kernel
 ${color #98c2c7}CPU: ${alignc}$cpu%${alignr}${freq_dyn}MHz
@@ -75,4 +76,3 @@ ${alignr}Temp:CPU-${ibm_temps 0}C GPU-${ibm_temps 3}C
 ${alignr}Volume:${ibm_volume}
 ${alignr}Brightness:${ibm_brightness}
 ${alignr}Uptime:$uptime 
-${color lightgrey}${alignc}${time %a %b %e %H:%M:%S %Z %G}

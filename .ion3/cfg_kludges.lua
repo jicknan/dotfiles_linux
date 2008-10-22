@@ -28,6 +28,12 @@ defwinprop{
 	float = "true",
 }
 
+defwinprop{
+	class = "MPlayer",
+	instance = "xv",
+	float = "true",
+}
+
 -- Put all dockapps in the statusbar's systray, also adding the missing
 -- size hints necessary for this to work.
 defwinprop{
