@@ -21,7 +21,6 @@ FILES += pacman.d
 FILES += ssh/ssh_config
 FILES += ssh/sshd_config
 FILES += tor/torrc
-FILES += uucp
 FILES += xinetd.d
 #FILES += DIR_COLORS
 FILES += cpufreqd.conf
