@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rsync -av --delete ~/public_html/ nasbox:/home/httpd/html/
+rsync -av --delete /data/git/ nasbox:/home/jick/git

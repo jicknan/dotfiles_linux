@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo wpa_supplicant -d -wB -P/var/run/wpa_supplicant_wlan0.pid -iwlan0 -c /etc/wpa_supplicant.mine -Dwext
+#sudo dhcpcd -d wlan0

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rdesktop -u jick -g 100% -K -a 16 jickwin &
