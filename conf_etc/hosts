@@ -22,8 +22,10 @@
 172.21.6.44		jick	thinkbox
 172.21.6.133		nasbox.org git.nasbox.org nasbox
 172.21.6.25		jickwin
-172.21.7.18		build
+#192.168.1.105		jickwin
+172.21.7.29		build
 172.21.7.13		kylin
+172.21.6.1		carole
 
 192.168.0.109		mynas
 192.168.0.107		inas
@@ -31,5 +33,6 @@
 66.111.62.170		silenceisdefeat.org sd
 147.65.1.201		luaforge.net
 64.233.187.99		google.com
+211.151.90.155		ubuntu.unix-center.net uc
 # End of hosts.
 

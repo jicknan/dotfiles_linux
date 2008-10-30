@@ -1,5 +1,5 @@
 
-initialZoom 200%
+initialZoom width
 #continuousView true
 
 #scrollOutlineDown 10

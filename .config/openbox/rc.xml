@@ -275,6 +275,11 @@
         <execute>gmrun</execute>
       </action>
     </keybind>
+    <keybind key="C-F4">
+      <action name="Execute">
+        <execute>sudo s2ram</execute>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>8</dragThreshold>
@@ -644,6 +649,7 @@
 		</application>
 		<application class="rdesktop">
 			<desktop>2</desktop>
+    			<fullscreen>yes</fullscreen>
 		</application>
 		<application class="Evince">
 			<desktop>2</desktop>
@@ -651,6 +657,7 @@
 		<application class="Xpdf">
 			<desktop>2</desktop>
     			<focus>yes</focus>
+    			<maximized>true</maximized>
 		</application>
 		<application class="Stardict">
 			<desktop>2</desktop>
